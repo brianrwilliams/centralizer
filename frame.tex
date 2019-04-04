@@ -1,0 +1,217 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros}
+\usepackage[bbgreekl]{mathbbol}
+
+\linespread{1.25}
+
+%\usepackage[final]{pdfpages}
+
+\setcounter{tocdepth}{2}
+\numberwithin{equation}{section}
+
+
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
+
+\begin{document}
+\title{Large $N$ limits of higher enveloping algebras}
+
+%\author{Owen Gwilliam}
+%\address{Department of Mathematics and Statistics \\
+%Lederle Graduate Research Tower, 1623D \\
+%University of Massachusetts Amherst \\
+%710 N. Pleasant Street}
+%\email{gwilliam@math.umass.edu}
+%
+%\author{Brian Williams}
+%\address{Department of Mathematics, 
+%Northeastern University \\ 
+%567 Lake Hall \\ 
+%Boston, MA 02115 \\ U.S.A.}
+%\email{br.williams@northeastern.edu}
+
+
+\maketitle
+\thispagestyle{empty}
+
+\tableofcontents
+ 
+Recently there has emerged a systematic generalization of the enveloping algebra $U\fg$ of a Lie algebra $\fg$ to {\em higher} enveloping algebras:
+each dg Lie algebra $\fg$ has an enveloping $E_n$ algebra $\UU_n\fg$.
+Building on prior work \cite{BD, AF}, Knudsen \cite{Knudsen} has developed these ideas extensively and offered useful models as factorization algebras.
+Our central goal here is to develop close cousins of two important results about enveloping algebras of Lie algebras: 
+\begin{enumerate}
+\item[(1)] the (underived) center of $U\sl_{N+1}$ is isomorphic to $(\Sym(\CC^{N}))^{S_N}$, where we view $\CC^{N}$ as the Cartan subalgebra of $\sl_{N+1}$ and $S_N$ as the Weyl group of $SL_{N+1}$, and
+\item[(2)] the derived center of the enveloping algebra $U\fg$ is given by derived invariants of the adjoint action of $\fg$ on $U\fg$:
+\[
+Hoch^*(U\fg,U\fg) \simeq \clies(\fg, Ug),
+\]
+\end{enumerate}
+but in a way that works uniformly for these higher enveloping algebras.
+
+Our results are cousins, and not exact analogues, because we are interested in varying (1) by taking the limit as $N \to \infty$ and in varying (2) by studying the derived {\em centralizer} of a map $\UU_n\sl_\infty \hookrightarrow \UU_n\gl_\infty$, where $A$ is a dg algebra.
+(The derived center is the centralizer of the identity map $\UU_n\fg \to \UU_n\fg$.)
+These notions will be reviewed and explained in the next section below,
+where we also describe our results in detail.
+When $n=1$, however, note that we find that \owen{state the classical thing!}
+
+Our main tool is the Loday-Quillen-Tsygan (LQT) theorem,
+which describes the large $N$ limit of Lie algebra homology of $\gl_N(A)$ for $A$ a dg algebra.
+Experts will know that enveloping $E_n$ algebras can be constructed using Chevalley-Eilenberg chains
+(i.e., that they are shifted versions of $\cliels$, in a precise sense),
+and hence will recognize the relevance of the LQT theorem in this context.
+From this perspective, our main result can be understood as an $E_n$ generalization of the LQT theorem.
+
+We hope these constructions and ideas have interesting applications to other large $N$ phenomena,
+such as in quantum field theory and random matrix theory.
+
+\section{Our main results}
+
+Our primary result is the following.
+
+\begin{thm}
+Let $A$ be a unital dg algebra over a field $k$ of characteristic zero. 
+Then the centralizer of the Lie algebra map 
+\[
+u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A)
+\]
+\end{thm}
+
+\section{A variant of the Loday-Quillen-Tsygan theorem}
+
+Throughout this section, let $A$ be a dg algebra over a field $k$ of characteristic zero.
+We do not assume $A$ is unital; whenever unitality leads to a stronger result, we will explicitly add it as a hypothesis.
+(It is possible to work with $A_\infty$ algebras rather than dg algebras, 
+but it changes nothing structurally essential while adding a distracting layer of notational complexity.)
+
+\begin{dfn}
+Let $\cC(A)$ denote the cochain complex $\Cyc_*(A)[1]$, which may be viewed as an abelian Lie algebra. 
+Let $\cL(A)$ denote the dg Lie algebra $\gl_\infty(A)$.
+\end{dfn}
+
+Let $\sl_\infty$ denote $\sl_\infty(k)$, the trace-zero matrices of rank infinity with only finitely many nonzero entries in~$k$.
+Let $\gl_\infty$ denote $\gl_\infty(k)$, the matrices of rank infinity with only finitely many nonzero entries in~$k$.
+Let $\gl_\infty(A)$ denote the matrices of rank infinity with only finitely many nonzero entries in~$A$.
+There is a natural action of $\sl_\infty$ on $\gl_\infty(A)$, 
+and hence on its Chevalley-Eilenberg chains $\cliels(\cL(A))$.
+A key step in the LQT theorem is the construction of a quasi-isomorphism
+\beqn\label{lqtco}
+\lambda^{co}_A: \cliels(\cL(A))_{\sl_\infty} \xto{\cong} \Sym(\cC(A)).
+\eeqn
+When $A$ is unital, the inclusion of the identity $k \hookrightarrow A$ means the action of $\sl_\infty$ on $\gl_\infty(A)$ is inner, 
+and hence the projection $\cliels(\cL(A)) \to \cliels(\cL(A))_{\sl_\infty}$ is a quasi-isomorphism.
+The standard statement of the LQT theorem composes these two maps.
+
+\begin{thm}
+For $A$ a unital dg algebra over a characteristic zero field $k$,
+there is a quasi-isomorphism
+\beqn\label{lqt}
+\lambda_A: \cliels(\cL(A)) \xto{\simeq} \Sym(\cC(A))
+\eeqn
+of dg cocommutative Hopf algebras.
+\end{thm}
+
+For us it is the coalgebra structure that is particularly important, although the full Hopf algebra structure is typically emphasized.
+
+As the constructions are natural in the algebra $A$, one can phrase a stronger but more abstract statement.
+
+\begin{cor}
+There is a natural transformation
+\[
+\lambda: \cliels(\cL(-)) \Longrightarrow \Sym(\cC(-))
+\]
+between these two functors from the dg category of unital dg algebras to the dg category of dg cocommutative Hopf algebras over~$k$.
+It is a quasi-isomorphism on every algebra.
+\end{cor}
+
+For our purposes, a variant is more useful, but this variant follows by easy, formal arguments.
+
+\def\lqt{{\bblambda}}
+
+\begin{thm}
+There is a natural transformation
+\[
+\lqt: \clies(\sl_\infty, \cliels(\cL(-)))  \Longrightarrow \clies(\sl_\infty) \otimes \Sym(\cC(-))
+\]
+between these two functors from the dg category of {\em non}unital dg algebras to the dg category of dg Hopf algebras over~$k$.
+For each nonunital dg algebra $A$, the map
+\beqn\label{lqtinv}
+\lqt_A: \clies(\sl_\infty, \cliels(\cL(A))) \xto{\simeq} \clies(\sl_\infty) \otimes \Sym(\cC(A))
+\eeqn
+is a quasi-isomorphism.
+\end{thm}
+
+\begin{proof}
+We take for granted that the reader is familiar with the proof of the LQT theorem as articulated in \cite{LQ, Weibel, Loday}.
+Our primary modification is to replace the coinvariants $\cliels(\cL(A))_{\sl_\infty}$ by the invariants $\cliels(\cL(A))^{\sl_\infty}$.
+Note that there is a canonical map
+\beqn\label{invtoco}
+\cliels(\cL(A))^{\sl_\infty} \hookrightarrow \cliels(\cL(A)) \to \cliels(\cL(A))_{\sl_\infty},
+\eeqn
+and in fact this map is an isomorphism, which we now show.
+
+To see this claim, we need to understand how $\sl_\infty$ acts on the underlying graded module of $\cliels(\cL(A))$. Note that as a $k$-module, $\cL(A) \cong \gl_\infty \otimes A$, which is a free $k$-module. 
+Each $n$th tensor power thus factors as
+\[
+(\cL(A)[1])^{\otimes n} \cong (\gl_\infty[1])^{\otimes n} \otimes A^{\otimes n}.
+\]
+Taking the coinvariants under the action of the symmetric group $S_n$
+(which acts diagonally on the $\gl_\infty$ factor and the $A$ factor),
+we obtain
+\[
+\Sym^n (\gl_\infty[1]) \otimes A.
+\]
+But the action of $\sl_\infty$ is then wholly on the left hand factor, leaving $A$ independent.
+
+There is a natural decomposition of $\Sym^n (\gl_\infty[1])$ into a direct sum $T_n \oplus T_n^\perp$ of representations of $\sl_\infty$, where $T_n$ is trivial and the complement $T_n^\perp$ has no trivial components.
+If we replace $\gl_\infty$ with the finite-dimensional Lie algebra $\gl_m$, 
+the analogous decomposition of $\Sym^n (\gl_m[1])$ exists by semisimplicity. 
+In fact, with $m > n$, invariant theory implies
+\[
+(\gl_m^{\otimes n})^{\sl_m} = (\gl_m^{\otimes n})_{\sl_m} \cong k S_n,
+\]  
+the group algebra of the symmetric group $S_n$.
+A stabilization phenomenon then implies the decomposition as $m \to \infty$.
+We note that we see here the equivalence of the $\sl_m$-invariants with the $\sl_m$-coinvariants,
+which holds for every degree $n$ and hence yields the desired isomorphism~(\ref{invtoco}).
+
+We thus conclude that there is a decomposition
+\[
+\cliels(\cL(A)) = T(A) \oplus T^\perp(A)
+\]
+into a direct sum of cochain complexes,
+where the first summand is a trivial $\sl_\infty$-module and the second has no trivial components.
+We will not unravel explicitly how to construct $T(A)$ from the algebra $A$ and the modules~$T_n$,
+but the reader should recognize that $T(A) = \cliels(\cL(A))^{\sl_\infty}$.
+
+We now recall two familiars fact about the Lie algebra cohomology of a semisimple Lie algebra~$\fg$:
+\begin{itemize}
+\item the Lie algebra cohomology of an irreducible, nontrivial, finite-dimensional module $M$ is zero, and
+\item for any trivial module $N$, there is a natural isomorphism $H^*_\Lie( \fg,N) \cong H^*_\Lie(\fg) \otimes N$.
+\end{itemize}
+Thus, we have a decomposition
+\[
+\clies(\sl_\infty,\cliels(\cL(A))) = \clies(\sl_\infty,T(A)) \oplus \clies(\sl_\infty,T^\perp(A)), 
+\]
+and there is a split surjection
+\[
+\bbsigma_A: \clies(\sl_\infty,\cliels(\cL(A))) \to \clies(\sl_\infty,T(A)) \cong \clies(\sl_\infty) \otimes T(A) 
+\]
+that is a quasi-isomorphism.
+
+We define our desired map $\lqt$ as the composite
+\[
+\lqt_A = \left(\id_{\clies(\sl_\infty)} \otimes \lambda^{co}_A \right) \circ \bbsigma_A,
+\]
+which is a quasi-isomorphism by construction.
+
+Our arguments, like those for the LQT theorem, are natural in the algebra~$A$ and hence we have constructed the natural transformation $\lqt$ implicitly.
+\end{proof}
+
+%\bibliographystyle{alpha}
+%%\bibliographystyle{spmpsci}  
+%\bibliography{hic}
+
+\end{document}
