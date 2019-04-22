@@ -14,9 +14,11 @@
 
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 \def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
+\def\mahmoud{\textcolor{green}{MZ: }\textcolor{green}}
+
 
 \begin{document}
-\title{Large $N$ limits of higher enveloping algebras}
+\title{Centralizers of higher enveloping algebras and their large $N$ limits}
 
 %\author{Owen Gwilliam}
 %\address{Department of Mathematics and Statistics \\
@@ -41,23 +43,23 @@
 Recently there has emerged a systematic generalization of the enveloping algebra $U\fg$ of a Lie algebra $\fg$ to {\em higher} enveloping algebras:
 each dg Lie algebra $\fg$ has an enveloping $E_n$ algebra $\UU_n\fg$.
 Building on prior work \cite{BD, AF}, Knudsen \cite{Knudsen} has developed these ideas extensively and offered useful models as factorization algebras.
-Our central goal here is to develop close cousins of two important results about enveloping algebras of Lie algebras: 
+Our central goal here is to document generalizations of two important results about enveloping algebras of Lie algebras: 
 \begin{enumerate}
 \item[(1)] the (underived) center of $U\sl_{N+1}$ is isomorphic to $(\Sym(\CC^{N}))^{S_N}$, where we view $\CC^{N}$ as the Cartan subalgebra of $\sl_{N+1}$ and $S_N$ as the Weyl group of $SL_{N+1}$, and
 \item[(2)] the derived center of the enveloping algebra $U\fg$ is given by derived invariants of the adjoint action of $\fg$ on $U\fg$:
 \[
-Hoch^*(U\fg,U\fg) \simeq \clies(\fg, Ug),
+\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg),
 \]
 \end{enumerate}
 but in a way that works uniformly for these higher enveloping algebras.
 
-Our results are cousins, and not exact analogues, because we are interested in varying (1) by taking the limit as $N \to \infty$ and in varying (2) by studying the derived {\em centralizer} of a map $\UU_n\sl_\infty \hookrightarrow \UU_n\gl_\infty$, where $A$ is a dg algebra.
+Our results include a cousin of these results where we vary (1) by taking the limit as $N \to \infty$ and vary (2) by studying the derived {\em centralizer} of a map $\UU_n\sl_\infty \hookrightarrow \UU_n\gl_\infty(A)$, where $A$ is a dg algebra.
 (The derived center is the centralizer of the identity map $\UU_n\fg \to \UU_n\fg$.)
 These notions will be reviewed and explained in the next section below,
 where we also describe our results in detail.
 When $n=1$, however, note that we find that \owen{state the classical thing!}
 
-Our main tool is the Loday-Quillen-Tsygan (LQT) theorem,
+Our main tool for this result is the Loday-Quillen-Tsygan (LQT) theorem,
 which describes the large $N$ limit of Lie algebra homology of $\gl_N(A)$ for $A$ a dg algebra.
 Experts will know that enveloping $E_n$ algebras can be constructed using Chevalley-Eilenberg chains
 (i.e., that they are shifted versions of $\cliels$, in a precise sense),
@@ -67,17 +69,239 @@ From this perspective, our main result can be understood as an $E_n$ generalizat
 We hope these constructions and ideas have interesting applications to other large $N$ phenomena,
 such as in quantum field theory and random matrix theory.
 
+\begin{rmk}
+Throughout this document, we will work with differential graded vector spaces over a field $k$ of characteristic zero.
+When we write ``Lie algebra,'' we mean a dg Lie algebra; if we mean an ordinary Lie algebra (such as $\sl_2(\CC)$), we say so explicitly.
+Similarly, ``algebra'' means ``dg algebra'' unless stated otherwise.
+Our theorems will be stated in terms of the stable $\infty$-category of such cochain complexes (one is free to work with the appropriate stable model or pretriangulated dg category, as one wishes).
+Many of our constructions involve, however, explicit manipulations with standard, explicit complexes.
+To minimize confusion, we try to indicate the level at which we are working but that may be left implicit in some places.
+\end{rmk}
+
 \section{Our main results}
 
-Our primary result is the following.
+See section~\ref{sec: enveloping} for a summary of the enveloping $E_n$ algebra construction, 
+and see section~\ref{sec: centralizer} for a summary of centralizers of maps of $E_n$ algebras.
 
 \begin{thm}
-Let $A$ be a unital dg algebra over a field $k$ of characteristic zero. 
-Then the centralizer of the Lie algebra map 
-\[
-u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A)
-\]
+\label{thm: centralizer}
+Let $f: \UU_n \fg \to B$ denote a map of $E_n$ algebras, where $\UU_n \fg$ is the enveloping $E_n$ algebra of a dg Lie algebra $\fg$.
+In particular, $B$ is an $E_n$ algebra in $\fg$-modules via the map~$f$.
+
+The centralizer ${\frak Z}_{E_n}(f)$ is the $E_n$ algebra $\clies(\fg, B)$.
 \end{thm}
+
+By using Knudsen's results, we have the following consequence.
+
+\begin{cor}
+Let $\rho: \fg \to \fh$ be a map of dg Lie algebras, and let $\UU_n \rho$ denote the associated map of enveloping $E_n$ algebras.
+When $k$ is $\RR$ or $\CC$, 
+the centralizer ${\frak Z}_{E_n}(\UU_n \rho)$ is modeled by the locally constant factorization algebra that assigns
+\[
+\clies(\fg \otimes \Omega^*(U), \cliels( \fh \otimes \Omega^*_c(U)))
+\]
+to each open set $U \subset \RR^n$.
+\end{cor}
+
+An immediate corollary, by taking the identity map, is the following.
+
+\begin{cor}
+\label{thm: center}
+The center of the enveloping $E_n$ algebra $\UU_n\fg$ is the $E_n$ algebra $\clies(\fg, \UU_n\fg)$.
+(It has, of course, a natural $E_{n+1}$ algebra structure.) 
+
+When $k$ is $\RR$ or $\CC$, 
+it is modeled by the locally constant factorization algebra that assigns
+\[
+\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\]
+to each open set $U \subset \RR^n$.
+\end{cor}
+
+This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
+
+Having an explicit presentation for the centralizer of a map of $E_n$ algebras allows for immediate calculations of factorization homology.
+Indeed, for $M$ a closed $n$-dimensional manifold,
+\[
+\int_M {\frak Z}_{E_n}(\UU_n \rho) \simeq \clies(\fg \otimes \Omega^*(M), \cliels( \fh \otimes \Omega^*(M))).
+\]
+When $M = S^n$, we thus see
+\[
+\int_{S^n} {\frak Z}_{E_n}(\UU_n \rho) \simeq \clies(\fg[\epsilon_n], \cliels( \fh[\epsilon_n]))
+\]
+as $\Omega^*(S^n) \simeq \CC[\epsilon_n]$ where $\epsilon_n$ is a formal variable with $|\epsilon_n| = n$ and $\epsilon_n^2 = 0$.
+In the case that $n=1$, this recovers a theorem of Tamarkin-Tsygan \cite{TT} on the Hochschild cohomology of differential operators in the case of a group $G$ (see Example \ref{eg: TT}). 
+
+\begin{rmk}
+The preceding results are well-known to experts in factorization homology (we discussed it with several, including Francis and Knudsen),
+since they are quick consequences of published work, as will be seen below.
+But these statements seem not to have be documented yet in the literature, 
+and so we record them here.
+\end{rmk}
+
+Our primary large $N$ result is the following, which is the novel contribution of this paper.
+
+\begin{thm}
+\label{thm: large N}
+Let $A$ be a unital algebra over a field $k$ of characteristic zero. 
+The map of Lie algebras
+\[
+u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A),
+\]
+induced by the unit in $A$, determines a map 
+\[
+\UU_nu_A: \UU_n\sl_\infty(k) \to \UU_n\gl_\infty(A).
+\]
+In particular, $\UU_n\gl_\infty(A)$ is an $E_n$ algebra in $\sl_\infty(k)$-representations.
+
+The centralizer ${\frak Z}_{E_n}(\UU_nu_A)$ of this map is the $E_n$ algebra obtained by forgetting the dg commutative algebra
+\[
+\clies(\sl_\infty(k)) \otimes \Sym(\Cyc_*(A)[1-n])
+\]
+down to an $E_n$ algebra.
+
+When $k$ is $\RR$ or $\CC$, 
+it is modeled by the locally constant factorization algebra that assigns
+\[
+\clies(\sl_\infty(\Omega^*(U)))\otimes \Sym(\Cyc_*(A \otimes \Omega^*_c(U))[1])
+\]
+to each open set $U \subset \RR^n$.
+\end{thm}
+
+\owen{We should write explicitly what happens in the case $A = k$, and maybe $n=1$.}
+
+The explicit factorization algebras provide convenient methods for computing factorization homology.
+As shown in \owen{exact reference} in \cite{Knudsen}, 
+the enveloping $E_n$ algebras are homotopy $O(n)$-fixed points and hence determine factorization algebras on unoriented $n$-dimensional manifolds.
+
+\section{Enveloping $E_n$ algebras of Lie algebras}
+
+Although \cite{Knudsen} develops an adjunction between Lie and $E_n$ algebras in any presentable stable symmetric monoidal $\infty$-category $\cC$,
+we need his result only in the setting of chain complexes over a field $k$ of characteristic zero $\Mod_k$ with tensor product~$\otimes_k$.
+We summarize his result in that setting as follows.
+
+\def\oblv{{\rm oblv}}
+\def\Free{{\rm Free}}
+
+\begin{thm}
+There is a commuting square of adjunctions
+\[
+\begin{tikzcd}
+\Alg_\Lie(\Mod_k) \arrow[r, bend left=20, shift left=.5ex,"\UU_n"] \arrow[dd] & \Alg_{E_n}(\Mod_k) \arrow[l, shift left=.5ex, "\oblv"] \arrow[dd]\\
+&\\
+\Mod_k \arrow[r, bend left=20, shift left=.5ex, "\Sigma^{1-n}"] \arrow[uu, bend left=20, shift left=.5ex, "\Free_\Lie"] & \Mod_k \arrow[l, shift left=.5ex,"\Sigma^{n-1}"] \arrow[uu, bend right=20, shift right=.5ex, "\Free_{E_n}"']
+\end{tikzcd}
+\]
+where $\Sigma$ denotes suspension \owen{because tikzcd does weird things with ``[1-n]'' instead}.
+(Curving arrows denote left adjoints.)
+
+When $k$ is $\RR$ or $\CC$, 
+the enveloping $E_n$ algebra $\UU_n \fg$ of a dg Lie algebra $\fg$ is modeled by the locally constant factorization algebra that assigns
+\[
+\cliels(\Omega^*_c(U) \otimes \fg)
+\]
+to each open set $U \subset \RR^n$.
+\end{thm}
+
+The second part of this result implies the explicit models in our theorems.
+
+\section{Centralizers of maps of $E_n$ algebras and the derived center}
+\label{sec: centralizer}
+
+We provide a gloss of the main notions here but refer the reader to Section 5.3 of \cite{LurieHA} and \cite{FrancisHH} for extensive and detailed discussions.
+
+Let $\cC^\otimes$ denote a presentable stable symmetric monoidal $\infty$-category (for us, chain complexes over a field $k$ of characteristic zero with~$\otimes_k$).
+
+\begin{dfn}
+For a map $f: A \to B$ of $E_n$ algebras in $\cC$, 
+the {\em centralizer} ${\frak Z}_{E_n}(f)$ is the $E_n$ algebra in $\cC$ that is universal among those that sit in a commuting diagram
+\[
+\begin{tikzcd}
+& {\frak Z}_{E_n}(f) \otimes A \arrow[dr] & \\
+A \arrow[ur, "u"] \arrow[rr, "f"] && B
+\end{tikzcd}
+\]
+where $u$ is induced by the identity map $1_\cC \to {\frak Z}_{E_n}(f)$.
+
+The {\em center} of an $E_n$ algebra $A$ is the centralizer of its identity morphism $\id_A: A \to A$.
+\end{dfn}
+
+When $n=1$ and $\cC$ just ordinary vector spaces, the centralizer of $f: A \to B$ thus consists of the subspace of elements of $B$ that commute with the image $f(A)$ inside~$B$.
+The center of $A$ thus recovers the traditional notion.
+
+An alternative characterization is found in Theorem 5.3.1.30 of~\cite{LurieHA}.
+
+\begin{prp}
+The centralizer ${\frak Z}_{E_n}(f)$ can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category $\Mod^{E_n}_A(\cC)$.
+\end{prp}
+
+When $n=1$ and $\cC$ is chain complexes over the field $k$, 
+then $\Mod^{E_1}_A(\cC)$ is equivalent to $A-A$-bimodules and hence ${\frak Z}_{E_1}(f) \simeq \HH^*(A,B_f)$,
+where $B_f$ denotes $B$ viewed as an $A-A$-bimodule via the map~$f$.
+
+We record a key fact drawn from \cite{LurieHA} and~\cite{FrancisHH}, which generalizes this situation.
+
+\begin{prp}
+Let $\cC^\otimes$ be a presentable symmetric monoidal stable $\infty$-category whose tensor product preserves colimits in each variable separately.
+For $A$ be an $E_n$ algebra in $\cC$,
+the $\infty$-category $\Mod^{E_n}_A(\cC)$ is equivalent to the $\infty$-category $\LMod_{\int_{S^{n-1} A}}(\cC)$.
+\end{prp}
+
+See Remark 7.3.5.3 of \cite{LurieHA} and Section 2 of \cite{FrancisHH}.
+Concretely, this claim arises from the fact that as a module over $A$ as an $E_n$ algebra, 
+$M \in \Mod^{E_n}_A(\cC)$ is equipped with a commuting family of actions by $A$ parametrized by $\RR^n \setminus \{0\}$.
+This action factors through the left action of the $E_1$ algebra $\int_{S^{n-1} \times \RR} A$ arising from factorization homology over the complement of the origin,
+which integrates all those actions and through which they all factor.
+As shown in Theorem 7.5.3.1 of \cite{LurieHA} and earlier in Proposition 3.16 of \cite{FrancisHH}, 
+this algebra $\int_{S^{n-1} \times \RR} A$ is equivalent to ${\rm Free}(1_\cC)$, 
+the image of the unit object $1_\cC \in \cC$ under the left adjoint ${\rm Free}$ to the forgetful functor $\Mod^{E_n}_A(\cC) \to \cC$.
+
+We now use these results to prove the central claim of Theorem~\ref{thm: centralizer}.
+
+\section{Proof of Theorem \ref{thm: centralizer}}
+
+Let $\fg$ be a dg Lie algebra, let $B$ be an $E_n$ algebra, and let $f: \UU_n \fg \to B$ be a map of $E_n$ algebras.
+Then the results of the preceding section imply
+\begin{align*}
+{\frak Z}_{E_n}(f) &\simeq {{\rm Mor}}_{\Mod^{E_n}_{\UU_n}}(\UU_n \fg, B_f) \\
+&\simeq {\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}}(\UU_n \fg, B_f)
+\end{align*}
+where 
+\begin{itemize}
+\item $B_f$ denotes the object in $\Mod^{E_n}_{\UU_n}$ or, equivalently, in $\LMod_{\int_{S^{n-1}}\UU_n}$ determined by~$f$,
+\item ${\rm Mor}_{\Mod^{E_n}_{\UU_n}}(\UU_n \fg, B)$ denotes the classifying object for maps from $\UU_n$ to $B_f$ in the $\infty$-category $\Mod^{E_n}_{\UU_n}$ (i.e., an internal mapping object),
+\item and ${\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}} (\UU_n \fg, B_f)$ denotes the classifying object for maps from ${\UU_n}$ to $B$ in the $\infty$-category $\LMod_{\int_{S^{n-1}}\UU_n}$.
+\end{itemize}
+Observe now that $\int_{S^{n-1}}\UU_n$ is an $E_1$ algebra equivalent to the dg algebra $U(\fg \otimes k[\epsilon_{n-1}])$.
+This is because the rational $(n-1)$-sphere is formal, and hence its cochains are quasi-isomorphic to its cohomology $k[\epsilon_{n-1}]$.
+Using the canonical inclusion $i: U\fg \to U(\fg \otimes k[\epsilon_{n-1}])$,
+we find
+\[
+k \otimes_{U\fg} U(\fg \otimes k[\epsilon_{n-1}]) \simeq \Sym(\fg[1-n]).
+\]
+Recall now that $\UU_n \fg \simeq \Sym(\fg[1-n])$ as $\fg$-modules.
+Base change thus implies
+\[
+{\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}} (\UU_n \fg, B_f)  \simeq {\rm Mor}_{U\fg} (k, B_f).
+\]
+The right hand side is precisely Lie algebra cochains of $\fg$ with coefficients in~$B_f$, as desired.
+
+\brian{do you like this example?}
+\begin{eg}\label{eg: TT}
+Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
+The Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$. 
+On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning 
+\[
+\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\]
+to each open set $U \subset \RR$.
+In particular, the factorization homology of the derived center along the closed manifold $S^1$ can be computed as
+\[
+\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
+\]
+where $\epsilon$ is a formal variable of degree $+1$. 
+\brian{let's talk about this.}
+\end{eg}
 
 \section{A variant of the Loday-Quillen-Tsygan theorem}
 
@@ -131,6 +355,7 @@ For our purposes, a variant is more useful, but this variant follows by easy, fo
 \def\lqt{{\bblambda}}
 
 \begin{thm}
+\label{thm: variant LQT}
 There is a natural transformation
 \[
 \lqt: \clies(\sl_\infty, \cliels(\cL(-)))  \Longrightarrow \clies(\sl_\infty) \otimes \Sym(\cC(-))
@@ -143,8 +368,17 @@ For each nonunital dg algebra $A$, the map
 is a quasi-isomorphism.
 \end{thm}
 
+This result yields the central claim of Theorem~\ref{thm: large N}, about the large $N$ limit of the centralizer.
+
+\begin{rmk}
+Loday and Procesi proved versions of the Loday-Quillen-Tsygan theorem for the Lie algebras $\mathfrak{o}_n$ and $\mathfrak{sp}_{2n}$,
+in which cyclic homology of the algebra is replaced by its dihedral homology.
+As nothing substantive changes in proving analogous versions of our results above, 
+we do not spell out the details here.
+\end{rmk}
+
 \begin{proof}
-We take for granted that the reader is familiar with the proof of the LQT theorem as articulated in \cite{LQ, Weibel, Loday}.
+We take for granted that the reader is familiar with the proof of the LQT theorem as articulated in \cite{LQ, Weibel, LodayCyclic}.
 Our primary modification is to replace the coinvariants $\cliels(\cL(A))_{\sl_\infty}$ by the invariants $\cliels(\cL(A))^{\sl_\infty}$.
 Note that there is a canonical map
 \beqn\label{invtoco}
@@ -176,6 +410,8 @@ the group algebra of the symmetric group $S_n$.
 A stabilization phenomenon then implies the decomposition as $m \to \infty$.
 We note that we see here the equivalence of the $\sl_m$-invariants with the $\sl_m$-coinvariants,
 which holds for every degree $n$ and hence yields the desired isomorphism~(\ref{invtoco}).
+\owen{MZ points out we should show the filtered colimit here commutes with taking invariants (which is a limit), 
+which should be true since filtered colimits commute with finite limits.}
 
 We thus conclude that there is a decomposition
 \[
@@ -186,11 +422,15 @@ where the first summand is a trivial $\sl_\infty$-module and the second has no t
 We will not unravel explicitly how to construct $T(A)$ from the algebra $A$ and the modules~$T_n$,
 but the reader should recognize that $T(A) = \cliels(\cL(A))^{\sl_\infty}$.
 
-We now recall two familiars fact about the Lie algebra cohomology of a semisimple Lie algebra~$\fg$:
+We now recall two familiar facts about the Lie algebra cohomology of a semisimple Lie algebra~$\fg$:
 \begin{itemize}
 \item the Lie algebra cohomology of an irreducible, nontrivial, finite-dimensional module $M$ is zero, and
 \item for any trivial module $N$, there is a natural isomorphism $H^*_\Lie( \fg,N) \cong H^*_\Lie(\fg) \otimes N$.
 \end{itemize}
+Together these imply that for an arbitrary finite-dimensional module~$M$,
+\[
+\clies(\fg,M) \simeq \clies(\fg) \otimes M^\fg.
+\]
 Thus, we have a decomposition
 \[
 \clies(\sl_\infty,\cliels(\cL(A))) = \clies(\sl_\infty,T(A)) \oplus \clies(\sl_\infty,T^\perp(A)), 
@@ -210,8 +450,108 @@ which is a quasi-isomorphism by construction.
 Our arguments, like those for the LQT theorem, are natural in the algebra~$A$ and hence we have constructed the natural transformation $\lqt$ implicitly.
 \end{proof}
 
-%\bibliographystyle{alpha}
+\section{A factorization algebra arising from cyclic homology}
+
+We explain here how to construct a factorization algebra using cyclic homology,
+much as Lie algebra homology leads to an explicit factorization Lodayalgebra modeling the enveloping $E_n$ algebra. 
+Throughout this section, let $k$ denote the field $\RR$ or $\CC$; 
+by mimicking \cite{Knudsen}, one could also produce an explicit model over~$\QQ$.
+
+\begin{dfn}
+Let $A$ be a dg algebra over $k$, and let $\cA = A \otimes \Omega^*_c$ denote the associated cosheaf of dg algebras on~$\RR^n$.
+Let $\cC_A$ denote the precosheaf $\Cyc_*(\cA)[1]$ of cochain complexes on $\RR^n$,
+which assigns to each open set $U$, the 1-shifted cyclic chains on $\cA(U)$.
+\end{dfn}
+
+Note that for two algebras $B$ and $B'$,
+\[
+\Cyc_*(B) \oplus \Cyc_*(B') \simeq \Cyc_*(B \times B') .
+\] 
+The corresponding statement for ordinary Hochschild homology is induced by the projections $B \leftarrow B \times B' \to B'$, and any map of algebras that induces a quasi-isomorphism on Hochschild homology induces one on cyclic homology as well.
+See, for instance, 2.2.12 of \cite{LodayCyclic}. 
+Hence, for any finite collection of disjoint opens $U_1$, \dots, $U_k$, 
+we have
+\[
+\cC_A(U_1 \sqcup \cdots \sqcup U_k) \simeq \cC_A(U_1) \oplus \cdots \oplus \cC_A(U_k).
+\]
+(In this sense $\cC_A$ behaves like a cosheaf, up to quasi-isomorphism. 
+\owen{Does cyclic homology preserve filtered colimits? If so, I think $\cC_A$ may be a homotopy cosheaf.}
+\brian{Yes, see E.2.1.1 of \cite{LodayCyclic} on p. 59.}
+This property underlies the following claim.
+
+
+\begin{lmm}
+\label{lem: cycfact}
+The functor $\Sym(\cC_A)$ sending an open set $U \subset \RR^n$ to $\Sym(\cC_A(U))$ is a locally constant prefactorization algebra.
+\end{lmm}
+
+%\begin{rmk}
+%We note that, as with the definition of the Chevalley-Eilenberg chains of a local Lie algebra,
+%we use here a construction of cyclic chains that plays nicely with the kind of vector spaces relevant to this situation,
+%namely smooth sections of vector bundles.
+%Where the cyclic quotient $A^{\otimes n}/C_n$ would appear for an ordinary algebra in complex vector spaces,
+%we take the $\Omega^{0,*}(X^n)/C_n$ and so on.
+%\owen{I need to check that the $\Sym$ doesn't lead to issues \dots If we must, we can ignore the quasi-isomorphism and focus on the map just to cyclic homology.}
+%\end{rmk}
+
+\begin{proof}
+It remains to provide the structure maps of the putative prefactorization algebra.
+We need to provide a multilinear structure map 
+\beqn
+\label{eqn: desiredmap}
+\cC(U_1) \times \cdots \times \cC(U_n) \to \cC(V)
+\eeqn
+for any finite set of pairwise disjoint opens $U_1,\ldots, U_n$ inside a larger open $V$.
+For the cosheaf $\Omega^{0,*}_c$ on pairwise disjoint opens $U_1,\ldots, U_n$,
+the isomorphism of dg algebras
+\[
+\Omega^{*}_c(U_1) \oplus \cdots \oplus \Omega^{*}_c(U_n) \cong \Omega^{*}_c(U_1 \sqcup \cdots \sqcup U_n),
+\]
+determines a quasi-isomorphism
+\beqn
+\label{eqn:cyccosheaf}
+\Cyc_*(A \otimes \Omega^{*}_c(U_1)) \oplus \cdots \oplus \Cyc_*(A \otimes \Omega^{*}_c(U_n)) \xto{\simeq} \Cyc_*(A \otimes \Omega^{*}_c(U_1 \sqcup \cdots \sqcup U_n)).
+\eeqn
+The inclusion $U_1 \sqcup \cdots \sqcup U_n \hookrightarrow V$ then provides a map
+\[
+\Cyc_*(A \otimes \Omega^{*}_c(U_1 \sqcup \cdots \sqcup U_n)) \to \Cyc_*(A \otimes \Omega^{*}(V)),
+\]
+and so determines a map
+\beqn
+\label{eqn:map2}
+\Sym(\cC_A(U_1 \sqcup \cdots \sqcup U_n)) \to \Sym(\cC_A(V)).
+\eeqn
+Likewise, applying $\Sym$ to map~\eqref{eqn:cyccosheaf} provides
+\[
+\Sym(\cC_A(U_1)) \otimes \cdots \otimes \Sym(\cC_A(U_n)) \to \Sym(\cC_A(U_1 \sqcup \cdots \sqcup U_n)).
+\]
+We thus obtain the desired map \eqref{eqn: desiredmap} as a composite.
+This construction is automatically associative for nested inclusions of pairwise disjoint opens,
+and so $\Sym(\cC_A)$ is a prefactorization algebra.
+\end{proof}
+
+\begin{cor}
+For $A$ a dg algebra over $k$, Theorem~\ref{thm: variant LQT} provides a weak equivalence of prefactorization algebras
+\[
+\lqt: \clies(\sl_\infty(\Omega^*), \cliels(\cL(\cA))) \xto{\simeq} \clies(\sl_\infty(\Omega^*)) \otimes \Sym(\cC_A).
+\]
+Hence, the functor $\Sym(\cC_A)$ determines a locally constant factorization algebra on $\RR^n$, and hence an $E_n$ algebra.
+\end{cor}
+
+This result yields the latter part of Theorem~\ref{thm: large N}, about an explicit factorization algebra.
+
+\begin{rmk}
+As remarked earlier, the Loday-Procesi theorem for the Lie algebras $\mathfrak{o}_n$ and $\mathfrak{sp}_{2n}$,
+in which cyclic homology of the algebra is replaced by its dihedral homology,
+lead to an analogous class of factorization algebras.
+\end{rmk}
+
+%\section{Proof of Theorem~\ref{thm: large N}}
+
+
+\bibliographystyle{alpha}  
+\bibliography{centralize}
+
 %%\bibliographystyle{spmpsci}  
-%\bibliography{hic}
 
 \end{document}
