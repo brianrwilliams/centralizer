@@ -530,6 +530,24 @@ This construction is automatically associative for nested inclusions of pairwise
 and so $\Sym(\cC_A)$ is a prefactorization algebra.
 \end{proof}
 
+\begin{rmk}
+We briefly remark on a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
+For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A, A^\vee)$ be a cyclic {\em cocycle} of degree $m$.
+Consider, for each open $U \subset \RR^n$ the cochain complex
+\[
+\Tilde{\cC}_{A,\chi} (U) = \left(\Cyc_*(A \tensor \Omega^*_c(U))[1] \oplus \CC \cdot K , \d_{\rm Cyc} + K \cdot \chi \right) 
+\]
+where $K$ is a formal parameter of degree $-m+n+1$.
+Also, $\d_{\rm Cyc}$ is the cyclic differential and $\chi$ is defined on $m$-chains by the pairing between cyclic chains and cochains, together with integration along $U$:
+\[
+\chi (\alpha_1 \tensor \cdots \tensor \alpha_m) = \int_U \<\chi, \alpha_1 \tensor \cdots \tensor \alpha_m\> .
+\]
+The differential is extended to the entire cochain complex by the graded Leibniz rule. 
+By similar arguments as above, the assignment $U \subset \Tilde{\cC}_{A, \chi}$ is a precosheaf of cochain complexes and $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ is a prefactorization algebra. 
+As a precosheaf of graded vectors spaces one has $\Tilde{\cC}_{A, \chi} = \cC_A \oplus \ul{\CC}[m-n-1]$, where $\ul{\CC}$ is the constant precosheaf, so that we may think of $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ as a twisted version of $\Sym(\cC_A)$. 
+These types of twisted \brian{what to say? check my degrees!}
+\end{rmk}
+
 \begin{cor}
 For $A$ a dg algebra over $k$, Theorem~\ref{thm: variant LQT} provides a weak equivalence of prefactorization algebras
 \[
