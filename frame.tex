@@ -15,6 +15,7 @@
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 \def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
 \def\mahmoud{\textcolor{green}{MZ: }\textcolor{green}}
+\def\greg{\textcolor{red}{GG: }\textcolor{red}}
 
 
 \begin{document}
@@ -90,7 +91,7 @@ In particular, $B$ is an $E_n$ algebra in $\fg$-modules via the map~$f$.
 
 The centralizer ${\frak Z}_{E_n}(f)$ is the $E_n$ algebra $\clies(\fg, B)$.
 \end{thm}
-
+\greg{shall explain/remind somewhere what is the $E_n$-structure there: namely induced by $E_n$-structure of $B$ and com mutliplication in $\clies$, namely convolution between an $E_\infty$-coalgebra and an $E_n$-algebra}
 By using Knudsen's results, we have the following consequence.
 
 \begin{cor}
@@ -117,11 +118,15 @@ it is modeled by the locally constant factorization algebra that assigns
 \]
 to each open set $U \subset \RR^n$.
 \end{cor}
-
+\greg{shall relate this to $P_n$-center of $\fg$. that shall also (but I have to think to the proof more), at least up to formality gives the $P_{n+1}$-structure on it. }
 This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
 
-Having an explicit presentation for the centralizer of a map of $E_n$ algebras allows for immediate calculations of factorization homology.
-Indeed, for $M$ a closed $n$-dimensional manifold,
+Having an explicit presentation for the centralizer of a map of $E_n$ algebras allows for immediate calculations of factorization homology. 
+
+Indeed, as shown  in \cite{Knudsen}, 
+the enveloping $E_n$ algebras are homotopy $O(n)$-fixed points (in other words $\mathrm{Disk}_n$-algebras in the sense of~\cite{AF}) and hence determine factorization algebras on unoriented $n$-dimensional manifolds.
+
+Therefore, for $M$ a closed $n$-dimensional manifold, one has 
 \[
 \int_M {\frak Z}_{E_n}(\UU_n \rho) \simeq \clies(\fg \otimes \Omega^*(M), \cliels( \fh \otimes \Omega^*(M))).
 \]
@@ -170,10 +175,9 @@ to each open set $U \subset \RR^n$.
 
 \owen{We should write explicitly what happens in the case $A = k$, and maybe $n=1$.}
 
-The explicit factorization algebras provide convenient methods for computing factorization homology.
-As shown in \owen{exact reference} in \cite{Knudsen}, 
-the enveloping $E_n$ algebras are homotopy $O(n)$-fixed points and hence determine factorization algebras on unoriented $n$-dimensional manifolds.
+Again, the explicit factorization algebras provide convenient methods for computing factorization homology.
 
+\greg{need to add a notation/convention somewhere including that $\Sigma^n$ will be shift functor, convention for grading and so on}
 \section{Enveloping $E_n$ algebras of Lie algebras}
 
 Although \cite{Knudsen} develops an adjunction between Lie and $E_n$ algebras in any presentable stable symmetric monoidal $\infty$-category $\cC$,
@@ -229,7 +233,7 @@ The {\em center} of an $E_n$ algebra $A$ is the centralizer of its identity morp
 When $n=1$ and $\cC$ just ordinary vector spaces, the centralizer of $f: A \to B$ thus consists of the subspace of elements of $B$ that commute with the image $f(A)$ inside~$B$.
 The center of $A$ thus recovers the traditional notion.
 
-An alternative characterization is found in Theorem 5.3.1.30 of~\cite{LurieHA}.
+An alternative characterization is found in Theorem 5.3.1.30 of~\cite{LurieHA} or Proposition 6.22 in~\cite{GTZ3}.
 
 \begin{prp}
 The centralizer ${\frak Z}_{E_n}(f)$ can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category $\Mod^{E_n}_A(\cC)$.
@@ -239,7 +243,7 @@ When $n=1$ and $\cC$ is chain complexes over the field $k$,
 then $\Mod^{E_1}_A(\cC)$ is equivalent to $A-A$-bimodules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^*(A,B_f)$,
 where $B_f$ denotes $B$ viewed as an $A-A$-bimodule via the map~$f$.
 
-We record a key fact drawn from \cite{LurieHA} and~\cite{FrancisHH}, which generalizes this situation.
+We record a key fact drawn from \cite{LurieHA},~\cite{FrancisHH}  and \cite{GG-Notes}, which generalizes this situation.
 
 \begin{prp}
 Let $\cC^\otimes$ be a presentable symmetric monoidal stable $\infty$-category whose tensor product preserves colimits in each variable separately.
@@ -247,7 +251,7 @@ For $A$ be an $E_n$ algebra in $\cC$,
 the $\infty$-category $\Mod^{E_n}_A(\cC)$ is equivalent to the $\infty$-category $\LMod_{\int_{S^{n-1} A}}(\cC)$.
 \end{prp}
 
-See Remark 7.3.5.3 of \cite{LurieHA} and Section 2 of \cite{FrancisHH}.
+See Remark 7.3.5.3 of \cite{LurieHA}, Coroallary 13 in~\cite{GG-Notes} and Section 2 of \cite{FrancisHH}.
 Concretely, this claim arises from the fact that as a module over $A$ as an $E_n$ algebra, 
 $M \in \Mod^{E_n}_A(\cC)$ is equipped with a commuting family of actions by $A$ parametrized by $\RR^n \setminus \{0\}$.
 This action factors through the left action of the $E_1$ algebra $\int_{S^{n-1} \times \RR} A$ arising from factorization homology over the complement of the origin,
@@ -279,7 +283,7 @@ we find
 \[
 k \otimes_{U\fg} U(\fg \otimes k[\epsilon_{n-1}]) \simeq \Sym(\fg[1-n]).
 \]
-Recall now that $\UU_n \fg \simeq \Sym(\fg[1-n])$ as $\fg$-modules.
+Recall now that $\UU_n \fg \simeq \Sym(\fg[1-n])$ as $\fg$-modules \greg{shall we also need that it is true as $E_n$-algebra one we see right hand side as a $P_n$-algebra in the natrual way and use formality ? I feel we need to say something more to recover the $E_n$-structure below-something like the $E_n$-structure on Lie algebra cochains realizes teh moduel map structure after all equivalences we use}.
 Base change thus implies that we have an equivalence
 \[
 {\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}} (\UU_n \fg, B_f)  \simeq {\rm Mor}_{U\fg} (k, B_f)
@@ -288,7 +292,7 @@ of underlying chain complexes.
 (That is, we have an equivalence after applying forgetful functors.)
 The right hand side is precisely Lie algebra cochains of $\fg$ with coefficients in~$B_f$, as desired.
 
-\brian{do you like this example?}
+\brian{do you like this example?} \greg{I do !}
 \begin{eg}\label{eg: TT}
 Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
 The Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$. 
@@ -331,7 +335,7 @@ When $A$ is unital, the inclusion of the identity $k \hookrightarrow A$ means th
 and hence the projection $\cliels(\cL(A)) \to \cliels(\cL(A))_{\sl_\infty}$ is a quasi-isomorphism.
 The standard statement of the LQT theorem composes these two maps.
 
-\begin{thm}
+\begin{thm}[\cite{LQ}]
 For $A$ a unital dg algebra over a characteristic zero field $k$,
 there is a quasi-isomorphism
 \beqn\label{lqt}
@@ -352,7 +356,7 @@ There is a natural transformation
 between these two functors from the dg category of unital dg algebras to the dg category of dg cocommutative Hopf algebras over~$k$.
 It is a quasi-isomorphism on every algebra.
 \end{cor}
-
+\greg{why not state (in a remark) this corollary and the next one as syaing this is an equivalence in the $\infty$-categories of functor ?}
 For our purposes, a variant is more useful, but this variant follows by easy, formal arguments.
 
 \def\lqt{{\bblambda}}
@@ -456,7 +460,7 @@ Our arguments, like those for the LQT theorem, are natural in the algebra~$A$ an
 \section{A factorization algebra arising from cyclic homology}
 
 We explain here how to construct a factorization algebra using cyclic homology,
-much as Lie algebra homology leads to an explicit factorization Lodayalgebra modeling the enveloping $E_n$ algebra. 
+much as Lie algebra homology leads to an explicit factorization algebra modeling the enveloping $E_n$ algebra. 
 Throughout this section, let $k$ denote the field $\RR$ or $\CC$; 
 by mimicking \cite{Knudsen}, one could also produce an explicit model over~$\QQ$.
 
@@ -465,7 +469,7 @@ Let $A$ be a dg algebra over $k$, and let $\cA = A \otimes \Omega^*_c$ denote th
 Let $\cC_A$ denote the precosheaf $\Cyc_*(\cA)[1]$ of cochain complexes on $\RR^n$,
 which assigns to each open set $U$, the 1-shifted cyclic chains on $\cA(U)$.
 \end{dfn}
-
+\greg{Here we shall either recall our model for cyclic chains, or first define the $\infty$-categorical universal statement and then precise a nice model. By the universal model, I mean define cyclic as the homotopy $S^1$-fixed point for the action on Hochschild chains. This will make the construction more transparent ?}
 Note that for two algebras $B$ and $B'$,
 \[
 \Cyc_*(B) \oplus \Cyc_*(B') \simeq \Cyc_*(B \times B') .
