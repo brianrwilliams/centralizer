@@ -236,7 +236,7 @@ The centralizer ${\frak Z}_{E_n}(f)$ can be identified with the classifying obje
 \end{prp}
 
 When $n=1$ and $\cC$ is chain complexes over the field $k$, 
-then $\Mod^{E_1}_A(\cC)$ is equivalent to $A-A$-bimodules and hence ${\frak Z}_{E_1}(f) \simeq \HH^*(A,B_f)$,
+then $\Mod^{E_1}_A(\cC)$ is equivalent to $A-A$-bimodules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^*(A,B_f)$,
 where $B_f$ denotes $B$ viewed as an $A-A$-bimodule via the map~$f$.
 
 We record a key fact drawn from \cite{LurieHA} and~\cite{FrancisHH}, which generalizes this situation.
@@ -280,10 +280,12 @@ we find
 k \otimes_{U\fg} U(\fg \otimes k[\epsilon_{n-1}]) \simeq \Sym(\fg[1-n]).
 \]
 Recall now that $\UU_n \fg \simeq \Sym(\fg[1-n])$ as $\fg$-modules.
-Base change thus implies
+Base change thus implies that we have an equivalence
 \[
-{\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}} (\UU_n \fg, B_f)  \simeq {\rm Mor}_{U\fg} (k, B_f).
+{\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n}} (\UU_n \fg, B_f)  \simeq {\rm Mor}_{U\fg} (k, B_f)
 \]
+of underlying chain complexes.
+(That is, we have an equivalence after applying forgetful functors.)
 The right hand side is precisely Lie algebra cochains of $\fg$ with coefficients in~$B_f$, as desired.
 
 \brian{do you like this example?}
@@ -299,8 +301,9 @@ In particular, the factorization homology of the derived center along the closed
 \[
 \int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
 \]
-where $\epsilon$ is a formal variable of degree $+1$. 
-\brian{let's talk about this.}
+where $\epsilon$ is a formal variable of degree~$1$. 
+\brian{We should compare with Tamarkin-Tsygan's noncommutative claculus (cf. section 2.6).
+We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
 \end{eg}
 
 \section{A variant of the Loday-Quillen-Tsygan theorem}
@@ -468,17 +471,20 @@ Note that for two algebras $B$ and $B'$,
 \Cyc_*(B) \oplus \Cyc_*(B') \simeq \Cyc_*(B \times B') .
 \] 
 The corresponding statement for ordinary Hochschild homology is induced by the projections $B \leftarrow B \times B' \to B'$, and any map of algebras that induces a quasi-isomorphism on Hochschild homology induces one on cyclic homology as well.
-See, for instance, 2.2.12 of \cite{LodayCyclic}. 
+(See, for instance, \S2.2.12 of \cite{LodayCyclic}.)
 Hence, for any finite collection of disjoint opens $U_1$, \dots, $U_k$, 
 we have
 \[
 \cC_A(U_1 \sqcup \cdots \sqcup U_k) \simeq \cC_A(U_1) \oplus \cdots \oplus \cC_A(U_k).
 \]
-(In this sense $\cC_A$ behaves like a cosheaf, up to quasi-isomorphism. 
-\owen{Does cyclic homology preserve filtered colimits? If so, I think $\cC_A$ may be a homotopy cosheaf.}
-\brian{Yes, see E.2.1.1 of \cite{LodayCyclic} on p. 59.}
+Moreover, for any nested sequence of inclusions $V_1 \subset V_2 \subset \cdots$ with $V = \bigcup_i V_i$,
+there is a quasi-isomorphism
+\[
+{\rm hocolim}(\cC_A(V_1) \to \cC_A(V_2) \to \cdots) \simeq \cC_A(V).
+\]
+(See E.2.1.1 of \cite{LodayCyclic}.)
+In this sense $\cC_A$ behaves like a cosheaf, up to quasi-isomorphism. 
 This property underlies the following claim.
-
 
 \begin{lmm}
 \label{lem: cycfact}
@@ -530,24 +536,6 @@ This construction is automatically associative for nested inclusions of pairwise
 and so $\Sym(\cC_A)$ is a prefactorization algebra.
 \end{proof}
 
-\begin{rmk}
-We briefly remark on a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
-For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A, A^\vee)$ be a cyclic {\em cocycle} of degree $m$.
-Consider, for each open $U \subset \RR^n$ the cochain complex
-\[
-\Tilde{\cC}_{A,\chi} (U) = \left(\Cyc_*(A \tensor \Omega^*_c(U))[1] \oplus \CC \cdot K , \d_{\rm Cyc} + K \cdot \chi \right) 
-\]
-where $K$ is a formal parameter of degree $-m+n+1$.
-Also, $\d_{\rm Cyc}$ is the cyclic differential and $\chi$ is defined on $m$-chains by the pairing between cyclic chains and cochains, together with integration along $U$:
-\[
-\chi (\alpha_1 \tensor \cdots \tensor \alpha_m) = \int_U \<\chi, \alpha_1 \tensor \cdots \tensor \alpha_m\> .
-\]
-The differential is extended to the entire cochain complex by the graded Leibniz rule. 
-By similar arguments as above, the assignment $U \subset \Tilde{\cC}_{A, \chi}$ is a precosheaf of cochain complexes and $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ is a prefactorization algebra. 
-As a precosheaf of graded vectors spaces one has $\Tilde{\cC}_{A, \chi} = \cC_A \oplus \ul{k}[m-n-1]$, where $\ul{k}$ is the constant precosheaf with costalk $k$, so that we may think of $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ as a twisted version of $\Sym(\cC_A)$. 
-These types of twisted \brian{what to say? check my degrees!}
-\end{rmk}
-
 \begin{cor}
 For $A$ a dg algebra over $k$, Theorem~\ref{thm: variant LQT} provides a weak equivalence of prefactorization algebras
 \[
@@ -564,7 +552,40 @@ in which cyclic homology of the algebra is replaced by its dihedral homology,
 lead to an analogous class of factorization algebras.
 \end{rmk}
 
-%\section{Proof of Theorem~\ref{thm: large N}}
+
+\section{\owen{A stub about a twisted version of LQT}}
+
+\owen{Brian and I will later insert an expansion of the following.}
+
+Let $\chi \in \Cyc^m(A)$ is a cyclic cocycle of degree $m$. 
+Then $\chi$ determines a central extension $\cC(A)_\chi$ of $\Cyc_*(A)[1]$ as an abelian Lie algebra (cf. Heisenberg Lie algebras),
+but $\chi$ also maps to Lie algebra cochains $\clies(\gl_N(A))$ for every $N$ via the LQT map,
+and hence determines a central extension $\gl_N(A)_\chi$ of $\gl_N(A)$ as well.
+There is thus a $\chi$-twisted version of the LQT map
+\[
+\lqt_\chi: \Sym(\cC(A)_\chi) \to \cliels(\gl_N(A)_\chi)
+\]
+which is a quasi-isomorphism in the large $N$ limit.
+
+This induces $\chi$-twisted versions of all our enveloping $E_n$ algebra theorems (in large $N$ limit).
+
+%We briefly remark on a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
+%For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A)$ be a cyclic {\em cocycle} of degree $m$.
+%Consider for each open $U \subset \RR^n$ the cochain complex
+%\[
+%\Tilde{\cC}_{A,\chi} (U) = \left(\Cyc_*(A \tensor \Omega^*_c(U))[1] \oplus \CC \cdot K , \d_{\rm Cyc} + K \cdot \chi \right) 
+%\]
+%where $K$ is a formal parameter of degree $-m+n+1$.
+%Also, $\d_{\rm Cyc}$ is the cyclic differential and $\chi$ is defined on $m$-chains by the pairing between cyclic chains and cochains, together with integration along $U$:
+%\[
+%\chi ((a_1 \otimes \alpha_1) \tensor \cdots \tensor (a_m \otimes \alpha_m)) = \int_U \<\chi, a_1 \tensor \cdots \tensor a_m\> \alpha_1 \wedge \cdots \wedge \alpha_m.
+%\]
+%The differential is extended to the entire cochain complex by the graded Leibniz rule. 
+%By similar arguments as above, the assignment $U \subset \Tilde{\cC}_{A, \chi}$ is a precosheaf of cochain complexes and $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ is a prefactorization algebra. 
+%As a precosheaf of graded vectors spaces one has $\Tilde{\cC}_{A, \chi} = \cC_A \oplus \ul{\CC}[m-n-1]$, where $\ul{\CC}$ is the constant precosheaf, so that we may think of $\Sym\left(\Tilde{\cC}_{A,\chi}\right)$ as a twisted version of $\Sym(\cC_A)$. 
+%These types of twisted \brian{what to say? check my degrees!}
+%
+
 
 
 \bibliographystyle{alpha}  
