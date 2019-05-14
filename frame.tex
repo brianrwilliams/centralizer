@@ -17,7 +17,7 @@
 
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 \def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
-\def\mahmoud{\textcolor{green}{MZ: }\textcolor{green}}
+\def\mahmoud{\textcolor{olive}{MZ: }\textcolor{olive}}
 \def\greg{\textcolor{red}{GG: }\textcolor{red}}
 
 
@@ -94,13 +94,17 @@ If $\rho: \fg \to \fg$ is the identity map, we get the following immediate corol
 
 \begin{cor}
 \label{thm: center}
-The center of the enveloping $E_n$ algebra $\UU_n\fg$ is the $E_n$ algebra $\clies(\fg, \UU_n\fg)$, which by Dunn's additivity theorem has in fact a natural $E_{n+1}$ algebra structure. When $k$ is $\RR$ or $\CC$, the 
+The center of the enveloping $E_n$ algebra $\UU_n\fg$ is the $E_n$ algebra $\clies(\fg, \UU_n\fg)$. 
+When $k$ is $\RR$ or $\CC$, the 
 center is modeled by the locally constant factorization algebra that assigns
 \[
 \clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
 \]
 to each open set $U \subset \RR^n$.
 \end{cor}
+
+\owen{Add remark for ", which by Dunn's additivity theorem has in fact a natural $E_{n+1}$ algebra structure."}
+
 \greg{shall relate this to $P_n$-center of $\fg$. that shall also (but I have to think about the proof more), at least up to formality gives the $P_{n+1}$-structure on it. }
 This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
 
@@ -212,7 +216,7 @@ the $\infty$-category $\Mod^{E_n}_A(\cC)$ is equivalent to the $\infty$-category
 
 See Remark 7.3.5.3 of \cite{LurieHA}, Coroallary 13 in~\cite{GG-Notes} and Section 2 of \cite{FrancisHH}.
 Concretely, this claim arises from the fact that as a module over $A$ as an $E_n$ algebra, 
-$M \in \Mod^{E_n}_A(\cC)$ is equipped with a commuting family of actions by $A$ parametrized by $\RR^n \setminus \{0\}$.
+$M \in \Mod^{E_n}_A(\cC)$ is equipped with a commuting family of actions by $A$ parametrized by $\RR^n \setminus \{0\}\cong S^{n-1} \times \RR_{>0}$.
 This action factors through the left action of the $E_1$ algebra $\int_{S^{n-1} \times \RR} A$ arising from factorization homology over the complement of the origin,
 which integrates all those actions and through which they all factor. \mahmoud{i think the picture of why it is a one-sided action is clearer if we use $S^{n-1} \times \RR^+$ istead of $S^{n-1} \times \RR$}
 As shown in Theorem 7.5.3.1 of \cite{LurieHA} and earlier in Proposition 3.16 of \cite{FrancisHH}, 
