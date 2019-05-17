@@ -94,7 +94,7 @@ If $\rho: \fg \to \fg$ is the identity map, we get the following immediate corol
 
 \begin{cor}
 \label{thm: center}
-The center of the enveloping $E_n$ algebra $\UU_n\fg$ is the $E_n$ algebra $\clies(\fg, \UU_n\fg)$. 
+The center ${\frak Z}_{E_n}(\UU_n\fg)$ of the enveloping $E_n$ algebra $\UU_n\fg$ is the $E_n$ algebra $\clies(\fg, \UU_n\fg)$. 
 When $k$ is $\RR$ or $\CC$, the 
 center is modeled by the locally constant factorization algebra that assigns
 \[
@@ -103,10 +103,26 @@ center is modeled by the locally constant factorization algebra that assigns
 to each open set $U \subset \RR^n$.
 \end{cor}
 
-\owen{Add remark for ", which by Dunn's additivity theorem has in fact a natural $E_{n+1}$ algebra structure."}
+In fact, ${\frak Z}_{E_n}(\UU_n\fg)$ has a natural $E_{n+1}$ algebra structure, 
+as shown in \cite{LurieHA, GTZ}, 
+but we will not examine it here.
 
 \greg{shall relate this to $P_n$-center of $\fg$. that shall also (but I have to think about the proof more), at least up to formality gives the $P_{n+1}$-structure on it. }
 This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
+
+As another consequence of the theorem, we note that we recover an explicit model for the Koszul dual to the enveloping algebra. 
+Namely, take $B$ to be the unit $E_n$ algebra $k$ (alternatively, take the enveloping $E_n$ algebra of the trivial Lie algebra $\fh = 0$).
+
+\begin{cor}
+\label{thm: koszul}
+The $E_n$ Koszul dual of the enveloping $E_n$ algebra $\UU_n\fg$ is the underlying $E_n$ algebra of the $\clies(\fg)$. 
+When $k$ is $\RR$ or $\CC$, the 
+center is modeled by the locally constant factorization algebra that assigns
+\[
+\clies(\fg \otimes \Omega^*(U)))
+\]
+to each open set $U \subset \RR^n$.
+\end{cor}
 
 Having an explicit presentation for the centralizer of a map of $E_n$ algebras leads to a calculation of factorization homology. The enveloping $E_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$-algebra in the sense of~\cite{AF}, and hence determines a factorization algebra on any un-oriented $n$-dimensional manifold \cite{Knudsen}. Therefore, for a closed $n$-dimensional manifold $M$, one has
 \[
@@ -161,14 +177,12 @@ we only work in the infinity category of chain complexes $(\Mod_k, \otimes_k)$, 
 There is a commuting square of adjunctions
 \[
 \begin{tikzcd}
-\Alg_\Lie(\Mod_k) \arrow[r, bend left=20, shift left=.5ex,"\UU_n"] \arrow[dd] & \Alg_{E_n}(\Mod_k) \arrow[l, shift left=.5ex, "\oblv"] \arrow[dd]\\
+\Alg_\Lie(\Mod_k) \arrow[r, bend left=20, shift left=.5ex,"\UU_n"] \arrow[dd, "\oblv"] & \Alg_{E_n}(\Mod_k) \arrow[l, shift left=.5ex, "\oblv"] \arrow[dd, swap, "\oblv"]\\
 &\\
-\Mod_k \arrow[r, bend left=20, shift left=.5ex, "\Sigma^{1-n}"] \arrow[uu, bend left=20, shift left=.5ex, "\Free_\Lie"] & \Mod_k \arrow[l, shift left=.5ex,"\Sigma^{n-1}"] \arrow[uu, bend right=20, shift right=.5ex, "\Free_{E_n}"']
+\Mod_k \arrow[r, bend left=20, shift left=.5ex, "\text{$[1-n]$}"] \arrow[uu, bend left=20, shift left=.5ex, "\Free_\Lie"] & \Mod_k \arrow[l, shift left=.5ex, "\text{$[n-1]$}"] \arrow[uu, bend right=20, shift right=.5ex, "\Free_{E_n}"']
 \end{tikzcd}
 \]
-
-\mahmoud{explain what oblv stands for}
-where $\Sigma$ denotes suspension \owen{because tikzcd does weird things with ``[1-n]'' instead}, \mahmoud{earlier we denoted the shift by [n]. should we use $\Sigma^n$ everywhere?}.
+where $\oblv$ denotes a forgetful functor.
 (Curving arrows denote left adjoints.)
 
 When $k$ is $\RR$ or $\CC$, 
@@ -197,11 +211,16 @@ A \arrow[ur, "u"] \arrow[rr, "f"] && B
 \]
 where $u$ is induced by the identity map $1_\cC \to {\frak Z}_{E_n}(f)$. The {\em center} of an $E_n$ algebra $A$ is the centralizer of its identity morphism $\id_A: A \to A$.
 \end{dfn}
-When $n=1$ and $\cC$ is the category of vector spaces, the centralizer of $f: A \to B$ consists of the subspace of elements of $B$ that commute with the image $f(A)$ inside~$B$. Thus, the center of $A$ agrees with the traditional notion. See Theorem 5.3.1.30 of~\cite{LurieHA}, or Proposition 6.22 in~\cite{GTZ3}, for an alternative characterization.
+When $n=1$ and $\cC$ is the category of vector spaces, the centralizer of $f: A \to B$ consists of the subspace of elements of $B$ that commute with the image $f(A)$ inside~$B$. Thus, the center of $A$ agrees with the traditional notion. See Theorem 5.3.1.30 of~\cite{LurieHA}, or Proposition 6.22 in~\cite{GTZ3}, for an alternative characterization,
+as follows.
 
 \begin{prp}
-The centralizer ${\frak Z}_{E_n}(f)$ can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category $\Mod^{E_n}_A(\cC)$. \mahmoud{we should probably spell out the meaning of the classifying object in this case to make it obvious that the centralizer is the classifying object}
+The centralizer ${\frak Z}_{E_n}(f)$ can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category~$\Mod^{E_n}_A(\cC)$.
 \end{prp} 
+
+Here ``classifying object'' means an internal hom object, so that a map from $M$ to ${\frak Z}_{E_n}(f)$ in $\Mod^{E_n}_A(\cC)$ corresponds to a map from $M \otimes A$ to $B$ in $\Mod^{E_n}_A(\cC)$. 
+(More carefully, there is an equivalence of the appropriate mapping spaces in that category.)
+\owen{We should double check this.}
 
 When $n=1$ and $\cC$ is chain complexes over the field $k$, then $\Mod^{E_1}_A(\cC)$ is equivalent to $A\otimes A^{op}$-modules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^*(A,B_f)$,
 where $B_f$ denotes $B$ viewed as an $A\otimes A^{op}$-modules via the map~$f$.
