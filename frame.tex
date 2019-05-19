@@ -464,7 +464,7 @@ much as Lie algebra homology leads to an explicit factorization algebra modeling
 Throughout this section, let $k$ denote the field $\RR$ or $\CC$; 
 by mimicking \cite{Knudsen}, one could also produce an explicit model over~$\QQ$.
 
-\begin{dfn}
+\begin{dfn}\label{dfn: CA}
 Let $A$ be a dg algebra over $k$, and let $\cA = A \otimes \Omega^*_c$ denote the associated cosheaf of dg algebras on~$\RR^n$.
 Let $\cC_A$ denote the precosheaf $\Cyc_*(\cA)[1]$ of cochain complexes on $\RR^n$,
 which assigns to each open set $U$, the 1-shifted cyclic chains on $\cA(U)$.
@@ -557,12 +557,11 @@ lead to an analogous class of factorization algebras.
 \end{rmk}
 
 
-\section{\owen{A stub about a twisted version of LQT}}
+\section{A twisted version of LQT}
 
-\owen{Brian and I will later insert an expansion of the following.}
-
+We step aside from the main body of the paper to describe a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
 Let $\chi \in \Cyc^m(A)$ is a cyclic cocycle of degree $m$. 
-Then $\chi$ determines a central extension $\cC(A)_\chi$ of $\Cyc_*(A)[1]$ as an abelian Lie algebra (cf. Heisenberg Lie algebras),
+Then $\chi$ determines a central extension $\cC(A)_\chi$ of $\Cyc_*(A)[1]$ as an abelian dg Lie algebra (cf. Heisenberg Lie algebras),
 but $\chi$ also maps to Lie algebra cochains $\clies(\gl_N(A))$ for every $N$ via the LQT map,
 and hence determines a central extension $\gl_N(A)_\chi$ of $\gl_N(A)$ as well.
 There is thus a $\chi$-twisted version of the LQT map
@@ -571,15 +570,19 @@ There is thus a $\chi$-twisted version of the LQT map
 \]
 which is a quasi-isomorphism in the large $N$ limit.
 
-This induces $\chi$-twisted versions of all our enveloping $E_n$ algebra theorems (in large $N$ limit).
+This induces $\chi$-twisted versions of all our enveloping $E_n$ algebra theorems (in large $N$ limit) which we can describe using the models prescribed in the main part of the text. 
+For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A)$ be a cyclic {\em cocycle} of degree $m$.
 
-%We briefly remark on a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
-%For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A)$ be a cyclic {\em cocycle} of degree $m$.
-%Consider for each open $U \subset \RR^n$ the cochain complex
-%\[
-%\Tilde{\cC}_{A,\chi} (U) = \left(\Cyc_*(A \tensor \Omega^*_c(U))[1] \oplus \CC \cdot K , \d_{\rm Cyc} + K \cdot \chi \right) 
-%\]
-%where $K$ is a formal parameter of degree $-m+n+1$.
+\begin{dfn}
+Define the precosheaf $\Tilde{\cC}_{A,\chi}$ on $\RR^n$ which assigns to the open $U \subset \RR^n$ the cochain complex
+\[
+ (U) = \left(\Cyc_*(A \tensor \Omega^*_c(U))[1] \oplus \CC \cdot K , \d_{\rm Cyc} + K \cdot \chi \right) 
+\]
+where $K$ is a formal parameter of degree $-m+n+1$.
+\end{dfn}
+
+Note that when $\chi = 0$, this precosheaf is equivalent to the precosheaf $\cC_A \oplus \ul{\CC}[m-n-1]$, where $\cC_A$ is as in Definition \ref{dfn: CA} and $\ul{\CC}[m-n-1]$ denotes the shifted constant precosheaf. 
+
 %Also, $\d_{\rm Cyc}$ is the cyclic differential and $\chi$ is defined on $m$-chains by the pairing between cyclic chains and cochains, together with integration along $U$:
 %\[
 %\chi ((a_1 \otimes \alpha_1) \tensor \cdots \tensor (a_m \otimes \alpha_m)) = \int_U \<\chi, a_1 \tensor \cdots \tensor a_m\> \alpha_1 \wedge \cdots \wedge \alpha_m.
