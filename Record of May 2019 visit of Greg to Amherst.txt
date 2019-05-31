@@ -1,0 +1,62 @@
+Dear MZ & BW,
+
+Here is an update of the situation. Greg and I found some flaws in the "variant LQT theorem" that are not minor, so the centralizer interpretation does not seem to work. Below we will record some of the issues we found (arising from tricky aspects of the LQT proof). Afterward we will also record some of things we tried in attempt to get a decent theorem.
+
+I. Subtleties
+
+Let gl without subscript mean gl_infty. Let k denote the base field.
+
+* Taking the strict gl(k)-invariants of gl(A) is zero! There are, however, nontrivial coinvariants. Hence we see that the "variant LQT" can't be correct. (For finite gl_N, they coincide. Unfortunately, the invariants do _not_ stabilize in the infinite limit.)
+
+* As a concrete example, consider a putative (and false) consequence of our desired theorem. It would say that the strict center of Ugl is the symmetric algebra on an infinite sequence of generators in degree 0 (by taking the symmetric algebra on the 1-shifted cyclic homology of k[-1]). It is quick to check, however, that there are no elements in the strict center (aside from the identity).
+
+* We might try to take the derived gl-coinvariants of C_*(gl(A)) instead of the derived invariants. Note here an interesting subtletly vis-a-vis LQT: for A unital, C_*(gl(A)) is quasi-isomorphic to the strict coinvariants but _not_ to the derived coinvariants. [Below we grapple with this issue to good effect.]
+
+* The LQT can be interpreted to say that there is an equivalence of E_0 algebras between the E_0 envelope of gl(A) and the E_0 envelope of Cyc_*(A) when A is unital. However, this equivalence does _not_ arise from an equivalence of Lie algebras between gl(A) and Cyc_*(A). There is an L_oo map here but it is _not_ an L_oo quasi-isomorphism. 
+
+* Hence, the LQT can be seen as a natural equivalence between the composite functors U_0 \circ gl and U_0 \circ Cyc_* from unital E_1 algebras to E_0 algebras. These functors are symmetric monoidal, sending the Cartesian product of E_1 algebras to the tensor product of E_0 algebras. Unfortunately, this means that you cannot apply the "looping trick" of G-Haugseng (i.e., taking Alg_{E_1}) to get a statement about E_n envelopes.
+
+* In the unital case, the derived gl(k)-coinvariants C_*(gl(k),C_*(gl(A)) decomposes into Sym(Cyc_*(k)[1] (+) Cyc_*(A)[1]).
+
+II. Possibilities
+
+* There is a nice factorization/E_n version of the cohomological LQT. (We need to check the details but it seems much less subtle.) The gl-term can be seen as the E_n centralizer  of the augmentation U_n(gl(A)) ---> k (i.e., the E_n Koszul dual of U_g(gl(A))). Unfortunately, the LQT map is not a filtered equivalence, so you can't take the E_n Koszul dual of the cyclic-term to get a novel description of U_n(gl(A)). [Taking the E_n Koszul dual involves a linear dual of a bar complex, and the bar complex does not play nicely with the non-filtered equivalences.]
+
+* A key step in LQT does admit a nice E_n generalization, and it is very structural. Let \oplus denote the map of Lie algebras gl(A) x gl(A) ---> gl(A) embedding (M,N) with M in the odd indices (M_{i,j} is put in spot {2i-1, 2j-1}) and N in the even indices. Note that there is a canonical action of gl(k) x gl(k) on gl(A) x gl(A) and also on gl(A) so that \oplus is gl(k) \times gl(k)-equivariant. (The action is simple: use \oplus for gl(k) and then act in the obvious way on gl(A).) This map \oplus gets sent to a map of E_n algebras U_n(gl(A)) (x) U_n(gl(A)) ---> U_n(gl(A)). Taking _derived_ gl(k) x gl(k)-coinvariants on both sides, we can extract a map of E_n algebras 
+
+U_n(gl(A))_{gl(k)} (x) U_n(gl(A))_{gl(k)} ---> U_n(gl(A))_{gl(k)}
+
+and it is associative and commutative. [Writing this out requires some care.] When n=0, this is a key step in LQT. We claim U_n(gl(A))_{gl(k)} is quasi-isomorphic to the commutative algebra Sym(Cyc_*(k(+)A[-n])[1]). [Here k(+)A[-n] denotes the augmented algebra associated to the nonunital algebra A[-n].]
+
+You can realize this explicitly using the factorization model of the E_n enveloping algebra, as follows. 
+
+(1) Note that for any algebra B, C_*(gl(k), C_*(gl(B))) equals C_*(gl(B_+)), where B_+ denotes the augmented algebra k(+)B.
+
+(2) Usual LQT implies C_*(gl(B_+)) is quasi-isomorphic to Sym(Cyc_*(B_+)[1]). (Note that B_+ is always unital!)
+
+(3) For A an algebra, consider the precosheaf of algebras sending an open V in R^n to A (x) DR_c(V). Then U_n(gl(A)) assigns to V, the cochain complex C_*(gl(A) (x) DR_c(V)) = C_*(gl(A(x)DR_c(V))). 
+
+(4) Now we know that the derived gl(k)-coinvariants of C_*(gl(A(x)DR_c(V))) is given by C_*(gl((A(x)DR_c(V))_+)) (i.e., we take B = A(x)DR_c(V) in the above).
+
+(5) Hence U_n(gl(A))_{gl(k)} is modeled by Sym(Cyc_*((A(x)DR_c(V))_+)[1]) (i.e., apply (2)).
+
+It seems like Cyc(B_+) admits a nice simplification in the main cases of interest.
+
+* Greg interprets the preceding strategy as "gl is like an infinite loop space in Lie algebras" (cf. BGL_+ being an infinite loop space).
+
+III. Strategy of proof for centralizer of a map f: U_n(g) ---> B
+
+* When B = U_n(h) and we start with a map f: g ---> h of Lie algebras, one can write down an explicit factorization model for the (putative) centralizer and directly check the desired universal property.
+
+* For B an arbitrary E_n algebra f: U_n(g) ---> B, it is not as easy to verify the putative centralizer is correct. More accurately, it is tricky to write down the explicit differential. It requires one to replace B by a factorization model together with an L_oo map from g to B[1] in order to obtain the differential on C^*(g,B). The result tells us that the E_n structure is the "convolution" product (in the style of Koszul duality). [Note that k is a cocommutative coalgebra and so think of RHom_Ug(k,B) and convolution.]
+
+Stuff to add to the paper
+
+* Add example of E_n Koszul dual of U_n(g)
+
+* Work out n=1, gl(k) case (which should know about Ugl(k), the usual enveloping algebra). This should know about Casimirs of gl(k) in "Category O" (which behaves like obvious generalization of gl_n, even though these Casimirs do _not_ live in Ugl(k)!).
+
+* Look at E.10.4.2 of Loday (i.e., LQT with coefficients)
+
+Best,
+Owen & Greg
