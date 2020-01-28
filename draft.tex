@@ -112,54 +112,13 @@ Some easy but important situations to examine:
 \begin{itemize}
 \item When $n=0$, we see naive endomorphisms arise.
 \item When $n=1$, we recover standard Koszul duality and Hochschild cohomology examples.
+\item When $n=1$, unpack in detail how the convolution picture matches the classic view of Koszul duality for associative (co)algebras.
 \item Consider $\fg$ {\em abelian} for arbitrary $n$ and compare to the $E_n$ HKR theorem.
 \item Compare with $E_n$ HKR theorem for $\clies(\fg)$ via $E_n$ Koszul duality.
 \item Use these facts to compute factorization homology of centralizers on manifolds with boundary --- kind of like Chern-Simons states!
 \end{itemize}
 
 \owen{End of strategy}
-
-To any $\fg$-module $M$ (wether $\fg$ is a dg Lie algebra or an $L_\infty$-algebra), 
-we can associate its Chevalley-Eilenberg cochain complex defined 
-by 
-\begin{equation}
- \clies(\fg, M) = \Hom (Sym(\fg[-1]), M)
-\end{equation}
-with its classical differential. 
-\greg{recall....quickly. AT least for dg-part. Say something for $L_\infty$ too}
-We have the evaluation map 
-\begin{equation}
- \label{eq:defev} ev: \clies(\fg, M) \otimes Sym(\fg[-1])\to M
-\end{equation}
-given by applying a function on a given tensor in $Sym(\fg[-1])$.
-
-\begin{dfn}\label{D:convolutionalgebraCE}Let $\fg$ be a dg Lie (or $L_\infty$)-algebra and $B$ be an $E_n$-algebra in $\fg$-modules,
-that is an object of the $\infty$-category 
-$E_n-Alg(Mod_{\fg})$. Its associated convolution $E_n$-algebra structure on  $\clies(\fg, B) = \Hom (Sym(\fg[-1]), B)$ is obtained by 
- taking the \emph{convolution} between the cocommutative symmetric coalgebra $Sym(\fg[-1])$ (forgetted to an $E_n$-coalgebra) and the $E_n$-algebra $B$.
-\end{dfn}
-\greg{Probably need somewhere to say what means $E_n-Alg(Mod_{\fg})$ and find a less ugly notation for it}
-Precisely, given an explicit $E_n$-operad $D_n$ in chain complexes and $(B, \mu^B)$ a $D_n$-algebra, 
-the convolution structure is given by the following composition
-\begin{multline}
- \Big(D_n(r)\otimes \clies(\fg, B)^{\otimes r} \Big)\otimes Sym(\fg[-1])\\ \stackrel{id\otimes id \otimes\Delta^{(r-1)}}\longrightarrow 
- D_n(r)\otimes \clies(\fg, B)^{\otimes r} \otimes Sym(\fg[-1])^{\otimes r} 
- \stackrel{id \otimes (ev^{\otimes r})}\longrightarrow D_n(r)\otimes B^{\otimes r} 
- \stackrel{\mu_\sigma^B}\longrightarrow B.
-\end{multline}
-where $\Delta$ is the cocommutative comultiplication.
-In plain formula,
-for any $\sigma \in D_n(r)$ and $\phi_1,\dots, \phi_r \in 
-\clies(\fg, B)$, their multiplication (parametrized by $\sigma$) is  given by 
-\begin{equation}
- \mu_\sigma (\phi_1,\dots, \phi_r): Sym(\fg[-1]) \ni x \mapsto \pm \mu^B_{\sigma} \big(\phi_1(x^{(1)}), \dots, \phi_r(x^{(r)})\big)
-\end{equation}
-where $x\mapsto x^{(1)}\otimes \cdots x^{(r)}$ is the usual $r$-fold cocommutative comultiplication.
-Note that here, we are using the usual Koszul sign  convention. 
-
-\begin{lmm}
- $\clies(\fg, M) = \Hom (Sym(\fg[-1]), B)$ is a $E_n$-algebra, naturally in $\fg$ and $B$.
-\end{lmm}
 
 
 By Knudsen's results \cite{Knudsen}, we have the following explicit interpretation of our main theorem~\ref{thm: center}, which is the second part of our main theorem.
@@ -208,12 +167,15 @@ Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal var
 \]
 
 For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
-see Example \ref{eg: TT}. 
+see Example~\ref{eg: TT}. 
 
 \begin{rmk}
-The preceding results are quick consequences of published work and are well-known to experts we spoke to, including John Francis and Ben Knudsen. 
-Nevertheless, we record these results so they are documented in the literature.
+The preceding results are known to experts we spoke to, including John Francis and Ben Knudsen. 
+Nevertheless, we record these results to document in the literature and for future use in mathematical physics,
+where such constructions already appear but lack proofs of their universal properties.
 \end{rmk}
+
+\owen{Below is an orphaned set of results. Perhaps we prove it, or perhaps we just reserve it for future projects.}
 
 Our novel contribution in this paper is the following large $N$ result. Let $A$ be a unital algebra over a field $k$ of characteristic zero, 
 and $u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A)$ be the map of Lie algebras determined by the unit in $A$. 
@@ -221,7 +183,6 @@ The induced map $\UU_nu_A: \UU_n\sl_\infty(k) \to \UU_n\gl_\infty(A)$ makes $\UU
 
 \begin{thm}
 \label{thm: large N}
-
 The centralizer ${\frak Z}_{E_n}(\UU_nu_A)$ of the map $\UU_nu_A$ is the $E_n$ algebra obtained by forgetting the dg commutative algebra
 \[
 \clies(\sl_\infty(k)) \otimes \Sym(\Cyc_*(A)[1-n])
@@ -240,6 +201,7 @@ to each open set $U \subset \RR^n$.
 We can calculate the factorization homology of this factorization algebra explicitly.
 
 \greg{need to add a notation/convention somewhere including that $\Sigma^n$ will be shift functor, convention for grading and so on}
+
 \section{Enveloping $E_n$ algebras of Lie algebras}
 
 Although \cite{Knudsen} develops an adjunction between Lie and $E_n$ algebras \mahmoud{non-unital?}\greg{Both I think}
@@ -276,18 +238,24 @@ to each open set $U \subset \RR^n$.
 
 The second part of this result leads to the explicit models in our theorems.
 Note that in the theorem we use the following equivalence due to Lurie~\cite{LurieHA}. 
-\begin{thm}\label{T:En=Fac} there is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant factorization algebras.
+
+\begin{thm}
+\label{T:En=Fac} 
+There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant factorization algebras.
 \end{thm}
+
 \begin{rmk}
  It follows from theorem~\ref{T:UnofLie} that for any $E_n$-algebra $B$, the underlying complex of the $L_\infty$-algebra $\oblv_n(B)$ is naturally quasi-isomorphic to 
  $\Sigma^{n-1}B = B[n-1]$. Henceforth in this paper, we will simply use the notation  $B[n-1]$ for $\oblv_n(B)$, that is tacitly assume 
  $B[n-1]$ is endowed with the $L_\infty$structure induced by its $E_n$ algebra structure.
 \end{rmk}
 
-
+\owen{I'm not wild about Greg's phrasing below. Also, I'd prefer to move the explicit formulas later, when we've shifted our setting to strict prefactorization algebras.}
 
 Let  $f:\UU_n \fg \to B$ be an $E_n$-algebra map. Then the adjunction 
-$\xymatrix{\Alg_\Lie(\Mod_k) \ar@/^/[r]^{\UU_n} & \ar[l]^{\oblv_n}  \Alg_{E_n}(\Mod_k)}$
+\[
+\xymatrix{\Alg_\Lie(\Mod_k) \ar@/^/[r]^{\UU_n} & \ar[l]^{\oblv_n}  \Alg_{E_n}(\Mod_k)}
+\]
 gives a $L_\infty$-algebra morphism 
 \begin{equation}
  \tilde{f}: \fg \, \longrightarrow \, \oblv(B)\cong B[n-1]
@@ -361,8 +329,6 @@ A special but very interesting case is of course when $B$ is itself an envelopin
 \begin{rmk}\greg{Extends to $L_\infty$ case in a sentence or too}
 \end{rmk}
 
-
-
 \section{Centralizers of maps of $E_n$ algebras and the derived center}
 \label{sec: centralizer}
 
@@ -390,12 +356,6 @@ The centralizer ${\frak Z}_{E_n}(f)$ exists and can be identified with the class
 When $n=1$ and $\cC$ is chain complexes over the field $k$, then $\Mod^{E_1}_A(\cC)$ is equivalent to $A\otimes A^{op}$-modules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^*(A,B_f)$,
 where $B_f$ denotes $B$ viewed as an $A\otimes A^{op}$-modules via the map~$f$.
 
-\smallskip 
-
-
-
-
-
 We record a key fact drawn from \cite{LurieHA},~\cite{FrancisHH}  and \cite{GG-Notes}, which generalizes this situation.
 
 \begin{prp}\label{P:ModentoModSn}
@@ -413,7 +373,6 @@ As shown in Theorem 7.5.3.1 of \cite{LurieHA} and earlier in Proposition 3.16 of
 this algebra $\int_{S^{n-1} \times \RR} A$ is equivalent to ${\rm Free}(1_\cC)$, 
 the image of the unit object $1_\cC \in \cC$ under the left adjoint ${\rm Free}$ to the forgetful functor $\Mod^{E_n}_A(\cC) \to \cC$.
 
-\medskip
 
 There is an immediate analogue of the notion of centralizers for factorization algebras.
 \begin{dfn}\label{D:centralizerFacAlgebra}
@@ -438,10 +397,19 @@ By Theorem~\ref{T:En=Fac} and Proposition~\ref{T:centralizer=inthom} (also see~\
 \end{lmm}
 
 
-
-\smallskip
-
 We now use these results to prove the central claim of Theorem~\ref{thm: centralizer}.
+
+
+\section{Convolution algebras over colored operads}
+
+\def\conv{{\rm Conv}}
+
+\owen{For an ordinary colored operad $\cO$, describe how to produce a $\cO$-algebra $\conv(C,A)$ from any $\cO$-coalgebra $C$ and $\cO$-algebra $A$.}
+
+\owen{A special case to consider is how a cocycle $f \in \conv(C,A)$ encodes an $\cO$-algebra morphism $C^! \to A$ from $C^! = \conv(C,1)$, the ``Koszul dual'' $\cO$-algebra to the coalgebra $C$. This cocycle can be used to twist the differential of $\conv(C,A)$. Hopefully this admits an obvious deformation-theoretic interpretation.}
+
+\owen{If we do this correctly, we might find a model category-theoretic picture of how Koszul duality works for prefactorization algebras.}
+
 
 \section{Proof of Theorem \ref{thm: centralizer}}
 
@@ -933,6 +901,54 @@ The commutativity of the lower square and triangle of the diagram follows from L
 \end{proof}
 
 \greg{To add: remark taht it implies the corollary~\ref{thm: center} and so.}
+
+\section{Leftover stuff}
+
+\owen{I took the following out of Greg's version of the "main theorem" section}
+
+To any $\fg$-module $M$ (wether $\fg$ is a dg Lie algebra or an $L_\infty$-algebra), 
+we can associate its Chevalley-Eilenberg cochain complex defined 
+by 
+\begin{equation}
+ \clies(\fg, M) = \Hom (Sym(\fg[-1]), M)
+\end{equation}
+with its classical differential. 
+\greg{recall....quickly. AT least for dg-part. Say something for $L_\infty$ too}
+We have the evaluation map 
+\begin{equation}
+ \label{eq:defev} ev: \clies(\fg, M) \otimes Sym(\fg[-1])\to M
+\end{equation}
+given by applying a function on a given tensor in $Sym(\fg[-1])$.
+
+\begin{dfn}\label{D:convolutionalgebraCE}Let $\fg$ be a dg Lie (or $L_\infty$)-algebra and $B$ be an $E_n$-algebra in $\fg$-modules,
+that is an object of the $\infty$-category 
+$E_n-Alg(Mod_{\fg})$. Its associated convolution $E_n$-algebra structure on  $\clies(\fg, B) = \Hom (Sym(\fg[-1]), B)$ is obtained by 
+ taking the \emph{convolution} between the cocommutative symmetric coalgebra $Sym(\fg[-1])$ (forgetted to an $E_n$-coalgebra) and the $E_n$-algebra $B$.
+\end{dfn}
+\greg{Probably need somewhere to say what means $E_n-Alg(Mod_{\fg})$ and find a less ugly notation for it}
+Precisely, given an explicit $E_n$-operad $D_n$ in chain complexes and $(B, \mu^B)$ a $D_n$-algebra, 
+the convolution structure is given by the following composition
+\begin{multline}
+ \Big(D_n(r)\otimes \clies(\fg, B)^{\otimes r} \Big)\otimes Sym(\fg[-1])\\ \stackrel{id\otimes id \otimes\Delta^{(r-1)}}\longrightarrow 
+ D_n(r)\otimes \clies(\fg, B)^{\otimes r} \otimes Sym(\fg[-1])^{\otimes r} 
+ \stackrel{id \otimes (ev^{\otimes r})}\longrightarrow D_n(r)\otimes B^{\otimes r} 
+ \stackrel{\mu_\sigma^B}\longrightarrow B.
+\end{multline}
+where $\Delta$ is the cocommutative comultiplication.
+In plain formula,
+for any $\sigma \in D_n(r)$ and $\phi_1,\dots, \phi_r \in 
+\clies(\fg, B)$, their multiplication (parametrized by $\sigma$) is  given by 
+\begin{equation}
+ \mu_\sigma (\phi_1,\dots, \phi_r): Sym(\fg[-1]) \ni x \mapsto \pm \mu^B_{\sigma} \big(\phi_1(x^{(1)}), \dots, \phi_r(x^{(r)})\big)
+\end{equation}
+where $x\mapsto x^{(1)}\otimes \cdots x^{(r)}$ is the usual $r$-fold cocommutative comultiplication.
+Note that here, we are using the usual Koszul sign  convention. 
+
+\begin{lmm}
+ $\clies(\fg, M) = \Hom (Sym(\fg[-1]), B)$ is a $E_n$-algebra, naturally in $\fg$ and $B$.
+\end{lmm}
+
+
 
 \section{Examples}
 
