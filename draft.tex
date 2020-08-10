@@ -78,37 +78,44 @@ for a brief discussion about centralizers to maps of $E_n$ algebras.
 
 \begin{thm}
 \label{thm: centralizer}
-Let $\UU_n \fg$ be the enveloping $E_n$ algebra of a dg Lie algebra $\fg$ and $f: \UU_n \fg \to B$ a map of augmented $E_n$ algebras that gives $B$
-the structure of an $E_n$ algebra in $\fg$-modules\footnote{see Proposition~\ref{P:inducedEngModStruct}}. 
-The centralizer ${\frak Z}_{E_n}(f)$ is an $E_n$-algebra modeled by the Chevalley-Eilenberg 
+Let $\UU_n \fg$ be the enveloping $E_n$ algebra of a dg Lie algebra $\fg$ and let $f: \UU_n \fg \to B$ a map of augmented $E_n$ algebras.
+Then
+\begin{itemize}
+\item $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-modules and
+\item the centralizer ${\frak Z}_{E_n}(f)$ is an $E_n$-algebra modeled by the Chevalley-Eilenberg 
 cochains $\clies(\fg, B)$ equipped with the convolution $E_n$-product.
+\end{itemize}
 \end{thm}
 
 \owen{Here is an outline of the proof strategy, with ingredients indicated:}
 
-Existing work gives us some insight into the situation:
+Existing work provides insight into and context for the situation:
 \begin{itemize}
 \item Lurie and Francis give a characterization of the centralizer of any map $f: A \to B$ as the ``internal hom'' in left $\int_{S^{n-1}}A$ -modules from $A$ to $B_f$, where $B_f$ denotes $B$ viewed as a left module via the map~$f$.
-\item Knudsen verifies that we can model the enveloping $E_n$ algebra by a strict prefactorization algebra $\cliel(\Omega_c \otimes \fg)$ on $\RR^n$, which is weakly locally constant.
-\item In combination, we have an explicit characterization of the centralizer up to quasi-isomorphism, 
+\item Knudsen verifies that we can model the enveloping $E_n$ algebra by a strict prefactorization algebra $\tt{U}_n \fg = \cliel(\Omega_c \otimes \fg)$ on $\RR^n$, which is weakly locally constant.
+\item In combination, the centralizer is characterized up to quasi-isomorphism, 
 since it is easy to compute the factorization homology of the enveloping algebra $\UU_n \fg$ over a sphere.
 \end{itemize}
-
-Our approach has the following steps:
+Our approach leverages these results as follows to prove the theorem.
 \begin{enumerate}
-\item Transfer the question to the setting of strict prefactorization algebras on $\RR^n$ that are weakly locally constant. (First use Lurie to explain that we can work with the homotopy coherent version, and then invoke strictification theorems from the model category literature on operads.) 
-\item In particular, explain why $B$ determines some prefactorization algebra that I'll also call~$B$. Explain how the map $f: \UU_n \fg \to B$ determines a $\fg$-action on $B$. That is, we can obtain a prefactorization algebra $B_f$ taking values in the 1-category of $\fg$-representations.
-\item Construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, B_f)$ as a kind of ``convolution algebra.'' Explain why it canonically fits into a centralizer diagram: there is a map
+\item First, we transfer the question to the setting of strict prefactorization algebras on $\RR^n$ that are weakly locally constant. Lurie \cite{LurieHA} explains why we can work with the homotopy coherent version of prefactorization algebras, and then strictification theorems from the model category literature on operads say we can work with strict prefactorization algebras.
+\item  In particular, given an $E_n$ algebra $B$,  let $\tt{B}$ denote a strict prefactorization algebra modeling~$B$.
+Strictification lets us associate to the map $f: \UU_n \fg \to B$, a map $\tt{f}: \tt{U}_n \fg \to \tt{B}$ of strict prefactorization algebras. 
+\owen{It might be better to first use the adjunction to get a map of homotopy-coherent Lie algebras $\fg \to B$ but \dots}
+\item From the map $\tt{f}$, we read off an $\fg$-action on $\tt{B}$ intertwining with the structure maps of $\tt{B}$. 
+That is, we have a prefactorization algebra $\tt{B}_f$ taking values in the 1-category of chain complexes of $\fg$-representations.
+\item We then construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, B_f)$ as a kind of ``convolution algebra.'' 
+\item We show this object fits canonically into a centralizer diagram: there is a map
 \[
-\clies(\Omega \otimes \fg, B_f) \otimes \UU_n \fg \to B_f
+\clies(\Omega \otimes \fg, \tt{B}_f) \otimes \tt{U}_n \fg \to \tt{B}_f
 \]
-such that precomposing with the map $1 \otimes \id_{\UU_n \fg}$ is the map~$f$.
-\item Fitting into such a diagram guarantees a canonical map $\clies(\Omega \otimes \fg, B_f) \to \cZ_f$ as strict prefactorization algebras.
-\item Verify that this map is a quasi-isomorphism on disks. 
-Hence it induces a weak equivalence of the associated $E_n$ algebras. 
+such that precomposing with the map $1 \otimes \id_{\tt{U}_n \fg}$ is the map~$\tt{f}$.
+Fitting into such a diagram guarantees a canonical map $\clies(\Omega \otimes \fg, B_f) \to \tt{Z}_f$ as strict prefactorization algebras. 
+\item We then verify that this map is a quasi-isomorphism on disks. 
 \end{enumerate}
+Hence it induces a weak equivalence of the associated $E_n$ algebras. 
 
-Some easy but important situations to examine:
+\owen{Some easy but important situations to examine:}
 \begin{itemize}
 \item When $n=0$, we see naive endomorphisms arise.
 \item When $n=1$, we recover standard Koszul duality and Hochschild cohomology examples.
@@ -118,14 +125,14 @@ Some easy but important situations to examine:
 \item Use these facts to compute factorization homology of centralizers on manifolds with boundary --- kind of like Chern-Simons states!
 \end{itemize}
 
-\owen{End of strategy}
 
+By Knudsen's results \cite{Knudsen}, we have the following explicit applications of our main theorem~\ref{thm: center}.
 
-By Knudsen's results \cite{Knudsen}, we have the following explicit interpretation of our main theorem~\ref{thm: center}, which is the second part of our main theorem.
+\owen{I think we should just work in $Ch(\RR)$ or $Ch(\CC)$ throughout.}
 
 \begin{cor}\label{cor:centerfactorization}
 Let $k$ is $\RR$ or $\CC$, and assume $\UU_n \rho:  \UU_n \fg \to \UU_n \fh$ is induced by a map of Lie algebras $\rho: \fg \to \fh$. 
-Then, the centralizer ${\frak Z}_{E_n}(\UU_n \rho)$ is modeled by the locally constant factorization algebra that assigns
+Then the centralizer ${\frak Z}_{E_n}(\UU_n \rho)$ is modeled by the locally constant factorization algebra that assigns
 \[
 \clies(\fg \otimes \Omega^*(U), \cliels( \fh \otimes \Omega^*_c(U)))
 \]
@@ -202,9 +209,17 @@ We can calculate the factorization homology of this factorization algebra explic
 
 \greg{need to add a notation/convention somewhere including that $\Sigma^n$ will be shift functor, convention for grading and so on}
 
-\section{Enveloping $E_n$ algebras of Lie algebras}
+\section{Background}
 
-Although \cite{Knudsen} develops an adjunction between Lie and $E_n$ algebras \mahmoud{non-unital?}\greg{Both I think}
+\owen{Add overview}
+
+\subsection{Recollections on $E_n$ algebras and prefactorization algebras}
+
+\owen{Recall Jacob's results and what it means in conjunction with strictification}
+
+\subsection{Enveloping $E_n$ algebras of Lie algebras}
+
+Although \cite{Knudsen} develops an adjunction between Lie and $E_n$ algebras \mahmoud{non-unital?}\greg{Both I think}\owen{augmented is probably best for us}
 in any presentable symmetric monoidal stable $\infty$-category $\cC$,
 we only work in the infinity category of chain complexes $(\Mod_k, \otimes_k)$, where $k$ is a field of characteristic zero.
 We summarize Knudsen's result in this setting as follows.
@@ -241,7 +256,7 @@ Note that in the theorem we use the following equivalence due to Lurie~\cite{Lur
 
 \begin{thm}
 \label{T:En=Fac} 
-There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant factorization algebras.
+There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$.
 \end{thm}
 
 \begin{rmk}
@@ -329,7 +344,7 @@ A special but very interesting case is of course when $B$ is itself an envelopin
 \begin{rmk}\greg{Extends to $L_\infty$ case in a sentence or too}
 \end{rmk}
 
-\section{Centralizers of maps of $E_n$ algebras and the derived center}
+\subsection{Centralizers of maps of $E_n$ algebras and the derived center}
 \label{sec: centralizer}
 
 We briefly review some of the main notions and refer the reader to \cite{LurieHA} Section 5.3 and \cite{FrancisHH} for detailed discussions. Let $\cC^\otimes$ denote a presentable stable symmetric monoidal $\infty$-category (for us, chain complexes over a field $k$ of characteristic zero with~$\otimes_k$).
@@ -398,7 +413,6 @@ By Theorem~\ref{T:En=Fac} and Proposition~\ref{T:centralizer=inthom} (also see~\
 
 
 We now use these results to prove the central claim of Theorem~\ref{thm: centralizer}.
-
 
 \section{Convolution algebras over colored operads}
 
