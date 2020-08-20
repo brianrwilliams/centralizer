@@ -91,7 +91,9 @@ cochains $\clies(\fg, B)$ equipped with the convolution $E_n$-product.
 
 Existing work provides insight into and context for the situation:
 \begin{itemize}
-\item Lurie and Francis give a characterization of the centralizer ${\frak Z}_{E_n}(f)$ of any $E_n$ algebra map $f: A \to B$ as the ``internal hom'' in left $\int_{S^{n-1}}A$ -modules from $A$ to $B_f$, where $B_f$ denotes $B$ viewed as a left module via the map~$f$.
+\item Lurie and Francis give a characterization of the centralizer ${\frak Z}_{E_n}(f)$ of any $E_n$ algebra map $f: A \to B$ as the ``internal hom'' in left $\int_{S^{n-1}}A$-modules from $A$ to $B_f$, where $B_f$ denotes $B$ viewed as a left module via the map~$f$.
+\item Their work shows, in fact, that $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-representations,
+which we also denote $B_f$, as it relies on related arguments. \owen{Let's hope we can justify this!}
 \item Knudsen verifies that we can model the enveloping $E_n$ algebra by a strict prefactorization algebra ${\tt U}_n \fg = \cliel(\Omega_c \otimes \fg)$ on $\RR^n$, which is weakly locally constant.
 \item In combination, the centralizer is characterized up to quasi-isomorphism, 
 since it is easy to compute the factorization homology of the enveloping algebra $\UU_n \fg$ over a sphere.
@@ -99,12 +101,11 @@ since it is easy to compute the factorization homology of the enveloping algebra
 Our approach leverages these results as follows to prove the theorem.
 \begin{enumerate}
 \item First, we transfer the question to the setting of strict prefactorization algebras on $\RR^n$ that are weakly locally constant. Lurie \cite{LurieHA} explains why we can work with the homotopy coherent version of prefactorization algebras, and then strictification theorems from the model category literature on operads say we can work with strict prefactorization algebras.
-\item  In particular, given an $E_n$ algebra $B$,  let ${\tt B}$ denote a strict prefactorization algebra modeling~$B$.
-Strictification lets us associate to the map $f: \UU_n \fg \to B$, a map ${\tt f}: {\tt U}_n \fg \to {\tt B}$ of strict prefactorization algebras. 
-\owen{It might be better to first use the adjunction to get a map of homotopy-coherent Lie algebras $\fg \to B$ but I'm not sure this plays nicely with the other strictification\dots}
-\item From the map ${\tt f}$, we read off an $\fg$-action on ${\tt B}$ intertwining with the structure maps of ${\tt B}$. 
-That is, we have a prefactorization algebra ${\tt B}_f$ taking values in the 1-category $\Ch(\Rep(\fg))$ of chain complexes of $\fg$-representations.
-\item We then construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, B_f)$ as a kind of ``convolution algebra.'' 
+\item  In particular, given our $E_n$ algebra $B_f$ in $\fg$-modules,  model it by a strict prefactorization algebra ${\tt B}_f$ with values in a nice model category $\Mod_\fg(\Ch_k)$ of dg $\fg$-representations.
+The forgetful functor $\Mod_\fg(\Ch_k) \to \Ch_k$ lets us produce a strict prefactorization algebra ${\tt B}$ that models~$B$.
+\item By construction, the action of $\fg$ on ${\tt B}_f$ determines a map ${\tt f}:  {\tt U}_n \fg \to {\tt B}$ of strict prefactorization algebras.
+\owen{I'm not sure this is true ... but let's be optimistic.}
+\item We then construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, {\tt B}_f)$ as a kind of ``convolution algebra.'' 
 \item We show this object fits canonically into a centralizer diagram: there is a map
 \[
 \clies(\Omega \otimes \fg, {\tt B}_f) \otimes {\tt U}_n \fg \to {\tt B}_f
@@ -227,6 +228,8 @@ Note that in the theorem we use the following equivalence due to Lurie~\cite{Lur
 There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$.
 \end{thm}
 
+\owen{I might move the discussion of $E_n$-modules from near proposition~\ref{P:ModentoModSn} to here. 
+We can then sketch here the argument you explained about $E_n$-monoidal products to show that $B$ lifts to an $E_n$ algebra $B_f$ in $\fg$-modules.}
 
 \subsection{Enveloping $E_n$ algebras of Lie algebras}
 \label{sec: enveloping}
@@ -300,7 +303,8 @@ where $B_f$ denotes $B$ viewed as an $A\otimes A^{op}$-modules via the map~$f$.
 
 We record a key fact drawn from \cite{LurieHA},~\cite{FrancisHH}  and \cite{GG-Notes}, which generalizes this situation.
 
-\begin{prp}\label{P:ModentoModSn}
+\begin{prp}
+\label{P:ModentoModSn}
 Let $\cC^\otimes$ be a presentable symmetric monoidal stable $\infty$-category whose tensor product preserves colimits in each variable separately.
 For $A$ be an $E_n$ algebra in $\cC$,
 the $\infty$-category $\Mod^{E_n}_A(\cC)$ is equivalent to the $\infty$-category $\LMod_{\int_{S^{n-1} A}}(\cC)$.
@@ -315,33 +319,41 @@ As shown in Theorem 7.5.3.1 of \cite{LurieHA} and earlier in Proposition 3.16 of
 this algebra $\int_{S^{n-1} \times \RR} A$ is equivalent to ${\rm Free}(1_\cC)$, 
 the image of the unit object $1_\cC \in \cC$ under the left adjoint ${\rm Free}$ to the forgetful functor $\Mod^{E_n}_A(\cC) \to \cC$.
 
+\owen{We need to track here how the $E_n$-monoidal product intertwines with these functors.
+If we can find a juicy comment in \cite{LurieHA} or \cite{FrancisHH}, 
+we can claim they've shown that the map $f: \UU_n \fg \to B$ allows us to ``forget'' $B$ to an $E_n$ algebra in $\fg$-modules.}
 
-There is an immediate analogue of the notion of centralizers for factorization algebras.
-\begin{dfn}\label{D:centralizerFacAlgebra}
- Let $X$ be a manifold and  $f: A(-) \to B(-)$ be a map of locally constant factorization algebras over $X$.  
-The {\em centralizer} ${\frak Z}(\mathbf{f})(-)$ is the locally constant factorization
-algebra over $X$ in $\cC$ that is universal among those that fit in a commuting diagram
-\[
-\begin{tikzcd}
-& {\frak Z}(\mathbf{f}) \otimes A(-) \arrow[dr] & \\
-A(-) \arrow[ur, "u"] \arrow[rr, "f"] && B(-)
-\end{tikzcd}
-\]
-where $u$ is induced by the canonical map $1_\cC= {\frak Z}(\mathbf{f})(\emptyset) \to {\frak Z}(\mathbf{f})(-)$ induced by the inclusion of the emptyset. The {\em center} of a locally constant  factorization algebra
-$A(-)$ is the centralizer of its identity morphism $\id: A(-) \to A(-)$.
-\end{dfn}
-By Theorem~\ref{T:En=Fac} and Proposition~\ref{T:centralizer=inthom} (also see~\cite{GTZ3}) we get
-\begin{lmm}\label{L:faccentralizerexists}
- Let $X=\RR^n$. Then a centralizer of $f: A(-)\to B(-)$ exists for any morphism of locally constant factorization algebras over $X$. Further, if the above map is induced by 
- an $E_n$-algebra morphism $f:A\to B$, then 
- ${\frak Z}(\mathbf{f})(-)$ is the locally constant factorization algebra over $\RR^n$ associated to 
- the $E_n$-algebra ${\frak Z}_{E_n}(f)$.
-\end{lmm}
+\owen{I commented out a discussion of the factorization algebra version of centralizer, as I don't think it's relevant.}
 
+%
+%There is an immediate analogue of the notion of centralizers for factorization algebras.
+%\begin{dfn}\label{D:centralizerFacAlgebra}
+% Let $X$ be a manifold and  $f: A(-) \to B(-)$ be a map of locally constant factorization algebras over $X$.  
+%The {\em centralizer} ${\frak Z}(\mathbf{f})(-)$ is the locally constant factorization
+%algebra over $X$ in $\cC$ that is universal among those that fit in a commuting diagram
+%\[
+%\begin{tikzcd}
+%& {\frak Z}(\mathbf{f}) \otimes A(-) \arrow[dr] & \\
+%A(-) \arrow[ur, "u"] \arrow[rr, "f"] && B(-)
+%\end{tikzcd}
+%\]
+%where $u$ is induced by the canonical map $1_\cC= {\frak Z}(\mathbf{f})(\emptyset) \to {\frak Z}(\mathbf{f})(-)$ induced by the inclusion of the emptyset. The {\em center} of a locally constant  factorization algebra
+%$A(-)$ is the centralizer of its identity morphism $\id: A(-) \to A(-)$.
+%\end{dfn}
+%By Theorem~\ref{T:En=Fac} and Proposition~\ref{T:centralizer=inthom} (also see~\cite{GTZ3}) we get
+%\begin{lmm}\label{L:faccentralizerexists}
+% Let $X=\RR^n$. Then a centralizer of $f: A(-)\to B(-)$ exists for any morphism of locally constant factorization algebras over $X$. Further, if the above map is induced by 
+% an $E_n$-algebra morphism $f:A\to B$, then 
+% ${\frak Z}(\mathbf{f})(-)$ is the locally constant factorization algebra over $\RR^n$ associated to 
+% the $E_n$-algebra ${\frak Z}_{E_n}(f)$.
+%\end{lmm}
+%
 
 We now turn to proving Theorem~\ref{thm: centralizer}.
 
 \section{Strictifying the map $f: \UU_n \fg \to B$}
+
+\owen{If our new strategy works, then we can get rid of this section.}
 
 As a first step, we analyze the strictification of the map $f: \UU_n \fg \to B$ and show how it lets us view $B$ as an $E_n$ algebra in~$\Ch(\Rep(\fg))$.
 
