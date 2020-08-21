@@ -98,13 +98,15 @@ Our approach has the following steps:
 \begin{enumerate}
 \item Transfer the question to the setting of strict prefactorization algebras on $\RR^n$ that are weakly locally constant. (First use Lurie to explain that we can work with the homotopy coherent version, and then invoke strictification theorems from the model category literature on operads.) 
 \item In particular, explain why $B$ determines some prefactorization algebra that I'll also call~$B$. Explain how the map $f: \UU_n \fg \to B$ determines a $\fg$-action on $B$. That is, we can obtain a prefactorization algebra $B_f$ taking values in the 1-category of $\fg$-representations.
-\item Construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, B_f)$ as a kind of ``convolution algebra.'' Explain why it canonically fits into a centralizer diagram: there is a map
+See Lemma \ref{L:inducedFacgModstruct}. 
+\item Construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, B_f)$ as a kind of ``convolution algebra", Lemma \ref{L:ClieFacDef}.
+We then argue that it canonically fits into a centralizer diagram: there is a map of prefactorization algebras
 \[
 \clies(\Omega \otimes \fg, B_f) \otimes \UU_n \fg \to B_f
 \]
-such that precomposing with the map $1 \otimes \id_{\UU_n \fg}$ is the map~$f$.
+such that precomposing with the map $1 \otimes \id_{\UU_n \fg}$ is the map~$f$, see Lemma \ref{L:ComTriangCent}.
 \item Fitting into such a diagram guarantees a canonical map $\clies(\Omega \otimes \fg, B_f) \to \cZ_f$ as strict prefactorization algebras.
-\item Verify that this map is a quasi-isomorphism on disks. 
+\item Verify that this map is a quasi-isomorphism on disks, Lemma \ref{L:thetaquisondisk}.
 Hence it induces a weak equivalence of the associated $E_n$ algebras. 
 \end{enumerate}
 
@@ -261,8 +263,12 @@ gives a $L_\infty$-algebra morphism
  \tilde{f}: \fg \, \longrightarrow \, \oblv(B)\cong B[n-1]
 \end{equation}
 which makes $B[n-1]$ into a $\fg$-module and therefore its shift $B$ inherits a  $\fg$-module structure as well from $f$.
-\begin{prp}\label{P:inducedEngModStruct} Let $f:\UU_n \fg \to B$ be an $E_n$-algebra morphism. The induced  
- $\fg$ $L_\infty$-module on $B$ lifts canonically to make  $B$ into an $E_n$-algebra in $\fg$-module. 
+
+\brian{let's start with a strict representative $B$. 
+So we have an actual locally constant factorization algebra.}
+
+\begin{prp}\label{P:inducedEngModStruct} Let $f:\UU_n \fg \to B$ be an $E_n$-algebra morphism. 
+The induced $\fg$ $L_\infty$-module on $B$ lifts canonically to make  $B$ into an $E_n$-algebra in the category of $\fg$-modules that we denote by $B_f$. 
 \end{prp}
 \begin{proof}
  
@@ -275,6 +281,8 @@ algebras
  \mathbf{f}: \cliels( \fg \otimes \Omega^*_c(-)) \longrightarrow B(-)
 \end{equation}
  where $B(-)$ is the factorization algebra associated to $B$.
+ \brian{How about $\ul{B}$ instead?}
+ 
 \begin{lmm}\label{L:inducedFacgModstruct} The factorization algebra map  $\mathbf{f}$ makes $B(-)$ into an homotopy cosheaf of $L_\infty$-modules over 
  $\fg \otimes \Omega^*_c(-)$.
 \end{lmm}
@@ -306,6 +314,7 @@ The (homotopy) sheaf structure of forms also gives us structure maps
   \clies(\fg\otimes \Omega (V), B(V))
 \end{multline}
 where $\rho$ is given by the restriction of forms onto a subspace. 
+
 \begin{lmm}\label{L:ClieFacDef} For any (resp. locally constant) factorization algebra $B(-)$ and factorization algebra map $\mathbf{f}:\UU_n(\fg) \to B(-)$, 
  the structure maps~\eqref{eq:transClieFac} makes $ \cliels\big(\fg \otimes \Omega^*_c(-), B(-) \big)$ a (resp. locally constant) factorization algebra.
  Similarly, the structure maps~\eqref{eq:transClieFacCochain} makes 
@@ -958,13 +967,19 @@ Note that here, we are using the usual Koszul sign  convention.
 \brian{do you like this example?} \greg{I do !}
 \begin{eg}\label{eg: TT}
 Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
-The Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$. 
-On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning 
+A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
+On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
+The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
+
+On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
 \[
 \clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
 \]
 to each open set $U \subset \RR$.
-In particular, the factorization homology of the derived center along the closed manifold $S^1$ can be computed as
+In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
+Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
+
+Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
 \[
 \int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
 \]
