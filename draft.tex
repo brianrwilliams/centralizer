@@ -228,9 +228,6 @@ Note that in the theorem we use the following equivalence due to Lurie~\cite{Lur
 There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$.
 \end{thm}
 
-\owen{I might move the discussion of $E_n$-modules from near proposition~\ref{P:ModentoModSn} to here. 
-We can then sketch here the argument you explained about $E_n$-monoidal products to show that $B$ lifts to an $E_n$ algebra $B_f$ in $\fg$-modules.}
-
 \subsection{Enveloping $E_n$ algebras of Lie algebras}
 \label{sec: enveloping}
 
@@ -273,6 +270,34 @@ Depending on one's preferences, one can work with an an $L_\infty$-algebra struc
 \end{rmk}
 
 \owen{\label{note on little model} Note that if we work with the colored operad of disks/boxes, then Poincar\'e lemma tells us that we can use the strict model $\cliel(\fg[-n])$ rather than the fatter model $\cliels(\Omega^*_c(U) \otimes \fg)$. I think Ben actually shows this too. This would be worth explaining because we can then use a much simpler strictification of $f$.}
+
+\subsection{Maps out of enveloping $E_n$ algebras}
+
+\owen{I might move the discussion of $E_n$-modules from near proposition~\ref{P:ModentoModSn} to here. 
+We can then sketch here the argument you explained about $E_n$-monoidal products to show that $B$ lifts to an $E_n$ algebra $B_f$ in $\fg$-modules.}
+
+These results can be marshaled to prove the following.
+
+\begin{prp}
+Let $\Ch_k^{\otimes_k}$ be the symmetric monoidal $\infty$-category arising from cochain complexes of vector spaces over a characteristic zero field $k$.
+Let $\fg$ be a Lie algebra in $\Ch_k^{\otimes_k}$, i.e., a dg Lie algebra, 
+and let $B$ be an $E_n$ algebra in $\Ch_k^{\otimes_k}$.
+Then given a map of $E_n$ algebras $f: \UU_n \fg \to B$, 
+there exists a lift of $B$ to an $E_n$ algebra $B_f$ in $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k}$, the symmetric monoidal $\infty$-category of $\fg$-modules.
+\end{prp}
+
+That is, the forgetful functor $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k} \to \Ch_k^{\otimes_k}$ sends $B_f$ to~$B$.
+
+\begin{proof}
+\owen{Essentially, we verify that a bunch of "forgetful functors" are $E_n$-monoidal.}
+\end{proof}
+
+By the strictification results, $B_f$ admits a model ${\tt B}_f$ as a strict prefactorization algebra with values in the stable symmetric monoidal \owen{other adjectives} model category $\Alg_\Lie(\Ch_k^{\rm dg})$.
+As the forgetful functor $\Alg_\Lie(\Ch_k^{\rm dg}) \to \Alg_\Lie(\Ch_k^{\rm dg})$ is \owen{more adjectives},
+we obtain an underlying strict prefactorization algebra ${\tt B}$ with values in cochain complexes.
+Moreover, there is a canonical map $\cliel(\fg[-n]) \to {\tt B}$ of strict prefactorization algebras that models $f$, as desired.
+
+\owen{I'd love to say we can produce a map from our favorite model of the envelope, but we may not need it.}
 
 \subsection{Centralizers of maps of $E_n$ algebras and the derived center}
 \label{sec: centralizer}
