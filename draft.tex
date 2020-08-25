@@ -289,7 +289,29 @@ there exists a lift of $B$ to an $E_n$ algebra $B_f$ in $\Mod_\fg(\Ch_k^{\otimes
 That is, the forgetful functor $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k} \to \Ch_k^{\otimes_k}$ sends $B_f$ to~$B$.
 
 \begin{proof}
-\owen{Essentially, we verify that a bunch of "forgetful functors" are $E_n$-monoidal.}
+By Corollary 3.4.4.6 of \cite{LurieHA}, any $E_n$ algebra $B$ defines an $E_n$-monoidal category ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ of $E_n$-$B$-modules. 
+Furthermore, by Corollary 3.4.1.7 \cite{LurieHA} (see also Example 3.4.4.7 of the same reference) $B$ can be viewed as an $E_n$-algebra in this $E_n$-monoidal category. 
+In other words, there is an object $\Bar{B} \in  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ which gets sent to $B$ under the forgetful functor ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k}) \to \Ch_k^{\otimes_k}$. 
+
+Given a map of $E_n$-algebras $f : A \to B$ there is an $E_n$-monoidal functor of $E_n$-module categories 
+\[
+f^* :  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes_k}) \to  {\rm Mod}_A^{E_n} (\Ch_k^{\otimes_k}) .
+\]
+In particular, for $A = \UU_n \fg$, we see that the $E_n$-algebra $B$ defines an $E_n$-algebra object $f^*\Bar{B} \in {\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes k})$. 
+Again, the image of this object under the forgetful functor to $\Ch_k^{\otimes_k}$ is $B$. 
+
+Now, for any $E_n$-algebra the factorization homology along the $(n-1)$-sphere $\int_{S^{n-1}} A$ is an $E_1$-algebra.
+By Proposition 3.33 of \cite{FrancisHH} (see also Example 5.5.4.16 of \cite{LurieHA}), there is an equivalence of $\infty$-categories ${\rm Mod}^{E_n}_A (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\int_{S^{n-1}} A} (\Ch_k^{\otimes_k})$.
+For $A = \UU_n \fg$, the factorization homology along the $(n-1)$-sphere is $\int_{S^{n-1} A} \simeq \UU_1 \left(\fg[\epsilon] \right)$, where $\epsilon$ is a formal parameter of cohomological degree $n-1$.
+It follows that there is an equivalence of $\infty$-categories 
+\[
+{\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\UU_1(\fg[\epsilon])} (\Ch_k^{\otimes_k}) = {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k}) .
+\]
+\brian{The RHS has a symmetric monoidal structure with $\otimes_k$. 
+This does not agree with the tensor product on the LHS, but we hope there is a functor $\otimes_{\UU_n \fg} \to \otimes_k$.}
+
+Finally, restriction along the map of Lie algebras $i : \fg \hookrightarrow \fg[\epsilon]$ defines monoidal functor $i^* :  {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k})  \to  {\rm Mod}_{\fg} (\Ch_k^{\otimes_k})$. 
+The desired $E_n$-algebra object $B_f$ is $i^* f^* \Bar{B}$.
 \end{proof}
 
 By the strictification results, $B_f$ admits a model ${\tt B}_f$ as a strict prefactorization algebra with values in the stable symmetric monoidal \owen{other adjectives} model category $\Alg_\Lie(\Ch_k^{\rm dg})$.
