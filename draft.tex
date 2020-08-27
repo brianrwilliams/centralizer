@@ -78,7 +78,11 @@ for a brief discussion about centralizers to maps of $E_n$ algebras.
 
 \begin{thm}
 \label{thm: centralizer}
-Let $\UU_n \fg$ be the enveloping $E_n$ algebra of a dg Lie algebra $\fg$ and let $f: \UU_n \fg \to B$ a map of augmented $E_n$ algebras.
+Let $\UU_n \fg$ be the enveloping $E_n$ algebra of a dg Lie algebra $\fg$ and let 
+\[
+f: \UU_n \fg \to B
+\]
+be a map of augmented $E_n$ algebras.
 Then
 \begin{itemize}
 \item $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-modules and
@@ -302,7 +306,7 @@ Again, the image of this object under the forgetful functor to $\Ch_k^{\otimes_k
 
 Now, for any $E_n$-algebra the factorization homology along the $(n-1)$-sphere $\int_{S^{n-1}} A$ is an $E_1$-algebra.
 By Proposition 3.33 of \cite{FrancisHH} (see also Example 5.5.4.16 of \cite{LurieHA}), there is an equivalence of $\infty$-categories ${\rm Mod}^{E_n}_A (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\int_{S^{n-1}} A} (\Ch_k^{\otimes_k})$.
-For $A = \UU_n \fg$, the factorization homology along the $(n-1)$-sphere is $\int_{S^{n-1} A} \simeq \UU_1 \left(\fg[\epsilon] \right)$, where $\epsilon$ is a formal parameter of cohomological degree $n-1$.
+For $A = \UU_n \fg$, the factorization homology along the $(n-1)$-sphere is $\int_{S^{n-1}} A \simeq \UU_1 \left(\fg[\epsilon] \right)$, where $\epsilon$ is a formal parameter of cohomological degree $n-1$.
 It follows that there is an equivalence of $\infty$-categories 
 \[
 {\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\UU_1(\fg[\epsilon])} (\Ch_k^{\otimes_k}) = {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k}) .
@@ -546,7 +550,7 @@ We start by defining a pairing between the factorization algebras of Chevalley-E
 
 \smallskip 
 
-First note that compactly supported form embedds in all forms, therefore we can apply 
+First note that compactly supported form embeds in all forms, therefore we can apply 
 any element of $\cliels\big(\fg \otimes \Omega^* (-), B(-)\big)$ 
 to any element of $\cliels\big(\fg \otimes \Omega_c^* (-)\big)$. Therefore, for any  $p\in \bN$, we have an evaluation 
 \begin{equation} \label{eqdef:ev} \begin{array}{c}\ev: Sym^p \big( \fg \otimes \Omega^* (U)[-1] ,B(U)\big)
@@ -1059,8 +1063,96 @@ Note that here, we are using the usual Koszul sign  convention.
 
 \greg{Add the Koszul duality example. Add examples coming from topological spaces and abelian Lie algebras}
 
-\brian{do you like this example?} \greg{I do !}
-\begin{eg}\label{eg: TT}
+\subsection{Koszul duality}
+\label{sec: Koszul}
+
+Consider the trivial $E_n$-algebra $k$ and suppose $\varepsilon : \UU_n \fg \to k$ is the natural augmentation. 
+Then, ${\frak Z}_n (\varepsilon)$ is the $E_n$-{\em Koszul dual} of the $E_n$-algebra $\UU_n \fg$. 
+Our results provide a model for this $E_n$-algebra as a locally constant factorization algebra on $\RR^n$ which assigns to an open set $U \subset \RR^n$ the cochain complex
+\[
+\clie \left(\fg \otimes \Omega(U) \right) .
+\]
+
+\subsection{Universal bulk TFT}
+\label{sec: TFT}
+
+Generally speaking, the local observables of a topological field theory on a manifold $M$ form a locally constant factorization algebra on $M$. 
+
+Let $\fg$ be a dg Lie algebra and consider the $E_n$ algebra $\UU_n \fg$. 
+We have shown that a model for the $E_n$-center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
+\[
+\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
+\]
+
+Let us place this locally constant factorization algebra on the $n$-manifold $M$.
+This factorization algebra is equivalent to the pushforward of a factorization algebra $\cF_{\rm bulk}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times \RR \to M$. 
+We proceed to construct this factorization algebra. 
+
+For an open set $V \subset M \times I$ let $\cF^{\rm cl}_{\rm bulk} (V)$ be the cochain complex 
+\[
+\cF^{\rm cl}_{\rm bulk} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
+\]
+The assignment $V \mapsto \cF^{\rm cl}_{\rm bulk}(V)$ defines a locally constant factorization algebra $\cF^{\rm cl}_{\rm bulk}$ on $M \times \RR$. 
+
+The factorization algebra $\pi_* \cF^{\rm cl}_{\rm bulk}$ on $M$ is quasi-isomorphic to a certain limit, or ``deqauntization", of the $E_n$-center of $\UU_n \fg$. 
+To exhibit this quasi-isomorphism, we introduce the following cochain maps.
+For an open set $U \subset M$ let
+\[
+\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
+\] 
+be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
+This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
+Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
+\[
+r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
+\]
+by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
+
+The ``dequantization" of the $E_n$-center is defined using the following filtration of ${\frak Z}_n(\UU_n \fg)$.
+We for any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
+The increasing filtration for the $E_n$-center is defined by
+\[
+F^k {\frak Z}_n(\UU_n \fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
+\]
+This is a filtration of factorization algebras on $M$. 
+The associated graded factorization algebra is
+\[
+{\rm Gr} \;  {\frak Z}_n(\UU_n \fg)  = \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
+\]
+Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
+
+\begin{lmm}
+Integration along $\RR$ determines a quasi-isomorphism of factorization algebras on $M$:
+\[
+\int_\RR : \pi_* \cF^{\rm cl}_{\rm bulk} \xto{\simeq} {\rm Gr} \;  {\frak Z}_n(\UU_n \fg) .
+\]
+In fact, this is a deformation retraction with retract given by $r_\phi$. 
+\end{lmm}
+ 
+\brian{Maybe you can finesse this last part better than me.}
+
+%\begin{lmm}
+%Consider the locally constant factorization algebra $\cF_{\rm bulk}$ on $M \times \RR$ which assigns to an open set $U \subset M \times \RR$
+%\[
+%\cF_{\rm bulk} = \clie \left(\fg \otimes \Omega (U) \; , \; \clieu (\fg \otimes \Omega_c (U)[1]) \right) .
+%\]
+%Then, 
+%\end{lmm}
+%
+%\begin{proof}
+%For $V \subset M$, the integration of compactly supported de Rham forms along $\RR$ 
+%\[
+%\fg \otimes \Omega_c (\pi^{-1} (V)) = \fg \otimes \Omega_c (V \times \RR) \xto{\int_{\RR}} \fg \otimes \Omega_c (V) [-1] .
+%\]
+%is a quasi-isomorphism. 
+%
+%\end{proof}
+
+\subsection{$E_n$-calculus}
+\label{sec: TT}
+
+\brian{HKR}
+
 Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
 A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
 On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
@@ -1081,7 +1173,6 @@ Our model also gives us a simple description of the factorization homology of th
 where $\epsilon$ is a formal variable of degree~$1$. 
 \brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
 We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
-\end{eg}
 
 %We briefly remark on a natural modification of the prefactorization algebra $\Sym(\cC_A)$. 
 %For simplicity, suppose $A$ is an ordinary (non dg) algebra, and let $\chi \in \Cyc^m(A)$ be a cyclic {\em cocycle} of degree $m$.
