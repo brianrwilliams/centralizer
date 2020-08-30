@@ -68,6 +68,10 @@ Many of our constructions, however, involve explicit manipulations of standard c
 and when it is helpful, we indicate the level at which we are working.
 \end{rmk}
 
+\owen{We should collect here a list of notations, such as}
+
+Let $\Ch_k^{\otimes_k}$ be the symmetric monoidal stable $\infty$-category arising from cochain complexes of vector spaces over a characteristic zero field $k$.
+Let ${\tt Ch}_k^{\otimes_k}$ denote the symmetric monoidal stable model category of cochain complexes of vector spaces over a characteristic zero field $k$ ETC.
 
 \section{Our main results}
 
@@ -85,9 +89,9 @@ f: \UU_n \fg \to B
 be a map of augmented $E_n$ algebras.
 Then
 \begin{itemize}
-\item $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-modules and
+\item $f$ lets us lift $B$ to an $E_n$ algebra $B_f$ in $\fg$-modules and
 \item the centralizer ${\frak Z}_{E_n}(f)$ is an $E_n$-algebra modeled by the Chevalley-Eilenberg 
-cochains $\clies(\fg, B)$ equipped with the convolution $E_n$-product.
+cochains $\clies(\fg, B_f)$ equipped with the convolution $E_n$-product.
 \end{itemize}
 \end{thm}
 
@@ -275,56 +279,6 @@ Depending on one's preferences, one can work with an an $L_\infty$-algebra struc
 
 \owen{\label{note on little model} Note that if we work with the colored operad of disks/boxes, then Poincar\'e lemma tells us that we can use the strict model $\cliel(\fg[-n])$ rather than the fatter model $\cliels(\Omega^*_c(U) \otimes \fg)$. I think Ben actually shows this too. This would be worth explaining because we can then use a much simpler strictification of $f$.}
 
-\subsection{Maps out of enveloping $E_n$ algebras}
-
-\owen{I might move the discussion of $E_n$-modules from near proposition~\ref{P:ModentoModSn} to here. 
-We can then sketch here the argument you explained about $E_n$-monoidal products to show that $B$ lifts to an $E_n$ algebra $B_f$ in $\fg$-modules.}
-
-These results can be marshaled to prove the following.
-
-\begin{prp}
-Let $\Ch_k^{\otimes_k}$ be the symmetric monoidal $\infty$-category arising from cochain complexes of vector spaces over a characteristic zero field $k$.
-Let $\fg$ be a Lie algebra in $\Ch_k^{\otimes_k}$, i.e., a dg Lie algebra, 
-and let $B$ be an $E_n$ algebra in $\Ch_k^{\otimes_k}$.
-Then given a map of $E_n$ algebras $f: \UU_n \fg \to B$, 
-there exists a lift of $B$ to an $E_n$ algebra $B_f$ in $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k}$, the symmetric monoidal $\infty$-category of $\fg$-modules.
-\end{prp}
-
-That is, the forgetful functor $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k} \to \Ch_k^{\otimes_k}$ sends $B_f$ to~$B$.
-
-\begin{proof}
-By Corollary 3.4.4.6 of \cite{LurieHA}, any $E_n$ algebra $B$ defines an $E_n$-monoidal category ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ of $E_n$-$B$-modules. 
-Furthermore, by Corollary 3.4.1.7 \cite{LurieHA} (see also Example 3.4.4.7 of the same reference) $B$ can be viewed as an $E_n$-algebra in this $E_n$-monoidal category. 
-In other words, there is an object $\Bar{B} \in  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ which gets sent to $B$ under the forgetful functor ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k}) \to \Ch_k^{\otimes_k}$. 
-
-Given a map of $E_n$-algebras $f : A \to B$ there is an $E_n$-monoidal functor of $E_n$-module categories 
-\[
-f^* :  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes_k}) \to  {\rm Mod}_A^{E_n} (\Ch_k^{\otimes_k}) .
-\]
-In particular, for $A = \UU_n \fg$, we see that the $E_n$-algebra $B$ defines an $E_n$-algebra object $f^*\Bar{B} \in {\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes k})$. 
-Again, the image of this object under the forgetful functor to $\Ch_k^{\otimes_k}$ is $B$. 
-
-Now, for any $E_n$-algebra the factorization homology along the $(n-1)$-sphere $\int_{S^{n-1}} A$ is an $E_1$-algebra.
-By Proposition 3.33 of \cite{FrancisHH} (see also Example 5.5.4.16 of \cite{LurieHA}), there is an equivalence of $\infty$-categories ${\rm Mod}^{E_n}_A (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\int_{S^{n-1}} A} (\Ch_k^{\otimes_k})$.
-For $A = \UU_n \fg$, the factorization homology along the $(n-1)$-sphere is $\int_{S^{n-1}} A \simeq \UU_1 \left(\fg[\epsilon] \right)$, where $\epsilon$ is a formal parameter of cohomological degree $n-1$.
-It follows that there is an equivalence of $\infty$-categories 
-\[
-{\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\UU_1(\fg[\epsilon])} (\Ch_k^{\otimes_k}) = {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k}) .
-\]
-\brian{The RHS has a symmetric monoidal structure with $\otimes_k$. 
-This does not agree with the tensor product on the LHS, but we hope there is a functor $\otimes_{\UU_n \fg} \to \otimes_k$.}
-
-Finally, restriction along the map of Lie algebras $i : \fg \hookrightarrow \fg[\epsilon]$ defines monoidal functor $i^* :  {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k})  \to  {\rm Mod}_{\fg} (\Ch_k^{\otimes_k})$. 
-The desired $E_n$-algebra object $B_f$ is $i^* f^* \Bar{B}$.
-\end{proof}
-
-By the strictification results, $B_f$ admits a model ${\tt B}_f$ as a strict prefactorization algebra with values in the stable symmetric monoidal \owen{other adjectives} model category $\Alg_\Lie(\Ch_k^{\rm dg})$.
-As the forgetful functor $\Alg_\Lie(\Ch_k^{\rm dg}) \to \Alg_\Lie(\Ch_k^{\rm dg})$ is \owen{more adjectives},
-we obtain an underlying strict prefactorization algebra ${\tt B}$ with values in cochain complexes.
-Moreover, there is a canonical map $\cliel(\fg[-n]) \to {\tt B}$ of strict prefactorization algebras that models $f$, as desired.
-
-\owen{I'd love to say we can produce a map from our favorite model of the envelope, but we may not need it.}
-
 \subsection{Centralizers of maps of $E_n$ algebras and the derived center}
 \label{sec: centralizer}
 
@@ -402,112 +356,212 @@ we can claim they've shown that the map $f: \UU_n \fg \to B$ allows us to ``forg
 
 We now turn to proving Theorem~\ref{thm: centralizer}.
 
-\section{Strictifying the map $f: \UU_n \fg \to B$}
+\section{Lifting $B$ to an $E_n$ algebra $B_f$ in $\fg$-modules}
 
-\owen{If our new strategy works, then we can get rid of this section.}
+A technical result is the key step.
 
-As a first step, we analyze the strictification of the map $f: \UU_n \fg \to B$ and show how it lets us view $B$ as an $E_n$ algebra in~$\Ch(\Rep(\fg))$.
+\def\obl{{\rm obl}}
 
-By using the small model \owen{see my comment \ref{note on little model}}, we can strictify to obtain a map
+\begin{prp}
+\label{prp: def of obl}
+For $\fg$ a dg Lie algebra in $\Ch_k^{\otimes_k}$, i.e., a dg Lie algebra, 
+there is a forgetful functor $\obl: \Mod^{E_n}_{\UU_n \fg} \to \LMod_{U\fg}$ that is lax $E_n$-monoidal.
+\end{prp}
+
+\owen{I don't know if we need to include the adjective ``lax'' here, or if it's implicit in the usual discussions these days.}
+
+Concretely, we mean there is a natural morphism
 \[
-{\tt f}: \cliel(\fg[-n]) \to {\tt B}.
+\obl(M) \otimes_k \obl \to \obl(M \otimes_{\UU_n \fg} N) 
 \]
+as left modules over $U\fg$, i.e., as $\fg$-representations.
 
-\owen{And now I'm really confused.}
+As a consequence, we obtain the following.
 
-\owen{I'm not wild about Greg's phrasing below. Also, I'd prefer to move the explicit formulas later, when we've shifted our setting to strict prefactorization algebras.}
+\begin{cor}
+There is a functor 
+\[
+\Alg_{E_n}(\obl): \Alg_{E_n}({\Mod^{E_n}_{\UU_n \fg}}) \to \Alg_{E_n}(\LMod_{U\fg}).
+\]
+\end{cor}
 
+These results can be marshaled to prove the following.
+
+\begin{prp}
+Let $\fg$ be a Lie algebra in $\Ch_k^{\otimes_k}$, 
+and let $B$ be an $E_n$ algebra in $\Ch_k^{\otimes_k}$.
+Given a map of $E_n$ algebras $f: \UU_n \fg \to B$, 
+there exists a lift of $B$ to an $E_n$ algebra $B_f$ in $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k}$, the symmetric monoidal $\infty$-category of $\fg$-modules.
+\end{prp}
+
+That is, the forgetful functor $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k} \to \Ch_k^{\otimes_k}$ sends $B_f$ to~$B$.
+
+\begin{proof}
+By Corollary 3.4.4.6 of \cite{LurieHA}, any $E_n$ algebra $B$ defines an $E_n$-monoidal category ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ of $E_n$-$B$-modules with monoidal structure $\otimes_B$. 
+Furthermore, by Corollary 3.4.1.7 \cite{LurieHA} $B$ can be viewed as an $E_n$-algebra in this $E_n$-monoidal category. 
+(See also Example 3.4.4.7 of the same reference.)
+In other words, there is an object $\Hat{B} \in  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes k})$ sent to $B$ under the forgetful functor ${\rm Mod}_B^{E_n} (\Ch_k^{\otimes k}) \to \Ch_k^{\otimes_k}$. 
+
+Given a map of $E_n$-algebras $f : A \to B$, 
+the forgetful functor of $E_n$-module categories 
+\[
+f^* :  {\rm Mod}_B^{E_n} (\Ch_k^{\otimes_k}) \to  {\rm Mod}_A^{E_n} (\Ch_k^{\otimes_k}) .
+\]
+admits a natural refinement to an $E_n$-monoidal functor.
+\owen{Any place to cite?}
+In particular, for $A = \UU_n \fg$, there is an $E_n$-algebra object $f^*\Hat{B} \in {\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes k})$, and it forgets to $B$ under the forgetful functor to $\Ch_k^{\otimes_k}$, by construction. 
+
+Applying the $E_n$-monoidal functor $\obl$, we obtain an $E_n$ algebra $\obl(f^*\Hat{B})$ in $\Mod_\fg(\Ch_k^{\otimes_k})^{\otimes_k}$.
+Again, by construction, it forgets to $B$.
+We denote $\obl(f^*\Hat{B})$ by~$B_f$.
+\end{proof}
 
 \begin{rmk}
-It follows from theorem~\ref{T:UnofLie} that for any $E_n$-algebra $B$, 
-the underlying complex of the $L_\infty$-algebra $\oblv_n(B)$ is naturally quasi-isomorphic to $\Sigma^{n-1}B = B[n-1]$. 
-Henceforth in this paper, we will simply use the notation $B[n-1]$ for $\oblv_n(B)$, 
-that is tacitly assume we $B[n-1]$ is endowed with the $L_\infty$structure induced by its $E_n$ algebra structure.
+By the strictification results, $B_f$ admits a model ${\tt B}_f$ as a strict prefactorization algebra with values in the stable symmetric monoidal \owen{other adjectives} model category $\Alg_\Lie(\Ch_k^{\rm dg})$.
+As the forgetful functor $\Alg_\Lie({\tt Ch}_k) \to \Alg_\Lie({\tt Ch}_k)$ is \owen{more adjectives},
+we obtain an underlying strict prefactorization algebra ${\tt B}$ with values in cochain complexes.
+Moreover, there is a canonical map $\cliel(\fg[-n]) \to {\tt B}$ of strict prefactorization algebras that models $f$, as desired.
 \end{rmk}
 
-Let  $f:\UU_n \fg \to B$ be an $E_n$-algebra map. Then the adjunction 
+It remains to prove the technical result.
+
+\begin{proof}[Proof of proposition~\ref{prp: def of obl}]
+\owen{We are stuck on this point.}
+We construct the underlying functor of $\infty$-categories $\Mod^{E_n}_{\UU_n \fg} \to \LMod_{U\fg}$ 
+before lifting to a lax $E_n$-monoidal functor.
+
+For any $E_n$-algebra the factorization homology along the $(n-1)$-sphere $\int_{S^{n-1}} A$ is an $E_1$-algebra.
+By Proposition 3.33 of \cite{FrancisHH} (see also Example 5.5.4.16 of \cite{LurieHA}), 
+there is an equivalence of $\infty$-categories ${\rm Mod}^{E_n}_A (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\int_{S^{n-1}} A} (\Ch_k^{\otimes_k})$.
+For $A = \UU_n \fg$, the factorization homology along the $(n-1)$-sphere is 
 \[
-\xymatrix{\Alg_\Lie(\Mod_k) \ar@/^/[r]^{\UU_n} & \ar[l]^{\oblv_n}  \Alg_{E_n}(\Mod_k)}
+\int_{S^{n-1}} A \simeq \UU_1 \left(\fg[\epsilon] \right),
+\] 
+where $\epsilon$ is a formal parameter of cohomological degree $n-1$.
+It follows that there is an equivalence of $\infty$-categories 
+\[
+{\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\UU_1(\fg[\epsilon])} (\Ch_k^{\otimes_k}).
+% = {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k}) .
 \]
-gives a $L_\infty$-algebra morphism 
-\begin{equation}
- \tilde{f}: \fg \, \longrightarrow \, \oblv(B)\cong B[n-1]
-\end{equation}
-which makes $B[n-1]$ into a $\fg$-module and therefore its shift $B$ inherits a  $\fg$-module structure as well from $f$.
+Consider now the map of Lie algebras $i : \fg \hookrightarrow \fg[\epsilon]$,
+which induces a forgetful functor $i^* :  {\rm Mod}_{\fg[\epsilon]} (\Ch_k^{\otimes_k})  \to  {\rm Mod}_{\fg} (\Ch_k^{\otimes_k})$. 
+The composite 
+\[
+{\rm Mod}_{\UU_n \fg}^{E_n} (\Ch_k^{\otimes_k}) \simeq {\rm LMod}_{\UU_1(\fg[\epsilon])} (\Ch_k^{\otimes_k}) \xto{i^*}  {\rm LMod}_{U\fg} (\Ch_k^{\otimes_k})
+\]
+is the desired forgetful functor.
 
-\brian{let's start with a strict representative $B$. 
-So we have an actual locally constant factorization algebra.}
-
-\begin{prp}\label{P:inducedEngModStruct} Let $f:\UU_n \fg \to B$ be an $E_n$-algebra morphism. 
-The induced $\fg$ $L_\infty$-module on $B$ lifts canonically to make  $B$ into an $E_n$-algebra in the category of $\fg$-modules that we denote by $B_f$. 
-\end{prp}
-\begin{proof}
- 
-\end{proof}
-Proposition~\ref{P:inducedEngModStruct} has an easy realization in the factorization algebra setting.
-Indeed, applying the equivalence of $E_n$-algebras with locally constant factorization algebras (Theorem~\ref{T:En=Fac}), 
-we obtain an induced map of factorization 
-algebras 
-\begin{equation}\label{eq:DefofFonFaclevel}
- \mathbf{f}: \cliels( \fg \otimes \Omega^*_c(-)) \longrightarrow B(-)
-\end{equation}
- where $B(-)$ is the factorization algebra associated to $B$.
- \brian{How about $\ul{B}$ instead?}
- 
-\begin{lmm}\label{L:inducedFacgModstruct} The factorization algebra map  $\mathbf{f}$ makes $B(-)$ into an homotopy cosheaf of $L_\infty$-modules over 
- $\fg \otimes \Omega^*_c(-)$.
-\end{lmm}
-\begin{proof}
- 
-\end{proof}
-The lemma allows us to define the factorization algebra given on any open $U$ by  the Chevalley-Eilenberg chain complexes
-$ \cliels\big(\fg \otimes \Omega^*_c(U), B(U) \big)$ (with their standard differential)
-of $\fg \otimes \Omega^*_c(U)$ with value on $B(U)$ whose structure maps are given, for any $(U_i)_{i\in I}$ 
-a finite family of pairwise disjoint open subsets of an open $V$, by 
-\begin{multline}\label{eq:transClieFac}
- \bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega^*_c(U_i), B(U_i) \big) \cong Sym\Big(
- \fg\otimes (\bigoplus_{i\in I}  \Omega^*_c(U_i))[-1]  \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big) \\ 
- \cong Sym\Big(\fg\otimes \Omega_c\big(\coprod U_i\big)[-1] \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big)  
- \stackrel{\omega^*\otimes \mu_B}\longrightarrow Sym(\fg\otimes \Omega_c(V)[-1] ) \otimes B(V) \\ 
- = \cliels(\fg\otimes \Omega_c(V), B(V))
-\end{multline}
-where $\omega$ is induced by the cosheaf structure of compactly supported form and $\mu_B$ is the factorization algebra structure of $B(-)$.
-
-\smallskip
-
-The (homotopy) sheaf structure of forms also gives us structure maps
-\begin{multline}\label{eq:transClieFacCochain}
- \bigotimes_{i\in I} \clies\big(\fg \otimes \Omega^*(U_i), B(U_i) \big) \longrightarrow
-  \Hom\Big(Sym\big(\fg\otimes (\bigoplus_{i\in I}  \Omega^*(U_i))[-1]\big),  \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \cong \Hom\Big(Sym\big(\fg\otimes \Omega^*(\coprod U_i)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \stackrel{\rho}\longrightarrow \Hom\Big(Sym\big(\fg\otimes \Omega^*(V)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \stackrel{\mu_B}\longrightarrow 
-  \clies(\fg\otimes \Omega (V), B(V))
-\end{multline}
-where $\rho$ is given by the restriction of forms onto a subspace. 
-
-\begin{lmm}\label{L:ClieFacDef} For any (resp. locally constant) factorization algebra $B(-)$ and factorization algebra map $\mathbf{f}:\UU_n(\fg) \to B(-)$, 
- the structure maps~\eqref{eq:transClieFac} makes $ \cliels\big(\fg \otimes \Omega^*_c(-), B(-) \big)$ a (resp. locally constant) factorization algebra.
- Similarly, the structure maps~\eqref{eq:transClieFacCochain} makes 
- $ \clies\big(\fg \otimes \Omega^*(-), B(-) \big)$ a (resp. locally constant) factorization algebra.
-\end{lmm}
-\begin{dfn}\label{dfn:CEofFact}
-We {call   $\cliels\big(\fg \otimes \Omega^*_c(-), B(-) \big)$ the Chevalley-Eilenberg chain factorization algebra of $\fg$ with value in $B(-)$} 
-and $\clies\big(\fg \otimes \Omega^*(-), B(-) \big)$ the Chevalley-Eilenberg cochain factorization algebra.
-\end{dfn}
-\begin{proof}
- 
+\owen{Now we need to explain why it is lax monoidal.}
 \end{proof}
 
-
-A special but very interesting case is of course when $B$ is itself an enveloping algebra. 
-\begin{cor}
- Let $\fg$, $\fh$ be dg-Lie algebras and $f:\fg\to \fh$ be a dg-Lie algebra morphism. 
- Then the induced factorization algebra map $\mathbf{\UU_n f}:  \cliels( \fg \otimes \Omega^*_c(-)) \longrightarrow  \cliels( \fh \otimes \Omega^*_c(-)) $
- is the standard map $\cliels(f)$ induced by $f$ and the action of $\fg  \otimes \Omega^*_c(-)$ is obtained from the $\fg$-action on $\fh$ by Leibniz rule.
-\end{cor}
-\begin{rmk}\greg{Extends to $L_\infty$ case in a sentence or too}
-\end{rmk}
+%\section{Strictifying the map $f: \UU_n \fg \to B$}
+%
+%
+%\owen{If our new strategy works, then we can get rid of this section.}
+%
+%As a first step, we analyze the strictification of the map $f: \UU_n \fg \to B$ and show how it lets us view $B$ as an $E_n$ algebra in~$\Ch(\Rep(\fg))$.
+%
+%By using the small model \owen{see my comment \ref{note on little model}}, we can strictify to obtain a map
+%\[
+%{\tt f}: \cliel(\fg[-n]) \to {\tt B}.
+%\]
+%
+%\owen{And now I'm really confused.}
+%
+%\owen{I'm not wild about Greg's phrasing below. Also, I'd prefer to move the explicit formulas later, when we've shifted our setting to strict prefactorization algebras.}
+%
+%
+%\begin{rmk}
+%It follows from theorem~\ref{T:UnofLie} that for any $E_n$-algebra $B$, 
+%the underlying complex of the $L_\infty$-algebra $\oblv_n(B)$ is naturally quasi-isomorphic to $\Sigma^{n-1}B = B[n-1]$. 
+%Henceforth in this paper, we will simply use the notation $B[n-1]$ for $\oblv_n(B)$, 
+%that is tacitly assume we $B[n-1]$ is endowed with the $L_\infty$structure induced by its $E_n$ algebra structure.
+%\end{rmk}
+%
+%Let  $f:\UU_n \fg \to B$ be an $E_n$-algebra map. Then the adjunction 
+%\[
+%\xymatrix{\Alg_\Lie(\Mod_k) \ar@/^/[r]^{\UU_n} & \ar[l]^{\oblv_n}  \Alg_{E_n}(\Mod_k)}
+%\]
+%gives a $L_\infty$-algebra morphism 
+%\begin{equation}
+% \tilde{f}: \fg \, \longrightarrow \, \oblv(B)\cong B[n-1]
+%\end{equation}
+%which makes $B[n-1]$ into a $\fg$-module and therefore its shift $B$ inherits a  $\fg$-module structure as well from $f$.
+%
+%\brian{let's start with a strict representative $B$. 
+%So we have an actual locally constant factorization algebra.}
+%
+%\begin{prp}\label{P:inducedEngModStruct} Let $f:\UU_n \fg \to B$ be an $E_n$-algebra morphism. 
+%The induced $\fg$ $L_\infty$-module on $B$ lifts canonically to make  $B$ into an $E_n$-algebra in the category of $\fg$-modules that we denote by $B_f$. 
+%\end{prp}
+%\begin{proof}
+% 
+%\end{proof}
+%Proposition~\ref{P:inducedEngModStruct} has an easy realization in the factorization algebra setting.
+%Indeed, applying the equivalence of $E_n$-algebras with locally constant factorization algebras (Theorem~\ref{T:En=Fac}), 
+%we obtain an induced map of factorization 
+%algebras 
+%\begin{equation}\label{eq:DefofFonFaclevel}
+% \mathbf{f}: \cliels( \fg \otimes \Omega^*_c(-)) \longrightarrow B(-)
+%\end{equation}
+% where $B(-)$ is the factorization algebra associated to $B$.
+% \brian{How about $\ul{B}$ instead?}
+% 
+%\begin{lmm}\label{L:inducedFacgModstruct} The factorization algebra map  $\mathbf{f}$ makes $B(-)$ into an homotopy cosheaf of $L_\infty$-modules over 
+% $\fg \otimes \Omega^*_c(-)$.
+%\end{lmm}
+%\begin{proof}
+% 
+%\end{proof}
+%The lemma allows us to define the factorization algebra given on any open $U$ by  the Chevalley-Eilenberg chain complexes
+%$ \cliels\big(\fg \otimes \Omega^*_c(U), B(U) \big)$ (with their standard differential)
+%of $\fg \otimes \Omega^*_c(U)$ with value on $B(U)$ whose structure maps are given, for any $(U_i)_{i\in I}$ 
+%a finite family of pairwise disjoint open subsets of an open $V$, by 
+%\begin{multline}\label{eq:transClieFac}
+% \bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega^*_c(U_i), B(U_i) \big) \cong Sym\Big(
+% \fg\otimes (\bigoplus_{i\in I}  \Omega^*_c(U_i))[-1]  \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big) \\ 
+% \cong Sym\Big(\fg\otimes \Omega_c\big(\coprod U_i\big)[-1] \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big)  
+% \stackrel{\omega^*\otimes \mu_B}\longrightarrow Sym(\fg\otimes \Omega_c(V)[-1] ) \otimes B(V) \\ 
+% = \cliels(\fg\otimes \Omega_c(V), B(V))
+%\end{multline}
+%where $\omega$ is induced by the cosheaf structure of compactly supported form and $\mu_B$ is the factorization algebra structure of $B(-)$.
+%
+%\smallskip
+%
+%The (homotopy) sheaf structure of forms also gives us structure maps
+%\begin{multline}\label{eq:transClieFacCochain}
+% \bigotimes_{i\in I} \clies\big(\fg \otimes \Omega^*(U_i), B(U_i) \big) \longrightarrow
+%  \Hom\Big(Sym\big(\fg\otimes (\bigoplus_{i\in I}  \Omega^*(U_i))[-1]\big),  \bigotimes\limits_{i\in I} B(U_i) \Big) \\
+% \cong \Hom\Big(Sym\big(\fg\otimes \Omega^*(\coprod U_i)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
+% \stackrel{\rho}\longrightarrow \Hom\Big(Sym\big(\fg\otimes \Omega^*(V)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
+% \stackrel{\mu_B}\longrightarrow 
+%  \clies(\fg\otimes \Omega (V), B(V))
+%\end{multline}
+%where $\rho$ is given by the restriction of forms onto a subspace. 
+%
+%\begin{lmm}\label{L:ClieFacDef} For any (resp. locally constant) factorization algebra $B(-)$ and factorization algebra map $\mathbf{f}:\UU_n(\fg) \to B(-)$, 
+% the structure maps~\eqref{eq:transClieFac} makes $ \cliels\big(\fg \otimes \Omega^*_c(-), B(-) \big)$ a (resp. locally constant) factorization algebra.
+% Similarly, the structure maps~\eqref{eq:transClieFacCochain} makes 
+% $ \clies\big(\fg \otimes \Omega^*(-), B(-) \big)$ a (resp. locally constant) factorization algebra.
+%\end{lmm}
+%\begin{dfn}\label{dfn:CEofFact}
+%We {call   $\cliels\big(\fg \otimes \Omega^*_c(-), B(-) \big)$ the Chevalley-Eilenberg chain factorization algebra of $\fg$ with value in $B(-)$} 
+%and $\clies\big(\fg \otimes \Omega^*(-), B(-) \big)$ the Chevalley-Eilenberg cochain factorization algebra.
+%\end{dfn}
+%\begin{proof}
+% 
+%\end{proof}
+%
+%
+%A special but very interesting case is of course when $B$ is itself an enveloping algebra. 
+%\begin{cor}
+% Let $\fg$, $\fh$ be dg-Lie algebras and $f:\fg\to \fh$ be a dg-Lie algebra morphism. 
+% Then the induced factorization algebra map $\mathbf{\UU_n f}:  \cliels( \fg \otimes \Omega^*_c(-)) \longrightarrow  \cliels( \fh \otimes \Omega^*_c(-)) $
+% is the standard map $\cliels(f)$ induced by $f$ and the action of $\fg  \otimes \Omega^*_c(-)$ is obtained from the $\fg$-action on $\fh$ by Leibniz rule.
+%\end{cor}
+%\begin{rmk}\greg{Extends to $L_\infty$ case in a sentence or too}
+%\end{rmk}
+%
 
 \section{Convolution algebras over colored operads}
 
