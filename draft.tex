@@ -73,12 +73,16 @@ and when it is helpful, we indicate the level at which we are working.
 Let $\Ch_k^{\otimes_k}$ be the symmetric monoidal stable $\infty$-category arising from cochain complexes of vector spaces over a characteristic zero field $k$.
 Let ${\tt Ch}_k^{\otimes_k}$ denote the symmetric monoidal stable model category of cochain complexes of vector spaces over a characteristic zero field $k$ ETC.
 
+\greg{need to add a notation/convention somewhere including that $\Sigma^n$ will be shift functor, convention for grading and so on}
+
 \section{Our main results}
 
 See section~\ref{sec: en background} for a brief discussion of $E_n$ algebras and their relationship with locally constant factorization algebras on $\RR^n$, section~\ref{sec: enveloping} for a brief discussion of the enveloping $E_n$ algebra construction, and see section~\ref{sec: centralizer} 
 for a brief discussion about centralizers to maps of $E_n$ algebras.
 
-\owen{An approximate version of our main theorem. It's not terrible but I'd like to make the statement more accurate and perhaps punchier.}
+\subsection{The central theorem and its proof strategy}
+
+%\owen{An approximate version of our main theorem. It's not terrible but I'd like to make the statement more accurate and perhaps punchier.}
 
 \begin{thm}
 \label{thm: centralizer}
@@ -95,34 +99,39 @@ cochains $\clies(\fg, B_f)$ equipped with the convolution $E_n$-product.
 \end{itemize}
 \end{thm}
 
-\owen{Here is an outline of the proof strategy, with ingredients indicated:}
+\def\Disk{{\rm Disk}}
 
 Existing work provides insight into and context for the situation:
 \begin{itemize}
 \item Lurie and Francis give a characterization of the centralizer ${\frak Z}_{E_n}(f)$ of any $E_n$ algebra map $f: A \to B$ as the ``internal hom'' in left $\int_{S^{n-1}}A$-modules from $A$ to $B_f$, where $B_f$ denotes $B$ viewed as a left module via the map~$f$.
-\item Their work shows, in fact, that $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-representations,
-which we also denote $B_f$, as it relies on related arguments. \owen{Let's hope we can justify this!}
-\item Knudsen verifies that we can model the enveloping $E_n$ algebra by a strict prefactorization algebra ${\tt U}_n \fg = \cliel(\Omega_c \otimes \fg)$ on $\RR^n$, which is weakly locally constant.
+\item Lurie \cite{LurieHA} explains why the $\infty$-category of $E_n$ algebras is equivalent to the homotopy-coherent version of locally constant prefactorization algebras on $\RR^n$.  
+In fact, he simplifies the situation a bit more. 
+Let $\Disk_n^\sqcup$ denote the colored operad whose colors are balls in $\RR^n$ and whose spaces of operations are either empty or a point, depending on whether the input balls are pairwise disjoint and subsets of the output ball. 
+One can work with locally constant, homotopy-coherent algebras over $\Disk_n^\sqcup$.
+\item In particular, Knudsen verifies that we can model the enveloping $E_n$ algebra by a strict $\Disk_n$-algebra $\cliels(\fg[-n])$ that is strictly locally constant.
 \item In combination, the centralizer is characterized up to quasi-isomorphism, 
 since it is easy to compute the factorization homology of the enveloping algebra $\UU_n \fg$ over a sphere.
 \end{itemize}
 Our approach leverages these results as follows to prove the theorem.
 \begin{enumerate}
-\item First, we transfer the question to the setting of strict prefactorization algebras on $\RR^n$ that are weakly locally constant. Lurie \cite{LurieHA} explains why we can work with the homotopy coherent version of prefactorization algebras, and then strictification theorems from the model category literature on operads say we can work with strict prefactorization algebras.
-\item  In particular, given our $E_n$ algebra $B_f$ in $\fg$-modules,  model it by a strict prefactorization algebra ${\tt B}_f$ with values in a nice model category $\Mod_\fg(\Ch_k)$ of dg $\fg$-representations.
+\item By modest extensions of the works cited above, we show that  $f$ equips $B$ with the structure of an $E_n$ algebra in $\fg$-representations, which we also denote $B_f$. \owen{Let's hope we can justify this!}
+\item Next, we transfer the question to the setting of {\em strict} $\Disk_n$-algebras that are weakly locally constant. 
+Strictification theorems from the model category literature on operads say we can replace homotopy-coherent $\Disk_n$-algebras with strict ones. 
+\item  In particular, given our $E_n$ algebra $B_f$ in $\fg$-modules, model it by a strict $\Disk_n$-algebra ${\tt B}_f$ with values in a nice model category $\Mod_\fg(\Ch_k)$ of dg $\fg$-representations.
 The forgetful functor $\Mod_\fg(\Ch_k) \to \Ch_k$ lets us produce a strict prefactorization algebra ${\tt B}$ that models~$B$.
-\item By construction, the action of $\fg$ on ${\tt B}_f$ determines a map ${\tt f}:  {\tt U}_n \fg \to {\tt B}$ of strict prefactorization algebras.
-\owen{I'm not sure this is true ... but let's be optimistic.}
-\item We then construct an explicit strict prefactorization algebra $\clies(\Omega \otimes \fg, {\tt B}_f)$ as a kind of ``convolution algebra.'' 
+\item By construction, the action of $\fg$ on ${\tt B}_f$ determines a map ${\tt f}:  {\tt U}_n \fg \to {\tt B}$ of strict $\Disk_n$-algebras that models the original map~$f$.
+\item We then construct an explicit strict $\Disk_n$-algebra $\clies(\Omega \otimes \fg, {\tt B}_f)$ as a kind of ``convolution algebra.'' 
 \item We show this object fits canonically into a centralizer diagram: there is a map
 \[
 \clies(\Omega \otimes \fg, {\tt B}_f) \otimes {\tt U}_n \fg \to {\tt B}_f
 \]
 such that precomposing with the map $1 \otimes \id_{{\tt U}_n \fg}$ is the map~${\tt f}$.
-Fitting into such a diagram guarantees a canonical map $\clies(\Omega \otimes \fg, {\tt B}_f) \to {\tt Z}_f$ as strict prefactorization algebras. 
-\item We then verify that this map is a quasi-isomorphism on disks. 
+Fitting into such a diagram guarantees a canonical map $\clies(\Omega \otimes \fg, {\tt B}_f) \to {\tt Z}_f$ as strict $\Disk_n$-algebras. 
+\item We then verify that this map is a quasi-isomorphism on disks, by the Lurie-Francis result mentioned above. 
 \end{enumerate}
 Hence it induces a weak equivalence of the associated $E_n$ algebras. 
+
+\subsection{Consequences of the central result}
 
 \owen{Some easy but important situations to examine:}
 \begin{itemize}
@@ -160,16 +169,17 @@ center is modeled by the locally constant factorization algebra that assigns
 \]
 to each open set $U \subset \RR^n$.
 \end{cor}
-\greg{I will add stuff and rewrite that latter, hopefully to explain ``how'' to see the $E_{n+1}$-structure}
-\owen{Add remark for ", which by Dunn's additivity theorem has in fact a natural $E_{n+1}$ algebra structure."}
 
-\greg{shall relate this to $P_n$-center of $\fg$. that shall also (but I have to think about the proof more), 
+\owen{Add remark that by Dunn's additivity theorem, the center has a natural $E_{n+1}$ algebra structure.}
+\greg{I will add stuff and rewrite that later, hopefully to explain ``how'' to see the $E_{n+1}$-structure}
+
+\greg{We could relate this to $P_n$-center of $\fg$. That shall also (but I have to think about the proof more), 
 at least up to formality gives the $P_{n+1}$-structure on it. }
+
 This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, 
 since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns
 $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
 
-\greg{somewhere recall that $\UU_n$ and center i that case are unoriented $E_n$-algebras and defined factorization algebras over any manifold which came from the formula}
 Having an explicit presentation for the centralizer of a map of $E_n$ algebras leads to a calculation of factorization homology.
 The enveloping $E_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$-algebra in the sense of~\cite{AF},
 and hence determines a factorization algebra on any un-oriented $n$-dimensional manifold \cite{Knudsen}.
@@ -185,38 +195,33 @@ Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal var
 For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
 see Example~\ref{eg: TT}. 
 
-\begin{rmk}
-The preceding results are known to experts we spoke to, including John Francis and Ben Knudsen. 
-Nevertheless, we record these results to document in the literature and for future use in mathematical physics,
-where such constructions already appear but lack proofs of their universal properties.
-\end{rmk}
+\greg{Somewhere we should recall that $\UU_n$ and its center are unoriented $E_n$-algebras and define factorization algebras over any manifold that came from the formula}
 
-\owen{Below is an orphaned set of results. Perhaps we prove it, or perhaps we just reserve it for future projects.}
-
-Our novel contribution in this paper is the following large $N$ result. Let $A$ be a unital algebra over a field $k$ of characteristic zero, 
-and $u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A)$ be the map of Lie algebras determined by the unit in $A$. 
-The induced map $\UU_nu_A: \UU_n\sl_\infty(k) \to \UU_n\gl_\infty(A)$ makes $\UU_n\gl_\infty(A)$ is an $E_n$ algebra in $\sl_\infty(k)$-modules.
-
-\begin{thm}
-\label{thm: large N}
-The centralizer ${\frak Z}_{E_n}(\UU_nu_A)$ of the map $\UU_nu_A$ is the $E_n$ algebra obtained by forgetting the dg commutative algebra
-\[
-\clies(\sl_\infty(k)) \otimes \Sym(\Cyc_*(A)[1-n])
-\]
-down to an $E_n$ algebra.
-
-When $k$ is $\RR$ or $\CC$, this centralizer is modeled by the locally constant factorization algebra that assigns
-\[
-\clies(\sl_\infty(\Omega^*(U)))\otimes \Sym(\Cyc_*(A \otimes \Omega^*_c(U))[1])
-\]
-to each open set $U \subset \RR^n$.
-\end{thm}
-\greg{Shall we keep these examples which uses/but are the easy part/ of LQT theorem ?}
-\owen{We should write explicitly what happens in the case $A = k$, and maybe $n=1$.}
-
-We can calculate the factorization homology of this factorization algebra explicitly.
-
-\greg{need to add a notation/convention somewhere including that $\Sigma^n$ will be shift functor, convention for grading and so on}
+\owen{Commented out below is an orphaned set of results. Perhaps we prove it, or perhaps we just reserve it for future projects.}
+%
+%Our novel contribution in this paper is the following large $N$ result. Let $A$ be a unital algebra over a field $k$ of characteristic zero, 
+%and $u_A: \sl_\infty(k) \hookrightarrow \gl_\infty(A)$ be the map of Lie algebras determined by the unit in $A$. 
+%The induced map $\UU_nu_A: \UU_n\sl_\infty(k) \to \UU_n\gl_\infty(A)$ makes $\UU_n\gl_\infty(A)$ is an $E_n$ algebra in $\sl_\infty(k)$-modules.
+%
+%\begin{thm}
+%\label{thm: large N}
+%The centralizer ${\frak Z}_{E_n}(\UU_nu_A)$ of the map $\UU_nu_A$ is the $E_n$ algebra obtained by forgetting the dg commutative algebra
+%\[
+%\clies(\sl_\infty(k)) \otimes \Sym(\Cyc_*(A)[1-n])
+%\]
+%down to an $E_n$ algebra.
+%
+%When $k$ is $\RR$ or $\CC$, this centralizer is modeled by the locally constant factorization algebra that assigns
+%\[
+%\clies(\sl_\infty(\Omega^*(U)))\otimes \Sym(\Cyc_*(A \otimes \Omega^*_c(U))[1])
+%\]
+%to each open set $U \subset \RR^n$.
+%\end{thm}
+%\greg{Shall we keep these examples which uses/but are the easy part/ of LQT theorem ?}
+%\owen{We should write explicitly what happens in the case $A = k$, and maybe $n=1$.}
+%
+%We can calculate the factorization homology of this factorization algebra explicitly.
+%
 
 \section{Background}
 
@@ -244,9 +249,6 @@ in any presentable symmetric monoidal stable $\infty$-category $\cC$,
 we only work in the infinity category of chain complexes $(\Mod_k, \otimes_k)$, where $k$ is a field of characteristic zero.
 We summarize Knudsen's result in this setting as follows.
 
-
-
-
 \begin{thm}\label{T:UnofLie}
 There is a commuting square of adjunctions
 \[
@@ -271,13 +273,16 @@ to each open set $U \subset \RR^n$.
 
 The second part of this result leads to the explicit models in our theorems.
 
+In fact, Knudsen shows a stronger version of the second part.
+if one restricts to working with open balls in $\RR^n$ (rather than arbitrary open sets)
+then there is a $\Disk_n$-algebra ${\tt U}_n \fg$ assigning $\cliels(\fg[-n])$ to each ball and it is manifestly locally constant.
+This algebra ${\tt U}_n \fg$ is a model for~$\UU_n \fg$.
+
 \begin{rmk}
 It follows from theorem~\ref{T:UnofLie} that for any $E_n$-algebra $B$, 
 its underlying complex is equipped with a homotopy-coherent Lie algebra structure.
 Depending on one's preferences, one can work with an an $L_\infty$-algebra structure or strictify to a dg Lie algebra structure (at the cost of replacing the complex with something quasi-isomorphic but typically much larger).
 \end{rmk}
-
-\owen{\label{note on little model} Note that if we work with the colored operad of disks/boxes, then Poincar\'e lemma tells us that we can use the strict model $\cliel(\fg[-n])$ rather than the fatter model $\cliels(\Omega^*_c(U) \otimes \fg)$. I think Ben actually shows this too. This would be worth explaining because we can then use a much simpler strictification of $f$.}
 
 \subsection{Centralizers of maps of $E_n$ algebras and the derived center}
 \label{sec: centralizer}
@@ -318,15 +323,11 @@ the $\infty$-category $\Mod^{E_n}_A(\cC)$ is equivalent to the $\infty$-category
 See Remark 7.3.5.3 of \cite{LurieHA}, Coroallary 13 in~\cite{GG-Notes} and Section 2 of \cite{FrancisHH}.
 Concretely, this claim arises from the fact that as a module over $A$ as an $E_n$ algebra, 
 $M \in \Mod^{E_n}_A(\cC)$ is equipped with a commuting family of actions by $A$ parametrized by $\RR^n \setminus \{0\}\cong S^{n-1} \times \RR_{>0}$.
-This action factors through the left action of the $E_1$ algebra $\int_{S^{n-1} \times \RR} A$ arising from factorization homology over the complement of the origin,
-which integrates all those actions and through which they all factor. \mahmoud{i think the picture of why it is a one-sided action is clearer if we use $S^{n-1} \times \RR^+$ istead of $S^{n-1} \times \RR$}
+This action factors through the left action of the $E_1$ algebra $\int_{S^{n-1} \times \RR_{>0}} A$ arising from factorization homology over the complement of the origin,
+which integrates all those actions and through which they all factor. 
 As shown in Theorem 7.5.3.1 of \cite{LurieHA} and earlier in Proposition 3.16 of \cite{FrancisHH}, 
 this algebra $\int_{S^{n-1} \times \RR} A$ is equivalent to ${\rm Free}(1_\cC)$, 
 the image of the unit object $1_\cC \in \cC$ under the left adjoint ${\rm Free}$ to the forgetful functor $\Mod^{E_n}_A(\cC) \to \cC$.
-
-\owen{We need to track here how the $E_n$-monoidal product intertwines with these functors.
-If we can find a juicy comment in \cite{LurieHA} or \cite{FrancisHH}, 
-we can claim they've shown that the map $f: \UU_n \fg \to B$ allows us to ``forget'' $B$ to an $E_n$ algebra in $\fg$-modules.}
 
 \owen{I commented out a discussion of the factorization algebra version of centralizer, as I don't think it's relevant.}
 
@@ -385,7 +386,7 @@ There is a functor
 \]
 \end{cor}
 
-These results can be marshaled to prove the following.
+These results can be marshaled to prove the first bullet point of our main theorem.
 
 \begin{prp}
 Let $\fg$ be a Lie algebra in $\Ch_k^{\otimes_k}$, 
@@ -420,13 +421,12 @@ We denote $\obl(f^*\Hat{B})$ by~$B_f$.
 By the strictification results, $B_f$ admits a model ${\tt B}_f$ as a strict prefactorization algebra with values in the stable symmetric monoidal \owen{other adjectives} model category $\Alg_\Lie(\Ch_k^{\rm dg})$.
 As the forgetful functor $\Alg_\Lie({\tt Ch}_k) \to \Alg_\Lie({\tt Ch}_k)$ is \owen{more adjectives},
 we obtain an underlying strict prefactorization algebra ${\tt B}$ with values in cochain complexes.
-Moreover, there is a canonical map $\cliel(\fg[-n]) \to {\tt B}$ of strict prefactorization algebras that models $f$, as desired.
+Moreover, there is a canonical map ${\tt U}_n \fg \to {\tt B}$ of strict prefactorization algebras that models $f$, as desired.
 \end{rmk}
 
-It remains to prove the technical result.
+It remains to prove the technical result.\owen{We are stuck on this point.}
 
 \begin{proof}[Proof of proposition~\ref{prp: def of obl}]
-\owen{We are stuck on this point.}
 We construct the underlying functor of $\infty$-categories $\Mod^{E_n}_{\UU_n \fg} \to \LMod_{U\fg}$ 
 before lifting to a lax $E_n$-monoidal functor.
 
@@ -563,43 +563,87 @@ is the desired forgetful functor.
 %\end{rmk}
 %
 
-\section{Convolution algebras over colored operads}
-
-\def\conv{{\rm Conv}}
-
-\owen{For an ordinary colored operad $\cO$, describe how to produce a $\cO$-algebra $\conv(C,A)$ from any $\cO$-coalgebra $C$ and $\cO$-algebra $A$.}
-
-\owen{A special case to consider is how a cocycle $f \in \conv(C,A)$ encodes an $\cO$-algebra morphism $C^! \to A$ from $C^! = \conv(C,1)$, the ``Koszul dual'' $\cO$-algebra to the coalgebra $C$. This cocycle can be used to twist the differential of $\conv(C,A)$. Hopefully this admits an obvious deformation-theoretic interpretation.}
-
-\owen{If we do this correctly, we might find a model category-theoretic picture of how Koszul duality works for prefactorization algebras.}
+%\section{Convolution algebras over colored operads}
+%
+%\def\conv{{\rm Conv}}
+%
+%\owen{For an ordinary colored operad $\cO$, describe how to produce a $\cO$-algebra $\conv(C,A)$ from any $\cO$-coalgebra $C$ and $\cO$-algebra $A$.}
+%
+%\owen{A special case to consider is how a cocycle $f \in \conv(C,A)$ encodes an $\cO$-algebra morphism $C^! \to A$ from $C^! = \conv(C,1)$, the ``Koszul dual'' $\cO$-algebra to the coalgebra $C$. This cocycle can be used to twist the differential of $\conv(C,A)$. Hopefully this admits an obvious deformation-theoretic interpretation.}
+%
+%\owen{If we do this correctly, we might find a model category-theoretic picture of how Koszul duality works for prefactorization algebras.}
 
 \section{Proof of Theorem \ref{thm: centralizer}}
 
-Let us start by summarizing the proof. The idea, using theorem~\ref{T:En=Fac}, 
-is that we only have to prove the factorization algebra part of the main theorem. 
-To do so, we first use the universal property of the centralizer to obtain 
-a canonical factorization algebra map 
-\[\Theta_f: \clies\big(\fg\otimes \Omega (-), B(-) \big) \longrightarrow  {\frak Z}(\mathbf{f})(-)\]
-where ${\frak Z}(\mathbf{f})(-)$ is the centralizer of locally constant factorization algebras (\ref{D:centralizerFacAlgebra}).
+We have implemented the first step in the proof strategy.
+This section is devoted to the remaining steps.
+First, we explain steps (2)-(4), which are rather formal.
+Next, we define the $\Disk_n$-algebra $\clies(\Omega^* \otimes \fg, {\tt B}_f)$ as a kind of convolution algebra.
+Finally, we get to the heart of the construction:
+we show that this convolution algebra naturally sits inside a centralizer diagram.
+By the universal property of the centralizer, we then obtain 
+a canonical map 
+\[
+\Theta_f: \clies\big(\fg\otimes \Omega (-), B(-) \big) \longrightarrow  {\frak Z}(\mathbf{f})(-)
+\]
+where ${\frak Z}(\mathbf{f})(-)$ is the centralizer of locally constant $\Disk_n$-algebras~(\ref{D:centralizerFacAlgebra}).
+\owen{Calibrate notations!}
+It is then a direct computation to verify $\Theta_f$ is a quasi-isomorphism.
 
+\owen{Commented below is Greg's summary of the proof.}
 
-Using the fundamental properties of universal $E_n$-enveloping algebra, we then prove that 
-this map is a weak-equivalence. 
+%Let us start by summarizing the proof. The idea, using theorem~\ref{T:En=Fac}, 
+%is that we only have to prove the factorization algebra part of the main theorem. 
+%To do so, we first use the universal property of the centralizer to obtain 
+%a canonical factorization algebra map 
+%\[\Theta_f: \clies\big(\fg\otimes \Omega (-), B(-) \big) \longrightarrow  {\frak Z}(\mathbf{f})(-)\]
+%where ${\frak Z}(\mathbf{f})(-)$ is the centralizer of locally constant factorization algebras (\ref{D:centralizerFacAlgebra}).
+%
+%
+%Using the fundamental properties of universal $E_n$-enveloping algebra, we then prove that 
+%this map is a weak-equivalence. 
+%
+%\smallskip 
+%
+%We thus let $\mathbf{f}: \cliels\big(\fg \otimes \Omega^* (-)) \to B(-)$ be a factorization algebra map (see~\eqref{eq:DefofFonFaclevel}). We can 
+%assume that the structural (natural) quasi-isomorphism
+%$$\bigotimes_{i\in I} B(U_i) 
+%\stackrel{\simeq}\longrightarrow B(\coprod  U_i)$$ are chain complexes isomorphisms by replacing $B(-)$ by the prefactorization algebra 
+%given, on any $V=\coprod_{j\in J} V_j$, where the $V_j$ are the connected components of $V$, by   $\mathop{\bigotimes}\limits_{j\in J} B(V_j)$. 
+%The structural maps of $B$ are then a quasi-isomorphism of prefactorization algebras between it and $B(-)$. The map $\mathbf{f}$ is lifted similary using 
+%the isomorphism $\bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega_c^* (U_i)\big) \cong
+%\cliels\big(\fg \otimes \Omega_c^* (U)\big)$ as well. We assume we have this property in the rest of this section.
+%\greg{Technically we may need to replace the latter by a quasi-isomorphic one satisfying the same property to ensure we do have a strict fact algebra map. 
+%Not sure if we should elaborate on it more since in the end we only need that to obtain lemma~\ref{L:inducedFacgModstruct} to make the construction valid 
+%and therefore only use the induced sym on the cosheaf of $L_\infty$-module maps}
 
-\smallskip 
+\subsection{Strictification}
 
-We thus let $\mathbf{f}: \cliels\big(\fg \otimes \Omega^* (-)) \to B(-)$ be a factorization algebra map (see~\eqref{eq:DefofFonFaclevel}). We can 
-assume that the structural (natural) quasi-isomorphism
-$$\bigotimes_{i\in I} B(U_i) 
-\stackrel{\simeq}\longrightarrow B(\coprod  U_i)$$ are chain complexes isomorphisms by replacing $B(-)$ by the prefactorization algebra 
-given, on any $V=\coprod_{j\in J} V_j$, where the $V_j$ are the connected components of $V$, by   $\mathop{\bigotimes}\limits_{j\in J} B(V_j)$. 
-The structural maps of $B$ are then a quasi-isomorphism of prefactorization algebras between it and $B(-)$. The map $\mathbf{f}$ is lifted similary using 
-the isomorphism $\bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega_c^* (U_i)\big) \cong
-\cliels\big(\fg \otimes \Omega_c^* (U)\big)$ as well. We assume we have this property in the rest of this section.
-\greg{Technically we may need to replace the latter by a quasi-isomorphic one satisfying the same property to ensure we do have a strict fact algebra map. 
-Not sure if we should elaborate on it more since in the end we only need that to obtain lemma~\ref{L:inducedFacgModstruct} to make the construction valid 
-and therefore only use the induced sym on the cosheaf of $L_\infty$-module maps}
+\owen{Recall the relevant strictification results.}
+
+\owen{Sketch of where ${\tt f}$ comes from.}
+Given a cochain complex $M$, every $\fg$-representation $\rho: \fg \to \End(M)$ determines a cocommutative coderivation $\cliels(\fg) \to M$.
+Conversely, such a coderivation determines an $L_\infty$ action of $\fg$ on $M$.
+\owen{\dots}
+Applying these observations to ${\tt B}_f$ disk-by-disk, we obtain the following.
+
+\begin{lmm}
+As ${\tt B}_f$ is a $\Disk_n$-algebra in $\fg$-representations,
+there is a map of $\Disk_n$-algebras in cochain complexes ${\tt f}:  {\tt U}_n \fg \to {\tt B}$.
+\end{lmm}
+
+\owen{I'm not sure how to prove the following, or even if we need to.}
+
+\begin{prp}
+The map ${\tt f}:  {\tt U}_n \fg \to {\tt B}$ of strict $\Disk_n$-algebras models the original map~$f$.
+\end{prp}
+
+\subsection{The convolution $\Disk_n$-algebra}
+
+\owen{Describe it.}
+
 \subsection{Construction of the universal pairing in factorization algebras}\label{SS:constuctionthetaf}
+
 We start by defining a pairing between the factorization algebras of Chevalley-Eilenberg (co)chains in order to use the universal property of centralizers.
 
 \smallskip 
