@@ -232,14 +232,16 @@ see Example~\ref{eg: TT}.
 
 \owen{Recall Jacob's results and what it means in conjunction with strictification.}
 
-\owen{I want to work with the colored operad of round disks (or rectilinear boxes) in $\RR^n$.}
+\owen{I want to work with a colored operad $\Disk_n$ of round disks (or rectilinear boxes) in $\RR^n$.}
 
 Note that in the theorem we use the following equivalence due to Lurie~\cite{LurieHA}. 
 
 \begin{thm}
 \label{T:En=Fac} 
-There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$.
+There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$. 
 \end{thm}
+
+\owen{Plus a version for $\Disk_n$ algebras}
 
 \subsection{Enveloping $E_n$ algebras of Lie algebras}
 \label{sec: enveloping}
@@ -302,7 +304,12 @@ where $u$ is induced by the identity map $1_\cC \to {\frak Z}_{E_n}(f)$.
 The {\em center} of an $E_n$ algebra $A$ is the centralizer of its identity morphism $\id_A: A \to A$. We will denote it ${\frak Z}_{E_n}(A) 
 := {\frak Z}_{E_n}(\id_A)$.
 \end{dfn}
-When $n=1$ and $\cC$ is the category of vector spaces, the centralizer of $f: A \to B$ consists of the subspace of elements of $B$ that commute with the image $f(A)$ inside~$B$. Thus, the center of $A$ agrees with the traditional notion. See Theorem 5.3.1.30 of~\cite{LurieHA}, or Proposition 6.22 in~\cite{GTZ3}, for an alternative characterization.
+
+When $n=1$ and $\cC$ is the category of vector spaces, 
+the centralizer of $f: A \to B$ consists of elements in $B$ that commute with the image $f(A)$ inside~$B$. 
+In particular, taking $f$ as the identity map, 
+the center of $A$ defined above agrees with the traditional notion. 
+See Theorem 5.3.1.30 of~\cite{LurieHA}, or Proposition 6.22 in~\cite{GTZ3}, for an alternative characterization.
 
 \begin{prp}\label{T:centralizer=inthom} 
 The centralizer ${\frak Z}_{E_n}(f)$ exists and can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category $\Mod^{E_n}_A(\cC)$. \mahmoud{we should probably spell out the meaning of the classifying object in this case to make it obvious that the centralizer is the classifying object}
@@ -355,7 +362,7 @@ the image of the unit object $1_\cC \in \cC$ under the left adjoint ${\rm Free}$
 %\end{lmm}
 %
 
-We now turn to proving Theorem~\ref{thm: centralizer}.
+%We now turn to proving Theorem~\ref{thm: centralizer}.
 
 \section{Lifting $B$ to an $E_n$ algebra $B_f$ in $\fg$-modules}
 
