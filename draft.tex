@@ -109,9 +109,10 @@ f: \UU_n \fg \to \UU_n \fh
 between their enveloping $E_n$ algebras.
 The centralizer ${\frak Z}_{E_n}(f)$ is an $E_n$-algebra modeled by the factorization algebra 
 \[
-\clies(\Omega^* \otimes \fg, \cliels(\Omega^*_c \otimes \fh))
+\clies(\Omega^* \otimes \fg, \cliels(\Omega^*_c \otimes \fh)_f)
 \]
-equipped with a convolution-type product.
+equipped with a convolution-type product,
+where the subscript $f$ indicates how $\cliels(\Omega^*_c \otimes \fh)$ is a module over $\Omega^* \otimes \fg$.
 \end{thm}
 
 \owen{I think we could (and maybe should) also discuss the $E_n$-Koszul dual situation involving cochains.}
@@ -388,70 +389,88 @@ We have the evaluation map
 \end{equation}
 given by applying a function on a given tensor in $Sym(\fg[-1])$.
 
-\begin{lmm}
-\label{lmm: CE from map}
+\begin{dfn}
+\label{dfn: CE from map}
 \owen{an $L_\infty$ map $\fg \rightsquigarrow \fh$ induces a cochain complex $\clies(\fg,\cliels(\fh))$.}
-\end{lmm}
+\end{dfn}
 
 
 \subsection{Defining the convolution factorization algebra}
 
 Our goal here is to construct the factorization algebra that models the centralizer.
 First, we need to show that there is a well-defined functor (in the 1-categorical sense) ${\rm Opens}_{\RR^n} \to \Ch_k$ assigning $\clies(\Omega^*(V) \otimes \fg, \bU_n \fh(V))$ to each open set $V$.
-Once that is in place, it is straightforward to describe the structure maps of the prefactorization algebra.
+Once that is in place, it is straightforward to describe the structure maps of the prefactorization algebra and to verify it forms a factorization algebra.
 
-The role of 
-
-The lemma allows us to define the factorization algebra given on any open $U$ by  the Chevalley-Eilenberg chain complexes
-$ \cliels\big(\fg \otimes \Omega^*_c(U), \bU_n \fh(U) \big)$ (with their standard differential)
-of $\fg \otimes \Omega^*_c(U)$ with value on $\bU_n \fh(U)$ whose structure maps are given, for any $(U_i)_{i\in I}$ 
-a finite family of pairwise disjoint open subsets of an open $V$, by 
-\begin{multline}\label{eq:transClieFac}
- \bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega^*_c(U_i), \bU_n \fh(U_i) \big) \cong Sym\Big(
- \fg\otimes (\bigoplus_{i\in I}  \Omega^*_c(U_i))[-1]  \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big) \\ 
- \cong Sym\Big(\fg\otimes \Omega_c\big(\coprod U_i\big)[-1] \Big) \otimes \Big( \bigotimes_{i\in I} B(U_i)\Big)  
- \stackrel{\omega^*\otimes \mu_B}\longrightarrow Sym(\fg\otimes \Omega_c(V)[-1] ) \otimes B(V) \\ 
- = \cliels(\fg\otimes \Omega_c(V), B(V))
-\end{multline}
-where $\omega$ is induced by the cosheaf structure of compactly supported form and $\mu_B$ is the factorization algebra structure of $B$.
-
-
-
-The (homotopy) sheaf structure of forms also gives us structure maps
-\begin{multline}\label{eq:transClieFacCochain}
- \bigotimes_{i\in I} \clies\big(\fg \otimes \Omega^*(U_i), B(U_i) \big) \longrightarrow
-  \Hom\Big(Sym\big(\fg\otimes (\bigoplus_{i\in I}  \Omega^*(U_i))[-1]\big),  \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \cong \Hom\Big(Sym\big(\fg\otimes \Omega^*(\coprod U_i)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \stackrel{\rho}\longrightarrow \Hom\Big(Sym\big(\fg\otimes \Omega^*(V)[-1]\big), \bigotimes\limits_{i\in I} B(U_i) \Big) \\
- \stackrel{\mu_B}\longrightarrow 
-  \clies(\fg\otimes \Omega (V), B(V))
-\end{multline}
-where $\rho$ is given by the restriction of forms onto a subspace. 
-
-\label{L:ClieFacDef} 
- Similarly, the structure maps~\eqref{eq:transClieFacCochain} makes 
- $ \clies\big(\fg \otimes \Omega^*, \bU_n \fh \big)$ a (resp. locally constant) factorization algebra.
-
-\begin{dfn}\label{dfn:CEofFact}
-We {call   $\cliels\big(\fg \otimes \Omega^*_c, \bU_n \fh \big)$ the Chevalley-Eilenberg chain factorization algebra of $\fg$ with value in $\bU_n \fh$} 
-and $\clies\big(\fg \otimes \Omega^*, \bU_n \fh \big)$ the Chevalley-Eilenberg cochain factorization algebra.
-\end{dfn}
-\begin{proof}
- 
-\end{proof}
-
-
-A special but very interesting case is of course when $\bU_n \fh$ is itself an enveloping algebra. 
-\begin{cor}
- Let $\fg$, $\fh$ be dg-Lie algebras and $f:\fg\to \fh$ be a dg-Lie algebra morphism. 
- Then the induced factorization algebra map $\mathbf{\UU_n f}:  \cliels( \fg \otimes \Omega^*_c) \longrightarrow  \cliels( \fh \otimes \Omega^*_c) $
- is the standard map $\cliels(f)$ induced by $f$ and the action of $\fg  \otimes \Omega^*_c$ is obtained from the $\fg$-action on $\fh$ by Leibniz rule.
-\end{cor}
-\begin{rmk}\greg{Extends to $L_\infty$ case in a sentence or too}
+\begin{rmk}
+These arguments are now standard in the literature of factorization algebras, so we will be brief in our discussion.
+See, e.g., \cite{CG1} \owen{stuff by Greg and others} for more.
 \end{rmk}
 
+Consider now a fixed open set $V \subset \RR^n$.
+Then the $L_\infty$ map $f: \fg \rightsquigarrow \fh$ induces canonically an $L_\infty$ map 
+\[
+\tilde{f}: \Omega^*_c(V) \otimes \fg \to \Omega^*_c(V) \otimes \fh
+\]
+by base change along the map $k \to \Omega^*_c(V)$ of dg commutative algebras,
+as the compactly supported de Rham forms form a dg commutative algebra under wedge product.
+In consequence, we see that $\Omega^*_c(V) \otimes \fg$ acts on $\Omega^*_c(V) \otimes \fh$ and hence equips it with the structure of an $L_\infty$ module over $\Omega^*_c(V) \otimes \fg$.
+We denote this module as
+\[
+(\Omega^*_c(V) \otimes \fh)_f
+\]
+to emphasize the dependence on the original map~$f$.
+In this action, the wedge product of forms intertwines with the $L_\infty$ structure on $\fg$ in a very simple way: 
+they simply happen side by side, but do not affect each other.
 
-\owen{Add a remark on convolution}
+Observe that $\Omega^*_c(V)$ is a module over the dg commutative algebra $\Omega^*(V)$ of {\em non}\/compactly supported forms.
+This action extends immediately to the module $(\Omega^*_c(V) \otimes \fh)_f$, so we now view it as an $L_\infty$ module over $\Omega^*(V)$ as well.
+In consequence, we have a cochain complex
+\[
+\clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+\]
+on each open set~$V$.
+
+The next step is to verify functoriality of this construction over the poset of opens.
+This property follows quickly from the fact that wedge product of forms preserves support.
+Given an inclusion $i: V' \subset V$ of opens, if we take a form $\alpha \in \Omega^*(V)$ and a compactly supported form $\beta \in \Omega^*_c(V')$, then the wedge product $\alpha \wedge i_* \beta \in \Omega^*_c(V)$ after applying the extension-by-zero map $i_*: \Omega^*_c(V') \to \Omega^*_c(V)$ equals the wedge product $i_*(i^*\alpha \wedge \beta)$ arising from the restriction $i^* \alpha$ of $\alpha$ to~$V'$.
+In consequence, the action of $\Omega^*(V) \otimes \fg$ on $(\Omega^*_c(V') \otimes \fh)_f$ arising from the restriction map $\Omega^*(V) \otimes \fg \to \Omega^*(V') \otimes \fg$ of $L_\infty$ algebras agrees with action induced by the inclusion of $(\Omega^*_c(V') \otimes \fh)_f$ as a (strict) submodule of~$(\Omega^*_c(V) \otimes \fh)_f$.
+This argument is manifestly associative under composition of inclusions, so we have shown our first claim.
+
+\begin{lmm}
+The assignment
+\[
+V \mapsto \clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+\]
+determines a functor from ${\rm Opens}_{\RR^n}$ to~$\Ch_k$.
+\end{lmm}
+
+We now turn to extending this functor to an algebra over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$ whose colors are opens in $\RR^n$ where there is a precisely a single operation from a tuple of opens $[V_1,\ldots,V_k]$ to an open $W$ if and only if both $W$ contains every $V_j$ and the $V_j$ are all pairwise disjoint.
+
+The key fact is that the functors $\cliels$ and $\clies$ are suitably symmetric monoidal:
+they send a product of $L_\infty$ algebras to a tensor product of cochain complexes.
+Hence it suffices to examine the underlying functors to $L_\infty$ algebras.
+As the functors $\Omega^*$ and $\Omega^*_c$ send finite disjoint unions of opens to the direct product of cochain complexes, 
+the functors like $\Omega^* \otimes \fg$ and $\Omega^*_c \otimes \fh$ send finite disjoint unions of opens to products of $L_\infty$ algebras.
+In consequence, we obtain the desired second claim.
+
+\begin{lmm}
+The assignment
+\[
+V \mapsto \clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+\]
+determines a prefactorization algebra, i.e., a strict algebra over ${\rm Opens}_{\RR^n}^\sqcup$ with values in~$\Ch_k^\otimes$.
+\end{lmm}
+
+Due to the Poincar\'e lemma, the inclusion of a disk into a bigger disk $D \hookrightarrow D'$ makes the structure map 
+\[
+\clies(\Omega^*(D) \otimes \fg, (\Omega^*_c(D) \otimes \fh)_f) \xto{\simeq} \clies(\Omega^*(D) \otimes \fg, (\Omega^*_c(D) \otimes \fh)_f)
+\]
+a quasi-isomorphism.
+Hence this prefactorization algebra is locally constant in a homotopical sense.
+
+In fact, it defines a {\em factorization} algebra, by arguments that can be found in \owen{chapter 6 of \cite{CG1} and elsewhere}.
+
+\owen{Add a remark on convolution?}
 %
 %\def\conv{{\rm Conv}}
 %
