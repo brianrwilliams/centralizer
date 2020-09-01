@@ -753,10 +753,15 @@ of underlying chain complexes, i.e. an equivalence after applying forgetful func
 \end{proof}
 \greg{That proof shall still be polished but it's the idea.}
 
-
-\begin{prp}\label{L:canonicaltocenterisquis} The morphism~\eqref{eq:canonicaltocenter}
-\[\clies\big(\fg\otimes \Omega , B \big) \longrightarrow  {\frak Z}(\mathbf{f})\] is a weak-equivalence of factorization algebras. 
+\begin{prp}
+\label{L:canonicaltocenterisquis} 
+The map~\eqref{eq:canonicaltocenter}
+\[
+\clies\big(\fg\otimes \Omega , B \big) \longrightarrow  {\frak Z}(\mathbf{f})
+\] 
+is a quasi-isomorphism of factorization algebras. 
 \end{prp}
+
 \begin{proof}
 By definition (and Lemma~\ref{L:ComTriangCent}) the map 
 $\theta_f$ is a factorization algebra map between \emph{locally constant} factorization algebras. 
@@ -765,8 +770,10 @@ $\clies\big(\fg\otimes \Omega (U), B(U) \big) \longrightarrow  {\frak Z}(\mathbf
 homeomorphic to $\RR^n$. This is given by lemma~\ref{L:thetaquisondisk}.
 \end{proof}
 
-\section{Factorization algebra description of the center}
+\section{Functoriality of the centralizer construction}
 \label{S:centerinFacAlg}
+
+\owen{If I'm understanding, this section shows that our construction satisfies the ``composition'' of centralizers on the nose. One corollary is that the center has a strict associative product!}
 
 The universal property of centralizer (definition~\ref{D:centralizer}) implies that, for any $E_n$-algebras maps $A\stackrel{f}\to B$ and
 $B\stackrel{g}\to C$, there are natural morphisms
