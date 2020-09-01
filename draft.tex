@@ -1166,46 +1166,77 @@ $E_n$-enveloping algebra functor to a (homotopy) Lie algebra homomorphism.
 %
 %\greg{To add: remark that it implies the corollary~\ref{thm: center} and so.}
 
-\section{Factorization algebras that model centralizers}
-
-
-\section{Examples}
-
-
-\greg{Add the Koszul duality example. Add examples coming from topological spaces and abelian Lie algebras}
-
-\subsection{Koszul duality}
-\label{sec: Koszul}
-
-Consider the trivial $E_n$-algebra $k$ and suppose $\varepsilon : \UU_n \fg \to k$ is the natural augmentation. 
-Then, ${\frak Z}_n (\varepsilon)$ is the $E_n$-{\em Koszul dual} of the $E_n$-algebra $\UU_n \fg$. 
-Our results provide a model for this $E_n$-algebra as a locally constant factorization algebra on $\RR^n$ which assigns to an open set $U \subset \RR^n$ the cochain complex
-\[
-\clie \left(\fg \otimes \Omega(U) \right) .
-\]
-
-\subsection{Universal bulk TFT}
+\section{Universal bulk TFT}
 \label{sec: TFT}
 
-Generally speaking, the local observables of a topological field theory on a manifold $M$ form a locally constant factorization algebra on $M$. 
+Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
-Let $\fg$ be a dg Lie algebra and consider the $E_n$ algebra $\UU_n \fg$. 
-We have shown that a model for the $E_n$-center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
+\begin{thm}
+Let $M$ be a smooth $n$-manifold and $\fg$ a Lie algebra. 
+There is a constructible factorization algebra on $M \times [0,1)$ satisfying the following properties:
+\begin{itemize}
+\item[(1)] On the $n$-dimensional stratum $M \times \{0\}$ the factorization algebra is equivalent to $\clieu (\fg \otimes \Omega_c)$.
+\item[(2)] On the $(n+1)$-dimensional stratum $M \times (0,1)$, the factorization algebra is a quantization of the observables of topological BF theory based on the Lie algebra $\fg$.
+\item[(3)] Locally on $\RR^n \times [0,1)$ this factorization algebra produces \brian{deligne picture how to say}
+\end{itemize}
+\end{thm}
+
+%Let $\fg$ be a dg Lie algebra and consider the $E_n$ algebra $\UU_n \fg$. 
+%We have shown that a model for the $E_n$-center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
+%\[
+%\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
+%\]
+
+\subsection{The bulk TFT}
+
+Let us place the locally constant factorization algebra module the $E_n$-enveloping algebra $\clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
+This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
+
+\begin{dfn}
+For an open set $V \subset M \times (0,1)$ let $\Obs^{\rm cl}_{\rm BF} (V)$ be the cochain complex 
 \[
-\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
+\Obs^{\rm cl}_{\rm BF} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
 \]
+The assignment $V \mapsto \Obs^{\rm cl}_{\rm BF}(V)$ defines a locally constant factorization algebra on $M \times (0,1)$. 
+\end{dfn}
 
-Let us place this locally constant factorization algebra on the $n$-manifold $M$.
-This factorization algebra is equivalent to the pushforward of a factorization algebra $\cF_{\rm bulk}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times \RR \to M$. 
-We proceed to construct this factorization algebra. 
+We note that $\Obs_{\rm BF}^{\rm cl}$ is a factorization algebra with values in commutative dg algebras. 
+In fact, it is given by the ``classical observables" of a topological field theory on $M \times (0,1)$ known as ``topological BF theory". 
 
-For an open set $V \subset M \times I$ let $\cF^{\rm cl}_{\rm bulk} (V)$ be the cochain complex 
+We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm BF}$ on $M$.
+Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $E_n$-center of $\UU_n \fg$.
+Recall, this model is given by the factorization algebra on $M$:
+\begin{equation}\label{eqn:centerTFT}
+\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
+\end{equation}
+
+The ``dequantization" is defined using the following filtration of this model.
+For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
+
+\begin{dfn}
+Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
 \[
-\cF^{\rm cl}_{\rm bulk} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
+F^k \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
-The assignment $V \mapsto \cF^{\rm cl}_{\rm bulk}(V)$ defines a locally constant factorization algebra $\cF^{\rm cl}_{\rm bulk}$ on $M \times \RR$. 
+\end{dfn}
 
-The factorization algebra $\pi_* \cF^{\rm cl}_{\rm bulk}$ on $M$ is quasi-isomorphic to a certain limit, or ``deqauntization", of the $E_n$-center of $\UU_n \fg$. 
+This is a filtration of factorization algebras on $M$. 
+The associated graded factorization algebra is
+\[
+{\rm Gr} \; \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
+\]
+Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
+
+ \begin{lmm}
+There is a quasi-isomorphism of commutative factorization algebras on $M$:
+\[
+\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) .
+\]
+\end{lmm}
+
+In fact, we will show that this quasi-isomorphism is a deformation retraction. 
+
+\begin{proof}
 To exhibit this quasi-isomorphism, we introduce the following cochain maps.
 For an open set $U \subset M$ let
 \[
@@ -1218,29 +1249,7 @@ Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and defi
 r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
 \]
 by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
-
-The ``dequantization" of the $E_n$-center is defined using the following filtration of ${\frak Z}_n(\UU_n \fg)$.
-We for any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
-The increasing filtration for the $E_n$-center is defined by
-\[
-F^k {\frak Z}_n(\UU_n \fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
-\]
-This is a filtration of factorization algebras on $M$. 
-The associated graded factorization algebra is
-\[
-{\rm Gr} \;  {\frak Z}_n(\UU_n \fg)  = \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
-\]
-Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
-
-\begin{lmm}
-Integration along $\RR$ determines a quasi-isomorphism of factorization algebras on $M$:
-\[
-\int_\RR : \pi_* \cF^{\rm cl}_{\rm bulk} \xto{\simeq} {\rm Gr} \;  {\frak Z}_n(\UU_n \fg) .
-\]
-In fact, this is a deformation retraction with retract given by $r_\phi$. 
-\end{lmm}
- 
-\brian{Maybe you can finesse this last part better than me.}
+\end{proof}
 
 %\begin{lmm}
 %Consider the locally constant factorization algebra $\cF_{\rm bulk}$ on $M \times \RR$ which assigns to an open set $U \subset M \times \RR$
@@ -1258,6 +1267,25 @@ In fact, this is a deformation retraction with retract given by $r_\phi$.
 %is a quasi-isomorphism. 
 %
 %\end{proof}
+
+\section{Factorization algebras that model centralizers}
+
+\brian{Remark about twisting in the unoriented case.}
+
+\section{Examples}
+
+
+\greg{Add the Koszul duality example. Add examples coming from topological spaces and abelian Lie algebras}
+
+\subsection{Koszul duality}
+\label{sec: Koszul}
+
+Consider the trivial $E_n$-algebra $k$ and suppose $\varepsilon : \UU_n \fg \to k$ is the natural augmentation. 
+Then, ${\frak Z}_n (\varepsilon)$ is the $E_n$-{\em Koszul dual} of the $E_n$-algebra $\UU_n \fg$. 
+Our results provide a model for this $E_n$-algebra as a locally constant factorization algebra on $\RR^n$ which assigns to an open set $U \subset \RR^n$ the cochain complex
+\[
+\clie \left(\fg \otimes \Omega(U) \right) .
+\]
 
 \subsection{$E_n$-calculus}
 \label{sec: TT}
