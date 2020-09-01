@@ -423,23 +423,33 @@ In this action, the wedge product of forms intertwines with the $L_\infty$ struc
 they simply happen side by side, but do not affect each other.
 
 Observe that $\Omega^*_c(V)$ is a module over the dg commutative algebra $\Omega^*(V)$ of {\em non}\/compactly supported forms.
-This action extends immediately to the module $(\Omega^*_c(V) \otimes \fh)_f$, so we now view it as an $L_\infty$ module over $\Omega^*(V)$ as well.
+This action extends immediately to the module $(\Omega^*_c(V) \otimes \fh)_f$, 
+so we now view it as an $L_\infty$ module over $\Omega^*(V) \otimes \fg$ as well.
+We now need to explain how to make $\cliels(\Omega^*_c(V) \otimes \fh)$ into an $L_\infty$-module over $\Omega^*(V) \otimes \fg$.
+Here we rely on the fact that modules over an $L_\infty$ algebra are symmetric monoidal over $\otimes_k$, 
+so that we can construct new modules from a given module by taking symmetric powers.
+Since
+\[
+\cliels(\Omega^*_c(V) \otimes \fh) = \bigoplus_{n \geq 0} \Sym^n(\Omega^*_c(V) \otimes \fh[1])
+\]
+as cochain complexes,
+we see that $\cliels(\Omega^*_c(V) \otimes \fh)$ acquires a canonical action of $\Omega^*(V) \otimes \fg$.
 In consequence, we have a cochain complex
 \[
-\clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+\clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
 \]
 on each open set~$V$.
 
 The next step is to verify functoriality of this construction over the poset of opens.
 This property follows quickly from the fact that wedge product of forms preserves support.
 Given an inclusion $i: V' \subset V$ of opens, if we take a form $\alpha \in \Omega^*(V)$ and a compactly supported form $\beta \in \Omega^*_c(V')$, then the wedge product $\alpha \wedge i_* \beta \in \Omega^*_c(V)$ after applying the extension-by-zero map $i_*: \Omega^*_c(V') \to \Omega^*_c(V)$ equals the wedge product $i_*(i^*\alpha \wedge \beta)$ arising from the restriction $i^* \alpha$ of $\alpha$ to~$V'$.
-In consequence, the action of $\Omega^*(V) \otimes \fg$ on $(\Omega^*_c(V') \otimes \fh)_f$ arising from the restriction map $\Omega^*(V) \otimes \fg \to \Omega^*(V') \otimes \fg$ of $L_\infty$ algebras agrees with action induced by the inclusion of $(\Omega^*_c(V') \otimes \fh)_f$ as a (strict) submodule of~$(\Omega^*_c(V) \otimes \fh)_f$.
+In consequence, the action of $\Omega^*(V) \otimes \fg$ on $\cliels(\Omega^*_c(V') \otimes \fh)_f$ arising from the restriction map $\Omega^*(V) \otimes \fg \to \Omega^*(V') \otimes \fg$ of $L_\infty$ algebras agrees with action induced by the inclusion of $\cliels(\Omega^*_c(V') \otimes \fh)_f$ as a (strict) submodule of~$\cliels(\Omega^*_c(V) \otimes \fh)_f$.
 This argument is manifestly associative under composition of inclusions, so we have shown our first claim.
 
 \begin{lmm}
 The assignment
 \[
-V \mapsto \clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+V \mapsto \clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
 \]
 determines a functor from ${\rm Opens}_{\RR^n}$ to~$\Ch_k$.
 \end{lmm}
@@ -456,19 +466,24 @@ In consequence, we obtain the desired second claim.
 \begin{lmm}
 The assignment
 \[
-V \mapsto \clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f)
+V \mapsto \clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
 \]
 determines a prefactorization algebra, i.e., a strict algebra over ${\rm Opens}_{\RR^n}^\sqcup$ with values in~$\Ch_k^\otimes$.
 \end{lmm}
 
 Due to the Poincar\'e lemma, the inclusion of a disk into a bigger disk $D \hookrightarrow D'$ makes the structure map 
 \[
-\clies(\Omega^*(D) \otimes \fg, (\Omega^*_c(D) \otimes \fh)_f) \xto{\simeq} \clies(\Omega^*(D) \otimes \fg, (\Omega^*_c(D) \otimes \fh)_f)
+\clies(\Omega^*(D) \otimes \fg, \cliels(\Omega^*_c(D) \otimes \fh)_f) \xto{\simeq} \clies(\Omega^*(D) \otimes \fg, \cliels(\Omega^*_c(D) \otimes \fh)_f)
 \]
 a quasi-isomorphism.
 Hence this prefactorization algebra is locally constant in a homotopical sense.
 
 In fact, it defines a {\em factorization} algebra, by arguments that can be found in \owen{chapter 6 of \cite{CG1} and elsewhere}.
+
+\begin{dfn}
+\label{dfn: centralizer for f}
+Let $\clies(\Omega^* \otimes \fg, (\bU_n \fh)_f)$ denote this factorization algebra on $\RR^n$ arising from the map $f: \fg \rightsquigarrow \fh$.
+\end{dfn}
 
 \owen{Add a remark on convolution?}
 %
@@ -483,136 +498,188 @@ In fact, it defines a {\em factorization} algebra, by arguments that can be foun
 \subsection{Construction of the universal pairing in factorization algebras}
 \label{SS:constuctionthetaf}
 
-We start by defining a pairing between the factorization algebras of Chevalley-Eilenberg (co)chains in order to use the universal property of centralizers.
+Our goal in this subsection is to construct a map of factorization algebras
+\[
+\Theta_{\bf{f}}: \clies(\Omega^* \otimes \fg, (\Omega^*_c \otimes \fh)_f) \otimes \bU_n \fg \to \bU_n \fh,
+\]
+while in the next subsection we will show it fits into a centralizer diagram.
+To produce our map, we first construct it separately on each open subset and then explain why the construction is functorial. 
 
-First note that compactly supported form embeds in all forms, therefore we can apply 
-any element of $\cliels\big(\fg \otimes \Omega^* , B\big)$ 
-to any element of $\cliels\big(\fg \otimes \Omega_c^* \big)$. Therefore, for any  $p\in \bN$, we have an evaluation 
-\begin{equation} \label{eqdef:ev} \begin{array}{c}\ev: Sym^p \big( \fg \otimes \Omega^* (U)[-1] ,B(U)\big)
-\otimes  Sym^p( \fg\otimes \Omega^*_c(U) [1]) \stackrel{ev}\longrightarrow B(U)  
-  \\
- (x,\Phi) \,\longmapsto\, (-1)^{p(|x|+p) } \Phi (x)\end{array}
-\end{equation} induced by this embedding  in all forms followed by evaluating on a function.
+Let $V \subset \RR^n$ be open.
+The canonical pairing between Lie algebra chains and cochains provides a canonical cochain map
+\[
+\clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f) \otimes \cliels(\Omega^*(V) \otimes \fg) \to \cliels(\Omega^*_c(V) \otimes \fh)_f.
+\]
+The canonical inclusion $\Omega^*_c(V) \otimes \fg \hookrightarrow \Omega^*(V) \otimes \fg$ induces a canonical inclusion 
+\[
+\cliels(\Omega^*_c(V) \otimes \fg) \hookrightarrow \cliels(\Omega^*(V) \otimes \fg)
+\]
+and hence, precomposing this inclusion with the pairing, we obtain our desired map
+\[
+\Theta_{\bf{f}}(V): \clies(\Omega^*(V) \otimes \fg, (\Omega^*_c(V) \otimes \fh)_f) \otimes \bU_n \fg(V) \to \bU_n \fh(V)
+\]
+for each open~$V$.
 
+This construction is functorial in $V$ because wedge product of differential forms preserves support,
+so a minor variation on our argument above implies the following.
 
-
-
-
-Second, the augmentation of $B$ makes $B$ augmented as well (in the obvious sense of~\cite{Gi-NotesFactorization}) and this induces an augmentation on
-$\clies\big(\fg\otimes \Omega , B \big)$ as well as follows. 
-We have the canonical factorization algebra map  $\mathbf{1}$  defined, for any open $U$, by 
-\[\xymatrix{ k(U)=k  \ar[r]^{\quad \cong}& 
-B(\emptyset) \ar[r] & B(U)  } 
- \] where the last map is given by the factorization algebra structure of $B$. This gives the canonical element element 
- $\mathbf{1}\in \clies(\fg\otimes \Omega^*, B) )$ which is the unit $k\to \clies(\fg\otimes \Omega^*, B) )$
- of the factorization structure of 
- the Chevalley-Eilenberg cochain factorization algebras~\ref{dfn:CEofFact}.  
- The augmentation map is given by $\varphi\mapsto \varepsilon \circ \varphi \circ 
- \iota$ where $\iota: k(U) \cong k \hookrightarrow Sym(\fg \otimes \Omega (U) [1]) $ is the inclusion and $\varepsilon B(U)\to k(U)$ is the augmentation of 
- $B$. We therefore obtain a canonical splitting of factorization algebras 
- \begin{equation}\label{eq:splittingbyaugm}
-   \clies\big(\fg\otimes \Omega^*, B\big)  \, \cong \, k \oplus \overline{ \clies(\fg\otimes \Omega^*, B) )}
- \end{equation}
-given by the augmentation. Below~\ref{Rmk:defgraduationclie}, we refine  this splitting, using it  freely  on each-connected component, to obtain 
-a natural grading on it.
- 
- 
- 
-
-We use the splitting and~\eqref{eqdef:ev} to define our pairing as follows. First for a \emph{connected} open subset $W$ of $\RR^n$, we define 
-\begin{multline}\label{eq:defevforconnected}
- \ev_f^W:   \clies (\fg\otimes \Omega (W), B(W)) \otimes \cliels\big(\fg \otimes \Omega_c^* (W)) 
- \\ \cong \, \left( k(W) \oplus \overline{\clies (\fg\otimes \Omega (W), B(W))  }\right) 
- \otimes \cliels\big(\fg \otimes \Omega_c^* (W))  \\ \cong
- \cliels\big(\fg \otimes \Omega_c^* (W))  \oplus  \left(\overline{\clies (\fg\otimes \Omega (W), B(W))  }\otimes \cliels\big(\fg \otimes \Omega_c^* (W)) 
- \right) \\
- \stackrel{ \mathbf{f}\oplus \ev}\longrightarrow  
- B(W)
-\end{multline}
-where $\mathbf{f}$ is the factorization algebra morphism  we are given.
-In other words, if $\varphi = \lambda \mathbf{1} \oplus \overline{\varphi}$ is the decomposition of $\varphi \in  \clies (\fg\otimes \Omega (W), B(W)) $,
-we have 
-\[ \ev_f^W(\varphi\otimes x)= \lambda \mathbf{f}(W)(x) + \overline{\varphi}(x). \]
-
-
-
-
-
-
-
-We extend this construction  to any 
- open subset in $\RR^n$ using the \lq\lq{}Leibniz rule\rq\rq{}, that is on using it freely on every connected components. 
- More precisely, 
-  write $U=\coprod_{i\in I} U_i$ the decomposition of an open into the  disjoint union 
-of its connected components. Using, the natural isomorphisms of complexes 
-\[Sym\big(\fg \otimes \Omega (U)[-1]\big) 
-\cong \bigotimes\limits_{i\in I} Sym\big(\fg \otimes \Omega ( U_i)[-1]\big), \mbox{  } 
-\bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega_c^* (U_i)\big) \cong
-\cliels\big(\fg \otimes \Omega_c^* (U)\big)\] and
-$\bigotimes_{i\in I} B(U_i) 
-\stackrel{\simeq}\longrightarrow B(U)$, we obtain the 
- (natural) decomposition 
-\begin{multline}\label{eq:defgraduationoncentralizernonconnected}
- \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, 
- \Hom\left(\bigotimes\limits_{i\in I} Sym\Big(\fg\otimes \Omega (U_i)[-1]), 
- \bigotimes\limits_{i\in I} B(U_i)\right) \\ \cong \, 
- \bigotimes\limits_{i\in I}\left( k(U_i) \oplus \overline{\clies (\fg\otimes \Omega (U_i), B(U_i))  }\right).
-\end{multline}
-and we can therefore define 
-\begin{multline}\label{eq:defineevf}
- \ev_f^U: \clies (\fg\otimes \Omega (U), B(U)) \otimes \cliels\big(\fg \otimes \Omega_c^* (U)) 
- \\ \stackrel{\simeq}\longrightarrow  
-\bigotimes\limits_{i\in I}\left( k(U_i) \oplus \overline{\clies (\fg\otimes \Omega (U_i), B(U_i))  }\right) \otimes 
- \left(\bigotimes\limits_{i\in I}\cliels\big(\fg \otimes \Omega_c^* (U_i)\big)\right)  \\ 
- \stackrel{\bigotimes\limits_{i\in I}\ev^{U_i}_f}\longrightarrow  
- \bigotimes\limits_{i\in I} B(U_i) \stackrel{\mu_B}\longrightarrow B(U)
-\end{multline}
-where $\mu_B$ is the canonical structure map of the factorization algebra $B$ and the other maps are given by~\eqref{eq:defgraduationoncentralizernonconnected} 
-and~\eqref{eq:defevforconnected}.
-\greg{In~\eqref{eq:defgraduationoncentralizernonconnected} and definition of Chevalley Eilneberg complexes, one shall explain/takes care of the appropriate 
-things to do (like completion) for non-finitely dimensional Lie algebras}
-\greg{The decomposition used to extend $\ev$ on non-connected open can be done with any augmented $B$, simply by defining it onto the prefact alg obtained by tensoring 
-out on non-connected components and using the quasi-isomorphism canonical map to $\clies(\fg, B)$ in that case. Not sure which way is easier to define/mention}
-
-
-\begin{rmk}\label{Rmk:defgraduationclie} The decomposition~\eqref{eq:defgraduationoncentralizernonconnected} makes 
-the Chevalley-Eilenberg cochain complex with value on an open $U$ naturally\footnote{The grading
-is compatible (by the same argument as Lemma~\ref{L:pairingCE}) with the factorization algebra structure maps of
-$\clies(\fg\otimes \Omega, B)$} graded by the subsets of its connected components:
- \begin{equation}\label{eq:defgraduationoncentralizernonconnected2}
- \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, \bigoplus\limits_{J\subset I} {\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) 
-\end{equation}
-where $J$ runs through all the (possibly empty) subsets of $I$.  Precisely, the $J$-piece is
-\begin{multline*}
-{\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) = 
-\left(\bigotimes\limits_{j\in I\setminus J} k(U_j)\right) \otimes \left(\bigotimes\limits_{j\in J}
-\overline{\clies (\fg\otimes \Omega (U_j), B(U_j))  }\right) \\ \cong 
-\overline{\clies (\fg\otimes \Omega (\coprod\limits_{j\in_J}U_j), B(\coprod\limits_{j\in_J}U_j))  }.
-\end{multline*}
-We think of an element of ${\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ has an element of ${\clies}\big(\fg\otimes \Omega^*(U), B(U)\big)$
-\emph{with support $\coprod\limits_{j\in J} U_j$}.   
-Note that the component $k$ in the decomposition~\eqref{eq:splittingbyaugm} is precisely the component 
-${\clies}^{(\emptyset)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ corresponding to the empty family.
-\end{rmk}
-In other words, if $\varphi = \sum_{J\subset I} \varphi^{(J)}$ is the decomposition of $\varphi$ in its graded pieces, for all 
-$X= \bigotimes\limits_{i\in I} X_i \in \bigotimes\limits_{I}\cliels(\fg\otimes \Omega_c^*(U_i)) \cong \cliels(\fg\otimes \Omega^*_c(U))$, we 
-have the following formula generalizing the one for connected open  subsets:
-\begin{equation} \ev_f^U(\varphi\otimes X)= \sum_{J\subset I} \mu_B\left(\mathbf{f}\Big(\bigotimes\limits_{i\in I\setminus J} 
-X_i\Big)\otimes  \varphi^{(J)}\Big(\bigotimes\limits_{j\in J} 
-X_j\Big)\right) \end{equation}
-where $\mu_{B,J}: B\Big(\coprod\limits_{i\in I\setminus J}U_i\Big)\otimes B\Big(\coprod\limits_{j\in J}U_j\Big) \to B(U)$
-is the  structure map of $B$.
-
-
-
-\begin{lmm}\label{L:pairingCE}
- The pairing morphism $\ev_f$ defined by formula~\eqref{eq:defineevf} extends to a factorization algebra morphism
- \[\ev_f:  \cliels\big(\fg \otimes \Omega^* , B\big) \otimes \cliels\big(\fg \otimes \Omega_c^* \big) 
- \longrightarrow B.\]
+\begin{lmm}
+The assignment
+\[
+V \mapsto \Theta_{\bf{f}}(V)
+\]
+determines a natural transformation between functors from ${\rm Opens}_{\RR^n}$ to~$\Ch_k$.
 \end{lmm}
-\begin{proof}
- 
-\end{proof}
+
+\owen{Commented out below is an extensive argument by Greg about the existence and behavior of $\Theta_f$. If my explanation above is missing something crucial, I suspect it's addressed in that argument.}
+
+%We start by defining a pairing between the factorization algebras of Chevalley-Eilenberg (co)chains in order to use the universal property of centralizers.
+%
+%First note that compactly supported form embeds in all forms, therefore we can apply 
+%any element of $\cliels\big(\fg \otimes \Omega^* , B\big)$ 
+%to any element of $\cliels\big(\fg \otimes \Omega_c^* \big)$. Therefore, for any  $p\in \bN$, we have an evaluation 
+%\begin{equation} \label{eqdef:ev} \begin{array}{c}\ev: Sym^p \big( \fg \otimes \Omega^* (U)[-1] ,B(U)\big)
+%\otimes  Sym^p( \fg\otimes \Omega^*_c(U) [1]) \stackrel{ev}\longrightarrow B(U)  
+%  \\
+% (x,\Phi) \,\longmapsto\, (-1)^{p(|x|+p) } \Phi (x)\end{array}
+%\end{equation} induced by this embedding  in all forms followed by evaluating on a function.
+%
+%Second, the augmentation of $B$ makes $B$ augmented as well (in the obvious sense of~\cite{Gi-NotesFactorization}) and this induces an augmentation on
+%$\clies\big(\fg\otimes \Omega , B \big)$ as well as follows. 
+%We have the canonical factorization algebra map  $\mathbf{1}$  defined, for any open $U$, by 
+%\[\xymatrix{ k(U)=k  \ar[r]^{\quad \cong}& 
+%B(\emptyset) \ar[r] & B(U)  } 
+% \] where the last map is given by the factorization algebra structure of $B$. This gives the canonical element element 
+% $\mathbf{1}\in \clies(\fg\otimes \Omega^*, B) )$ which is the unit $k\to \clies(\fg\otimes \Omega^*, B) )$
+% of the factorization structure of 
+% the Chevalley-Eilenberg cochain factorization algebras~\ref{dfn:CEofFact}.  
+% The augmentation map is given by $\varphi\mapsto \varepsilon \circ \varphi \circ 
+% \iota$ where $\iota: k(U) \cong k \hookrightarrow Sym(\fg \otimes \Omega (U) [1]) $ is the inclusion and $\varepsilon B(U)\to k(U)$ is the augmentation of 
+% $B$. We therefore obtain a canonical splitting of factorization algebras 
+% \begin{equation}\label{eq:splittingbyaugm}
+%   \clies\big(\fg\otimes \Omega^*, B\big)  \, \cong \, k \oplus \overline{ \clies(\fg\otimes \Omega^*, B) )}
+% \end{equation}
+%given by the augmentation. Below~\ref{Rmk:defgraduationclie}, we refine  this splitting, using it  freely  on each-connected component, to obtain 
+%a natural grading on it.
+% 
+% 
+% 
+%
+%We use the splitting and~\eqref{eqdef:ev} to define our pairing as follows. First for a \emph{connected} open subset $W$ of $\RR^n$, we define 
+%\begin{multline}\label{eq:defevforconnected}
+% \ev_f^W:   \clies (\fg\otimes \Omega (W), B(W)) \otimes \cliels\big(\fg \otimes \Omega_c^* (W)) 
+% \\ \cong \, \left( k(W) \oplus \overline{\clies (\fg\otimes \Omega (W), B(W))  }\right) 
+% \otimes \cliels\big(\fg \otimes \Omega_c^* (W))  \\ \cong
+% \cliels\big(\fg \otimes \Omega_c^* (W))  \oplus  \left(\overline{\clies (\fg\otimes \Omega (W), B(W))  }\otimes \cliels\big(\fg \otimes \Omega_c^* (W)) 
+% \right) \\
+% \stackrel{ \mathbf{f}\oplus \ev}\longrightarrow  
+% B(W)
+%\end{multline}
+%where $\mathbf{f}$ is the factorization algebra morphism  we are given.
+%In other words, if $\varphi = \lambda \mathbf{1} \oplus \overline{\varphi}$ is the decomposition of $\varphi \in  \clies (\fg\otimes \Omega (W), B(W)) $,
+%we have 
+%\[ \ev_f^W(\varphi\otimes x)= \lambda \mathbf{f}(W)(x) + \overline{\varphi}(x). \]
+%
+%
+%
+%
+%
+%
+%
+%We extend this construction  to any 
+% open subset in $\RR^n$ using the \lq\lq{}Leibniz rule\rq\rq{}, that is on using it freely on every connected components. 
+% More precisely, 
+%  write $U=\coprod_{i\in I} U_i$ the decomposition of an open into the  disjoint union 
+%of its connected components. Using, the natural isomorphisms of complexes 
+%\[Sym\big(\fg \otimes \Omega (U)[-1]\big) 
+%\cong \bigotimes\limits_{i\in I} Sym\big(\fg \otimes \Omega ( U_i)[-1]\big), \mbox{  } 
+%\bigotimes_{i\in I} \cliels\big(\fg \otimes \Omega_c^* (U_i)\big) \cong
+%\cliels\big(\fg \otimes \Omega_c^* (U)\big)\] and
+%$\bigotimes_{i\in I} B(U_i) 
+%\stackrel{\simeq}\longrightarrow B(U)$, we obtain the 
+% (natural) decomposition 
+%\begin{multline}\label{eq:defgraduationoncentralizernonconnected}
+% \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, 
+% \Hom\left(\bigotimes\limits_{i\in I} Sym\Big(\fg\otimes \Omega (U_i)[-1]), 
+% \bigotimes\limits_{i\in I} B(U_i)\right) \\ \cong \, 
+% \bigotimes\limits_{i\in I}\left( k(U_i) \oplus \overline{\clies (\fg\otimes \Omega (U_i), B(U_i))  }\right).
+%\end{multline}
+%and we can therefore define 
+%\begin{multline}\label{eq:defineevf}
+% \ev_f^U: \clies (\fg\otimes \Omega (U), B(U)) \otimes \cliels\big(\fg \otimes \Omega_c^* (U)) 
+% \\ \stackrel{\simeq}\longrightarrow  
+%\bigotimes\limits_{i\in I}\left( k(U_i) \oplus \overline{\clies (\fg\otimes \Omega (U_i), B(U_i))  }\right) \otimes 
+% \left(\bigotimes\limits_{i\in I}\cliels\big(\fg \otimes \Omega_c^* (U_i)\big)\right)  \\ 
+% \stackrel{\bigotimes\limits_{i\in I}\ev^{U_i}_f}\longrightarrow  
+% \bigotimes\limits_{i\in I} B(U_i) \stackrel{\mu_B}\longrightarrow B(U)
+%\end{multline}
+%where $\mu_B$ is the canonical structure map of the factorization algebra $B$ and the other maps are given by~\eqref{eq:defgraduationoncentralizernonconnected} 
+%and~\eqref{eq:defevforconnected}.
+%\greg{In~\eqref{eq:defgraduationoncentralizernonconnected} and definition of Chevalley Eilneberg complexes, one shall explain/takes care of the appropriate 
+%things to do (like completion) for non-finitely dimensional Lie algebras}
+%\greg{The decomposition used to extend $\ev$ on non-connected open can be done with any augmented $B$, simply by defining it onto the prefact alg obtained by tensoring 
+%out on non-connected components and using the quasi-isomorphism canonical map to $\clies(\fg, B)$ in that case. Not sure which way is easier to define/mention}
+%
+%
+%\begin{rmk}\label{Rmk:defgraduationclie} The decomposition~\eqref{eq:defgraduationoncentralizernonconnected} makes 
+%the Chevalley-Eilenberg cochain complex with value on an open $U$ naturally\footnote{The grading
+%is compatible (by the same argument as Lemma~\ref{L:pairingCE}) with the factorization algebra structure maps of
+%$\clies(\fg\otimes \Omega, B)$} graded by the subsets of its connected components:
+% \begin{equation}\label{eq:defgraduationoncentralizernonconnected2}
+% \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, \bigoplus\limits_{J\subset I} {\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) 
+%\end{equation}
+%where $J$ runs through all the (possibly empty) subsets of $I$.  Precisely, the $J$-piece is
+%\begin{multline*}
+%{\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) = 
+%\left(\bigotimes\limits_{j\in I\setminus J} k(U_j)\right) \otimes \left(\bigotimes\limits_{j\in J}
+%\overline{\clies (\fg\otimes \Omega (U_j), B(U_j))  }\right) \\ \cong 
+%\overline{\clies (\fg\otimes \Omega (\coprod\limits_{j\in_J}U_j), B(\coprod\limits_{j\in_J}U_j))  }.
+%\end{multline*}
+%We think of an element of ${\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ has an element of ${\clies}\big(\fg\otimes \Omega^*(U), B(U)\big)$
+%\emph{with support $\coprod\limits_{j\in J} U_j$}.   
+%Note that the component $k$ in the decomposition~\eqref{eq:splittingbyaugm} is precisely the component 
+%${\clies}^{(\emptyset)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ corresponding to the empty family.
+%\end{rmk}
+%In other words, if $\varphi = \sum_{J\subset I} \varphi^{(J)}$ is the decomposition of $\varphi$ in its graded pieces, for all 
+%$X= \bigotimes\limits_{i\in I} X_i \in \bigotimes\limits_{I}\cliels(\fg\otimes \Omega_c^*(U_i)) \cong \cliels(\fg\otimes \Omega^*_c(U))$, we 
+%have the following formula generalizing the one for connected open  subsets:
+%\begin{equation} \ev_f^U(\varphi\otimes X)= \sum_{J\subset I} \mu_B\left(\mathbf{f}\Big(\bigotimes\limits_{i\in I\setminus J} 
+%X_i\Big)\otimes  \varphi^{(J)}\Big(\bigotimes\limits_{j\in J} 
+%X_j\Big)\right) \end{equation}
+%where $\mu_{B,J}: B\Big(\coprod\limits_{i\in I\setminus J}U_i\Big)\otimes B\Big(\coprod\limits_{j\in J}U_j\Big) \to B(U)$
+%is the  structure map of $B$.
+%
+
+We need to show that this natural transformation extends to a morphism of prefactorization algebras,
+i.e., that it intertwines with the operations over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$.
+Here we use the fact that the evaluation pairing between Lie algebra chains and cochains plays nicely with products of $L_\infty$ algebras, in the following sense.
+Let $\fX, \fY$ be $L_\infty$ algebras and let $M, N$ be modules for those respective $L_\infty$ algebras.
+The direct sum $M \oplus N$ admits a natural action of the product $L_\infty$ algebra $\fX \times \fY$.
+Then the isomorphisms
+\begin{align*}
+\clies(\fX \times \fY, M \oplus N) \otimes \cliels(\fX \times \fY) 
+&\cong (\clies(\fX, M) \otimes \clies(\fY,N) ) \otimes (\cliels(\fX) \otimes \cliels(\fY) ) \\
+&\cong (\clies(\fX,M) \otimes \cliels(\fX) ) \otimes (\cliels(\fY,N) \otimes \cliels(\fY) )
+\end{align*}
+precompose with the tensored evaluation pairings
+\[
+\cong (\clies(\fX,M) \otimes \cliels(\fX) ) \otimes (\cliels(\fY,N) \otimes \cliels(\fY) ) \xto{\ev_\fX \otimes \ev_\fY} M \otimes N
+\]
+to provide a canonical map
+\[
+\clies(\fX \times \fY, M \oplus N) \otimes \cliels(\fX \times \fY) \to M \otimes N.
+\]
+In light of this observation and the fact that functors such as $\Omega^* \otimes \fg$ and $\Omega^*_c \otimes \fh$ send disjoint unions to products of $L_\infty$ algebras,
+we deduce the desired result.
+
+\begin{lmm}
+\label{L:pairingCE}
+The natural transformation $\Theta_{\bf{f}}$ determines a map of strict prefactorization algebras,
+i.e., algebras over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$.
+\end{lmm}
+
+\subsection{}
+
 We write, $1$ for the factorization algebra map defined, for any open $U$, by 
 \[\xymatrix{ k(U)=k  \ar[r]^{\quad \cong}& 
 B(\emptyset) \ar[r] & B(U)  } 
