@@ -372,6 +372,8 @@ this map is a weak-equivalence.
 
 \subsection{Standard manipulations with $L_\infty$ algebras and their modules}
 
+\owen{I want to recall briefly how an $L_\infty$ action on a cochain complex leads to all the variants of CE (co)chains.}
+
 To any $\fg$-module $M$ (wether $\fg$ is a dg Lie algebra or an $L_\infty$-algebra), 
 we can associate its Chevalley-Eilenberg cochain complex defined 
 by 
@@ -386,8 +388,19 @@ We have the evaluation map
 \end{equation}
 given by applying a function on a given tensor in $Sym(\fg[-1])$.
 
+\begin{lmm}
+\label{lmm: CE from map}
+\owen{an $L_\infty$ map $\fg \rightsquigarrow \fh$ induces a cochain complex $\clies(\fg,\cliels(\fh))$.}
+\end{lmm}
+
 
 \subsection{Defining the convolution factorization algebra}
+
+Our goal here is to construct the factorization algebra that models the centralizer.
+First, we need to show that there is a well-defined functor (in the 1-categorical sense) ${\rm Opens}_{\RR^n} \to \Ch_k$ assigning $\clies(\Omega^*(V) \otimes \fg, \bU_n \fh(V))$ to each open set $V$.
+Once that is in place, it is straightforward to describe the structure maps of the prefactorization algebra.
+
+The role of 
 
 The lemma allows us to define the factorization algebra given on any open $U$ by  the Chevalley-Eilenberg chain complexes
 $ \cliels\big(\fg \otimes \Omega^*_c(U), \bU_n \fh(U) \big)$ (with their standard differential)
