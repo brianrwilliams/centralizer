@@ -1021,14 +1021,22 @@ The commutativity of the lower square and triangle of the diagram follows from L
 
 \section{Universal bulk TFT}
 \label{sec: TFT}
+ 
+The operad of little $n$-disks 
+
+\brian{main thrust is to interpret this in terms of the BV / BD formalism}
+
 
 Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
+
+\brian{or there exists a filtration on the constructible factorization algebra whose associated graded is a commutative P0 constructible factorization algebra or $1$-shifted Poisson.}
+\brian{as a corollary butson-yoo}
 
 \begin{thm}
 Let $M$ be a smooth $n$-manifold and $\fg$ a Lie algebra. 
 There is a constructible factorization algebra on $M \times [0,1)$ satisfying the following properties:
 \begin{itemize}
-\item[(1)] On the $n$-dimensional stratum $M \times \{0\}$ the factorization algebra is equivalent to $\clieu (\fg \otimes \Omega_c)$.
+\item[(1)] On the $n$-dimensional stratum $M \times \{0\}$ the factorization algebra is equivalent to $\bU_n(\fg)$.
 \item[(2)] On the $(n+1)$-dimensional stratum $M \times (0,1)$, the factorization algebra is a quantization of the observables of topological BF theory based on the Lie algebra $\fg$.
 \item[(3)] Locally on $\RR^n \times [0,1)$ this factorization algebra produces \brian{deligne picture how to say}
 \end{itemize}
@@ -1040,9 +1048,17 @@ There is a constructible factorization algebra on $M \times [0,1)$ satisfying th
 %\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
 %\]
 
+\subsection{A swiss cheese model}
+
+\brian{Review interpretation of the center as a swiss cheese algebra context of Deligne conjecture}
+
+\begin{prp}
+For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times [0,1)$.
+\end{prp}
+
 \subsection{The bulk TFT}
 
-Let us place the locally constant factorization algebra module the $E_n$-enveloping algebra $\clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
+Let us place the locally constant factorization algebra model of the $E_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
 This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
 
 \begin{dfn}
@@ -1060,7 +1076,7 @@ We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm 
 Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $E_n$-center of $\UU_n \fg$.
 Recall, this model is given by the factorization algebra on $M$:
 \begin{equation}\label{eqn:centerTFT}
-\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
+\bZ_n(\fg) = \clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
 \end{equation}
 
 The ``dequantization" is defined using the following filtration of this model.
@@ -1069,21 +1085,21 @@ For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chev
 \begin{dfn}
 Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
 \[
-F^k \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
+F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
 \end{dfn}
 
 This is a filtration of factorization algebras on $M$. 
 The associated graded factorization algebra is
 \[
-{\rm Gr} \; \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
+{\rm Gr} \; \bZ_n(\fg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
 \]
 Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
 
  \begin{lmm}
 There is a quasi-isomorphism of commutative factorization algebras on $M$:
 \[
-\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bigg(\clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) \bigg) .
+\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
 \]
 \end{lmm}
 
