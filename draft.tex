@@ -798,28 +798,59 @@ Hence the map $\theta_{\bf f}$ is a quasi-isomorphism on any disk, as needed.
 
 \owen{If I'm understanding, this section shows that our construction satisfies the ``composition'' of centralizers on the nose. One corollary is that the center has a strict associative product!}
 
-The universal property of centralizer (definition~\ref{D:centralizer}) implies that, for any $E_n$-algebras maps $A\stackrel{f}\to B$ and
-$B\stackrel{g}\to C$, there are natural morphisms
-\begin{equation}\label{eqdef:canonicaltocentralizers} {\frak Z}_{E_n}(g) \otimes {\frak Z}_{E_n}(f) \longrightarrow {\frak Z}_{E_n}(g\circ f)
+The universal property of centralizer (recall definition~\ref{D:centralizer}) implies that 
+for any maps $A\stackrel{f}\to B$ and $B\stackrel{g}\to C$ of $E_n$-algebras, 
+there is a natural morphism
+\begin{equation}
+\label{eqdef:canonicaltocentralizers} 
+{\frak Z}_{E_n}(g) \otimes {\frak Z}_{E_n}(f) \longrightarrow {\frak Z}_{E_n}(g\circ f)
 \end{equation}
- 
-in the $\infty$-catgeory of $E_n$-algebras which are given by the  
-following commutative diagrams of $E_n$-algebras:
-\[\begin{tikzcd}
+in the $\infty$-category of $E_n$-algebras that arises from  
+following commutative diagram of $E_n$-algebras:
+\[
+\begin{tikzcd}
 &   {\frak Z}_{E_n}(g) \otimes  {\frak Z}_{E_n}(f) \otimes A \arrow[rr, "\id\otimes \ev_f"] &&  {\frak Z}_{E_n}(g) \otimes  B \arrow[dr, "\ev_g"]\\
 A \arrow[ur, "1\otimes \id_A"] \arrow[rr, "f"] && B \arrow[rr, "g"] \arrow[ur, "1\otimes \id_B"] && C. 
-\end{tikzcd}\]
- When $f=g=\id_A:A\to A$, we obtain a canonical morphism \begin{equation} \label{eq:dgAssofcenter}
- {\frak Z}_{E_n}(A){\otimes} {\frak Z}_{E_n}(A) \longrightarrow {\frak Z}_{E_n}(A).\end{equation}
- Lurie has proved that this multiplication makes the center into an (homotopy) dg-associative algebras in $E_n$-algebras 
- and therefore an $E_{n+1}$-algebra. Precisely: 
-\begin{prp}[\cite{LurieHA} Section 5] \label{P:PtyCenter}
-\begin{itemize}
- \item The canonical map~\eqref{eq:dgAssofcenter} makes the center ${\frak Z}_{E_n}(A)$ into an $E_1$-algebra in the symmetric monoidal category of 
- $E_n$-algebras.
- \item There is a canonical equivalence of the $\infty$-category $E_1\mathrm{-Alg}(E_n\mathrm{-Alg})$ with $E_{n+1}\mathrm{-Alg}$.
-\end{itemize}
-\end{prp}
+\end{tikzcd}
+\]
+When $f=g=\id_A:A\to A$, we thus obtain a canonical morphism 
+\begin{equation} 
+\label{eq:dgAssofcenter}
+{\frak Z}_{E_n}(A){\otimes} {\frak Z}_{E_n}(A) \longrightarrow {\frak Z}_{E_n}(A).
+\end{equation}
+Lurie \cite{HA} has proved that this multiplication makes the center into an $E_1$ algebra in $E_n$-algebras 
+and therefore an $E_{n+1}$-algebra, by Dunn additivity. 
+%To be precise, there is the following result.
+%
+%\begin{prp}[\cite{LurieHA} Section 5] 
+%\label{P:PtyCenter}
+%\begin{itemize}
+% \item The canonical map~\eqref{eq:dgAssofcenter} makes the center ${\frak Z}_{E_n}(A)$ into an $E_1$-algebra in the symmetric monoidal category of 
+% $E_n$-algebras.
+% \item There is a canonical equivalence of the $\infty$-category $E_1\mathrm{-Alg}(E_n\mathrm{-Alg})$ with $E_{n+1}\mathrm{-Alg}$.
+%\end{itemize}
+%\end{prp}
+
+A compelling aspect of our construction is that it lets one see these properties in a barehanded fashion,
+using familiar formulas with $L_\infty$ algebras.
+(More accurately, via composition of convolution algebras.)
+The goal of this section is to prove directly the following result.
+
+\owen{I'm pooping out, but it should be straightforward to revise this in light of our revisions above.}
+
+\begin{thm}
+\label{T:compcentralizer}
+ Let $f: \fg \to \fh$ and $g: \fh \to \fl$ be maps of  $L_\infty$-algebras.
+\begin{enumerate} 
+\item The composition $(-\star-)$ of factorization algebras (definition~\ref{def:comp}) is the canonical map 
+\[{\frak Z}_{E_n}(g) \otimes {\frak Z}_{E_n}(f) \longrightarrow {\frak Z}_{E_n}(g\circ f).\] 
+\item If $f= \fg \stackrel{\id}\to \fg$,  the composition $(-\star-)$ makes 
+$\clies\big(\fg \otimes \Omega, \cliels(\fg \otimes \Omega_c) \big)$ into an 
+(augmented) associative algebra object in factorization algebra, with unit given by $\mathbf{1}$, 
+which is equivalent to the structure of the center ${\frak Z} (\cliels(\fg \otimes \Omega_c))$. 
+\end{enumerate}
+\end{thm}
+
 When $A$ is a factorization algebra model for $A$, in virtue of theorem~\ref{T:En=Fac} 
 (and \greg{add reference for fac algebra in fac algebra maybe too}), in order to have a factorization algebra 
 model of the center of $A$, it is sufficient to describe the induced map 
@@ -943,23 +974,12 @@ The composition is asscoiative in the following sense.
 \end{tikzcd}\]
  is commutative.
 \end{lmm}
+
 \begin{proof}
- 
 \end{proof}
 
-\begin{thm}\label{T:compcentralizer}
- Let $f: \fg \to \fh$, $g: \fh \to \fl$ be  $L_\infty$-algebras morphisms.
-\begin{enumerate} \item 
- The composition $(-\star-)$ of factorization algebras (definition~\ref{def:comp}) 
- is the canonical map 
-\[{\frak Z}_{E_n}(g) \otimes {\frak Z}_{E_n}(f) \longrightarrow {\frak Z}_{E_n}(g\circ f).\] 
-\item If $f= \fg \stackrel{\id}\to \fg$,  the composition $(-\star-)$ makes 
-$\clies\big(\fg \otimes \Omega, \cliels(\fg \otimes \Omega_c) \big)$ into an 
-(augmented) associative algebra object in factorization algebra, with unit given by $\mathbf{1}$, 
-which is equivalent to the structure of the center ${\frak Z} (\cliels(\fg \otimes \Omega_c))$. 
-\end{enumerate}
-\end{thm}
-\begin{proof}
+
+\begin{proof}[Proof of Theorem~\ref{T:compcentralizer}]
 By universal property of centralizers, the canonical map~\eqref{eqdef:canonicaltocentralizers}  
 is the unique\footnote{it is unique in the $\infty$-categorical 
 sense, that is there is a contractible space of choices for it} map 
