@@ -1017,16 +1017,27 @@ The commutativity of the lower square and triangle of the diagram follows from L
 
 \section{Universal bulk TFT}
 \label{sec: TFT}
- 
-The operad of little $n$-disks 
 
-\brian{main thrust is to interpret this in terms of the BV / BD formalism}
+Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
+This is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra then considering the left-modules for this $E_1$-algebra.
 
+The $E_n$-center, or $E_n$-Hochschild cohomology, of an $E_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra which acts on $A$. 
+In Section \ref{sec:swiss} below, we will recall an elegant operadic interpretation of this universal picture and interpret it in terms of {\em constructible factorization algebras}. 
+In the case of $E_n$-enveloping algebras, we will provide a strict factorization model of this universal situation in terms of a constructible factorization algebra on an $(n+1)$-dimensional 
+manifold with boundary. 
 
-Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
+We will furthermore provide an interpretation of this constructible factorization algebra in terms of the quantization of a certain topological field theory. 
+The key insight is that there is a {\em classical limit} of the $E_n$-center $\fZ_n(\fg)$ which is equivalent to the observables of an $(n+1)$-dimensional topological field theory known as {\em BF theory}. 
+Likewise, there is a classical limit of $\UU_n(\fg)$ which can be viewed as a boundary condition for BF theory.
+
+In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $E_n$-enveloping algebra as a boundary condition. 
+This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
+
+%Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
 \brian{or there exists a filtration on the constructible factorization algebra whose associated graded is a commutative P0 constructible factorization algebra or $1$-shifted Poisson.}
 \brian{as a corollary butson-yoo}
+\brian{main thrust is to interpret this in terms of the BV / BD formalism}
 
 \begin{thm}
 Let $M$ be a smooth $n$-manifold and $\fg$ a Lie algebra. 
@@ -1046,11 +1057,35 @@ There is a constructible factorization algebra on $M \times [0,1)$ satisfying th
 
 \subsection{A swiss cheese model}
 
-\brian{Review interpretation of the center as a swiss cheese algebra context of Deligne conjecture}
+The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
+There is a similar operadic picture which encodes $E_{n+1}$-algebras together with their left-modules. 
+The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
+What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
+
+An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is a left $B$-module. 
+Indeed, if one restricts to the ``disk" colors we recover the data of $B$. 
+The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $A$ on $B$.
+
+Given an $E_n$-algebra $A$ we know that $E_n$-center $\fZ_n(A)$ has the structure of an $E_{n+1}$ algebra.
+Moreover, the pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair.
+This universality is a conjecture of \cite{Kontsevich} which was later made precise and proved in \cite{Thomas, Tamarkin, Dolgushev, jnkf others?}. 
+One consequence of this \brian{universal property}
+
+Abstractly, an algebra over the $(n+1)$-dimensional Swiss cheese operad can be modeled as a {\em constructible} factorization algebra on the upper half space $\HH^{n+1}$. 
+Concretely, this is the data of (1) a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$, (2) a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$, (3) together with natural \brian{finish}
+
+We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
+Combining these descriptions we obtain the following.
 
 \begin{prp}
-For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times [0,1)$.
+For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
+When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
 \end{prp}
+
+\begin{proof}[Proof sketch]
+In the bulk manifold $M \times \RR_{>0}$ we place the 
+\end{proof}
 
 \subsection{The bulk TFT}
 
