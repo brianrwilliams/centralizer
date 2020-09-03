@@ -1019,6 +1019,79 @@ The commutativity of the lower square and triangle of the diagram follows from L
 
 \greg{To add: remark that it implies the corollary~\ref{thm: center} and so.}
 
+\section{Higher calculus {\it \`a la} Kontsevich and Tamarkin-Tsygan}
+\label{sec: TT}
+
+The $E_n$-center, or $E_n$-Hochschild cohomology, of an $E_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra that acts on $A$ {\em qua} $E_n$ algebra. 
+
+In Section \ref{sec:swiss} below, we will recall an elegant operadic articulation of this idea and rephrase it in terms of {\em constructible factorization algebras} on a half-space~$\HH^{n+1}$. 
+
+
+\brian{HKR}
+
+Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
+A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
+On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
+The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
+
+On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
+\[
+\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\]
+to each open set $U \subset \RR$.
+In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
+Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
+
+Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
+\[
+\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
+\]
+where $\epsilon$ is a formal variable of degree~$1$. 
+\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
+We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
+
+
+\subsection{Swiss cheese pairs well with centers}
+
+Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
+This $\infty$-category is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra and then taking the left-modules for this $E_1$-algebra.
+
+The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
+There is a similar operadic picture which encodes $E_{n+1}$-algebras together with their left-modules. 
+The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
+What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
+
+
+An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is an $E_n$-algebra in the category of left $B$-modules.
+Indeed, if one restricts to the ``disk" colors we recover the data of $B$. 
+The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $A$ on $B$.
+
+Given an $E_n$-algebra $A$ we know that $E_n$-center $\fZ_n(A)$ has the structure of an $E_{n+1}$ algebra.
+Moreover, the pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair.
+This universality is a conjecture of \cite{Kontsevich} which was later made precise and proved in \cite{Thomas, Tamarkin, Dolgushev, jnkf others?}. 
+One consequence of this \brian{universal property}
+
+Abstractly, an algebra over the $(n+1)$-dimensional Swiss cheese operad can be modeled as a {\em constructible} factorization algebra on the upper half space $\HH^{n+1}$. 
+Concretely, this is the data of a pair $(\bB, \bM)$ where $\bB$ is a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$ and $\bM$ is a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$.
+
+\begin{prp}[\cite{Lurie, AF}]
+For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible factorization algebra on $M \times \RR_{\geq 0}$ which is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
+\end{prp}
+
+%We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
+%Combining these descriptions we obtain the following.
+%
+%\begin{prp}
+%For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
+%When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
+%\end{prp}
+%
+%\begin{proof}[Proof sketch]
+%In the bulk manifold $M \times \RR_{>0}$ we place the 
+%\end{proof}
+
+
 \section{Universal bulk TFT}
 \label{sec: TFT}
 
@@ -1059,41 +1132,6 @@ There is a constructible factorization algebra on $M \times [0,1)$ satisfying th
 %\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
 %\]
 
-\subsection{A swiss cheese model}
-
-The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
-There is a similar operadic picture which encodes $E_{n+1}$-algebras together with their left-modules. 
-The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
-What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
-
-An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is an $E_n$-algebra in the category of left $B$-modules.
-Indeed, if one restricts to the ``disk" colors we recover the data of $B$. 
-The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $A$ on $B$.
-
-Given an $E_n$-algebra $A$ we know that $E_n$-center $\fZ_n(A)$ has the structure of an $E_{n+1}$ algebra.
-Moreover, the pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair.
-This universality is a conjecture of \cite{Kontsevich} which was later made precise and proved in \cite{Thomas, Tamarkin, Dolgushev, jnkf others?}. 
-One consequence of this \brian{universal property}
-
-Abstractly, an algebra over the $(n+1)$-dimensional Swiss cheese operad can be modeled as a {\em constructible} factorization algebra on the upper half space $\HH^{n+1}$. 
-Concretely, this is the data of a pair $(\bB, \bM)$ where $\bB$ is a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$ and $\bM$ is a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$.
-
-\begin{prp}[\cite{Lurie, AF}]
-For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible factorization algebra on $M \times \RR_{\geq 0}$ which is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
-\end{prp}
-
-%We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
-%Combining these descriptions we obtain the following.
-%
-%\begin{prp}
-%For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
-%When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
-%\end{prp}
-%
-%\begin{proof}[Proof sketch]
-%In the bulk manifold $M \times \RR_{>0}$ we place the 
-%\end{proof}
 
 \subsection{The bulk TFT}
 
@@ -1181,42 +1219,7 @@ by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$.
 
 \greg{Add the Koszul duality example. Add examples coming from topological spaces and abelian Lie algebras}
 
-\subsection{Koszul duality}
-\label{sec: Koszul}
-
-Consider the trivial $E_n$-algebra $k$ and suppose $\varepsilon : \UU_n \fg \to k$ is the natural augmentation. 
-Then, ${\frak Z}_n (\varepsilon)$ is the $E_n$-{\em Koszul dual} of the $E_n$-algebra $\UU_n \fg$. 
-Our results provide a model for this $E_n$-algebra as a locally constant factorization algebra on $\RR^n$ which assigns to an open set $U \subset \RR^n$ the cochain complex
-\[
-\clie \left(\fg \otimes \Omega(U) \right) .
-\]
-
 \subsection{$E_n$-calculus}
-\label{sec: TT}
-
-\brian{HKR}
-
-Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
-A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
-On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
-The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
-
-On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
-\[
-\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
-\]
-to each open set $U \subset \RR$.
-In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
-Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
-
-Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
-\[
-\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
-\]
-where $\epsilon$ is a formal variable of degree~$1$. 
-\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
-We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
-
 \bibliographystyle{alpha}  
 \bibliography{centralize}
 
