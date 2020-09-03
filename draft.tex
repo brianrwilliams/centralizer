@@ -1026,29 +1026,29 @@ The $E_n$-center, or $E_n$-Hochschild cohomology, of an $E_n$-algebra $A$ is the
 
 In Section \ref{sec:swiss} below, we will recall an elegant operadic articulation of this idea and rephrase it in terms of {\em constructible factorization algebras} on a half-space~$\HH^{n+1}$. 
 
-
-\brian{HKR}
-
-Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
-A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
-On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
-The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
-
-On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
-\[
-\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
-\]
-to each open set $U \subset \RR$.
-In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
-Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
-
-Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
-\[
-\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
-\]
-where $\epsilon$ is a formal variable of degree~$1$. 
-\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
-We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
+%
+%\brian{HKR}
+%
+%Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
+%A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
+%On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
+%The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
+%
+%On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
+%\[
+%\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+%\]
+%to each open set $U \subset \RR$.
+%In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
+%Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
+%
+%Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
+%\[
+%\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
+%\]
+%where $\epsilon$ is a formal variable of degree~$1$. 
+%\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
+%We could exhibit Theorem 2.7.1 explicitly in this case for the $E_n$ case with enveloping algebras.}
 
 
 \subsection{Swiss cheese pairs well with centers}
@@ -1091,6 +1091,30 @@ For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible f
 %In the bulk manifold $M \times \RR_{>0}$ we place the 
 %\end{proof}
 
+\subsection{How factorization homology intertwines with taking the center}
+
+\owen{Explain why there is a canonical map from the fact hlgy of a center to the center of the fact hlgy}
+
+\begin{prp}
+For any $L_\infty$ algebra $\fg$ and any closed $(n-k)$-dimensional manifold $S$,
+the canonical map of $E_k$-algebras
+\[
+\int_{S} \fZ_n(\fg) \to \fZ_k \left( \int_S \UU_n \fg \right)
+\]
+is a weak equivalence.
+\end{prp}
+
+As a slogan, we say ``factorization homology commutes with taking centers,'' 
+at least for enveloping $E_n$ algebras.
+It is natural to ask whether this result holds in general.
+
+\begin{qtn}
+Is the canonical map always a weak equivalence?
+\end{qtn}
+
+\owen{We should see if that's what Tamarkin-Tsygan prove for  $E_1$ algebras, as it would be further evidence.}
+
+\owen{Then ask what is the factorization homology on a compact manifold with boundary, which leads into next section.}
 
 \section{Universal bulk TFT}
 \label{sec: TFT}
@@ -1109,6 +1133,8 @@ Likewise, there is a classical limit of $\UU_n(\fg)$ which can be viewed as a bo
 
 In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $E_n$-enveloping algebra as a boundary condition. 
 This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
+
+\owen{Somewhere please mention that the slogan ``quantization commutes with pushforward'' holds for this class of theories.}
 
 %Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
@@ -1214,7 +1240,7 @@ by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$.
 %
 %\end{proof}
 
-\section{Examples}
+\section{Examples?}
 
 
 \greg{Add the Koszul duality example. Add examples coming from topological spaces and abelian Lie algebras}
