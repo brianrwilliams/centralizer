@@ -371,7 +371,7 @@ Nonetheless, we review a few aspects that play a crucial role below.
 
 First, recall that an $L_\infty$ algebra $\fg$, with its collection of brackets $\{\ell_n\}_{n \geq 1}$ is fully encoded by its dg conilpotent cocommutative coalgebra
 \[
-\cliels(\fg) = (\Sym(\fg[1]), \d = \sum_n \ell_n)
+\cliels(\fg) = \bigg(\Sym(\fg[1]) \; , \; \d = \sum_{n \geq 1} \ell_n\bigg)
 \]
 where the sum of the brackets provides a square-zero coderivation.
 The square-zero condition efficiently encodes the higher Jacobi relations.
@@ -1066,7 +1066,7 @@ There is a similar operadic picture which encodes $E_{n+1}$-algebras together wi
 The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
 What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
 
-An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is a left $B$-module. 
+An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is an $E_n$-algebra in the category of left $B$-modules.
 Indeed, if one restricts to the ``disk" colors we recover the data of $B$. 
 The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $A$ on $B$.
 
@@ -1077,19 +1077,23 @@ This universality is a conjecture of \cite{Kontsevich} which was later made prec
 One consequence of this \brian{universal property}
 
 Abstractly, an algebra over the $(n+1)$-dimensional Swiss cheese operad can be modeled as a {\em constructible} factorization algebra on the upper half space $\HH^{n+1}$. 
-Concretely, this is the data of (1) a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$, (2) a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$, (3) together with natural \brian{finish}
+Concretely, this is the data of a pair $(\bB, \bM)$ where $\bB$ is a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$ and $\bM$ is a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$.
 
-We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
-Combining these descriptions we obtain the following.
-
-\begin{prp}
-For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
-When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
+\begin{prp}[\cite{Lurie, AF}]
+For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible factorization algebra on $M \times \RR_{\geq 0}$ which is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
 \end{prp}
 
-\begin{proof}[Proof sketch]
-In the bulk manifold $M \times \RR_{>0}$ we place the 
-\end{proof}
+%We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
+%Combining these descriptions we obtain the following.
+%
+%\begin{prp}
+%For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
+%When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
+%\end{prp}
+%
+%\begin{proof}[Proof sketch]
+%In the bulk manifold $M \times \RR_{>0}$ we place the 
+%\end{proof}
 
 \subsection{The bulk TFT}
 
