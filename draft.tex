@@ -1093,9 +1093,31 @@ For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible f
 
 \subsection{How factorization homology intertwines with taking the center}
 
-\owen{Explain why there is a canonical map from the fact hlgy of a center to the center of the fact hlgy}
+A natural question in our setting is what happens to our pair $(\bZ_n(\fg), \bU_n \fg)$ when we take factorization homology.
+As we will see below, the behavior is optimal.
+
+Let us start with a discussion of the general situation.
+Let $(A,B)$ be a Swiss cheese pair: $A$ is an $E_1$ algebra in $E_n$ algebras and $B$ is an $E_n$ algebra in left $A$-modules. 
+We will freely view these as locally constant factorization algebras on framed $n$-manifolds.
+Observe that since factorization homology is a symmetric monoidal functor, 
+it is immediate that $\int_S B$ is a left module over $\int_S A$.
+Indeed, for any $(n-k)$-dimensional framed manifold $S$, 
+taking factorization homology $\int_S B$ yields a locally constant factorization algebra on $\RR^k$ 
+and this factorization structure is compatible with the left action of $\int_S A$ as a locally constant factorization algebra on $\RR^k$.
+The universal property of the center implies there is then a canonical map
+\[
+\int_{S} A \to \fZ_k \left( \int_S B \right).
+\]
+In particular, when $A = \fZ(B)$, we have
+\begin{equation}
+\label{eqn: can cen int}
+\int_{S} \fZ(B) \to \fZ_k \left( \int_S B \right),
+\end{equation}
+so that taking centers intertwines with taking factorization homology.
+In our favorite case, this relationship is as nice as possible.
 
 \begin{prp}
+\label{prp: z commutes with int}
 For any $L_\infty$ algebra $\fg$ and any closed $(n-k)$-dimensional manifold $S$,
 the canonical map of $E_k$-algebras
 \[
@@ -1109,10 +1131,48 @@ at least for enveloping $E_n$ algebras.
 It is natural to ask whether this result holds in general.
 
 \begin{qtn}
-Is the canonical map always a weak equivalence?
+Is the canonical map \eqref{eqn: can cen int} always a weak equivalence?
 \end{qtn}
 
 \owen{We should see if that's what Tamarkin-Tsygan prove for  $E_1$ algebras, as it would be further evidence.}
+
+\begin{proof}[Proof of Proposition~\ref{prp: z commutes with int}]
+The key fact is a simple consequence of the K\"unneth theorem in the setting of de Rham forms.
+Let $S$ be the closed $n-k$-dimensional manifold of the proposition,
+and let $V$ be an arbitrary manifold without boundary.
+Then there is a canonical map
+\[
+\Omega^*(V) \otimes \Omega^*(S) \to \Omega^*(V \times S),
+\]
+by wedge product after pulling back along the two projection maps.
+It is a quasi-isomorphism, by K\"unneth.
+Similarly, the canonical map
+\[
+\Omega_c^*(V) \otimes \Omega^*(S) \to \Omega_c^*(V \times S),
+\]
+is a quasi-isomorphism, as $S$ is compact.
+
+Let $\fg_S$ denote the $L_\infty$ algebra $\Omega^*(S) \otimes \fg$. 
+Then these quasi-isomorphisms above imply there are quasi-isomorphisms of $L_\infty$ algebras
+\begin{align*}
+\Omega^*(V) \otimes \fg_S &\xto{\simeq} \Omega^*(V \times S) \otimes \fg \\
+\Omega_c^*(V) \otimes \fg_S &\xto{\simeq} \Omega_c^*(V \times S) \otimes \fg 
+\end{align*}
+and hence a quasi-isomorphism
+\[
+\bU_k \fg_S \xto{\simeq} \int_S \bU_n \fg
+\]
+of factorization algebras.
+
+Likewise, on each open set $V \subset \RR^k$, 
+we obtain a quasi-isomorphism
+\[
+\bZ_k(\fg_S)(V) \cong \clies( \Omega^*(V) \otimes \fg_S, \bU_k \fg_S) \xto{\simeq} \clies(\Omega^*(V \times S) \otimes \fg, \bU_n(V \times S))
+\]
+and this map is functorial in opens.
+The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
+\owen{Hmmm, that map goes the wrong way, but I'm pretty sure it provides the inverse-up-to-qiso we need.}
+\end{proof}
 
 \owen{Then ask what is the factorization homology on a compact manifold with boundary, which leads into next section.}
 
