@@ -1131,7 +1131,7 @@ at least for enveloping $E_n$ algebras.
 It is natural to ask whether this result holds in general.
 
 \begin{qtn}
-Is the canonical map \eqref{eqn: can cen int} always a weak equivalence?
+Is the canonical map \eqref{eqn: can cen int} a weak equivalence when $\UU_n \fg$ is replaced by an arbitrary $E_n$-algebra?
 \end{qtn}
 
 \owen{We should see if that's what Tamarkin-Tsygan prove for  $E_1$ algebras, as it would be further evidence.}
@@ -1178,39 +1178,64 @@ The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
 
 \section{Universal bulk TFT}
 \label{sec: TFT}
+%
+%Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
+%This is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra then considering the left-modules for this $E_1$-algebra.
+%
+%The $E_n$-center, or $E_n$-Hochschild cohomology, of an $E_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra which acts on $A$. 
+%In Section \ref{sec:swiss} below, we will recall an elegant operadic interpretation of this universal picture and interpret it in terms of {\em constructible factorization algebras}. 
+%In the case of $E_n$-enveloping algebras, we will provide a strict factorization model of this universal situation in terms of a constructible factorization algebra on an $(n+1)$-dimensional 
+%manifold with boundary. 
+%
+%We will furthermore provide an interpretation of this constructible factorization algebra in terms of the quantization of a certain topological field theory. 
+%The key insight is that there is a {\em classical limit} of the $E_n$-center $\fZ_n(\fg)$ which is equivalent to the observables of an $(n+1)$-dimensional topological field theory known as {\em BF theory}. 
+%Likewise, there is a classical limit of $\UU_n(\fg)$ which can be viewed as a boundary condition for BF theory.
+%
+%In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $E_n$-enveloping algebra as a boundary condition. 
+%This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
 
-Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
-This is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra then considering the left-modules for this $E_1$-algebra.
-
-The $E_n$-center, or $E_n$-Hochschild cohomology, of an $E_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra which acts on $A$. 
-In Section \ref{sec:swiss} below, we will recall an elegant operadic interpretation of this universal picture and interpret it in terms of {\em constructible factorization algebras}. 
-In the case of $E_n$-enveloping algebras, we will provide a strict factorization model of this universal situation in terms of a constructible factorization algebra on an $(n+1)$-dimensional 
-manifold with boundary. 
-
-We will furthermore provide an interpretation of this constructible factorization algebra in terms of the quantization of a certain topological field theory. 
-The key insight is that there is a {\em classical limit} of the $E_n$-center $\fZ_n(\fg)$ which is equivalent to the observables of an $(n+1)$-dimensional topological field theory known as {\em BF theory}. 
-Likewise, there is a classical limit of $\UU_n(\fg)$ which can be viewed as a boundary condition for BF theory.
-
-In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $E_n$-enveloping algebra as a boundary condition. 
-This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
+In this section, we turn to an interpretation of the $E_n$-center of an $E_n$-enveloping algebra in terms of a certain topological field theory (TFT).
 
 \owen{Somewhere please mention that the slogan ``quantization commutes with pushforward'' holds for this class of theories.}
 
+Abstractly, we know that any algebra over the Swiss cheese operad can be modeled as a constructible factorization algebra on a manifold with boundary. 
+One drawback of the previous section is that we did not provide a model for the $E_n$-center of an enveloping algebra as a constructible factorization algebra on an $(n+1)$-dimensional manifold with boundary. 
+There is, however, a certain ``dequantization" of the $E_n$-center that we do have an explicit description of. 
+
+The key insight is that there exists a filtration on our model for the $E_n$-center $\bZ_n(\fg)$ and the $E_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are {\em commutative} factorization algebras. 
+
+Our first main result is the following. 
+
 %Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
-\brian{or there exists a filtration on the constructible factorization algebra whose associated graded is a commutative P0 constructible factorization algebra or $1$-shifted Poisson.}
-\brian{as a corollary butson-yoo}
-\brian{main thrust is to interpret this in terms of the BV / BD formalism}
+\begin{prp}
+Let $M$ be a smooth $n$-dimensional manifold and $\fg$ a Lie algebra. 
+There is a constructible $\PP_0$-factorization algebra 
+\begin{equation}\label{eqn:graded}
+\left(\Tilde{\bZ}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
+\end{equation}
+on $M \times \RR_{\geq 0}$ such that $\pi_* \Tilde{\bZ}_n (\fg)$ is equivalent to ${\rm Gr} \; \bZ_n(\fg)$ as commutative factorization algebras on $M$ where $\pi : M \times \RR_{\geq 0} \to M$ is the projection. 
+\end{prp}
 
-\begin{thm}
-Let $M$ be a smooth $n$-manifold and $\fg$ a Lie algebra. 
-There is a constructible factorization algebra on $M \times [0,1)$ satisfying the following properties:
-\begin{itemize}
-\item[(1)] On the $n$-dimensional stratum $M \times \{0\}$ the factorization algebra is equivalent to $\bU_n(\fg)$.
-\item[(2)] On the $(n+1)$-dimensional stratum $M \times (0,1)$, the factorization algebra is a quantization of the observables of topological BF theory based on the Lie algebra $\fg$.
-\item[(3)] Locally on $\RR^n \times [0,1)$ this factorization algebra produces \brian{deligne picture how to say}
-\end{itemize}
-\end{thm}
+A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
+Likewise, a $\PP_0$-factorization algebra is a factorization algebra whose value on each open set is $\PP_0$-algebra. 
+
+The Batalin--Vilkovisky (BV) formalism for studying quantum field theory \brian{finish}
+
+Following the proof of this proposition, our main thrust is to interpret this result in the BV formalism by exhibiting a topological field theory on the $(n+1)$-dimensional manifold with boundary $M \times \RR_{\geq 0}$ whose factorization algebra of classical observables is precisely the constructible factorization algebra in (\ref{eqn:graded}). 
+
+\brian{as a corollary butson-yoo}
+
+
+%\begin{thm}
+%Let $M$ be a smooth $n$-manifold and $\fg$ a Lie algebra. 
+%There is a constructible factorization algebra on $M \times [0,1)$ satisfying the following properties:
+%\begin{itemize}
+%\item[(1)] On the $n$-dimensional stratum $M \times \{0\}$ the factorization algebra is equivalent to $\bU_n(\fg)$.
+%\item[(2)] On the $(n+1)$-dimensional stratum $M \times (0,1)$, the factorization algebra is a quantization of the observables of topological BF theory based on the Lie algebra $\fg$.
+%\item[(3)] Locally on $\RR^n \times [0,1)$ this factorization algebra produces \brian{deligne picture how to say}
+%\end{itemize}
+%\end{thm}
 
 %Let $\fg$ be a dg Lie algebra and consider the $E_n$ algebra $\UU_n \fg$. 
 %We have shown that a model for the $E_n$-center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
@@ -1219,51 +1244,72 @@ There is a constructible factorization algebra on $M \times [0,1)$ satisfying th
 %\]
 
 
-\subsection{The bulk TFT}
+\subsection{The bulk factorization algebra}
 
-Let us place the locally constant factorization algebra model of the $E_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
-This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
+Let $M$ be an $n$-dimensional manifold and $\fg$ a Lie algebra. 
 
 \begin{dfn}
-For an open set $V \subset M \times (0,1)$ let $\Obs^{\rm cl}_{\rm BF} (V)$ be the cochain complex 
+For an open set $U \subset M \times \RR_{>0}$ let $\Tilde{\bZ}_n(\fg) (U)$ be the cochain complex 
 \[
-\Obs^{\rm cl}_{\rm BF} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
+\Tilde{\bZ}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
 \]
-The assignment $V \mapsto \Obs^{\rm cl}_{\rm BF}(V)$ defines a locally constant factorization algebra on $M \times (0,1)$. 
+The assignment $\Tilde{\bZ}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
 \end{dfn}
 
-We note that $\Obs_{\rm BF}^{\rm cl}$ is a factorization algebra with values in commutative dg algebras. 
-In fact, it is given by the ``classical observables" of a topological field theory on $M \times (0,1)$ known as ``topological BF theory". 
+On each open set $U$, the cochain complex $\Tilde{\bZ}_n(\fg) (U)$ is actually a commutative dg algebra. 
+In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
 
-We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm BF}$ on $M$.
-Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $E_n$-center of $\UU_n \fg$.
-Recall, this model is given by the factorization algebra on $M$:
-\begin{equation}\label{eqn:centerTFT}
-\bZ_n(\fg) = \clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
-\end{equation}
+\begin{prp}
+$\Tilde{\bZ}_n(\fg)$ has the structure of a $\PP_0$-factorization algebra on $M \times \RR_{>0}$. 
+\end{prp}
+\begin{proof}
+Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
+\[
+{\rm Sym} \left(\fg^* \otimes \Bar{\Omega}_c (U) [n-1] \right) \; \Hat{\otimes} \; {\rm Sym}  \left(\fg \otimes \Omega_c(U) [2] \right)  .
+\]
+Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
+Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ and $1 \otimes (y \otimes \beta)$ is defined by
+\begin{align*}
+\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
+\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
+\end{align*}
+Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
+\end{proof}
 
-The ``dequantization" is defined using the following filtration of this model.
-For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
+\subsection{The ``classical limit"}
 
-\begin{dfn}
-Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
+For any dg Lie (in fact, $L_\infty$) algebra, the Chevalley--Eilenberg cochain complex computing Lie algebra homology admits a natural filtration whose associated graded has the structure of a commutative dg algebra.
+If $\fh$ is a dg Lie algebra, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
+The associated graded is the free symmetric algebra on $\fh[1]$ thought of as simply a cochain complex:
+\[
+{\rm Gr} \; \clieu (\fh) = {\rm Sym} (\fh [1])  .
+\]
+Here, the differential on the right-hand side is simply the underlying linear differential of $\fh$ (in terms of $L_\infty$ algebras, this is the $1$-ary operation $\ell_1$). 
+
+The Lie bracket on $\fh$ endows ${\rm Sym} (\fh [1])$ with the additional structure of a $\PP_0$-algebra. 
+On linear elements this is simply the Lie bracket on $\fh$, and one extends to the full symmetric algebra by the graded Leibniz rule.
+
+Consider our factorization model for the $E_n$-enveloping algebra $\bU_n(\fg) = \clieu (\fg \otimes \Omega_c)$. 
+The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
+Furthermore, the resulting associated graded ${\rm Gr} \; \bU_n (\fg)$ has the natural structure of a $\PP_0$-factorization algebra.
+
+There is a similar filtration on our model for the $E_n$-center $\bZ_n(\fg)$. 
+Define
 \[
 F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
-\end{dfn}
-
-This is a filtration of factorization algebras on $M$. 
-The associated graded factorization algebra is
-\[
-{\rm Gr} \; \bZ_n(\fg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
-\]
-Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
+It is immediate to check that this is a filtration of factorization algebras and that its associated graded has the structure of a $\PP_0$-factorization algebra.
+In fact, we have the following result, which explains the relationship to the ``bulk" $(n+1)$-dimensional factorization algebra $\Tilde{\bZ}_n(\fg)$ we introduced in the last section.
 
  \begin{lmm}
-There is a quasi-isomorphism of commutative factorization algebras on $M$:
+Let $M$ be an $n$-dimensional manifold.
+There is a quasi-isomorphism of  $\PP_0$-factorization algebras on $M$:
 \[
-\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
+\pi_* \Tilde{\bZ}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
 \]
+where $\pi : M \times \RR_{>0} \to M$ is the projection. 
 \end{lmm}
 
 In fact, we will show that this quasi-isomorphism is a deformation retraction. 
@@ -1282,6 +1328,168 @@ r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
 \]
 by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
 \end{proof}
+
+Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
+
+\begin{dfn}\label{dfn:constructible1}
+Let $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n(\fg))$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
+\begin{itemize}
+\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\Tilde{\bZ}_n (\fg)(U)$.
+\item to an open set $U \subset M \times \RR_{\geq 0}$ with $U \cap (M \times \{0\}) \ne 0$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(U)$. 
+\end{itemize}
+\brian{not sure how much to say about structure maps}
+\end{dfn}
+
+
+\subsection{Bulk-boundary topological field theory}
+
+It is the central theme of \cite{CG1, CG2} that the observables of a perturbative quantum field theory define the structure of a factorization algebra. 
+In this setup, one first uses the Batalin--Vilkovisky (BV) formalism to define a perturbative classical field theory. 
+The key ingredient in this formalism is a $(-1)$-shifted symplectic structure on the classical space of fields. 
+The observables, or functions on the classical space of fields is then equipped with the structure of a $\PP_0$-factorization algebra.
+
+More recently in \cite{ButsonYoo} and \cite{Eugene}, it is shown how to run the classical BV formalism on manifolds with boundary. 
+Let $N$ be such a manifold with boundary and let $\cE$ denote the space of fields, typically given as the space of sections of a finite rank vector bundle on $N$. 
+The definition of a classical BV theory on $N$ amounts to prescribing the following data:
+\begin{itemize}
+\item[(1)]
+an ordinary classical BV theory on the interior $N \setminus \partial N$ whose space of fields is $\cE|_{N \setminus \partial N}$;
+\item[(2)] 
+a compatible $0$-shifted symplectic structure on $\cE|_{\partial N}$ equipped with a Lagrangian subspace $\cL \subset \cE|_{\partial N}$.
+This is called a {\em boundary condition}.
+\end{itemize}
+From this data at the level of fields, one obtains a constructible $\PP_0$-factorization algebra on the manifold with boundary $N$ at the level of the observables. 
+
+For any Lie algebra $\fg$, there is a topological field theory defined in any dimension known as ``topological BF theory". 
+Suppose $N$ is an $(n+1)$-dimensional manifold, which for now we assume has no boundary $\partial N = \emptyset$. 
+In the BV formalism, the perturbative space of fields of BF theory on $N$ consists of
+\[
+(A, B) \in \Omega^{\bu} (N) \otimes \fg [1] \oplus \Omega^{\bu} (N) \otimes \fg^* [n-1] .
+\]
+When $N$ is compact, the classical moduli space underlying this field theory has an elegant description in terms of the AKSZ formalism. 
+It can be interpreted as the following mapping stack 
+\begin{equation} \label{stack1}
+{\rm Map}(N_{\rm dR} ,  {\rm T}^*[n] {\rm B} G)
+\end{equation}
+where $N_{\rm dR}$ denotes the de Rham stack of $N$ and where $G$ is a Lie group whose Lie algebra is $\fg$. 
+Perturbative BF theory is obtained by taking the tangent space of the above mapping stack near at the trivial $G$-bundle.
+Concretely, the classical moduli space consists of pairs $(A, B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega^{n-1} (N) \otimes \fg^*$ satisfying the equations
+\begin{align*}
+\d A + \frac12 [A,A] & = 0 \\
+\d_A B + [A,B] & = 0 .
+\end{align*}
+
+Now, suppose $N$ has a boundary $\partial N \ne 0$.
+Then, (\ref{stack1}) no longer admits a $(-1)$-shifted symplectic structure. 
+However, the AKSZ construction equips 
+\[
+{\rm Map}(\partial N , {\rm T}^* [n] {\rm B} G)
+\]
+with a $0$-shifted symplectic structure. 
+Perturbatively, this mapping stack represents the restriction of the fields to the boundary. 
+
+For BF theory, there is a natural choice of a Lagrangian for this boundary condition. 
+In terms of mapping stacks, it is given by considering maps from $N_{\rm dR}$ into the $n$-shifted conormal bundle of ${\rm B} G$:
+\[
+{\rm Map}(N_{\rm dR} , {\rm N}^*_e [n] {\rm B}G) .
+\]
+Then, by abstract maneuvers \brian{reference} the following fiber product
+\[
+\begin{tikzcd}
+X \ar[r] \ar[d] & {\rm Map} (N , {\rm T}^* [n] {\rm B} G) \ar[d] \\
+{\rm Map}(\partial N_{\rm dR} , {\rm N}^*_e  [n] {\rm B}G) \ar[r] & {\rm Map}(\partial N_{\rm dR} , {\rm T}^*[n]  {\rm B}G)
+\end{tikzcd}
+\]
+is equipped with a $(-1)$-shifted symplectic structure. 
+Heuristically, the classical observables are given by functions on the $(-1)$-shifted symplectic space $X$.
+
+Perturbatively, we follow \cite{ButsonYoo} and \cite{Eugene} to make the following definition within the BV formalism.
+
+\begin{dfn}
+Let $M$ be an $n$-dimensional manifold.
+{\em Topological BF theory with its universal Neumann boundary condition} is the classical bulk-boundary theory on $M \times \RR_{\geq 0}$ described as follows:
+\begin{itemize}
+\item[(1)] 
+The bulk theory is that of topological BF theory on $M \times \RR_{>0}$, where the space of fields is 
+\[
+\cE|_{M \times \RR_{>0}} = \Omega^{\bu} (M \times \RR_{>0}) \otimes \fg [1] \oplus \Omega^{\bu} (M \times \RR_{>0}) \otimes \fg^* [n-2] .
+\]
+\item[(2)] 
+The boundary condition is determined by the subspace of the fields on the boundary
+\[
+\Omega^{\bu} (M) \otimes \fg^* [n-2] \subset \cE|_{M \times \{0\}} .
+\]
+\end{itemize}
+\end{dfn}
+
+We obtain the following by a direct unpacking of the setup in \cite{Eugene}. 
+
+\begin{prp}
+The constructible $\PP_0$-factorization algebra of topological BF theory with its universal Neumann boundary condition is equivalent to the constructible factorization algebra $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n (\fg))$ of Definition \ref{dfn:constructible1}. 
+\end{prp}
+%\subsection{The bulk TFT}
+%
+%Let us place the locally constant factorization algebra model of the $E_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
+%This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
+%
+%\begin{dfn}
+%For an open set $V \subset M \times (0,1)$ let $\Obs^{\rm cl}_{\rm BF} (V)$ be the cochain complex 
+%\[
+%\Obs^{\rm cl}_{\rm BF} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
+%\]
+%The assignment $V \mapsto \Obs^{\rm cl}_{\rm BF}(V)$ defines a locally constant factorization algebra on $M \times (0,1)$. 
+%\end{dfn}
+%
+%We note that $\Obs_{\rm BF}^{\rm cl}$ is a factorization algebra with values in commutative dg algebras. 
+%In fact, it is given by the ``classical observables" of a topological field theory on $M \times (0,1)$ known as ``topological BF theory". 
+%
+%We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm BF}$ on $M$.
+%Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $E_n$-center of $\UU_n \fg$.
+%Recall, this model is given by the factorization algebra on $M$:
+%\begin{equation}\label{eqn:centerTFT}
+%\bZ_n(\fg) = \clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
+%\end{equation}
+%
+%The ``dequantization" is defined using the following filtration of this model.
+%For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
+%
+%\begin{dfn}
+%Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
+%\[
+%F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
+%\]
+%\end{dfn}
+%
+%This is a filtration of factorization algebras on $M$. 
+%The associated graded factorization algebra is
+%\[
+%{\rm Gr} \; \bZ_n(\fg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
+%\]
+%Notice this is similar to the model $E_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
+%
+% \begin{lmm}
+%There is a quasi-isomorphism of commutative factorization algebras on $M$:
+%\[
+%\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
+%\]
+%\end{lmm}
+%
+%In fact, we will show that this quasi-isomorphism is a deformation retraction. 
+%
+%\begin{proof}
+%To exhibit this quasi-isomorphism, we introduce the following cochain maps.
+%For an open set $U \subset M$ let
+%\[
+%\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
+%\] 
+%be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
+%This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
+%Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
+%\[
+%r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
+%\]
+%by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
+%\end{proof}
 
 %\begin{lmm}
 %Consider the locally constant factorization algebra $\cF_{\rm bulk}$ on $M \times \RR$ which assigns to an open set $U \subset M \times \RR$
