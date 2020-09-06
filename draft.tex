@@ -1210,11 +1210,13 @@ Our first main result is the following.
 
 \begin{prp}
 Let $M$ be a smooth $n$-dimensional manifold and $\fg$ a Lie algebra. 
-There is a constructible $\PP_0$-factorization algebra 
+There is a constructible commutative factorization algebra 
 \begin{equation}\label{eqn:graded}
-\left(\Tilde{\bZ}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
+\left({\bf Bulk}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
 \end{equation}
-on $M \times \RR_{\geq 0}$ such that $\pi_* \Tilde{\bZ}_n (\fg)$ is equivalent to ${\rm Gr} \; \bZ_n(\fg)$ as commutative factorization algebras on $M$ where $\pi : M \times \RR_{\geq 0} \to M$ is the projection. 
+on $M \times \RR_{\geq 0}$ such that $\pi_* {\bf Bulk}_n (\fg)$ is equivalent to ${\rm Gr} \; \bZ_n(\fg)$ as commutative factorization algebras on $M$ where $\pi : M \times \RR_{\geq 0} \to M$ is the projection. 
+
+\brian{lifts to $\PP_0$}.
 \end{prp}
 
 A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
@@ -1243,6 +1245,10 @@ Following the proof of this proposition, our main thrust is to interpret this re
 %\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
 %\]
 
+\begin{prp}
+Filtered swiss cheese.
+Gr is a P_0 swiss cheese algebra.
+\end{prp}
 
 \subsection{The bulk factorization algebra}
 
@@ -1376,7 +1382,7 @@ Perturbative BF theory is obtained by taking the tangent space of the above mapp
 Concretely, the classical moduli space consists of pairs $(A, B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega^{n-1} (N) \otimes \fg^*$ satisfying the equations
 \begin{align*}
 \d A + \frac12 [A,A] & = 0 \\
-\d_A B + [A,B] & = 0 .
+\d B + [A,B] & = 0 .
 \end{align*}
 
 Now, suppose $N$ has a boundary $\partial N \ne 0$.
@@ -1427,6 +1433,9 @@ We obtain the following by a direct unpacking of the setup in \cite{Eugene}.
 \begin{prp}
 The constructible $\PP_0$-factorization algebra of topological BF theory with its universal Neumann boundary condition is equivalent to the constructible factorization algebra $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n (\fg))$ of Definition \ref{dfn:constructible1}. 
 \end{prp}
+
+\brian{spectral sequence}
+
 %\subsection{The bulk TFT}
 %
 %Let us place the locally constant factorization algebra model of the $E_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
