@@ -1423,7 +1423,7 @@ The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-catego
 The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
 \end{prp}
 
-The key insight is that there exists a filtration on our model for the $E_n$-center $\bZ_n(\fg)$ and the $E_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
+The key insight is that there exists a filtration on our model for the $\EE_n$-center $\bZ_n(\fg)$ and the $\EE_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
 Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
 If the associated graded of a filtered $\EE_n$-algebra is commutative, then it carries the structure of a $\PP_n$-algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
@@ -1442,20 +1442,21 @@ By a similar proof as in the main part of the paper, we expect that one can see 
 is a model for the {\em $\PP_n$-center} of the $\PP_n$-enveloping algebra $\UU_{\PP_n} (\fg)$. 
 \end{rmk}
 
-There is another geometric model \brian{finish}
-The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
-What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
 
-There is another geometric picture for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-manifolds with boundary.
-One drawback of the previous section is that we did not provide a model for the $E_n$-center of an enveloping algebra as a constructible factorization algebra on an $(n+1)$-dimensional manifold with boundary. 
+%The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
+%What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
 
-A constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a pair of factorization algebras $(\pi_* \bA , \bA_{\partial})$ on $M$ which define a factorization pair as in Definition \ref{dfn:pair}.
-
+In the previous section, we mentioned another geometric model for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-manifolds with boundary.
+One drawback of the previous section is that we did not provide a model of this type for the $\EE_n$-center of an enveloping algebra. 
 The next goal of this section is to provide a model of the classical limit of the $\EE_n$-center as a constructible factorization algebra. 
+
+Any constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a factorization pair $(\pi_* \overset{\circ}{\bA} , \bA_{\partial})$ in the sense of Definition \ref{dfn:pair}.
+We recall this construction in Section \ref{sec:bulk}. 
+In particular, on the upper half space $\HH^n$, a constructible factorization algebra determines an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
 
 %Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
-\begin{prp}
+\begin{prp}\label{prp:pair}
 Let $M$ be a smooth $n$-dimensional manifold and $\fg$ a Lie algebra. 
 There is a constructible commutative factorization algebra ${\bf C}_n (\fg)$
 %\begin{equation}\label{eqn:graded}
@@ -1463,7 +1464,7 @@ There is a constructible commutative factorization algebra ${\bf C}_n (\fg)$
 %\end{equation}
 on $M \times \RR_{\geq 0}$ such that the pair 
 \[
-(\pi_* {\bf C}_n (\fg), {\bf C}_n (\fg)_\partial)
+(\pi_* \overset{\circ}{\bf C}_n (\fg), {\bf C}_n (\fg)_\partial)
 \]
 is equivalent to the pair $({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg))$ as commutative factorization algebras \brian{adjectives}
 \end{prp}
@@ -1520,8 +1521,8 @@ F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \ot
 Proposition \ref{prp:swiss1} is a direct consequence of the following lemma.
 
 \begin{lmm}
-These filtrations equip the pair $(\bZ_n (\fg), \bU_n(\fg))$ with the structure of a filtered \brian{name}.
-Moreover, the associated graded pair $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg))$ is a commutative \brian{name}. 
+These filtrations equip $(\bZ_n (\fg), \bU_n(\fg))$ with the structure of a filtered factorization pair.
+Moreover, the associated graded pair $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg))$ is a commutative factorization pair. 
 \end{lmm}
 \begin{proof}
 One has
@@ -1538,17 +1539,64 @@ These are both commutative by direct inspection.
 
 The associated graded commutative factorization algebras ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ lift to $\PP_0$-factorization algebras.
 
-\subsection{The bulk factorization algebra}
+\subsection{The bulk factorization algebra} \label{sec:bulk}
 
 We turn towards a model for the $\EE_n$-center as a constructible factorization algebra. 
 
 \begin{dfn}
-For an open set $U \subset M \times \RR_{>0}$ let $\overset{\circ}{\bf Z}_n(\fg) (U)$ be the cochain complex 
+For an open set $U \subset M \times \RR_{>0}$ let $\overset{\circ}{\bC}_n(\fg) (U)$ be the cochain complex 
 \[
-\overset{\circ}{\bf Z}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
+\overset{\circ}{\bC}_n (\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
 \]
-The assignment $U \mapsto \overset{\circ}{\bf Z}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
 \end{dfn}
+
+The assignment $U \mapsto \overset{\circ}{\bC}_n(\fg)(U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
+In fact, it extends to a constructible factorization algebra on $M \times \RR_{\geq 0}$ in the following way. 
+
+To state the definition, we will make use of the following map of cochain complexes. 
+
+\begin{dfn}\label{dfn:constructible1}
+Let $\bC_n(\fg)$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
+\begin{itemize}
+\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\overset{\circ}{\bC}_n (\fg)(U)$.
+\item to an open set $V \times [0,\epsilon)$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(V)$. 
+\end{itemize}
+The structure map associated to the embedding 
+\[
+U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
+\]
+is
+\[
+\clie \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V) [1] \right) 
+\]
+\end{dfn}
+
+On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a commutative dg algebra. 
+In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
+
+\begin{lmm}
+$\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
+\end{lmm}
+\begin{proof}
+Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
+\[
+{\rm Sym} \left(\fg^* \otimes \Bar{\Omega}_c (U) [n-1] \right) \; \Hat{\otimes} \; {\rm Sym}  \left(\fg \otimes \Omega_c(U) [2] \right)  .
+\]
+Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
+Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ and $1 \otimes (y \otimes \beta)$ is defined by
+\begin{align*}
+\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
+\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
+\end{align*}
+Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
+\end{proof}
+
+Suppose $\bA$ is any constructible factorization algebra on a manifold with boundary $M \times \RR_{\geq 0}$. 
+Then, restricting to the boundary $M$, we obtain a locally constant factorization algebra that we will denote by $\bA_{\partial}$. 
+Likewise, we can restrict to the bulk $M \times \RR_{> 0}$ and pushforward along $\pi : M \times \RR_{> 0} \to M$ to obtain another locally constant factorization algebra on $M$ that we will denote by $\pi_* \overset{\circ}{\bA}$. 
+It is immediate to check that $(\pi_* \overset{\circ}{\bA} , \bA_{\partial})$ form a factorization pair in the sense of Definition \ref{dfn:pair}. 
 
  \begin{lmm}
 Let $M$ be an $n$-dimensional manifold.
@@ -1577,39 +1625,6 @@ by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$.
 \end{proof}
 
 Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
-
-\begin{dfn}\label{dfn:constructible1}
-Let $\bC_n(\fg)$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
-\begin{itemize}
-\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\overset{\circ}{\bf Z}_n (\fg)(U)$.
-\item to an open set $V \times [0,\epsilon)$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(V)$. 
-\end{itemize}
-\brian{not sure how much to say about structure maps}
-\end{dfn}
-
-On each open set $U$, the cochain complex $\Tilde{\bZ}_n(\fg) (U)$ is actually a commutative dg algebra. 
-In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
-
-\begin{lmm}
-$\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
-\end{lmm}
-\begin{proof}
-Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
-\[
-{\rm Sym} \left(\fg^* \otimes \Bar{\Omega}_c (U) [n-1] \right) \; \Hat{\otimes} \; {\rm Sym}  \left(\fg \otimes \Omega_c(U) [2] \right)  .
-\]
-Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
-Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ and $1 \otimes (y \otimes \beta)$ is defined by
-\begin{align*}
-\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
-\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
-\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
-\end{align*}
-Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
-The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
-\end{proof}
-
-
 
 \subsection{Bulk-boundary topological field theory}
 
