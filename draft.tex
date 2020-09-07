@@ -1267,33 +1267,62 @@ In this section, we turn to an interpretation of the $E_n$-center of an $E_n$-en
 
 \owen{Somewhere please mention that the slogan ``quantization commutes with pushforward'' holds for this class of theories.}
 
-Abstractly, we know that any algebra over the Swiss cheese operad can be modeled as a constructible factorization algebra on a manifold with boundary. 
-One drawback of the previous section is that we did not provide a model for the $E_n$-center of an enveloping algebra as a constructible factorization algebra on an $(n+1)$-dimensional manifold with boundary. 
-There is, however, a certain ``dequantization" of the $E_n$-center that we do have an explicit description of. 
+Given an $E_n$-algebra $A$ the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $E_n$-enveloping algebra. 
+
+\begin{prp} \label{prp:swiss1}
+Let $\fg$ be a Lie algebra. 
+The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-category of algebras over the $(n+1)$-dimensional Swiss cheese operad. 
+The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
+\end{prp}
 
 The key insight is that there exists a filtration on our model for the $E_n$-center $\bZ_n(\fg)$ and the $E_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are {\em commutative} factorization algebras. 
 
-Our first main result is the following. 
+
+\brian{additivity}
+
+\begin{rmk}
+By a similar proof as in the main part of the paper, we expect that one can see that the factorization algebra
+\[
+\clie \bigg(\Omega^\bu \otimes \fg \; ; \; {\rm Sym} \left(\Omega^\bu_c \otimes \fg [1] \right) \bigg)
+\]
+is a model for the {\em $\PP_n$-center} of the $\PP_n$-enveloping algebra $\UU_{\PP_n} (\fg)$. 
+\end{rmk}
+
+The associated graded pair in Proposition \ref{prp:swiss1} carries the additional Poisson-type structure. 
+
+\begin{prp} \label{prp:poisson}
+The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ determines an algebra over the operad $\PP_{[n+1,n]}$. 
+\end{prp}
+
+There is another geometric picture for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-manifolds with boundary.
+One drawback of the previous section is that we did not provide a model for the $E_n$-center of an enveloping algebra as a constructible factorization algebra on an $(n+1)$-dimensional manifold with boundary. 
+
+A constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a pair of factorization algebras $(\pi_* \bA , \bA_{\partial})$ on $M$ which locally define the $E_1$-model for $(n+1)$-Swiss cheese algebras. 
+
+The next goal of this section is to provide a model of the classical limit of the $E_n$-center as a constructible factorization algebra. 
 
 %Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
 \begin{prp}
 Let $M$ be a smooth $n$-dimensional manifold and $\fg$ a Lie algebra. 
-There is a constructible commutative factorization algebra 
-\begin{equation}\label{eqn:graded}
-\left({\bf Bulk}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
-\end{equation}
-on $M \times \RR_{\geq 0}$ such that $\pi_* {\bf Bulk}_n (\fg)$ is equivalent to ${\rm Gr} \; \bZ_n(\fg)$ as commutative factorization algebras on $M$ where $\pi : M \times \RR_{\geq 0} \to M$ is the projection. 
-
-\brian{lifts to $\PP_0$}.
+There is a constructible commutative factorization algebra ${\bf C}_n (\fg)$
+%\begin{equation}\label{eqn:graded}
+%\left({\bf Bulk}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
+%\end{equation}
+on $M \times \RR_{\geq 0}$ such that the pair 
+\[
+(\pi_* {\bf C}_n (\fg), {\bf C}_n (\fg)_\partial)
+\]
+is equivalent to the pair $({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg))$ as commutative factorization algebras \brian{adjectives}
 \end{prp}
 
-A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
-Likewise, a $\PP_0$-factorization algebra is a factorization algebra whose value on each open set is $\PP_0$-algebra. 
+%A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
+%Likewise, a $\PP_0$-factorization algebra is a factorization algebra whose value on each open set is $\PP_0$-algebra. 
+
+Following the proof of this proposition, our main thrust is to interpret this result by exhibiting a topological field theory on the $(n+1)$-dimensional manifold with boundary $M \times \RR_{\geq 0}$ whose factorization algebra of classical observables is precisely the constructible factorization algebra in (\ref{eqn:graded}). 
 
 The Batalin--Vilkovisky (BV) formalism for studying quantum field theory \brian{finish}
-
-Following the proof of this proposition, our main thrust is to interpret this result in the BV formalism by exhibiting a topological field theory on the $(n+1)$-dimensional manifold with boundary $M \times \RR_{\geq 0}$ whose factorization algebra of classical observables is precisely the constructible factorization algebra in (\ref{eqn:graded}). 
 
 \brian{as a corollary butson-yoo}
 
@@ -1314,50 +1343,13 @@ Following the proof of this proposition, our main thrust is to interpret this re
 %\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
 %\]
 
-\begin{prp}
-Filtered swiss cheese.
-Gr is a P_0 swiss cheese algebra.
-\end{prp}
-
-\subsection{The bulk factorization algebra}
-
-Let $M$ be an $n$-dimensional manifold and $\fg$ a Lie algebra. 
-
-\begin{dfn}
-For an open set $U \subset M \times \RR_{>0}$ let $\Tilde{\bZ}_n(\fg) (U)$ be the cochain complex 
-\[
-\Tilde{\bZ}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
-\]
-The assignment $\Tilde{\bZ}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
-\end{dfn}
-
-On each open set $U$, the cochain complex $\Tilde{\bZ}_n(\fg) (U)$ is actually a commutative dg algebra. 
-In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
-
-\begin{prp}
-$\Tilde{\bZ}_n(\fg)$ has the structure of a $\PP_0$-factorization algebra on $M \times \RR_{>0}$. 
-\end{prp}
-\begin{proof}
-Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
-\[
-{\rm Sym} \left(\fg^* \otimes \Bar{\Omega}_c (U) [n-1] \right) \; \Hat{\otimes} \; {\rm Sym}  \left(\fg \otimes \Omega_c(U) [2] \right)  .
-\]
-Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
-Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ and $1 \otimes (y \otimes \beta)$ is defined by
-\begin{align*}
-\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
-\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
-\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
-\end{align*}
-Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
-The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
-\end{proof}
-
 \subsection{The ``classical limit"}
+
+We accomplish Proposition \ref{prp:swiss1} by exhibiting a filtration at the level of strict factorization algebras in our model of the $E_n$-center. 
 
 For any dg Lie (in fact, $L_\infty$) algebra, the Chevalley--Eilenberg cochain complex computing Lie algebra homology admits a natural filtration whose associated graded has the structure of a commutative dg algebra.
 If $\fh$ is a dg Lie algebra, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
-The associated graded is the free symmetric algebra on $\fh[1]$ thought of as simply a cochain complex:
+The associated graded cochain complex is the free symmetric algebra on $\fh[1]$ thought of as simply a cochain complex:
 \[
 {\rm Gr} \; \clieu (\fh) = {\rm Sym} (\fh [1])  .
 \]
@@ -1368,13 +1360,23 @@ On linear elements this is simply the Lie bracket on $\fh$, and one extends to t
 
 Consider our factorization model for the $E_n$-enveloping algebra $\bU_n(\fg) = \clieu (\fg \otimes \Omega_c)$. 
 The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
-Furthermore, the resulting associated graded ${\rm Gr} \; \bU_n (\fg)$ has the natural structure of a $\PP_0$-factorization algebra.
 
 There is a similar filtration on our model for the $E_n$-center $\bZ_n(\fg)$. 
 Define
 \[
 F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
+
+\brian{$\PP_0$ stuff}
+
+The associated graded commutative factorization algebras ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ lift to $\PP_0$-factorization algebras.
+
+\begin{prp}
+The pair $(\bZ_n (\fg), \bU_n(\fg)$ is a filtered, \brian{not sure what we're calling this}. 
+Further, the associated graded $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg)$ is a $\PP_0$ \brian{not sure what we're calling this}. 
+\end{prp}
+
+
 It is immediate to check that this is a filtration of factorization algebras and that its associated graded has the structure of a $\PP_0$-factorization algebra.
 In fact, we have the following result, which explains the relationship to the ``bulk" $(n+1)$-dimensional factorization algebra $\Tilde{\bZ}_n(\fg)$ we introduced in the last section.
 
@@ -1414,6 +1416,81 @@ Let $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n(\fg))$ be the following constructible 
 \end{itemize}
 \brian{not sure how much to say about structure maps}
 \end{dfn}
+
+\subsection{The bulk factorization algebra}
+
+It is immediate to check that this is a filtration of factorization algebras and that its associated graded has the structure of a $\PP_0$-factorization algebra.
+In fact, we have the following result, which explains the relationship to the ``bulk" $(n+1)$-dimensional factorization algebra $\Tilde{\bZ}_n(\fg)$ we introduced in the last section.
+
+ \begin{lmm}
+Let $M$ be an $n$-dimensional manifold.
+There is a quasi-isomorphism of  $\PP_0$-factorization algebras on $M$:
+\[
+\pi_* \Tilde{\bZ}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
+\]
+where $\pi : M \times \RR_{>0} \to M$ is the projection. 
+\end{lmm}
+
+In fact, we will show that this quasi-isomorphism is a deformation retraction. 
+
+\begin{proof}
+To exhibit this quasi-isomorphism, we introduce the following cochain maps.
+For an open set $U \subset M$ let
+\[
+\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
+\] 
+be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
+This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
+Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
+\[
+r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
+\]
+by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
+\end{proof}
+
+Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
+
+\begin{dfn}\label{dfn:constructible1}
+Let $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n(\fg))$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
+\begin{itemize}
+\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\Tilde{\bZ}_n (\fg)(U)$.
+\item to an open set $U \subset M \times \RR_{\geq 0}$ with $U \cap (M \times \{0\}) \ne 0$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(U)$. 
+\end{itemize}
+\brian{not sure how much to say about structure maps}
+\end{dfn}
+
+Let $M$ be an $n$-dimensional manifold and $\fg$ a Lie algebra. 
+
+\begin{dfn}
+For an open set $U \subset M \times \RR_{>0}$ let $\Tilde{\bZ}_n(\fg) (U)$ be the cochain complex 
+\[
+\Tilde{\bZ}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
+\]
+The assignment $\Tilde{\bZ}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
+\end{dfn}
+
+On each open set $U$, the cochain complex $\Tilde{\bZ}_n(\fg) (U)$ is actually a commutative dg algebra. 
+In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
+
+\begin{prp}
+$\Tilde{\bZ}_n(\fg)$ has the structure of a $\PP_0$-factorization algebra on $M \times \RR_{>0}$. 
+\end{prp}
+\begin{proof}
+Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
+\[
+{\rm Sym} \left(\fg^* \otimes \Bar{\Omega}_c (U) [n-1] \right) \; \Hat{\otimes} \; {\rm Sym}  \left(\fg \otimes \Omega_c(U) [2] \right)  .
+\]
+Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
+Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ and $1 \otimes (y \otimes \beta)$ is defined by
+\begin{align*}
+\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
+\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
+\end{align*}
+Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
+\end{proof}
+
 
 
 \subsection{Bulk-boundary topological field theory}
