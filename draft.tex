@@ -257,7 +257,7 @@ see Example~\ref{eg: TT}.
 Note that in the theorem we use the following equivalence due to Lurie~\cite{LurieHA}. 
 
 \begin{thm}
-\label{T:En=Fac} 
+\label{thm:lurie1} 
 There is an equivalence of $\infty$-categories between $E_n$-algebras and locally constant prefactorization algebras on~$\RR^n$. 
 \end{thm}
 
@@ -1261,31 +1261,35 @@ In Section \ref{sec:swiss} below, we will recall an elegant operadic articulatio
 
 \subsection{Swiss cheese pairs well with centers}
 
-Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
-This $\infty$-category is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra and then taking the left-modules for this $E_1$-algebra.
+Given an $\EE_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
+This $\infty$-category is obtained by ``forgetting" the $\EE_{n+1}$-algebra to an $\EE_1$-algebra and then taking the left-modules for this $\EE_1$-algebra.
 
 The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
-There is a similar operadic picture which encodes $E_{n+1}$-algebras together with their left-modules. 
-The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
-What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
+The $(n+1)$-dimensional Swiss cheese operad is a two-colored operad whose algebras include pairs $(B, M)$ where $B$ is an $\EE_{n+1}$-algebra, $M$ is an $\EE_n$-algebra, and where $M$ is a left-module for $B$.
 
+Geometrically, it is most constructive to view this operad as built from open sets in the upper half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$.
+The colors include disks and half-disks. 
+If one restricts to the ``disk" colors we recover the data of the $\EE_{n+1}$-algebra $B$. 
+The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $B$ on $M$.
 
-An algebra over this colored operad can be identified with a pair of objects $(B,M)$ where $B$ is an $E_{n+1}$-algebra and $M$ is an $E_n$-algebra in the category of left $B$-modules.
-Indeed, if one restricts to the ``disk" colors we recover the data of $B$. 
-The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $A$ on $B$.
-
-Given an $E_n$-algebra $A$ we know that $E_n$-center $\fZ_n(A)$ has the structure of an $E_{n+1}$ algebra.
-Moreover, the pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair.
+The pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair in the sense that if $(B, A)$ is another such pair then there exists a unique (up to equivalence) map of $\EE_{n+1}$-algebras $B \to \fZ_n(A)$. 
 This universality is a conjecture of \cite{Kontsevich} which was later made precise and proved in \cite{Thomas, Tamarkin, Dolgushev, jnkf others?}. 
-One consequence of this \brian{universal property}
 
-Abstractly, an algebra over the $(n+1)$-dimensional Swiss cheese operad can be modeled as a {\em constructible} factorization algebra on the upper half space $\HH^{n+1}$. 
-Concretely, this is the data of a pair $(\bB, \bM)$ where $\bB$ is a locally constant factorization algebra on the ``bulk" manifold $\RR^n \times \RR_{>0}$ and $\bM$ is a locally constant factorization algebra on the boundary $\RR^n \times \{0\}$.
+In this paper, we will use two models for algebras over the $(n+1)$-dimensional Swiss cheese operad. 
+The first is obtained by considering pairs of locally constant factorization algebras on an $n$-dimensional manifold. 
 
-\begin{prp}[\cite{Lurie, AF}]
-For any smooth manifold $M$ and Lie algebra $\fg$ there exists a constructible factorization algebra on $M \times \RR_{\geq 0}$ which is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
-\end{prp}
+\begin{dfn}\label{dfn:pair}
+A {\em factorization pair} on a manifold $M$ is a pair $(\bB, \bM)$ where
+\begin{itemize}
+\item $\bB$ is an $\EE_1$-algebra in locally constant factorization algebras;
+\item $\bM$ is a locally constant factorization algebra together with map of $\EE_1$ factorization algebras $\bB \to \bZ_n(\bM)$.
+\end{itemize}
+\end{dfn}
+
+An immediate consequence of Theorem \ref{thm:lurie1} and Theorem \ref{thm: centralizer} is that a factorization pair on $\RR^n$ determines an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+
+In the next section we will recall a different model for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-dimensional manifolds with boundary. 
 
 %We have developed locally constant factorization models separately for enveloping $E_n$-algebras and their centers.
 %Combining these descriptions we obtain the following.
@@ -1410,8 +1414,8 @@ In this section, we turn to an interpretation of the $E_n$-center of an $E_n$-en
 
 \owen{Somewhere please mention that the slogan ``quantization commutes with pushforward'' holds for this class of theories.}
 
-Given an $E_n$-algebra $A$ the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $E_n$-enveloping algebra. 
+Given an $\EE_n$-algebra $A$, the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $\EE_n$-enveloping algebra. 
 
 \begin{prp} \label{prp:swiss1}
 Let $\fg$ be a Lie algebra. 
@@ -1419,10 +1423,16 @@ The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-catego
 The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
 \end{prp}
 
-The key insight is that there exists a filtration on our model for the $E_n$-center $\bZ_n(\fg)$ and the $E_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are {\em commutative} factorization algebras. 
+The key insight is that there exists a filtration on our model for the $E_n$-center $\bZ_n(\fg)$ and the $E_n$-enveloping algebra $\bU_n (\fg)$ whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
+Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
+If the associated graded of a filtered $\EE_n$-algebra is commutative, then it carries the structure of a $\PP_n$-algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
+There is a similar description of the ``classical limit"  of algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of algebras over a certain two-colored operad $\PP_{[n+1,n]}$, see \cite{Pavel1, Pavel2}. 
+We recall the definition of this operad below. 
 
-\brian{additivity}
+\begin{prp} \label{prp:poisson}
+The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ determines an algebra over the operad $\PP_{[n+1,n]}$. 
+\end{prp}
 
 \begin{rmk}
 By a similar proof as in the main part of the paper, we expect that one can see that the factorization algebra
@@ -1432,18 +1442,16 @@ By a similar proof as in the main part of the paper, we expect that one can see 
 is a model for the {\em $\PP_n$-center} of the $\PP_n$-enveloping algebra $\UU_{\PP_n} (\fg)$. 
 \end{rmk}
 
-The associated graded pair in Proposition \ref{prp:swiss1} carries the additional Poisson-type structure. 
-
-\begin{prp} \label{prp:poisson}
-The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ determines an algebra over the operad $\PP_{[n+1,n]}$. 
-\end{prp}
+There is another geometric model \brian{finish}
+The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
+What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
 
 There is another geometric picture for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-manifolds with boundary.
 One drawback of the previous section is that we did not provide a model for the $E_n$-center of an enveloping algebra as a constructible factorization algebra on an $(n+1)$-dimensional manifold with boundary. 
 
-A constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a pair of factorization algebras $(\pi_* \bA , \bA_{\partial})$ on $M$ which locally define the $E_1$-model for $(n+1)$-Swiss cheese algebras. 
+A constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a pair of factorization algebras $(\pi_* \bA , \bA_{\partial})$ on $M$ which define a factorization pair as in Definition \ref{dfn:pair}.
 
-The next goal of this section is to provide a model of the classical limit of the $E_n$-center as a constructible factorization algebra. 
+The next goal of this section is to provide a model of the classical limit of the $\EE_n$-center as a constructible factorization algebra. 
 
 %Generally speaking, the local observables of a topological field theory on a manifold $M$ define a locally constant factorization algebra on $M$. 
 
@@ -1488,7 +1496,7 @@ The Batalin--Vilkovisky (BV) formalism for studying quantum field theory \brian{
 
 \subsection{The ``classical limit"}
 
-We accomplish Proposition \ref{prp:swiss1} by exhibiting a filtration at the level of strict factorization algebras in our model of the $E_n$-center. 
+We prove Proposition \ref{prp:swiss1} by exhibiting a filtration at the level of strict factorization algebras in our model of the $\EE_n$-center. 
 
 For any dg Lie (in fact, $L_\infty$) algebra, the Chevalley--Eilenberg cochain complex computing Lie algebra homology admits a natural filtration whose associated graded has the structure of a commutative dg algebra.
 If $\fh$ is a dg Lie algebra, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
@@ -1501,75 +1509,52 @@ Here, the differential on the right-hand side is simply the underlying linear di
 The Lie bracket on $\fh$ endows ${\rm Sym} (\fh [1])$ with the additional structure of a $\PP_0$-algebra. 
 On linear elements this is simply the Lie bracket on $\fh$, and one extends to the full symmetric algebra by the graded Leibniz rule.
 
-Consider our factorization model for the $E_n$-enveloping algebra $\bU_n(\fg) = \clieu (\fg \otimes \Omega_c)$. 
+Consider our factorization model for the $\EE_n$-enveloping algebra $\bU_n(\fg) = \clieu (\fg \otimes \Omega_c)$. 
 The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
 
-There is a similar filtration on our model for the $E_n$-center $\bZ_n(\fg)$. 
-Define
+There is a similar filtration on our model for the $\EE_n$-center $\bZ_n(\fg)$ defined by
 \[
 F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
 
-\brian{$\PP_0$ stuff}
+Proposition \ref{prp:swiss1} is a direct consequence of the following lemma.
+
+\begin{lmm}
+These filtrations equip the pair $(\bZ_n (\fg), \bU_n(\fg))$ with the structure of a filtered \brian{name}.
+Moreover, the associated graded pair $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg))$ is a commutative \brian{name}. 
+\end{lmm}
+\begin{proof}
+One has
+\[
+{\rm Gr} \; \UU_n (\fg) = {\rm Sym} \left(\fg \otimes \Omega^\bu_c [1] \right)
+\]
+and
+\[
+{\rm Gr} \; \bZ_n (\fg) = \clie^\bu\bigg(\fg \otimes \Omega^\bu \; , \; {\rm Sym} \left(\fg \otimes \Omega^\bu_c [1]\right) \bigg) 
+\]
+as factorization algebras. 
+These are both commutative by direct inspection. 
+\end{proof}
 
 The associated graded commutative factorization algebras ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ lift to $\PP_0$-factorization algebras.
 
-\begin{prp}
-The pair $(\bZ_n (\fg), \bU_n(\fg)$ is a filtered, \brian{not sure what we're calling this}. 
-Further, the associated graded $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg)$ is a $\PP_0$ \brian{not sure what we're calling this}. 
-\end{prp}
-
-
-It is immediate to check that this is a filtration of factorization algebras and that its associated graded has the structure of a $\PP_0$-factorization algebra.
-In fact, we have the following result, which explains the relationship to the ``bulk" $(n+1)$-dimensional factorization algebra $\Tilde{\bZ}_n(\fg)$ we introduced in the last section.
-
- \begin{lmm}
-Let $M$ be an $n$-dimensional manifold.
-There is a quasi-isomorphism of  $\PP_0$-factorization algebras on $M$:
-\[
-\pi_* \Tilde{\bZ}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
-\]
-where $\pi : M \times \RR_{>0} \to M$ is the projection. 
-\end{lmm}
-
-In fact, we will show that this quasi-isomorphism is a deformation retraction. 
-
-\begin{proof}
-To exhibit this quasi-isomorphism, we introduce the following cochain maps.
-For an open set $U \subset M$ let
-\[
-\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
-\] 
-be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
-This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
-Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
-\[
-r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
-\]
-by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
-\end{proof}
-
-Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
-
-\begin{dfn}\label{dfn:constructible1}
-Let $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n(\fg))$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
-\begin{itemize}
-\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\Tilde{\bZ}_n (\fg)(U)$.
-\item to an open set $U \subset M \times \RR_{\geq 0}$ with $U \cap (M \times \{0\}) \ne 0$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(U)$. 
-\end{itemize}
-\brian{not sure how much to say about structure maps}
-\end{dfn}
-
 \subsection{The bulk factorization algebra}
 
-It is immediate to check that this is a filtration of factorization algebras and that its associated graded has the structure of a $\PP_0$-factorization algebra.
-In fact, we have the following result, which explains the relationship to the ``bulk" $(n+1)$-dimensional factorization algebra $\Tilde{\bZ}_n(\fg)$ we introduced in the last section.
+We turn towards a model for the $\EE_n$-center as a constructible factorization algebra. 
+
+\begin{dfn}
+For an open set $U \subset M \times \RR_{>0}$ let $\overset{\circ}{\bf Z}_n(\fg) (U)$ be the cochain complex 
+\[
+\overset{\circ}{\bf Z}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
+\]
+The assignment $U \mapsto \overset{\circ}{\bf Z}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
+\end{dfn}
 
  \begin{lmm}
 Let $M$ be an $n$-dimensional manifold.
 There is a quasi-isomorphism of  $\PP_0$-factorization algebras on $M$:
 \[
-\pi_* \Tilde{\bZ}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
+\pi_* \overset{\circ}{\bf Z}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
 \]
 where $\pi : M \times \RR_{>0} \to M$ is the projection. 
 \end{lmm}
@@ -1594,30 +1579,20 @@ by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$.
 Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 
 \begin{dfn}\label{dfn:constructible1}
-Let $(\Tilde{\bZ}_n (\fg), {\rm Gr} \bU_n(\fg))$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
+Let $\bC_n(\fg)$ be the following constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$:
 \begin{itemize}
-\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\Tilde{\bZ}_n (\fg)(U)$.
-\item to an open set $U \subset M \times \RR_{\geq 0}$ with $U \cap (M \times \{0\}) \ne 0$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(U)$. 
+\item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex $\overset{\circ}{\bf Z}_n (\fg)(U)$.
+\item to an open set $V \times [0,\epsilon)$ we assign the cochain complex ${\rm Gr} \;\bU_n(\fg)(V)$. 
 \end{itemize}
 \brian{not sure how much to say about structure maps}
-\end{dfn}
-
-Let $M$ be an $n$-dimensional manifold and $\fg$ a Lie algebra. 
-
-\begin{dfn}
-For an open set $U \subset M \times \RR_{>0}$ let $\Tilde{\bZ}_n(\fg) (U)$ be the cochain complex 
-\[
-\Tilde{\bZ}_n(\fg) (U) = \clie \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
-\]
-The assignment $\Tilde{\bZ}_n(\fg) (U)$ defines a locally constant factorization algebra on $M \times \RR_{>0}$. 
 \end{dfn}
 
 On each open set $U$, the cochain complex $\Tilde{\bZ}_n(\fg) (U)$ is actually a commutative dg algebra. 
 In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
 
-\begin{prp}
-$\Tilde{\bZ}_n(\fg)$ has the structure of a $\PP_0$-factorization algebra on $M \times \RR_{>0}$. 
-\end{prp}
+\begin{lmm}
+$\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
+\end{lmm}
 \begin{proof}
 Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
 \[
@@ -1842,7 +1817,7 @@ which gives us,  for any integer $n$, maps
 
 \def \Fac {\mathrm{Fac}}
 We now need to express the $E_n$-structure on ${\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n\fg}}(\UU_n \fg, B_f)$ induced by the equivalence of Proposition~\ref{P:ModentoModSn}, and then on the subsequent isomorphic hom spaces of modules morphisms.  Since we are going to take advantage of the factorization algebra presentation of $\UU_n( \fg)$, see~Theorem~\ref{T:UnofLie}, we recall the following factorization algebra description of the centralizer.
-Let $\cA \stackrel{f}\to \cB$ be a morphism of locally constant factorization algebras on $\RR^n$ corresponding to an $E_n$-algebra map similarly denoted. Then by Theorems~\ref{T:En=Fac}, \ref{T:centralizer=inthom} the centralizer of $f$ is represented by the locally constant factorization algebra  
+Let $\cA \stackrel{f}\to \cB$ be a morphism of locally constant factorization algebras on $\RR^n$ corresponding to an $E_n$-algebra map similarly denoted. Then by Theorems~\ref{thm:lurie1}, \ref{T:centralizer=inthom} the centralizer of $f$ is represented by the locally constant factorization algebra  
 ${\rm Mor}_{\Fac_{\cA}}(\cA, \cB_f)$ which is the internal mapping object  of maps from $\cA$ to $\cB_f$ in the $\infty$-category of locally constant factorization algebras on $\RR^n$ which are a $\cA$-module. 
 
 The factorization algebra structure is 
