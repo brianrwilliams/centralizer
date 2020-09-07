@@ -19,7 +19,7 @@
 
 
 \begin{document}
-\title{Centralizers of higher enveloping algebras of Lie algebras}
+\title{Centers and centralizers of higher enveloping algebras of Lie algebras}
 
 %\author{Owen Gwilliam}
 %\address{Department of Mathematics and Statistics \\
@@ -398,6 +398,8 @@ First, recall that an $L_\infty$ algebra $\fg$, with its collection of brackets 
 \]
 where the sum of the brackets provides a square-zero coderivation.
 The square-zero condition efficiently encodes the higher Jacobi relations.
+We call $\cliels(\fg)$ the {\em Lie algebra chains} (or Chevalley-Eilenberg chains) of~$\fg$.
+
 This coalgebra is canonically coaugmented by the inclusion of the base field $k \xto{\simeq} \Sym^0(\fg[1])$.
 There is thus a subcoalgebra $\overline{\cliels(\fg)} \subset \cliels(\fg)$ given by the direct sum over positive symmetric powers of $\fg[1]$,
 which can be identified with both the kernel of the counit map as well as cokernel of the coaugmentation map.
@@ -406,6 +408,13 @@ In short,
 \cliels(\fg) = k \oplus \overline{\cliels(\fg)}
 \]
 as complexes.
+
+This construction is symmetric monoidal.
+The {\em product} of two $L_\infty$ algebras $\fg \times \fh$ is the direct sum of the underlying graded vector spaces $\fg \oplus \fh$ equipped with the brackets encoded by the tensor product of their chains
+\[
+\cliels(\fg \times \fh) = \cliels(\fg) \otimes \cliels(\fh),
+\]
+which piggybacks on the fact that $\Sym$ is a symmetric monoidal functor.
 
 By definition, an $L_\infty$ map $f: \fg \rightsquigarrow \fh$ is a (strict) map of such dg cocommutative coalgebras
 \[
@@ -970,6 +979,8 @@ and then apply theorems about Lie algebra cohomology plus Chevalley restriction 
 
 \owen{Point out how to use LQT map and deduce existence of $E_n$ algebra structure on a shifted copy of cyclic cohomology of~$\Omega^*_c$}
 
+\owen{The weird and interesting bit is to compute the factorization homology over a nontrivial (closed) manifold.}
+
 \subsection{Free Lie algebras and free $E_n$ algebras}
 
 \owen{Describe what we can of the center of a free $E_n$ algebra thanks to Ben's theorem}
@@ -1061,8 +1072,8 @@ Recall from Section~\ref{sec: review of linfty} the natural decomposition
 \[
 \clies(\fg,(\cliels(\fh)_f)) \cong k \oplus \Hom^\bullet(\overline{\cliels(\fg)}, \cliels(\fh)_f)
 \]
-and that the summand $k$ encodes the defining map~$f: \fg \rightsquigarrow \fh$.
-(Abusively, here $f$, $\fg$, and $\fh$ denote generic elements and not those appearing in the theorem we are proving.)
+and that the summand $k$ corresponds to (scalar multiples of) the defining map~$f: \fg \rightsquigarrow \fh$.
+(Abusively, here $f$, $\fg$, and $\fh$ are generic and are not those appearing in the theorem we are proving here.)
 Hence, any element $\varphi$ in $\bZ_n(f)$, for instance, has the form
 \[
 \varphi =\lambda_\varphi \mathbf{1} +\overline{\varphi}
@@ -1088,7 +1099,7 @@ set
 \psi \star \varphi =  \lambda_{\psi} \lambda_{\varphi} \mathbf{1}+
 \lambda_\psi g\circ \overline{\varphi} + \lambda_{\varphi} \overline{\psi} \circ \iota_W \circ f +\overline{\psi} \circ \iota_W \circ \overline{\varphi} 
 \]
-where $\iota_W$ denotes the inclusion $\Omega^*_c(W) \hookrightarrow \Omega^*(W)$ extended in the obvious way to this setting.
+where the inclusion $\iota_W: \Omega^*_c(W) \hookrightarrow \Omega^*(W)$ is extended in the obvious, functorial way to this setting.
 \end{dfn}
 
 Since $\iota_V$ is an embedding for every open $V$, 
