@@ -1461,11 +1461,12 @@ There is a constructible commutative factorization algebra ${\bf C}_n (\fg)$
 %\begin{equation}\label{eqn:graded}
 %\left({\bf Bulk}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
 %\end{equation}
-on $M \times \RR_{\geq 0}$ such that the pair 
+on $M \times \RR_{\geq 0}$ and a quasi-isomorphism of factorization pairs
 \[
-\left( {\bf C}_n (\fg)^\circ \; , \; {\bf C}_n (\fg)^\partial \right)
+\bigg( {\bf C}_n (\fg)^\circ \; , \; {\bf C}_n (\fg)^\partial \bigg) \xto{\simeq} \bigg({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg) \bigg).
 \]
-is equivalent to the pair $({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg))$ as a commutative factorization pair.
+
+In fact, $\bC_n(\fg)$ is a constructible $\PP_0$-factorization algebra and this quasi-isomorphism is compatible with Poisson structures.
 \end{prp}
 
 %A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
@@ -1658,74 +1659,68 @@ We are now ready to prove Proposition \ref{prp:pair}.
 
 \begin{proof}[Proof of Proposition \ref{prp:pair}]
 To exhibit this quasi-isomorphism, we introduce the following cochain maps.
-For an open set $U \subset M$ let
+For an open set $V \subset M$ let
 \[
-\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
+\int_{\RR_{>0}} : \Omega_c(V \times \RR_{>0}) \to \Omega_c (U) [1] 
 \] 
-be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
-This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
+be the map which integrates a compactly supported form on $U \times \RR_{> 0}$ along $\RR_{> 0}$. 
+This map is a quasi-isomorphism for any $U$ and, in fact, admits the following explicit retract. 
 Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
 \[
-r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
+r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR_{\geq 0})
 \]
 by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
+
+Notice that for an open set $V \subset M$ we have 
+\[
+\bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega (V \otimes \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega_c(V \times \RR_{>0}) [2] \right) \bigg)  .
+\]
+The map $\int_{\RR_{>0}}$ induces a map of factorization algebras on $M$
+\[
+\int_{\RR_{>0}} : \bC_n(\fg)^\circ \to {\rm Gr} \; \bZ_n (\fg)
+\]
+which on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>0})$ sends $x \otimes \alpha \in \Omega^\bu_c(V \times \RR_{>0})[2]$ to $x \otimes \int_{\RR_{>0}} \alpha \in \Omega^\bu_c (V)[1]$. 
+Using the retract $r_\phi$, we see that this is a quasi-isomorphism of factorization algebras on $M$. 
+
+Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras $\int_{\RR_{\geq 0}} : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg)$.
+
+The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization pairs. 
+The compatibility of this quasi-isomorphism with Poisson brackets is a direct calculation. 
 \end{proof}
 
 \subsection{Bulk-boundary topological field theory}
 
-\brian{intro paragraph}
-
-It is the central theme of \cite{CG1, CG2} that the observables of a perturbative quantum field theory define the structure of a factorization algebra. 
-In this setup, one first uses the Batalin--Vilkovisky (BV) formalism to define a perturbative classical field theory. 
-The key ingredient in this formalism is a $(-1)$-shifted symplectic structure on the classical space of fields. 
-The observables, or functions on the classical space of fields is then equipped with the structure of a $\PP_0$-factorization algebra.
-
-\brian{maybe say AKSZ here}
-
-More recently in \cite{ButsonYoo} and \cite{Eugene}, it is shown how to run the classical BV formalism on manifolds with boundary. 
-Let $N$ be such a manifold with boundary and let $\cE$ denote the space of fields, typically given as the space of sections of a finite rank vector bundle on $N$. 
-The definition of a classical BV theory on $N$ amounts to prescribing the following data:
-\begin{itemize}
-\item[(1)]
-an ordinary classical BV theory on the interior $N \setminus \partial N$ whose space of fields is $\cE|_{N \setminus \partial N}$;
-\item[(2)] 
-a compatible $0$-shifted symplectic structure on $\cE|_{\partial N}$ equipped with a Lagrangian subspace $\cL \subset \cE|_{\partial N}$.
-This is called a {\em boundary condition}.
-\end{itemize}
-From this data at the level of fields, one obtains a constructible $\PP_0$-factorization algebra on the manifold with boundary $N$ at the level of the observables. 
+In this section, we describe a relationship of our model of the $\EE_n$-center with a certain topological field theory. 
+This theory admits a natural description via the AKSZ formalism \cite{AKSZ}, which we briefly recount now. 
 
 For any Lie algebra $\fg$, there is a topological field theory defined in any dimension known as {\em topological BF theory}.
 Suppose $N$ is an $(n+1)$-dimensional manifold, which for now we assume has no boundary $\partial N = \emptyset$. 
-In the BV formalism, the perturbative space of fields of topological $BF$ theory on $N$ consists of
-\[
-(A, B) \in \Omega^{\bu} (N) \otimes \fg [1] \oplus \Omega^{\bu} (N) \otimes \fg^* [n-1] .
-\]
-Concretely, the classical moduli space consists of pairs $(A, B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega^{n-1} (N) \otimes \fg^*$ satisfying the equations
-\begin{align*}
-\d A + \frac12 [A,A] & = 0 \\
-\d B + [A,B] & = 0 .
-\end{align*}
-When $N$ is compact, the classical moduli space underlying this field theory has an elegant description in terms of the AKSZ formalism. 
-It can be interpreted as the following mapping stack 
+When $N$ is compact, the classical moduli space underlying this topological field theory can be described as the following mapping space 
 \begin{equation} \label{stack1}
 {\rm Map}(N_{\rm dR} ,  {\rm T}^*[n] {\rm B} G)
 \end{equation}
 where $N_{\rm dR}$ denotes the de Rham stack of $N$ and where $G$ is a Lie group whose Lie algebra is $\fg$. 
-Perturbative BF theory is obtained by taking the tangent space of the above mapping stack near at the trivial $G$-bundle.
+Via the obvious $n$-shifted symplectic structure on ${\rm T}^* [n] {\rm B} G$, the AKSZ formalism equips the mapping space with a $(-1)$-shifted symplectic structure. 
+Classically, on manifolds without boundary, this is the complete description of topological BF theory in the Batalin--Vilkovisky formalism \cite{BV}. 
 
-Now, suppose $N$ has a boundary $\partial N \ne 0$.
+Now, suppose $N$ has non-empty boundary $\partial N \ne 0$.
 Then, (\ref{stack1}) no longer admits a $(-1)$-shifted symplectic structure. 
 However, the AKSZ construction equips 
 \[
 {\rm Map}(\partial N_{\rm dR} , {\rm T}^* [n] {\rm B} G)
 \]
 with a $0$-shifted symplectic structure. 
-Perturbatively, this mapping stack represents the restriction of the fields to the boundary. 
-
-For BF theory, there is a natural choice of a Lagrangian for this boundary condition. 
-In terms of mapping stacks, it is given by considering maps from $N_{\rm dR}$ into the $n$-shifted conormal bundle of ${\rm B} G$:
+Moreover, the restriction map 
 \[
-{\rm Map}(N_{\rm dR} , {\rm N}^*_e [n] {\rm B}G) .
+{\rm Map}(N_{\rm dR} , {\rm T}^* [n] {\rm B} G) \to {\rm Map}(\partial N_{\rm dR} , {\rm T}^* [n] {\rm B} G)
+\]
+is a Lagrangian morphism. 
+%Perturbatively, this mapping stack represents the restriction of the fields to the boundary. 
+
+For BF theory, this $0$-shifted symplectic manifold admits another natural Lagrangian. 
+In terms of mapping stacks, it is given by considering maps from $\partial N_{\rm dR}$ into the $n$-shifted conormal bundle of ${\rm B} G$:
+\[
+{\rm Map}(\partial N_{\rm dR} , {\rm N}^*_e [n] {\rm B}G) .
 \]
 Then, by abstract maneuvers \brian{reference} the following fiber product
 \[
@@ -1737,30 +1732,81 @@ X \ar[r] \ar[d] & {\rm Map} (N , {\rm T}^* [n] {\rm B} G) \ar[d] \\
 is equipped with a $(-1)$-shifted symplectic structure. 
 Heuristically, the classical observables are given by functions on the $(-1)$-shifted symplectic space $X$.
 
-Perturbatively, we follow \cite{ButsonYoo} and \cite{Eugene} to make the following definition within the BV formalism.
+It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra. 
+Moreover, the observables, is equipped with the structure of a $\PP_0$-factorization algebra.
+
+Perturbative BF theory is the formal moduli space is defined by the formal neighborhood of a point in the derived mapping space (\ref{stack1}). 
+For simplicity, we will work near the trivial $G$-bundle. 
+Here, the formal moduli space is described in terms of the following dg Lie algebra 
+\begin{equation}\label{eqn:fields}
+\cL = \Omega^{\bu} (N) \otimes \fg \ltimes \Omega^{\bu} (N) \otimes \fg^* [n-3] .
+\end{equation}
+We denote elements of this dg Lie algebra by pairs $(A,B)$. 
+
+The classical {\em fields} of the theory are given by shifting the dg Lie algebra down by one $\cL[1]$. 
+One can read off the $(-1)$-symplectic structure on the fields simply by $\int A \wedge B$. 
+
+Perturbatively, the classical moduli space is the space of Maurer--Cartan elements of this dg Lie algebra.
+These are pairs $(A,B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega^{n-1} (N) \otimes \fg^*$ satisfying the equations
+\begin{align*}
+\d A + \frac12 [A,A] & = 0 \\
+\d B + [A,B] & = 0 .
+\end{align*}
+
+We remark that we are free to replace $\fg$ by an arbitrary $L_\infty$ algebra, which we will do so for the remainder of this section. 
+It is clear that the $L_\infty$-algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$-algebras. 
+In the setup of \cite{CG2}, the factorization algebra of classical observables is the Chevalley--Eilenberg cochains $\clies (\cL)$.   
+The $\PP_0$-structure is induced from the explicit $(-1)$-symplectic pairing $\int A \wedge B$ at the level of the fields. 
+
+So far, we have provided a description of perturbative BF theory on manifolds without boundary. 
+More recently, in \cite{ButsonYoo} and \cite{Eugene}, it is shown how to run the perturbative BV formalism on manifolds with boundary which we follow in the definition below. 
+
+%Let $N$ be such a manifold with boundary $\partial N \ne \emptyset$ and let $\cE$ denote the space of fields, typically given as the space of sections of a finite rank vector bundle on $N$. 
+%The definition of a classical BV theory on $N$ amounts to prescribing the following data:
+%\begin{itemize}
+%\item[(1)]
+%an ordinary classical BV theory on the interior $N \setminus \partial N$ whose space of fields is $\cE|_{N \setminus \partial N}$;
+%\item[(2)] 
+%a compatible $0$-shifted symplectic structure on $\cE|_{\partial N}$ equipped with a Lagrangian subspace $\cL \subset \cE|_{\partial N}$.
+%This is called a {\em boundary condition}.
+%\end{itemize}
+%From this data at the level of fields, one obtains a constructible $\PP_0$-factorization algebra on the manifold with boundary $N$ at the level of the observables. 
+
 
 \begin{dfn}
-Let $M$ be an $n$-dimensional manifold.
-{\em Topological BF theory with its universal Neumann boundary condition} is the classical bulk-boundary theory on $M \times \RR_{\geq 0}$ described as follows:
+Let $M$ be an $n$-dimensional manifold and let $\fg$ be an $L_\infty$-algebra. 
+{\em Topological BF theory with its universal Neumann boundary condition} is the classical BV theory on $M \times \RR_{\geq 0}$ described by the following constructible sheaf $\cL$ of $L_\infty$-algebras:
 \begin{itemize}
 \item[(1)] 
-The bulk theory is topological BF theory on $M \times \RR_{>0}$, where the space of fields is 
+The bulk theory is perturbative topological BF theory on $M \times \RR_{>0}$. 
+That is, to an open set $U \subset M \times \RR_{>0}$ the theory is described by the $L_\infty$-algebra 
 \[
-\cE|_{M \times \RR_{>0}} = \Omega^{\bu} (M \times \RR_{>0}) \otimes \fg [1] \oplus \Omega^{\bu} (M \times \RR_{>0}) \otimes \fg^* [n-2] .
+\cL (U) = \Omega^{\bu} (U) \otimes \fg [1] \ltimes \Omega^{\bu} (U) \otimes \fg^* [n-3] .
 \]
 \item[(2)] 
-The boundary condition is the Lagrangian subspace
+To an open set $V \times [0,\epsilon)$, we assign the (abelian) $L_\infty$-algebra
 \[
-\Omega^{\bu} (M) \otimes \fg^* [n-2] \subset \cE|_{M \times \{0\}} .
+\cL (V \times [0,\epsilon)) = \Omega^{\bu} (V \times [0,\epsilon)) \otimes \fg^* [n-3] .
 \]
 \end{itemize}
 \end{dfn}
 
-We obtain the following by a direct unpacking of the setup in \cite{Eugene}. 
+By definition, the classical observables of perturbative BF theory suppported on an open set $U \subset M \times \RR_{\geq 0}$ is the cochain complex $\clies (\cL (U))$. 
+In \cite{Eugene}, it is shown that the assignment $U \mapsto \clies (\cL(U))$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
+
+The main result of this section is that the classical observables are equivalent to our constructible model for the classical limit of the $\EE_n$-center. 
 
 \begin{prp}
-The constructible $\PP_0$-factorization algebra of topological BF theory with its universal Neumann boundary condition is equivalent to the constructible factorization algebra $\bC_n(\fg)$. 
+There is a quasi-isomorphism of constructible $\PP_0$-factorization algebras on $M \times \RR_{\geq 0}$:
+\[
+\bC_n (\fg) \xto{\simeq} \clies(\cL) .
+\]
 \end{prp}
+
+\begin{proof}
+Suppose $U \subset M \times \RR_{>0}$ is an open set 
+\end{proof}
+
 
 \begin{rmk} Examples
 
