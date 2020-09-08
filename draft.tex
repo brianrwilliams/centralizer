@@ -251,23 +251,47 @@ see Example~\ref{eg: TT}.
 \subsection{Recollections on $\EE_n$ algebras and prefactorization algebras}
 \label{sec: en background}
 
-\owen{Recall Jacob's results and what it means in conjunction with strictification.}
+We reemphasize that $\EE_n$ refers to any operad or colored operad or $\infty$-operad equivalent to the topological operad of little $n$-disks. 
 
-\owen{I want to work with a colored operad $\Disk_n$ of round disks (or rectilinear boxes) in $\RR^n$.}
+Let $M$ be a manifold. 
+The collection of disjoint disks in $M$ form a colored operad that we will denote by ${\rm Disk}^\sqcup_M$. 
+When $M = \RR^n$ we will denote this colored operad by ${\rm Disk}^{\sqcup}_n$. 
 
-\owen{Recall any relevant strictification results.}
+A ${\rm Disk}^\sqcup_M$-algebra $A$ is {\em locally constant} if for any embedding of disks $D \hookrightarrow D'$ in $M$ that the induced map $A(D) \to A(D')$ is an equivalence. 
+When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$-algebras is equivalent to the theory of $\EE_n$-algebras. 
 
-Note that in the theorem we use the following equivalence due to Lurie~\cite{LurieHA}. 
-
-\begin{thm}
-\label{thm:lurie1} 
-There is an equivalence of $\infty$-categories between $\EE_n$-algebras and locally constant prefactorization algebras on~$\RR^n$. 
+\begin{thm}[\cite{LurieHA} Proposition 5.4.5.15]
+\label{thm:lurie0} 
+There is a fully faithful embedding of $\infty$-categories
+\[
+{\rm Alg}_{\EE_n} \to {\rm Alg}_{{\rm Disk}^\sqcup_n}
+\]
+whose essential image is the full subcategory of locally constant ${\rm Disk}^\sqcup_n$-algebras. 
 \end{thm}
 
-\owen{Plus a version for $\Disk_n$ algebras}
+In the above proposition, we refer to ${\rm Disk}^\sqcup_n$-algebras in the homotopically coherent sense. 
+In particular, the requisite associativity axioms hold up to a prescribed homotopy.
+For algebras over a colored operad satisfying some modest axioms, one can find a ``strictification" which is equivalent to the original homotopically coherent algebra.
+See Theorem 1.1 of \cite{PavlovRectify} for a general result of this type that is sufficient for our purposes. 
+There is a $1$-category of ${\rm Disk}^\sqcup_n$-algebras where we require associativity to hold in the strict sense. 
+By this general strictification result, given any homotopically coherent ${\rm Disk}^{\sqcup}_n$-algebra we can find an equivalent algebra which is an object in this $1$-category. 
 
-\brian{notation $\EE$ and $\bE$}
+There is another colored operad ${\rm Opens}^\sqcup_M$ whose colors consist of all connected open subsets of $M$. 
+We note that ${\rm Disk}^\sqcup_M$ is a full subcategory of ${\rm Opens}^\sqcup_M$.
+%The set of operations ${\rm Disj}_M \left(\{U_\alpha\} , V \right)$ consists of a single point if the collection $\{U_\alpha\}$ is pairwise disjoint and are all contained in $V$.
+%Otherwise the set is empty. 
+A {\em prefactorization algebra} on $M$ is an algebra over the colored operad ${\rm Opens}^{\sqcup}_M$. 
+We say a prefactorization algebra on $M$ is locally constant if its associated ${\rm Disk}_n$-algebra is.
 
+Again, the $\infty$-category of prefactorization algebras consists of objects where associativity only holds up to homotopy. 
+We can equally apply strictification for prefactorization algebras: given a homotopy coherent prefactorization algebra, we can find an equivalent object in the $1$-category of strict prefactorization algebras. 
+
+A prefactorization algebra is a {\em factorization} algebra if it satisfies a certain codescent condition, see Section 5.5.4 of \cite{LurieHA} or Chapter 6 \cite{CG1}. 
+Locally constant factorization algebras provide another model for $\EE_n$-algebras: there is an equivalence of $\infty$-categories between locally constant factorization algebras on $\RR^n$ and $\EE_n$-algebras. 
+
+Throughout the text, we will refer to particular strict factorization (or strict ${\rm Disk}^\sqcup_M$) algebras using bold fonts, e.g. $\bU, \bZ$, etc.. 
+The homotopy coherent $\EE_n$-algebras will be denoted by blackboard font, e.g. $\UU$, except for the centralizer of a map where we will use the symbol $\fZ(f)$. 
+ 
 \subsection{Enveloping $\EE_n$ algebras of Lie algebras}
 \label{sec: enveloping}
 
@@ -1644,7 +1668,7 @@ The structure map associated to the embedding
 \begin{equation}\label{eqn:embed}
 U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
 \end{equation}
-is
+is given by the composition
 \[
 \begin{tikzcd}
 \clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) \ar[d] \\
@@ -1653,7 +1677,7 @@ is
 \Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
 \end{tikzcd}
 \]
-The first map projects onto the $\Sym^0$ component of $\clie^\bu$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
+The first map evaluates the unit in $\Sym\left(\fg \otimes \Omega^\bu(U)\right)$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
 Finally, the third map is induced by the extension of compactly supported de Rham forms along the embedding (\ref{eqn:embed}). 
 \end{dfn}
 
@@ -1773,7 +1797,7 @@ Heuristically, the classical observables are given by functions on the $(-1)$-sh
 \owen{I'm not sure it's a heuristic. I think we could say that we interpret functions on $X$ as the classical observables for the classical field theory with this boundary condition.}
 
 It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra. 
-Moreover, the observables, is equipped with the structure of a $\PP_0$-factorization algebra.
+Moreover, the observables are equipped with the structure of a $\PP_0$-factorization algebra.
 
 Perturbative BF theory is the formal moduli space is defined by the formal neighborhood of a point in the derived mapping space (\ref{stack1}). 
 For simplicity, we will work near the trivial $G$-bundle. 
@@ -1832,19 +1856,30 @@ To an open set $V \times [0,\epsilon)$, we assign the (abelian) $L_\infty$-algeb
 \end{dfn}
 
 By definition, the classical observables of perturbative BF theory suppported on an open set $U \subset M \times \RR_{\geq 0}$ is the cochain complex $\clies (\cL (U))$. 
-In \cite{Eugene}, it is shown that the assignment $U \mapsto \clies (\cL(U))$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
+In \cite{Eugene}, it is shown that the assignment $U \mapsto \clies (\cL(U))$ has the structure of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 
 The main result of this section is that the classical observables are equivalent to our constructible model for the classical limit of the $\EE_n$-center. 
 
 \begin{prp}
-There is a quasi-isomorphism of constructible $\PP_0$-factorization algebras on $M \times \RR_{\geq 0}$:
+There is a quasi-isomorphism of constructible factorization algebras on $M \times \RR_{\geq 0}$:
 \[
 \bC_n (\fg) \xto{\simeq} \clies(\cL) .
 \]
 \end{prp}
 
 \begin{proof}
-Suppose $U \subset M \times \RR_{>0}$ is an open set 
+Suppose $V \times [0,\epsilon) \subset M \times \RR_{\geq 0}$ is an open set. 
+Then, as cochain complexes 
+\[
+\clie^\bu(\cL(V \times [0,\epsilon)) = {\rm Sym} \left(\Bar{\Omega}^\bu_c(V \times [0,\epsilon) [2] \right)  .
+\]
+Here $\Bar{\Omega}^\bu_c$ denotes the compactly supported distributional de Rham forms. 
+By ellipticity, the inclusion $\Omega^\bu \hookrightarrow \Bar{\Omega}^\bu_c$ is a quasi-isomorphism which induces a quasi-isomorphism
+\[
+\bC_n(\fg) (V \times [0,\epsilon)) \hookrightarrow \clie^\bu(\cL(V \times [0,\epsilon)) 
+\]
+as desired. 
+The quasi-isomorphism for the value of the factorization algebras on open sets $U \subset M \times \RR_{>0}$ is defined similarly. 
 \end{proof}
 
 
