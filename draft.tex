@@ -1508,10 +1508,7 @@ The associated graded cochain complex is the free symmetric algebra on $\fh[1]$ 
 \]
 Here, the differential on the right-hand side is simply the underlying linear differential of $\fh$ (in terms of $L_\infty$ algebras, this is the $1$-ary operation $\ell_1$). 
 
-The Lie bracket on $\fh$ endows ${\rm Sym} (\fh [1])$ with the additional structure of a $\PP_0$-algebra. 
-On linear elements this is simply the Lie bracket on $\fh$, and one extends to the full symmetric algebra by the graded Leibniz rule.
-
-Consider our factorization model for the $\EE_n$-enveloping algebra $\bU_n(\fg) = \clieu (\fg \otimes \Omega_c)$. 
+Consider our factorization model for the $\EE_n$-enveloping algebra $\bU_n(\fg) = \cliels (\fg \otimes \Omega^\bu_c)$. 
 The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
 
 There is a similar filtration on our model for the $\EE_n$-center $\bZ_n(\fg)$ defined by
@@ -1557,6 +1554,18 @@ Then
 \end{itemize}
 \end{lmm}
 
+\begin{proof}
+For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$-algebra.
+It is given by the sum of the $L_\infty$-operations $\ell_2 + \ell_3 + \cdots$. 
+This implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
+
+Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm Gr} \; \bZ_n (\fg)$ assigns the cochain complex whose underlying 
+\[
+\clie^\bu\bigg(\fg \otimes \Omega^\bu (U) \; , \; {\rm Sym} \left(\fg \otimes \Omega^\bu_c(U) [1]\right) \bigg) = {\rm Hom}^\bu \bigg(\cliels(\fg \otimes \Omega^\bu(U)) , \cliels (\fg \otimes \Omega^\bu_c(U)) \bigg).
+\]
+\brian{how to handle homs}.
+\end{proof}
+
 The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
 At the level of the associated graded algebras, we obtain an algebra over a certain classical limit of this operad which takes into account the aforementioned Poisson structures.
 
@@ -1593,14 +1602,20 @@ Let $\bC_n(\fg)$ be the following constructible factorization algebra on $M \tim
 \]
 \end{itemize}
 The structure map associated to the embedding 
-\[
+\begin{equation}\label{eqn:embed}
 U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
-\]
+\end{equation}
 is
 \[
-\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) 
+\begin{tikzcd}
+\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) \ar[d] \\
+\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d] \\
+\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d]\\
+\Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
+\end{tikzcd}
 \]
-\brian{finish}
+The first map projects onto the $\Sym^0$ component of $\clie^\bu$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
+Finally, the third map is induced by the extension of compactly supported de Rham forms along the embedding (\ref{eqn:embed}). 
 \end{dfn}
 
 On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a commutative dg algebra. 
@@ -1628,7 +1643,7 @@ Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and 
 The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
 \end{proof}
 
-Next, we provide a construction of a factorization pair on the manifold $M$ from that data of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
+Next, we provide a construction of a factorization pair on the manifold $M$ from the data of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 Suppose $\bA$ is any constructible factorization algebra on a manifold with boundary $M \times \RR_{\geq 0}$. 
 Let $\pi : M \times \RR_{\geq 0} \to M$ be the projection and denote by $\pi|_{M \times \RR_{>0}}$ its restriction to the interior. 
 Define the following two factorization algebras on $M$:
@@ -1639,19 +1654,9 @@ Define the following two factorization algebras on $M$:
 It is immediate to check that $(\bA^\circ, \bA^\partial)$ form a factorization pair in the sense of Definition \ref{dfn:pair}. 
 In fact, this construction determines a functor from the category of constructible factorization algebras on $M \times \RR_{\geq 0}$ to factorization pairs on $M$.
 
- \begin{lmm}
- \brian{fix notation}
-Let $M$ be an $n$-dimensional manifold.
-There is a quasi-isomorphism of  $\PP_0$-factorization algebras on $M$:
-\[
-\pi_* \overset{\circ}{\bf Z}_n(\fg) \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
-\]
-where $\pi : M \times \RR_{>0} \to M$ is the projection. 
-\end{lmm}
+We are now ready to prove Proposition \ref{prp:pair}.
 
-In fact, we will show that this quasi-isomorphism is a deformation retraction. 
-
-\begin{proof}
+\begin{proof}[Proof of Proposition \ref{prp:pair}]
 To exhibit this quasi-isomorphism, we introduce the following cochain maps.
 For an open set $U \subset M$ let
 \[
@@ -1665,8 +1670,6 @@ r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
 \]
 by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
 \end{proof}
-
-Since the universal action of $\bZ_n(\fg)$ on $\bU_n (\fg)$ is compatible with the above filtrations, we obtain the following constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 
 \subsection{Bulk-boundary topological field theory}
 
