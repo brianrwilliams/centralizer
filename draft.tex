@@ -128,7 +128,7 @@ This map determines functorially a map of $\EE_n$ algebras
 \UU_n f: \UU_n \fg \to \UU_n \fh
 \]
 between their enveloping $\EE_n$ algebras.
-The centralizer of this map ${\frak Z}_n(\UU_n f)$ is an $\EE_n$-algebra modeled by the factorization algebra 
+The centralizer of this map ${\frak Z}_n(\UU_n f)$ is an $\EE_n$ algebra modeled by the factorization algebra 
 \[
 \clies(\Omega^* \otimes \fg, \cliels(\Omega^*_c \otimes \fh)_f)
 \]
@@ -139,7 +139,7 @@ where the subscript $f$ indicates how $\cliels(\Omega^*_c \otimes \fh)$ is a mod
 {\em Nota bene:}\/ For concision --- and since it is essentially the only kind of map we deal with in this paper --- we simply write $f: \UU_n \fg \to \UU_n \fh$ for the map $\UU_n(f)$ arising from the $L_\infty$ map $f: \fg \rightsquigarrow \fh$.
 Likewise, we write ${\frak Z}_n(f)$ instead of~${\frak Z}_n(\UU_n f)$.
 
-\owen{I think we could (and maybe should) also discuss the $\EE_n$-Koszul dual situation involving cochains.}
+\owen{I think we could (and maybe should) also discuss the $\EE_n$ Koszul dual situation involving cochains.}
 
 \def\Disk{{\rm Disk}}
 
@@ -237,7 +237,7 @@ Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal var
 For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
 see Example~\ref{eg: TT}. 
 
-\greg{Somewhere we should recall that $\UU_n$ and its center are unoriented $\EE_n$-algebras and define factorization algebras over any manifold that came from the formula}
+\greg{Somewhere we should recall that $\UU_n$ and its center are unoriented $\EE_n$ algebras and define factorization algebras over any manifold that came from the formula}
 
 \subsection{Comments on a generalization}
 
@@ -258,7 +258,7 @@ The collection of disjoint disks in $M$ form a colored operad that we will denot
 When $M = \RR^n$ we will denote this colored operad by ${\rm Disk}^{\sqcup}_n$. 
 
 A ${\rm Disk}^\sqcup_M$-algebra $A$ is {\em locally constant} if for any embedding of disks $D \hookrightarrow D'$ in $M$ that the induced map $A(D) \to A(D')$ is an equivalence. 
-When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$-algebras is equivalent to the theory of $\EE_n$-algebras. 
+When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$-algebras is equivalent to the theory of $\EE_n$ algebras. 
 
 \begin{thm}[\cite{LurieHA} Proposition 5.4.5.15]
 \label{thm:lurie0} 
@@ -287,10 +287,10 @@ Again, the $\infty$-category of prefactorization algebras consists of objects wh
 We can equally apply strictification for prefactorization algebras: given a homotopy coherent prefactorization algebra, we can find an equivalent object in the $1$-category of strict prefactorization algebras. 
 
 A prefactorization algebra is a {\em factorization} algebra if it satisfies a certain codescent condition, see Section 5.5.4 of \cite{LurieHA} or Chapter 6 \cite{CG1}. 
-Locally constant factorization algebras provide another model for $\EE_n$-algebras: there is an equivalence of $\infty$-categories between locally constant factorization algebras on $\RR^n$ and $\EE_n$-algebras. 
+Locally constant factorization algebras provide another model for $\EE_n$ algebras: there is an equivalence of $\infty$-categories between locally constant factorization algebras on $\RR^n$ and $\EE_n$ algebras. 
 
 Throughout the text, we will refer to particular strict factorization (or strict ${\rm Disk}^\sqcup_M$) algebras using bold fonts, e.g. $\bU, \bZ$, etc.. 
-The homotopy coherent $\EE_n$-algebras will be denoted by blackboard font, e.g. $\UU$, except for the centralizer of a map where we will use the symbol $\fZ(f)$. 
+The homotopy coherent $\EE_n$ algebras will be denoted by blackboard font, e.g. $\UU$, except for the centralizer of a map where we will use the symbol $\fZ(f)$. 
  
 \subsection{Enveloping $\EE_n$ algebras of Lie algebras}
 \label{sec: enveloping}
@@ -333,7 +333,7 @@ then there is a $\Disk_n$-algebra ${\tt U}_n \fg$ assigning $\cliels(\fg[-n]) = 
 This algebra ${\tt U}_n \fg$ is a model for~$\UU_n \fg$.
 
 \begin{rmk}
-It follows from theorem~\ref{T:UnofLie} that for any $\EE_n$-algebra $B$, 
+It follows from theorem~\ref{T:UnofLie} that for any $\EE_n$ algebra $B$, 
 its underlying complex is equipped with a homotopy-coherent Lie algebra structure.
 Depending on one's preferences, one can work with an an $L_\infty$-algebra structure or strictify to a dg Lie algebra structure (at the cost of replacing the complex with something quasi-isomorphic but typically much larger).
 \end{rmk}
@@ -880,11 +880,7 @@ we find that
 \int_{S^{n-1}}\UU_n\fg \simeq U(\fg \otimes R_n)
 \]
 as $E_1$ algebras.
-
-Recall from Section~\ref{sec: enveloping} that $\UU_n \fg$ admits two convenient models:
-as a factorization algebra by $\bU_n \fg$ and as a strict algebra over a colored operad $\Disk_n$ assigning $\Sym(\fg[1-n])$ to each disk.
-For $n > 1$ that is a commutative algebra.
-\owen{Should I say that??? And should we remark that the $n=1$ case is known???}
+Recall as well that $\UU_n \fg$ is quasi-isomorphic to $\Sym(\fg[1-n])$ as cochain complexes.
 
 We have thus reduced the situation to familiar dg algebra via the equivalence
 \[
@@ -926,7 +922,7 @@ We also know that for an abelian dg Lie algebra~${\frak a}$,
 \cliels({\frak a}) = \Sym({\frak a}[1])
 \]
 and hence provides a free dg commutative algebra.
-This feature can be leveraged to prove the following result about $\EE_n$-centers of free commutative algebras.
+This feature can be leveraged to prove the following result about $\EE_n$ centers of free commutative algebras.
 
 \begin{prp}
 Given a free dg commutative algebra $A = \Sym(V^\bullet)$ generated by a cochain complex $V^\bullet$,
@@ -1033,16 +1029,14 @@ and then apply theorems about Lie algebra cohomology plus Chevalley restriction 
 \section{Functoriality of the centralizer construction}
 \label{S:centerinFacAlg}
 
-\owen{If I'm understanding, this section shows that our construction satisfies the ``composition'' of centralizers on the nose. One corollary is that the center has a strict associative product!}
-
 The universal property of centralizer (recall definition~\ref{D:centralizer}) implies that 
-for any maps $A\stackrel{f}\to B$ and $B\stackrel{g}\to C$ of $\EE_n$-algebras, 
-there is a natural map of $\EE_n$-algebras
+for any maps $A\stackrel{f}\to B$ and $B\stackrel{g}\to C$ of $\EE_n$ algebras, 
+there is a natural map of $\EE_n$ algebras
 \begin{equation}
 \label{eqdef:canonicaltocentralizers} 
 {\frak Z}_n(g) \otimes {\frak Z}_n(f) \longrightarrow {\frak Z}_n(g\circ f)
 \end{equation}
-that arises from following commutative diagram of $\EE_n$-algebras:
+that arises from following commutative diagram of $\EE_n$ algebras:
 \[
 \begin{tikzcd}
 &   {\frak Z}_n(g) \otimes  {\frak Z}_n(f) \otimes A \arrow[rr, "\id\otimes \ev_f"] &&  {\frak Z}_n(g) \otimes  B \arrow[dr, "\ev_g"]\\
@@ -1054,7 +1048,7 @@ When $f=g=\id_A:A\to A$, we thus obtain a canonical morphism
 \label{eq:dgAssofcenter}
 {\frak Z}_n(A){\otimes} {\frak Z}_n(A) \longrightarrow {\frak Z}_n(A).
 \end{equation}
-Lurie \cite{HA} has proved that this multiplication makes the center into an $E_1$ algebra in $\EE_n$-algebras 
+Lurie \cite{HA} has proved that this multiplication makes the center into an $E_1$ algebra in $\EE_n$ algebras 
 and therefore an $E_{n+1}$-algebra, by Dunn additivity. 
 %To be precise, there is the following result.
 %
@@ -1297,36 +1291,26 @@ while the augmentation is provided by Lemma~\ref{L:compisaugmented}.
 \section{Higher calculus {\it \`a la} Kontsevich-Soibelman}
 \label{sec: TT}
 
-The $\EE_n$-center, or $\EE_n$-Hochschild cohomology, of an $\EE_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra that acts on $A$ {\em qua} $\EE_n$ algebra. 
+The $\EE_n$ center ${\frak Z}_n(A)$ of an $\EE_n$ algebra $A$ is a rich object 
+and controls how other algebras can act on $A$ as an $\EE_n$ algebra.
+In a precise sense that we will discuss below, 
+it is the {\em universal} $\EE_{n+1}$-algebra that acts on $A$ {\em qua} $\EE_n$ algebra. 
 
-In Section \ref{sec:swiss} below, we will recall an elegant operadic articulation of this idea and rephrase it in terms of {\em constructible factorization algebras} on a half-space~$\HH^{n+1}$. 
+As a familiar example, consider the degenerate situation of an $\EE_0$ algebra $V$, 
+which is simply a cochain complex with a cochain map $k \to V$.
+The $\EE_0$ center ${\frak Z}_0(V)$ is then $\End^\bullet(V)$,
+the dg associative algebra that controls all actions of algebras on~$V$:
+an action of an algebra $A$ on $V$ is equivalent to giving an algebra map $A \to \End^\bullet(V)$.
+As another example, the $\EE_1$ center of a dg associative algebra $A$ is modeled by the Hochschild cochains $\Hoch^\bullet(A,A)$,
+which is an $\EE_2$ algebra by Deligne's conjecture and which controls actions of $\EE_2$ algebras on~$A$.
 
-\owen{Mention lots of prior work, e.g., Greg et al, Ayala-Francis, Geoffroy Horel, and so on}
+Our model for $\EE_n$ centers of enveloping $\EE_n$ algebras provides useful insight into the behavior of centers and into how they interact with factorization homology.
 
-%
-%\brian{HKR}
-%
-%Consider the case $n=1$ and $B = U \fg$ where $f$ is simply the identity map. 
-%A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad})$. 
-%On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
-%The algebra structure is given by a special case of the convolution product as in Section \ref{??}. 
-%
-%On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
-%\[
-%\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
-%\]
-%to each open set $U \subset \RR$.
-%In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
-%Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
-%
-%Our model also gives us a simple description of the factorization homology of the derived center along the circle $S^1$.
-%\[
-%\int_{S^1} {\frak Z}(U(\fg)) \simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
-%\]
-%where $\epsilon$ is a formal variable of degree~$1$. 
-%\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
-%We could exhibit Theorem 2.7.1 explicitly in this case for the $\EE_n$ case with enveloping algebras.}
-
+Before we explore consequence of our results,
+we review some key results about $\EE_n$ centers and how they act.
+In Section \ref{sec:swiss} below, we will recall an elegant operadic articulation of how an $\EE_{n+1}$ algebra can act on an $\EE_n$ algebra 
+and then we rephrase it in terms of {\em constructible factorization algebras} on a half-space~$\HH^{n+1}$. 
+\owen{Mention lots of prior work, e.g., Greg et al, Ayala-Francis, Geoffroy Horel, and so on}.
 
 \subsection{Swiss cheese pairs well with centers}
 
@@ -1334,7 +1318,7 @@ Given an $\EE_{n+1}$-algebra one can speak of its $\infty$-category of left (or 
 This $\infty$-category is obtained by ``forgetting" the $\EE_{n+1}$-algebra to an $\EE_1$-algebra and then taking the left-modules for this $\EE_1$-algebra.
 
 The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
-The $(n+1)$-dimensional Swiss cheese operad is a two-colored operad whose algebras include pairs $(B, M)$ where $B$ is an $\EE_{n+1}$-algebra, $M$ is an $\EE_n$-algebra, and where $M$ is a left-module for $B$.
+The $(n+1)$-dimensional Swiss cheese operad is a two-colored operad whose algebras include pairs $(B, M)$ where $B$ is an $\EE_{n+1}$-algebra, $M$ is an $\EE_n$ algebra, and where $M$ is a left-module for $B$.
 
 Geometrically, it is most constructive to view this operad as built from open sets in the upper half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$.
 The colors include disks and half-disks. 
@@ -1413,10 +1397,12 @@ at least for enveloping $\EE_n$ algebras.
 It is natural to ask whether this result holds in general.
 
 \begin{qtn}
-Is the canonical map \eqref{eqn: can cen int} a weak equivalence when $\UU_n \fg$ is replaced by an arbitrary $\EE_n$-algebra?
+Is the canonical map \eqref{eqn: can cen int} a weak equivalence when $\UU_n \fg$ is replaced by an arbitrary $\EE_n$ algebra?
 \end{qtn}
 
-\owen{We should see if that's what Tamarkin-Tsygan prove for  $E_1$ algebras, as it would be further evidence.}
+Even in the classical setting of associative algebras, it seems \dots
+
+\owen{For all the associative algebras I tried, it seemed like this way true, but I only tried a very short list ...}
 
 \begin{proof}[Proof of Proposition~\ref{prp: z commutes with int}]
 The key fact is a simple consequence of the K\"unneth theorem in the setting of de Rham forms.
@@ -1456,7 +1442,46 @@ The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
 \owen{That map is not the canonical map as it goes the ``wrong way,'' but I'm pretty sure it provides the inverse-up-to-qiso we need.}
 \end{proof}
 
-\owen{Then ask what is the factorization homology on a compact manifold with boundary, which leads into next section.}
+In the case $k = 0$, we have the immediate corollary that
+\[
+\int_{S} \fZ_n(\fg) \simeq \fZ_0 \left( \int_S \UU_n \fg \right) ,
+\]
+which unwinds to 
+\[
+\clies(\fg \otimes \Omega^*(S), \cliels(\fg \otimes \Omega^*(S)) \simeq \End^\bullet(\cliels(\fg \otimes \Omega^*(S))),
+\]
+which looks rather tautological.
+Nonetheless, by using other models for factorization homology,
+one obtains less obvious identifications.
+
+Consider first the case $n=1$ and $B = U \fg$. 
+A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as 
+\[
+\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad}).
+\] 
+On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
+The algebra structure is given by a special case of the convolution product as in Section~\ref{??}. 
+
+On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
+\[
+\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\]
+to each open set $U \subset \RR$.
+In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
+Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
+
+Our model also gives us a simple description of the factorization homology of the derived center along the circle~$S^1$:
+\begin{align*}
+\Hoch_*(\Hoch^*(U \fg, U\fg)) 
+&\simeq \int_{S^1} {\frak Z}(U(\fg)) \\
+&\simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
+\end{align*}
+where $\epsilon$ is a formal variable of degree~$1$. 
+In the last step we use the fact that the circle is formal as a rational space.
+\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
+We could exhibit Theorem 2.7.1 explicitly in this case for the $\EE_n$ case with enveloping algebras.}
+
+\owen{Other manifolds? Products of circles? Spheres?}
 
 \subsection{Koszul duality for enveloping $\EE_n$ algebras}
 
@@ -1468,7 +1493,7 @@ The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
 %Given an $E_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
 %This is obtained by ``forgetting" the $E_{n+1}$-algebra to an $E_1$-algebra then considering the left-modules for this $E_1$-algebra.
 %
-%The $\EE_n$-center, or $\EE_n$-Hochschild cohomology, of an $\EE_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra which acts on $A$. 
+%The $\EE_n$ center, or $\EE_n$ Hochschild cohomology, of an $\EE_n$-algebra $A$ is the {\em universal} $E_{n+1}$-algebra which acts on $A$. 
 %In Section \ref{sec:swiss} below, we will recall an elegant operadic interpretation of this universal picture and interpret it in terms of {\em constructible factorization algebras}. 
 %In the case of $\EE_n$-enveloping algebras, we will provide a strict factorization model of this universal situation in terms of a constructible factorization algebra on an $(n+1)$-dimensional 
 %manifold with boundary. 
@@ -1480,10 +1505,10 @@ The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
 %In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $\EE_n$-enveloping algebra as a boundary condition. 
 %This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
 
-In this section, we turn to an interpretation of the $\EE_n$-center of an $\EE_n$-enveloping algebra in terms of a certain topological field theory (TFT).
+In this section, we turn to an interpretation of the $\EE_n$ center of an $\EE_n$ enveloping algebra in terms of a certain topological field theory (TFT).
 
-Given an $\EE_n$-algebra $A$, the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $\EE_n$-enveloping algebra. 
+Given an $\EE_n$ algebra $A$, the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $\EE_n$ enveloping algebra. 
 
 \begin{prp} \label{prp:swiss1}
 Let $\fg$ be an $L_\infty$ algebra. 
@@ -1491,10 +1516,10 @@ The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-catego
 The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
 \end{prp}
 
-The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$-center and our model $\bU_n (\fg)$ for the $\EE_n$-enveloping algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
+The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$ center and our model $\bU_n (\fg)$ for the $\EE_n$ enveloping algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
 Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
-If the associated graded of a filtered $\EE_n$-algebra is commutative, then it carries the structure of a $\PP_n$-algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
+If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$-algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
 There is a similar description of the ``classical limit"  of algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of algebras over a certain two-colored operad $\PP_{[n+1,n]}$, introduced by Safronov \cite{Pavel1, Pavel2}, whose definition we recall below.
 
 \begin{prp} 
@@ -1507,8 +1532,8 @@ The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ d
 %What results is a two-colored operad known as the $(n+1)$-dimensional Swiss cheese operad where the two colors correspond to disks and half-disks. 
 
 In the previous section, we mentioned another geometric model for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-manifolds with boundary.
-One drawback of the previous section is that we did not provide a model of this type for the $\EE_n$-center of an enveloping algebra. 
-The next goal of this section is to provide a model of the classical limit of the $\EE_n$-center as a constructible factorization algebra. 
+One drawback of the previous section is that we did not provide a model of this type for the $\EE_n$ center of an enveloping algebra. 
+The next goal of this section is to provide a model of the classical limit of the $\EE_n$ center as a constructible factorization algebra. 
 
 Any constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a factorization pair $(\bA^\circ , \bA^{\partial})$ in the sense of Definition \ref{dfn:pair}.
 We recall this construction in Section \ref{sec:bulk}. 
@@ -1554,14 +1579,14 @@ Following the proof of this proposition, our main thrust is to interpret this re
 %\end{thm}
 
 %Let $\fg$ be a dg Lie algebra and consider the $\EE_n$ algebra $\UU_n \fg$. 
-%We have shown that a model for the $\EE_n$-center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
+%We have shown that a model for the $\EE_n$ center ${\frak Z}_n (\UU_n \fg) = {\frak Z}_n ({\rm id}_{\UU_n \fg})$ is the $n$-dimensional locally constant factorization algebra 
 %\[
 %\clie \left( \fg \otimes \Omega \; , \; \clieu (\fg \otimes \Omega_c) \right)  .
 %\]
 
 \subsection{The ``classical limit"}
 
-We prove Proposition \ref{prp:swiss1} by exhibiting a filtration at the level of strict factorization algebras in our model of the $\EE_n$-center. 
+We prove Proposition \ref{prp:swiss1} by exhibiting a filtration at the level of strict factorization algebras in our model of the $\EE_n$ center. 
 
 For any $L_\infty$ algebra, the Chevalley--Eilenberg cochain complex computing Lie algebra homology admits a natural filtration whose associated graded has the structure of a commutative dg algebra.
 If $\fh$ is an $L_\infty$ algebra, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
@@ -1571,10 +1596,10 @@ The associated graded cochain complex is the free symmetric algebra on $\fh[1]$ 
 \]
 Here, the differential on the right-hand side is simply the underlying linear differential of $\fh$ (in terms of $L_\infty$ algebras, this is the $1$-ary operation $\ell_1$). 
 
-Consider our factorization model for the $\EE_n$-enveloping algebra $\bU_n(\fg) = \cliels (\fg \otimes \Omega^\bu_c)$. 
+Consider our factorization model for the $\EE_n$ enveloping algebra $\bU_n(\fg) = \cliels (\fg \otimes \Omega^\bu_c)$. 
 The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
 
-There is a similar filtration on our model for the $\EE_n$-center $\bZ_n(\fg)$ defined by
+There is a similar filtration on our model for the $\EE_n$ center $\bZ_n(\fg)$ defined by
 \[
 F^k \bZ_n(\fg) = \clies \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
 \]
@@ -1649,7 +1674,7 @@ is a model for the $\PP_n$-center of the $\PP_n$-{\em enveloping algebra} $\UU_{
 
 \subsection{The bulk factorization algebra} \label{sec:bulk}
 
-We turn towards a model for the $\EE_n$-center as a constructible factorization algebra. 
+We turn towards a model for the $\EE_n$ center as a constructible factorization algebra. 
 
 \begin{dfn}
 \label{dfn:constructible1}
@@ -1752,7 +1777,7 @@ The compatibility of this quasi-isomorphism with Poisson brackets is a direct ca
 
 \subsection{Bulk-boundary topological field theory}
 
-In this section, we describe a relationship between our model of the $\EE_n$-center and a certain topological field theory. 
+In this section, we describe a relationship between our model of the $\EE_n$ center and a certain topological field theory. 
 This theory admits a natural description via the AKSZ formalism \cite{AKSZ}, which we briefly recount now. 
 
 For any Lie algebra $\fg$, there is a topological field theory defined in any dimension known as {\em topological BF theory}.
@@ -1858,7 +1883,7 @@ To an open set $V \times [0,\epsilon)$, we assign the (abelian) $L_\infty$-algeb
 By definition, the classical observables of perturbative BF theory suppported on an open set $U \subset M \times \RR_{\geq 0}$ is the cochain complex $\clies (\cL (U))$. 
 In \cite{Eugene}, it is shown that the assignment $U \mapsto \clies (\cL(U))$ has the structure of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 
-The main result of this section is that the classical observables are equivalent to our constructible model for the classical limit of the $\EE_n$-center. 
+The main result of this section is that the classical observables are equivalent to our constructible model for the classical limit of the $\EE_n$ center. 
 
 \begin{prp}
 There is a quasi-isomorphism of constructible factorization algebras on $M \times \RR_{\geq 0}$:
@@ -2011,8 +2036,8 @@ which gives us,  for any integer $n$, maps
 
 
 \def \Fac {\mathrm{Fac}}
-We now need to express the $\EE_n$-structure on ${\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n\fg}}(\UU_n \fg, B_f)$ induced by the equivalence of Proposition~\ref{P:ModentoModSn}, and then on the subsequent isomorphic hom spaces of modules morphisms.  Since we are going to take advantage of the factorization algebra presentation of $\UU_n( \fg)$, see~Theorem~\ref{T:UnofLie}, we recall the following factorization algebra description of the centralizer.
-Let $\cA \stackrel{f}\to \cB$ be a morphism of locally constant factorization algebras on $\RR^n$ corresponding to an $\EE_n$-algebra map similarly denoted. Then by Theorems~\ref{thm:lurie1}, \ref{T:centralizer=inthom} the centralizer of $f$ is represented by the locally constant factorization algebra  
+We now need to express the $\EE_n$ structure on ${\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n\fg}}(\UU_n \fg, B_f)$ induced by the equivalence of Proposition~\ref{P:ModentoModSn}, and then on the subsequent isomorphic hom spaces of modules morphisms.  Since we are going to take advantage of the factorization algebra presentation of $\UU_n( \fg)$, see~Theorem~\ref{T:UnofLie}, we recall the following factorization algebra description of the centralizer.
+Let $\cA \stackrel{f}\to \cB$ be a morphism of locally constant factorization algebras on $\RR^n$ corresponding to an $\EE_n$ algebra map similarly denoted. Then by Theorems~\ref{thm:lurie1}, \ref{T:centralizer=inthom} the centralizer of $f$ is represented by the locally constant factorization algebra  
 ${\rm Mor}_{\Fac_{\cA}}(\cA, \cB_f)$ which is the internal mapping object  of maps from $\cA$ to $\cB_f$ in the $\infty$-category of locally constant factorization algebras on $\RR^n$ which are a $\cA$-module. 
 
 The factorization algebra structure is 
