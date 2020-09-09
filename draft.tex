@@ -1607,7 +1607,6 @@ on $M \times \RR_{\geq 0}$ and a quasi-isomorphism of factorization sc-pairs
 \[
 \bigg( {\bf C}_n (\fg)^\circ \; , \; {\bf C}_n (\fg)^\partial \bigg) \xto{\simeq} \bigg({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg) \bigg).
 \]
-
 In fact, $\bC_n(\fg)$ is a constructible $\PP_0$-factorization algebra and this quasi-isomorphism is compatible with Poisson structures.
 \end{prp}
 
@@ -1765,7 +1764,7 @@ On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\
 In fact, it has the structure of a $\PP_0$ algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
 
 \begin{lmm}
-$\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
+$\bC_n(\fg)$ admits the structure of a constructible $\PP_0$-factorization algebra on~$M \times \RR_{\geq 0}$. 
 \end{lmm}
 
 \begin{proof}
@@ -1834,87 +1833,100 @@ The compatibility of this quasi-isomorphism with Poisson brackets is a direct ca
 In this section, we describe a relationship between our model of the $\EE_n$ center and a certain topological field theory. 
 This theory admits a natural description via the AKSZ formalism \cite{AKSZ}, which we briefly recount now. 
 
-For any Lie algebra $\fg$, there is a topological field theory defined in any dimension known as {\em topological BF theory}.
-Suppose $N$ is an $(n+1)$-dimensional manifold, which for now we assume has no boundary $\partial N = \emptyset$. 
-When $N$ is compact, the classical moduli space underlying this topological field theory can be described as the following mapping space 
-\begin{equation} \label{stack1}
-{\rm Map}(N_{\rm dR} ,  {\rm T}^*[n] {\rm B} G)
+For any Lie group $G$, there is a gauge theory defined in any dimension known as {\em topological BF theory}.
+Let the ``spacetime'' be an $(n+1)$-dimensional manifold $N$, 
+which for now we assume has no boundary $\partial N = \emptyset$. 
+As a field theory, there is a system of PDE known as the ``solutions to the equations of motion.''
+When $N$ is compact, the moduli space of solutions to these equations of motion for topological BF theory can be described as the mapping space 
+\begin{equation} 
+\label{stack1}
+{\rm Map}(N_{\rm dR} ,  {\rm T}^*[n] {\rm B} G),
 \end{equation}
-where $N_{\rm dR}$ denotes the de Rham stack of $N$ and where $G$ is a Lie group whose Lie algebra is $\fg$. 
-Via the canonical $n$-shifted symplectic structure on ${\rm T}^* [n] {\rm B} G$, the AKSZ construction equips the mapping space with a $(-1)$-shifted symplectic structure. 
-Classically, on manifolds without boundary, this produce describes topological BF theory in the Batalin--Vilkovisky formalism~\cite{BV}. 
+where $N_{\rm dR}$ denotes the de Rham stack of $N$ and where ${\rm B}G$ is the classifying stack of $G$.
+Via the canonical $n$-shifted symplectic structure on ${\rm T}^* [n] {\rm B} G$, 
+the AKSZ construction equips this mapping space with a $(-1)$-shifted symplectic structure. 
+On manifolds without boundary, this procedure describes topological BF theory in the Batalin--Vilkovisky formalism~\cite{BV}. 
 
-Now, suppose $N$ has non-empty boundary $\partial N \ne 0$.
-Then, (\ref{stack1}) no longer admits a $(-1)$-shifted symplectic structure. 
-However, the AKSZ construction equips 
+Now, suppose that our compact manifold $N$ has non-empty boundary $\partial N \ne 0$.
+Then (\ref{stack1}) no longer admits a $(-1)$-shifted symplectic structure. 
+In this case, the AKSZ construction equips 
 \[
 {\rm Map}(\partial N_{\rm dR} , {\rm T}^* [n] {\rm B} G)
 \]
 with a $0$-shifted symplectic structure. 
-Moreover, the restriction map 
+Moreover, the map that restricts a map from all of $N$ to its boundary
 \[
 {\rm Map}(N_{\rm dR} , {\rm T}^* [n] {\rm B} G) \to {\rm Map}(\partial N_{\rm dR} , {\rm T}^* [n] {\rm B} G)
 \]
 is a Lagrangian morphism. 
-\owen{Somewhere say that $N$ and $\partial N$ are still compact here.}
-%Perturbatively, this mapping stack represents the restriction of the fields to the boundary. 
 
-For BF theory, this $0$-shifted symplectic manifold admits another natural Lagrangian. 
-In terms of mapping stacks, it is given by considering maps from $\partial N_{\rm dR}$ into the $n$-shifted conormal bundle of ${\rm B} G$:
+For topological BF theory, this $0$-shifted symplectic manifold admits another natural Lagrangian ``subspace.'' 
+In terms of mapping stacks, it is given by maps from $\partial N_{\rm dR}$ into the $n$-shifted conormal bundle of ${\rm B} G$:
 \[
 {\rm Map}(\partial N_{\rm dR} , {\rm N}^*_e [n] {\rm B}G) .
 \]
-Then, by higher abstract nonsense \brian{reference} the fiber product
+The fiber product
 \[
 \begin{tikzcd}
 X \ar[r] \ar[d] & {\rm Map} (N , {\rm T}^* [n] {\rm B} G) \ar[d] \\
 {\rm Map}(\partial N_{\rm dR} , {\rm N}^*_e  [n] {\rm B}G) \ar[r] & {\rm Map}(\partial N_{\rm dR} , {\rm T}^*[n]  {\rm B}G)
 \end{tikzcd}
 \]
-is equipped with a $(-1)$-shifted symplectic structure. 
-Heuristically, the classical observables are given by functions on the $(-1)$-shifted symplectic space $X$.
-\owen{I'm not sure it's a heuristic. I think we could say that we interpret functions on $X$ as the classical observables for the classical field theory with this boundary condition.}
+is then equipped with a $(-1)$-shifted symplectic structure. 
+From the point of view of classical physics, 
+we view the algebra of functions $\cO_X$ on $X$ as the {\em classical observables} of topological BF theory with these boundary conditions.
+
+\owen{Brian: please edit this paragraph.}
+Although we have started here with a Lie group $G$, 
+one can replace $T^*[n] {\rm B}G$ with {\em any} $n$-shifted symplectic derived stack.
+Such AKSZ theories encompass examples of interest in physics (e.g., the A- and B-models or Rozansky-Witten theories).
+Of particular interest to us here are the shifted cotangent spaces~$T^*[n] X$.
+
+We now turn to relating these ideas to the constructions of this paper.
 
 It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra. 
 Moreover, the observables are equipped with the structure of a $\PP_0$-factorization algebra.
 
-Perturbative BF theory is the formal moduli space is defined by the formal neighborhood of a point in the derived mapping space (\ref{stack1}). 
-For simplicity, we will work near the trivial $G$-bundle. 
+Perturbative BF theory for the group $G$ is the formal moduli space is defined by the formal neighborhood of a point in a derived mapping space such as (\ref{stack1}). 
+For simplicity, consider working around the trivial $G$-bundle. 
 Here, the formal moduli space is described in terms of the following dg Lie algebra 
 \begin{equation}\label{eqn:fields}
 \cL = \Omega^{\bu} (N) \otimes \fg \ltimes \Omega^{\bu} (N) \otimes \fg^* [n-3] .
 \end{equation}
-We denote elements of this dg Lie algebra by pairs $(A,B)$. 
+We denote elements of this dg Lie algebra by pairs~$(A,B)$. 
 
-The classical {\em fields} of the theory are given by shifting the dg Lie algebra down by one $\cL[1]$. 
-One can read off the $(-1)$-symplectic structure on the fields simply by $\int A \wedge B$. 
+\begin{rmk}
+In the physics literature, one does not work with the $L_\infty$ algebra $\fg$ arising from a formal moduli space,
+but the shifted $L_\infty$ algebra $\fg[1]$. 
+In physical terminology, the classical {\em fields} here are $A$ and $B$, 
+and the $(-1)$-shifted symplectic structure on the fields is~$\int A \wedge B$. 
+\end{rmk}
 
 Perturbatively, the classical moduli space is the space of Maurer--Cartan elements of this dg Lie algebra.
 These are pairs $(A,B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega^{n-1} (N) \otimes \fg^*$ satisfying the equations
 \begin{align*}
 \d A + \frac12 [A,A] & = 0 \\
-\d B + [A,B] & = 0 .
+\d B + [A,B] & = 0 ,
 \end{align*}
+which ask for a flat $G$-connection $\d + A$ and a flat section $B$ in the coadjoint bundle.
 
-We remark that we are free to replace $\fg$ by an arbitrary $L_\infty$ algebra, which we will do so for the remainder of this section. 
-It is clear that the $L_\infty$ algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$ algebras. 
-In the setup of \cite{CG2}, the factorization algebra of classical observables is the Chevalley--Eilenberg cochains $\clies (\cL)$.   
+As noted earlier, we could replace ${\rm B}G$ by any (reasonable) derived stack $X$.
+In that setting, the ordinary Lie algebra $\fg$ is replaced by the $L_\infty$ algebra describing the formal neighborhood of some point on $X$.
+(Or, more generally, the $L_\infty$ algebra describing the formal neighborhood around some point on the whole mapping space.)
+Indeed, we might as well view $\fg$ as an arbitrary $L_\infty$ algebra,
+which we will do for the remainder of this section. 
+
+\begin{rmk}
+The $L_\infty$ algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$ algebras,
+and it can be understood as a generalized topological BF theory. 
+In the setup of \cite{CG2}, the factorization algebra of classical observables of generalized topological BF theory is given by the Chevalley--Eilenberg cochains $\clies (\cL)$.   
 The $\PP_0$-structure is induced from the explicit $(-1)$-symplectic pairing $\int A \wedge B$ at the level of the fields. 
+\end{rmk}
 
 So far, we have provided a description of perturbative BF theory on manifolds without boundary. 
-More recently, in \cite{ButsonYoo} and \cite{Eugene}, it is shown how to run the perturbative BV formalism on manifolds with boundary which we follow in the definition below. 
-
-%Let $N$ be such a manifold with boundary $\partial N \ne \emptyset$ and let $\cE$ denote the space of fields, typically given as the space of sections of a finite rank vector bundle on $N$. 
-%The definition of a classical BV theory on $N$ amounts to prescribing the following data:
-%\begin{itemize}
-%\item[(1)]
-%an ordinary classical BV theory on the interior $N \setminus \partial N$ whose space of fields is $\cE|_{N \setminus \partial N}$;
-%\item[(2)] 
-%a compatible $0$-shifted symplectic structure on $\cE|_{\partial N}$ equipped with a Lagrangian subspace $\cL \subset \cE|_{\partial N}$.
-%This is called a {\em boundary condition}.
-%\end{itemize}
-%From this data at the level of fields, one obtains a constructible $\PP_0$-factorization algebra on the manifold with boundary $N$ at the level of the observables. 
-
+More recently, in \cite{ButsonYoo} and \cite{Eugene}, 
+it is shown how to extend the perturbative BV formalism to manifolds with boundary, 
+which we follow in the definition below. 
 
 \begin{dfn}
 Let $M$ be an $n$-dimensional manifold and let $\fg$ be an $L_\infty$ algebra. 
@@ -1945,6 +1957,8 @@ There is a quasi-isomorphism of constructible factorization algebras on $M \time
 \bC_n (\fg) \xto{\simeq} \clies(\cL) .
 \]
 \end{prp}
+
+\owen{$\PP_0$ algebras?}
 
 \begin{proof}
 Suppose $V \times [0,\epsilon) \subset M \times \RR_{\geq 0}$ is an open set. 
