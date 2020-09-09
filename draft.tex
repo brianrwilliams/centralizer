@@ -942,26 +942,26 @@ indeed, so is any shift $V^\bullet[k]$.
 Let $\fg_V$ denote $V^\bullet[-n+1]$ viewed as an abelian dg Lie algebra.
 The Poincar\'e lemma for compactly supported de Rham forms on $\RR^n$ provides a canonical quasi-isomorphism
 \[
-\Omega^*_c(\RR^n) \xto{\simeq} \RR[-n]
+\Omega^\bu_c(\RR^n) \xto{\simeq} \RR[-n]
 \]
 by the natural quotient map and hence determines a canonical quasi-isomorphism
 \[
-\cliels(\Omega^*_c(\RR^n) \otimes \fg_V) \xto{\simeq} \Sym(V^\bullet).
+\cliels(\Omega^\bu_c(\RR^n) \otimes \fg_V) \xto{\simeq} \Sym(V^\bullet).
 \]
 This map makes sense on any ball in $\RR^n$ and thus implies that $\bU_n \fg_V$ is quasi-isomorphic as a $\Disk_n$ algebra to~$\Sym(V^\bullet)$.
 Applying our central theorem, we see
 \begin{align*}
 \bZ_n(\fg_V) &= \clies(\Omega^* \otimes \fg_V, \bU_n \fg_V) \\
-&= \Sym((\Omega^* \otimes \fg_V)^\vee[-1]) \otimes \Sym(\Omega^*_c \otimes \fg_V[1])\\
+&= \Sym((\Omega^\bu \otimes \fg_V)^\vee[-1]) \otimes \Sym(\Omega^\bu_c \otimes \fg_V[1])\\
 & \simeq \Sym(V^\bullet \oplus (V\bullet)^\vee[-n])
 \end{align*}
 because
 \[
-\Omega^*(\RR^n) \otimes \fg_V \simeq V[-n+1]
+\Omega^\bu (\RR^n) \otimes \fg_V \simeq V[-n+1]
 \]
 so
 \[
-\Sym( (\Omega^*(\RR^n) \otimes \fg_V)^\vee[-1]) \simeq \Sym( V^\vee[-n]).
+\Sym( (\Omega^\bu(\RR^n) \otimes \fg_V)^\vee[-1]) \simeq \Sym( V^\vee[-n]).
 \]
 This identification concludes the argument.
 \end{proof}
@@ -1004,20 +1004,39 @@ there is a quasi-isomorphism
 
 \subsection{Reductive Lie algebras and a generalized Harish-Chandra homomorphism}
 
+For a reductive Lie algebra $\fg$, the Harish-Chandra isomorphism is an isomorphism of commutative algebras
+\[
+Z(U(\fg)) \xto{\cong} {\rm Sym} (\fh)^W
+\]
+where $\fh$ is a Cartan subalgebra and $W$ is the Weyl group of $\fg$. 
+Here $Z(U(\fg))$ denotes the ordinary center of the associative algebra $U(\fg)$. 
+
+The following result generalizes (and implies) the Harish--Chandra isomorphism for the $\EE_n$-center of the $\EE_n$-enveloping algebra. 
+
 \begin{prp}
 For $\fg$ a reductive \owen{semisimple?} Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, 
-there is a quasi-isomorphism of $E_{n+1}$ algebra
+there is a quasi-isomorphism of $\EE_{n+1}$-algebras
 \[
-{\frak Z}_n(\UU_n \fg) \simeq H^*_{\rm Lie}(\fg) \otimes \Sym(\fh[1-n])^W.
+{\frak Z}_n(\UU_n \fg) \simeq H^\bu_{\rm Lie}(\fg) \otimes \Sym(\fh[1-n])^W.
 \]
 \end{prp}
 
+\brian{Is there an explicit description of the $\EE_{n+1}$-structure for the RHS?}
+
 \begin{proof}
-\owen{In brief
+By the Poincar\'{e} lemma for de Rham forms and compactly supported de Rham forms, one has a canonical quasi-isomorphism
 \[
-{\frak Z}_n(\UU_n \fg) \simeq \clies(\fg, \Sym(\fg[1-n])
+\bZ_n(\UU_n \fg) \xto{\simeq} \clies\left(\fg, \Sym(\fg[1-n]) \right) .
 \]
-and then apply theorems about Lie algebra cohomology plus Chevalley restriction theorem.}
+Since $\fg$ is reductive, there is a quasi-isomorphism \brian{do we actually need semisimple here?}
+\[
+\clies(\fg, \Sym(\fg[1-n]) \simeq H^\bu_{\rm Lie} (\fg) \otimes \Sym(\fg[1-n])^G 
+\]
+where $G$ is a compact connected Lie group whose Lie algebra is $\fg$. 
+Further, by the Chevalley restriction theorem one has 
+\[
+\Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
+\]
 \end{proof}
 
 \subsection{The large $N$ limit of the center ${\frak Z}_n(\UU_n \frak{gl}_N)$ and cyclic cohomology}
