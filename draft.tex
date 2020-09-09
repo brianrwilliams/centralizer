@@ -1300,7 +1300,7 @@ commutative.
 %Note that the lower part of the diagram commutes by definition of centralizers.
 
 The diagram above is model-independent,
-but we will check that the analogous diagram~\eqref{eq:comdiagforcentralizercomput} commutes when we use our models $\bU_n \fg$, $\bZ_n(f)$, and so on for the objects and when we use our factorization maps $\ev_{{\bf f}}$ (for $\ev_f$), ${\bf 1}$ (for the unit elements $1$),  and so on.
+but we will check that the analogous diagram~\eqref{eq:comdiagforcentralizercomput} commutes when we use our models $\bU_n (\fg)$, $\bZ_n(f)$, and so on for the objects and when we use our factorization maps $\ev_{{\bf f}}$ (for $\ev_f$), ${\bf 1}$ (for the unit elements $1$),  and so on.
 In particular, we use $(-\star-)$ for~$\Upsilon$.
 
 The commutativity of the bottom square and bottom triangle follows from Lemma~\ref{L:ComTriangCent}.
@@ -1641,7 +1641,7 @@ For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenb
 It is given by the sum of the $L_\infty$-operations $\ell_2 + \ell_3 + \cdots$. 
 This implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
 
-Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm Gr} \; \bZ_n (\fg)$ assigns the cochain complex whose underlying 
+Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm Gr} \; \bZ_n (\fg)$ assigns the cochain complex
 \[
 \clie^\bu\bigg(\fg \otimes \Omega^\bu (U) \; , \; {\rm Sym} \left(\fg \otimes \Omega^\bu_c(U) [1]\right) \bigg) = {\rm Hom}^\bu \bigg(\cliels(\fg \otimes \Omega^\bu(U)) , \cliels (\fg \otimes \Omega^\bu_c(U)) \bigg).
 \]
@@ -1685,18 +1685,18 @@ Let $\bC_n(\fg)$ be the following constructible factorization algebra on $M \tim
 \end{itemize}
 The structure map associated to the embedding 
 \begin{equation}\label{eqn:embed}
-U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
+i : U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
 \end{equation}
 is given by the composition
 \[
 \begin{tikzcd}
-\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) \ar[d] \\
-\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d] \\
-\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d]\\
+\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) \ar[d, "{\rm ev}_1"] \\
+\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
+\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d, "i_*"]\\
 \Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
 \end{tikzcd}
 \]
-The first map evaluates the unit in $\Sym\left(\fg \otimes \Omega^\bu(U)\right)$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
+The first map ${\rm ev}_1$ evaluates the unit $1$ in $\Sym\left(\fg \otimes \Omega^\bu(U)\right)$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
 Finally, the third map is induced by the extension of compactly supported de Rham forms along the embedding (\ref{eqn:embed}). 
 \end{dfn}
 
@@ -1708,20 +1708,19 @@ $\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra 
 \end{lmm}
 
 \begin{proof}
-Note that as an underlying graded vector space $\Tilde{\bZ}_n(\fg) (U)$ is of the form
+For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\fg)(U)$ is of the form
 \[
 {\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
 \]
-\brian{explain notation with homs} 
-Let $x^* \otimes \alpha$ denote an element of $\fg \otimes \Bar{\Omega}_c (U)$ and $y \otimes \beta$ denote an element of $\fg \otimes \Omega_c(U) [2]$. 
-Then, the bracket involving the linear elements $(x^* \otimes \alpha) \otimes 1$ 
-and $1 \otimes (y \otimes \beta)$ is defined by
+Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U) \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [2]$. 
+Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
+and $y \otimes \beta$ is defined by
 \begin{align*}
-\{(x^* \otimes \alpha) \otimes 1 , 1 \otimes (y \otimes \beta)\} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
-\{(x^* \otimes \alpha) \otimes 1 , (x'^* \otimes \alpha') \otimes 1\} & = 0 \\
-\{1 \otimes (y \otimes \beta) , 1 \otimes (y' \otimes \beta')\} & = 0 . 
+\{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+\{x^* \otimes \alpha , x'^* \otimes \alpha' \} & = 0 \\
+\{y \otimes \beta , y' \otimes \beta'\} & = 0 . 
 \end{align*}
-Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. \brian{how to say this now}
 The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
 \end{proof}
 
