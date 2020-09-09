@@ -56,7 +56,7 @@ Our central goal here is to generalize the some well-known results about the env
 \item[(1)] the (underived) center of $U\sl_{N+1}$ is isomorphic to $(\Sym(\CC^{N}))^{S_N}$, where $\CC^{N}$ denotes the Cartan subalgebra of $\sl_{N+1}$ and $S_N$ is the Weyl group of $SL_{N+1}$, and
 \item[(2)] the derived center of the enveloping algebra $U\fg$ is given by derived invariants of the adjoint action of $\fg$ on $U\fg$. That is to say $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$.
 \end{enumerate}
-\owen{And keep going}
+\owen{And keep going just a little.}
 %
 %Our results pertains to (1) by taking $N \to \infty$, and to (2) through the derived {\em centralizer} of the map $\UU_n\sl_\infty \hookrightarrow \UU_n\gl_\infty(A)$, where $A$ is a dg algebra. Note that the usual derived center is the centralizer of the identity map $\UU_n\fg \to \UU_n\fg$.
 %
@@ -210,33 +210,11 @@ The centralizer of the augmentation $\epsilon: \UU_n \fg \to k$ is equivalent to
 to each open set $V \subset \RR^n$.
 \end{cor}
 
-\owen{Some easy but important situations to examine:}
-\begin{itemize}
-\item When $n=0$, we see naive endomorphisms arise.
-\item When $n=1$, we recover standard Koszul duality and Hochschild cohomology examples.
-\item When $n=1$, unpack in detail how the convolution picture matches the classic view of Koszul duality for associative (co)algebras.
-\item Consider $\fg$ {\em abelian} for arbitrary $n$ and compare to the $\EE_n$ HKR theorem.
-\item Compare with $\EE_n$ HKR theorem for $\clies(\fg)$ via $\EE_n$ Koszul duality.
-\item Use these facts to compute factorization homology of centralizers on manifolds with boundary --- kind of like Chern-Simons states!
-\end{itemize}
-
-Having an explicit presentation for the centralizer of a map of $\EE_n$ algebras leads to a calculation of factorization homology.
-The enveloping $\EE_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$ algebra in the sense of~\cite{AF},
-and hence determines a factorization algebra on any un-oriented $n$-dimensional manifold \cite{Knudsen}.
-Therefore, for a closed $n$-dimensional manifold $M$, one has
-\[
-\int_M {\frak Z}_n(\UU_n \rho) \simeq \clies(\fg \otimes \Omega^*(M), \cliels( \fh \otimes \Omega^*(M))).
-\]
-Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal variable with $|\epsilon_n| = n$ and $\epsilon_n^2 = 0$, we have
-\[
-\int_{S^n} {\frak Z}_n(\UU_n \rho) \simeq \clies(\fg[\epsilon_n], \cliels( \fh[\epsilon_n]))
-\]
-For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
-see Example~\ref{eg: TT}. 
+\owen{We could describe more that we do.}
 
 \subsection{Comments on a generalization}
 
-\owen{I think we can conjecture here the general statement that we almost proved and sketch an approach.}
+\owen{If we want, we could conjecture here the general statement that we almost proved (for $f: \UU_n \fg \to B$, $\frak{Z}_n(f) \simeq \clies(\fg, B_f)$) and maybe even sketch an approach.}
 
 \section{Background}
 \label{sec: background}
@@ -1604,8 +1582,9 @@ Our model also gives us a simple description of the factorization homology of th
 \end{align*}
 where $\epsilon$ is a formal variable of degree~$1$. 
 In the last step we use the fact that the circle is formal as a rational space.
-\brian{We should compare with Tamarkin-Tsygan's noncommutative calculus (cf. section 2.6).
-We could exhibit Theorem 2.7.1 explicitly in this case for the $\EE_n$ case with enveloping algebras.}
+\brian{For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
+see Example~\ref{eg: TT}(cf. section 2.6).
+We could describe an $\EE_n$ generalization?}
 
 \owen{Other manifolds? Products of circles? Spheres?}
 
