@@ -150,7 +150,7 @@ we leverage deep, prior work:
 \item Lurie \cite{LurieHA} explains why the $\infty$-category of $\EE_n$ algebras is equivalent to the homotopy-coherent version of locally constant prefactorization algebras on $\RR^n$.  
 In fact, he simplifies the situation a bit more. 
 Let $\Disk_n^\sqcup$ denote the colored operad whose colors are balls in $\RR^n$ and whose spaces of operations are either empty or a point, depending on whether the input balls are pairwise disjoint and subsets of the output ball. 
-One can work with locally constant, homotopy-coherent $\Disk_n^\sqcup$-algebras.
+One can work with locally constant, homotopy-coherent $\Disk_n^\sqcup$ algebras.
 \item Knudsen verifies that we can model the enveloping $\EE_n$ algebra by the factorization algebra $\bU_n \fg$ described earlier.
 \item Francis and Lurie give a characterization of the centralizer ${\frak Z}_n(f)$ of any $\EE_n$ algebra map $\phi: A \to B$ as the ``internal hom'' in left $\int_{S^{n-1}}A$-modules from $A$ to $B_\phi$, where $B_\phi$ denotes $B$ viewed as a left module via the map~$\phi$.
 \item In combination, the centralizer is characterized up to quasi-isomorphism, 
@@ -221,7 +221,7 @@ to each open set $V \subset \RR^n$.
 \end{itemize}
 
 Having an explicit presentation for the centralizer of a map of $\EE_n$ algebras leads to a calculation of factorization homology.
-The enveloping $\EE_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$-algebra in the sense of~\cite{AF},
+The enveloping $\EE_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$ algebra in the sense of~\cite{AF},
 and hence determines a factorization algebra on any un-oriented $n$-dimensional manifold \cite{Knudsen}.
 Therefore, for a closed $n$-dimensional manifold $M$, one has
 \[
@@ -252,8 +252,8 @@ Let $M$ be a manifold.
 The collection of disjoint disks in $M$ form a colored operad that we will denote by ${\rm Disk}^\sqcup_M$. 
 When $M = \RR^n$ we will denote this colored operad by ${\rm Disk}^{\sqcup}_n$. 
 
-A ${\rm Disk}^\sqcup_M$-algebra $A$ is {\em locally constant} if for any embedding of disks $D \hookrightarrow D'$ in $M$ that the induced map $A(D) \to A(D')$ is an equivalence. 
-When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$-algebras is equivalent to the theory of $\EE_n$ algebras. 
+A ${\rm Disk}^\sqcup_M$ algebra $A$ is {\em locally constant} if for any embedding of disks $D \hookrightarrow D'$ in $M$ that the induced map $A(D) \to A(D')$ is an equivalence. 
+When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$ algebras is equivalent to the theory of $\EE_n$ algebras. 
 
 \begin{thm}[\cite{LurieHA} Proposition 5.4.5.15]
 \label{thm:lurie0} 
@@ -261,22 +261,22 @@ There is a fully faithful embedding of $\infty$-categories
 \[
 {\rm Alg}_{\EE_n} \to {\rm Alg}_{{\rm Disk}^\sqcup_n}
 \]
-whose essential image is the full subcategory of locally constant ${\rm Disk}^\sqcup_n$-algebras. 
+whose essential image is the full subcategory of locally constant ${\rm Disk}^\sqcup_n$ algebras. 
 \end{thm}
 
-In the above proposition, we refer to ${\rm Disk}^\sqcup_n$-algebras in the homotopically coherent sense. 
+In the above proposition, we refer to ${\rm Disk}^\sqcup_n$ algebras in the homotopically coherent sense. 
 In particular, the requisite associativity axioms hold up to a prescribed homotopy.
 For algebras over a colored operad satisfying some modest axioms, one can find a ``strictification" which is equivalent to the original homotopically coherent algebra.
 See Theorem 1.1 of \cite{PavlovRectify} for a general result of this type that is sufficient for our purposes. 
-There is a $1$-category of ${\rm Disk}^\sqcup_n$-algebras where we require associativity to hold in the strict sense. 
-By this general strictification result, given any homotopically coherent ${\rm Disk}^{\sqcup}_n$-algebra we can find an equivalent algebra which is an object in this $1$-category. 
+There is a $1$-category of ${\rm Disk}^\sqcup_n$ algebras where we require associativity to hold in the strict sense. 
+By this general strictification result, given any homotopically coherent ${\rm Disk}^{\sqcup}_n$ algebra we can find an equivalent algebra which is an object in this $1$-category. 
 
 There is another colored operad ${\rm Opens}^\sqcup_M$ whose colors consist of all connected open subsets of $M$. 
 We note that ${\rm Disk}^\sqcup_M$ is a full subcategory of ${\rm Opens}^\sqcup_M$.
 %The set of operations ${\rm Disj}_M \left(\{U_\alpha\} , V \right)$ consists of a single point if the collection $\{U_\alpha\}$ is pairwise disjoint and are all contained in $V$.
 %Otherwise the set is empty. 
 A {\em prefactorization algebra} on $M$ is an algebra over the colored operad ${\rm Opens}^{\sqcup}_M$. 
-We say a prefactorization algebra on $M$ is locally constant if its associated ${\rm Disk}_n$-algebra is.
+We say a prefactorization algebra on $M$ is locally constant if its associated ${\rm Disk}_n$ algebra is.
 
 Again, the $\infty$-category of prefactorization algebras consists of objects where associativity only holds up to homotopy. 
 We can equally apply strictification for prefactorization algebras: given a homotopy coherent prefactorization algebra, we can find an equivalent object in the $1$-category of strict prefactorization algebras. 
@@ -331,13 +331,13 @@ and hence makes sense on general manifolds.
 
 In fact, Knudsen shows a stronger version of the second part.
 if one restricts to working with open balls in $\RR^n$ (rather than arbitrary open sets)
-then there is a $\Disk_n$-algebra ${\tt U}_n \fg$ assigning $\cliels(\fg[-n]) = \Sym(\fg[1-n])$ to each ball and it is manifestly locally constant.
-This $\Disk_n$-algebra ${\tt U}_n \fg$ is another model for~$\UU_n \fg$.
+then there is a $\Disk_n$ algebra ${\tt U}_n \fg$ assigning $\cliels(\fg[-n]) = \Sym(\fg[1-n])$ to each ball and it is manifestly locally constant.
+This $\Disk_n$ algebra ${\tt U}_n \fg$ is another model for~$\UU_n \fg$.
 
 \begin{rmk}
 It follows from theorem~\ref{T:UnofLie} that for any $\EE_n$ algebra $B$, 
 its underlying complex is equipped with a homotopy-coherent Lie algebra structure.
-Depending on one's preferences, one can work with an an $L_\infty$-algebra structure or strictify to a dg Lie algebra structure (at the cost of replacing the complex with something quasi-isomorphic but typically much larger).
+Depending on one's preferences, one can work with an an $L_\infty$ algebra structure or strictify to a dg Lie algebra structure (at the cost of replacing the complex with something quasi-isomorphic but typically much larger).
 \end{rmk}
 
 \subsection{Centralizers of maps of $\EE_n$ algebras and the derived center}
@@ -1013,7 +1013,7 @@ The following result generalizes (and implies) the Harish--Chandra isomorphism f
 
 \begin{prp}
 For $\fg$ a reductive \owen{semisimple?} Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, 
-there is a quasi-isomorphism of $\EE_{n+1}$-algebras
+there is a quasi-isomorphism of $\EE_{n+1}$ algebras
 \[
 {\frak Z}_n(\UU_n \fg) \simeq H^\bu_{\rm Lie}(\fg) \otimes \Sym(\fh[1-n])^W.
 \]
@@ -1070,7 +1070,7 @@ When $f=g=\id_A:A\to A$, we thus obtain a canonical morphism
 {\frak Z}_n(A){\otimes} {\frak Z}_n(A) \longrightarrow {\frak Z}_n(A).
 \end{equation}
 Lurie \cite{HA} has proved that this multiplication makes the center into an $E_1$ algebra in $\EE_n$ algebras 
-and therefore an $E_{n+1}$-algebra, by Dunn additivity. 
+and therefore an $E_{n+1}$ algebra, by Dunn additivity. 
 %To be precise, there is the following result.
 %
 %\begin{prp}[\cite{LurieHA} Section 5] 
@@ -1089,7 +1089,7 @@ The goal of this section is to prove directly the following result.
 
 \begin{thm}
 \label{T:compcentralizer}
-Let $f: \fg \rightsquigarrow \fh$ and $g: \fh \rightsquigarrow \fl$ be maps of  $L_\infty$-algebras,
+Let $f: \fg \rightsquigarrow \fh$ and $g: \fh \rightsquigarrow \fl$ be maps of  $L_\infty$ algebras,
 and let $\bold{f}: \bU_n \fg \to \bU_n \fh$ and $\bold{g}: \bU_n \fh \to \bU_n \fl$ denote the induced maps of factorization algebras.
 \begin{enumerate} 
 \item There is a natural map of factorization algebras
@@ -1222,7 +1222,7 @@ The first is about associativity.
 
 \begin{lmm}
 \label{L:compisassociative} 
-Let $f: \fg \rightsquigarrow \fh$, $g: \fh \rightsquigarrow \fl$ and $h: \fl \rightsquigarrow \fk$ be maps of $L_\infty$-algebras.
+Let $f: \fg \rightsquigarrow \fh$, $g: \fh \rightsquigarrow \fl$ and $h: \fl \rightsquigarrow \fk$ be maps of $L_\infty$ algebras.
 For any $\varphi \in \bZ_n(f)$, $\psi \in \bZ_n(g)$, and $\gamma \in \bZ_n(h)$,  
 the equality 
 \[ 
@@ -1315,7 +1315,7 @@ while the augmentation is provided by Lemma~\ref{L:compisaugmented}.
 The $\EE_n$ center ${\frak Z}_n(A)$ of an $\EE_n$ algebra $A$ is a rich object 
 and controls how other algebras can act on $A$ as an $\EE_n$ algebra.
 In a precise sense that we will discuss below, 
-it is the {\em universal} $\EE_{n+1}$-algebra that acts on $A$ {\em qua} $\EE_n$ algebra. 
+it is the {\em universal} $\EE_{n+1}$ algebra that acts on $A$ {\em qua} $\EE_n$ algebra. 
 
 As a familiar example, consider the degenerate situation of an $\EE_0$ algebra $V$, 
 which is simply a cochain complex with a cochain map $k \to V$.
@@ -1335,48 +1335,53 @@ and then we rephrase it in terms of {\em constructible factorization algebras} o
 
 \subsection{Swiss cheese pairs well with centers}
 
-Given an $\EE_{n+1}$-algebra one can speak of its $\infty$-category of left (or right) modules.
-This $\infty$-category is obtained by ``forgetting" the $\EE_{n+1}$-algebra to an $\EE_1$-algebra and then taking the left-modules for this $\EE_1$-algebra.
+We review now the notion of Swiss cheese algebras.
+As with the $\EE_n$ operad, we will first fix a specific presentation but will then use Swiss cheese to mean any equivalent operadic structure.
 
-The operad of little $n$-disks is built from configurations of disjoint unions of $n$-disks inside $n$-dimensional Euclidean space.
-The $(n+1)$-dimensional Swiss cheese operad is a two-colored operad whose algebras include pairs $(B, M)$ where $B$ is an $\EE_{n+1}$-algebra, $M$ is an $\EE_n$ algebra, and where $M$ is a left-module for $B$.
+First, observe that given an $\EE_{n+1}$ algebra $B$, 
+one can speak of its $\infty$-category of left (or right) modules.
+This $\infty$-category is obtained by ``forgetting" the $\EE_{n+1}$ algebra to an $\EE_1$ algebra and then taking the left-modules for this underlying $\EE_1$ algebra.
+This $\infty$-category has a natural $\EE_n$-monoidal structure by tensoring over~$B$
+\owen{citation to Lurie?}, a rather nontrivial result.
 
-Geometrically, it is most constructive to view this operad as built from open sets in the upper half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$.
-The colors include disks and half-disks. 
-If one restricts to the ``disk" colors we recover the data of the $\EE_{n+1}$-algebra $B$. 
-The operadic structure maps which include disks and half-disks embedded inside bigger half-disks encodes the left-module structure of $B$ on $M$.
+Recall now the topological operad of little $n$-disks whose operations are parametrized by configurations of disjoint unions of $n$-disks inside a big $n$-disk.
+There is a natural extension to a two-colored topological operad where the first color is an $n$-disk and the second color is an $n$-dimensional semi-disk, 
+and whose operations are parametrized by configurations of disjoint unions of disks and semi-disks, where the disks live in the interior of a big semi-disk and where the little semi-disks have their straight boundary lying on the boundary of the big semi-disk.\owen{Citations?}
 
-The pair $(\fZ_{n} (A), A)$ can be given the structure of an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-In fact, $(\fZ_{n} (A), A)$ is the {\em universal} such pair in the sense that if $(B, A)$ is another such pair then there exists a unique (up to equivalence) map of $\EE_{n+1}$-algebras $B \to \fZ_n(A)$. 
-This universality is a conjecture of \cite{Kontsevich} which was later made precise and proved in \cite{Thomas, Tamarkin, Dolgushev, jnkf others?}. 
+If one works through the definition, one finds that a Swiss cheese algebra consists of  a pair $(B, M)$, 
+where $B$ is an $\EE_{n+1}$ algebra and $M$ is an $\EE_n$ algebra in the $\infty$-category of left-modules for~$B$.
+The crucial example is that the pair $(\fZ_{n} (A), A)$ naturally determines a Swiss cheese algebra, 
+in fact, the {\em universal} such pair in a sense conjectured by Kontsevich \cite{}.
+
+\begin{thm}[\cite{Thomas, Tamarkin, Dolgushev, jnkf others?}] 
+For any $\EE_n$ algebra $A$ and any $\EE_{n+1}$ algebra~$B$,
+the space of Swiss cheese algebras whose underlying algebras are $B$ and $A$, respectively,
+is weakly equivalent to the space of maps of $\EE_{n+1}$ algebras $B \to \fZ_n(A)$. 
+\end{thm}
 
 In this paper, we will use two models for algebras over the $(n+1)$-dimensional Swiss cheese operad. 
 The first is obtained by considering pairs of locally constant factorization algebras on an $n$-dimensional manifold. 
 
-\begin{dfn}\label{dfn:pair}
-A {\em factorization pair} on a manifold $M$ is a pair $(\bB, \bM)$ where
+\begin{dfn}
+\label{dfn:pair}
+A {\em factorization sc-pair} on a manifold $M$ is a pair $(\bB, \bM)$ where
 \begin{itemize}
-\item $\bB$ is an associative algebra in locally constant factorization algebras;
-\item $\bM$ is a locally constant factorization algebra together with map $\bB \to \bZ_n(\bM)$ of associative algebras in factorization algebras.
+\item $\bB$ is an associative algebra in locally constant prefactorization algebras;
+\item $\bM$ is a locally constant prefactorization algebra together with map $\bB \to \bZ_n(\bM)$ of associative algebras in prefactorization algebras.
 \end{itemize}
-\brian{add remark about 1 categorical notion}
 \end{dfn}
 
-An immediate consequence of Theorem \ref{thm:lurie1} and Theorem \ref{thm: centralizer} is that a factorization pair on $\RR^n$ determines an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
+\begin{rmk}
+Since our focus is on concrete models, we mean here a strictly associative algebra $\bB$ in the 1-category of prefactorization algebras on $M$,
+and the map $\bB \to \bZ_n(\bM)$ should be strictly associative.
+It is straightforward to take such a pair and produce a Swiss cheese algebra in an $\infty$-categorical sense.
+In this paper we will always go in this concrete-to-abstract direction,
+never needing to start with a Swiss cheese algebra and produce a factorization sc-pair.
+\end{rmk}
+
+An immediate consequence of Theorem~\ref{thm:lurie1} and Theorem~\ref{thm: centralizer} is that a factorization sc-pair on $\RR^n$ determines an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
 
 In the next section we will recall a different model for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-dimensional manifolds with boundary. 
-
-%We have developed locally constant factorization models separately for enveloping $\EE_n$-algebras and their centers.
-%Combining these descriptions we obtain the following.
-%
-%\begin{prp}
-%For any smooth manifold $M$ and Lie algebra $\fg$ the pair $(\bZ_n(\fg), \bU_n (\fg))$ define a constructible factorization algebra on the $(n+1)$-manifold with boundary $M \times \RR_{\geq 0}$.
-%When $M = \RR^n$, this is a model for the algebra $(\fZ_n(\fg), \UU_n(\fg))$ over the $(n+1)$-dimensional Swiss cheese operad.
-%\end{prp}
-%
-%\begin{proof}[Proof sketch]
-%In the bulk manifold $M \times \RR_{>0}$ we place the 
-%\end{proof}
 
 \subsection{How factorization homology intertwines with taking the center}
 
@@ -1406,7 +1411,7 @@ In our favorite case, this relationship is as nice as possible.
 \begin{prp}
 \label{prp: z commutes with int}
 For any $L_\infty$ algebra $\fg$ and any closed $(n-k)$-dimensional manifold $S$,
-the canonical map of $E_k$-algebras
+the canonical map of $E_k$ algebras
 \[
 \int_{S} \fZ_n(\fg) \to \fZ_k \left( \int_S \UU_n \fg \right)
 \]
@@ -1489,7 +1494,7 @@ On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \f
 \]
 to each open set $U \subset \RR$.
 In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
-Furthermore, one can verify that the resulting $E_1$-algebra structure agrees with the one coming from convolution. 
+Furthermore, one can verify that the resulting $E_1$ algebra structure agrees with the one coming from convolution. 
 
 Our model also gives us a simple description of the factorization homology of the derived center along the circle~$S^1$:
 \begin{align*}
@@ -1540,7 +1545,7 @@ The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_
 The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$ center and our model $\bU_n (\fg)$ for the $\EE_n$ enveloping algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
 Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
-If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$-algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
+If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$ algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
 There is a similar description of the ``classical limit"  of algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of algebras over a certain two-colored operad $\PP_{[n+1,n]}$, introduced by Safronov \cite{Pavel1, Pavel2}, whose definition we recall below.
 
 \begin{prp} 
@@ -1556,7 +1561,7 @@ In the previous section, we mentioned another geometric model for algebras over 
 One drawback of the previous section is that we did not provide a model of this type for the $\EE_n$ center of an enveloping algebra. 
 The next goal of this section is to provide a model of the classical limit of the $\EE_n$ center as a constructible factorization algebra. 
 
-Any constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a factorization pair $(\bA^\circ , \bA^{\partial})$ in the sense of Definition \ref{dfn:pair}.
+Any constructible factorization algebra $\bA$ on $M \times \RR_{\geq 0}$ determines a factorization sc-pair $(\bA^\circ , \bA^{\partial})$ in the sense of Definition \ref{dfn:pair}.
 We recall this construction in Section \ref{sec:bulk}. 
 In particular, on the upper half space $\HH^n$, a constructible factorization algebra determines an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
 
@@ -1569,7 +1574,7 @@ There is a constructible commutative factorization algebra ${\bf C}_n (\fg)$
 %\begin{equation}\label{eqn:graded}
 %\left({\bf Bulk}_n (\fg) \; , \; {\rm Gr} \; \bU_n(\fg) \right)
 %\end{equation}
-on $M \times \RR_{\geq 0}$ and a quasi-isomorphism of factorization pairs
+on $M \times \RR_{\geq 0}$ and a quasi-isomorphism of factorization sc-pairs
 \[
 \bigg( {\bf C}_n (\fg)^\circ \; , \; {\bf C}_n (\fg)^\partial \bigg) \xto{\simeq} \bigg({\rm Gr} \; \bZ_n(\fg), {\rm Gr} \; \bU_n(\fg) \bigg).
 \]
@@ -1628,8 +1633,8 @@ F^k \bZ_n(\fg) = \clies \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \o
 Proposition \ref{prp:swiss1} is a direct consequence of the following lemma.
 
 \begin{lmm}
-These filtrations equip $(\bZ_n (\fg), \bU_n(\fg))$ with the structure of a filtered factorization pair.
-Moreover, the associated graded pair $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg))$ is a commutative factorization pair. 
+These filtrations equip $(\bZ_n (\fg), \bU_n(\fg))$ with the structure of a filtered factorization sc-pair.
+Moreover, the associated graded pair $({\rm Gr} \; \bZ_n (\fg), {\rm Gr} \; \bU_n(\fg))$ is a commutative factorization sc-pair. 
 \end{lmm}
 \begin{proof}
 One has
@@ -1646,10 +1651,10 @@ These are both commutative by direct inspection.
 
 The associated graded factorization algebras ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ are equipped with Poisson brackets that are compatible with the factorization structure. 
 
-For $k \geq -1$, a {\em $\PP_k$-factorization algebra} is a factorization algebra $\bA$ such that for every open set $U$ the cochain complex $\bA(U)$ is equipped with the structure of a $\PP_k$-algebra. 
-Furthermore, we require that the factorization structure maps be compatible with the $\PP_k$-algebra structure. 
+For $k \geq -1$, a {\em $\PP_k$-factorization algebra} is a factorization algebra $\bA$ such that for every open set $U$ the cochain complex $\bA(U)$ is equipped with the structure of a $\PP_k$ algebra. 
+Furthermore, we require that the factorization structure maps be compatible with the $\PP_k$ algebra structure. 
 
-Theorem \ref{thm:lurie1} combines with the additivity result of \cite{SafronovAdd} to show that there is an equivalence of categories between the category of locally constant $\PP_k$-factorization algebras on $\RR^n$ and $\PP_{n+k}$-algebras.  
+Theorem \ref{thm:lurie1} combines with the additivity result of \cite{SafronovAdd} to show that there is an equivalence of categories between the category of locally constant $\PP_k$-factorization algebras on $\RR^n$ and $\PP_{n+k}$ algebras.  
 
 In light of this, the following lemma implies that ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ determine $\PP_n$ and $\PP_{n+1}$ algebras respectively. 
 
@@ -1664,7 +1669,7 @@ Then
 \end{lmm}
 
 \begin{proof}
-For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$-algebra.
+For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$ algebra.
 It is given by the sum of the $L_\infty$-operations $\ell_2 + \ell_3 + \cdots$. 
 This implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
 
@@ -1679,13 +1684,13 @@ The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional S
 At the level of the associated graded algebras, we obtain an algebra over a certain classical limit of this operad which takes into account the aforementioned Poisson structures.
 
 The definition of this two-colored operad $\PP_{[n+1,n]}$ can be found in \cite{SafronovCoiso}. 
-A $\PP_{[n+1,n]}$-algebra consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$-algebra and $B$ is a $\PP_n$ algebra which receives an action by $A$. 
+A $\PP_{[n+1,n]}$ algebra consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$ algebra and $B$ is a $\PP_n$ algebra which receives an action by $A$. 
 
 The action of $\bZ_n(\fg)$ on $\bU_n(\fg)$ descends to an action at the level of the associated graded factorization algebras
 Together with Lemma \ref{lmm:pois1}, we obtain Proposition \ref{prp:poisson}. 
 
 \begin{rmk}
-One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$-algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$-center} of the $\PP_n$-algebra $B$. 
+One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$ algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$-center} of the $\PP_n$ algebra $B$. 
 By a similar proof as in the main part of the paper, we expect that one can see that the factorization algebra
 \[
 \clies \bigg(\Omega^\bu \otimes \fg \; ; \; {\rm Sym} \left(\Omega^\bu_c \otimes \fg [1] \right) \bigg)
@@ -1728,7 +1733,7 @@ Finally, the third map is induced by the extension of compactly supported de Rha
 \end{dfn}
 
 On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a commutative dg algebra. 
-In fact, it has the structure of a $\PP_0$-algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
+In fact, it has the structure of a $\PP_0$ algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
 
 \begin{lmm}
 $\bC_n(\fg)$ has the structure of a constructible $\PP_0$-factorization algebra on $M \times \RR_{\geq 0}$. 
@@ -1751,7 +1756,7 @@ Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and 
 The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
 \end{proof}
 
-Next, we provide a construction of a factorization pair on the manifold $M$ from the data of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
+Next, we provide a construction of a factorization sc-pair on the manifold $M$ from the data of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
 Suppose $\bA$ is any constructible factorization algebra on a manifold with boundary $M \times \RR_{\geq 0}$. 
 Let $\pi : M \times \RR_{\geq 0} \to M$ be the projection and denote by $\pi|_{M \times \RR_{>0}}$ its restriction to the interior. 
 Define the following two factorization algebras on $M$:
@@ -1759,8 +1764,8 @@ Define the following two factorization algebras on $M$:
 \bA^\circ & = \left(\left.\pi\right|_{M \times \RR_{>0}} \right)_* \bA \\
 \bA^\partial & = \pi_* \bA
 \end{align*}
-It is immediate to check that $(\bA^\circ, \bA^\partial)$ form a factorization pair in the sense of Definition \ref{dfn:pair}. 
-In fact, this construction determines a functor from the category of constructible factorization algebras on $M \times \RR_{\geq 0}$ to factorization pairs on $M$.
+It is immediate to check that $(\bA^\circ, \bA^\partial)$ form a factorization sc-pair in the sense of Definition \ref{dfn:pair}. 
+In fact, this construction determines a functor from the category of constructible factorization algebras on $M \times \RR_{\geq 0}$ to factorization sc-pairs on $M$.
 
 We are now ready to prove Proposition \ref{prp:pair}.
 
@@ -1791,7 +1796,7 @@ Using the retract $r_\phi$, we see that this is a quasi-isomorphism of factoriza
 
 Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras $\int_{\RR_{\geq 0}} : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg)$.
 
-The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization pairs. 
+The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization sc-pairs. 
 The compatibility of this quasi-isomorphism with Poisson brackets is a direct calculation. 
 \end{proof}
 
@@ -1863,7 +1868,7 @@ These are pairs $(A,B)$ where $A \in \Omega^1 (N) \otimes \fg$ and $B \in \Omega
 \end{align*}
 
 We remark that we are free to replace $\fg$ by an arbitrary $L_\infty$ algebra, which we will do so for the remainder of this section. 
-It is clear that the $L_\infty$-algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$-algebras. 
+It is clear that the $L_\infty$ algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$ algebras. 
 In the setup of \cite{CG2}, the factorization algebra of classical observables is the Chevalley--Eilenberg cochains $\clies (\cL)$.   
 The $\PP_0$-structure is induced from the explicit $(-1)$-symplectic pairing $\int A \wedge B$ at the level of the fields. 
 
@@ -1883,17 +1888,17 @@ More recently, in \cite{ButsonYoo} and \cite{Eugene}, it is shown how to run the
 
 
 \begin{dfn}
-Let $M$ be an $n$-dimensional manifold and let $\fg$ be an $L_\infty$-algebra. 
-{\em Topological BF theory with its universal Neumann boundary condition} is the classical BV theory on $M \times \RR_{\geq 0}$ described by the following constructible sheaf $\cL$ of $L_\infty$-algebras:
+Let $M$ be an $n$-dimensional manifold and let $\fg$ be an $L_\infty$ algebra. 
+{\em Topological BF theory with its universal Neumann boundary condition} is the classical BV theory on $M \times \RR_{\geq 0}$ described by the following constructible sheaf $\cL$ of $L_\infty$ algebras:
 \begin{itemize}
 \item[(1)] 
 The bulk theory is perturbative topological BF theory on $M \times \RR_{>0}$. 
-That is, to an open set $U \subset M \times \RR_{>0}$ the theory is described by the $L_\infty$-algebra 
+That is, to an open set $U \subset M \times \RR_{>0}$ the theory is described by the $L_\infty$ algebra 
 \[
 \cL (U) = \Omega^{\bu} (U) \otimes \fg [1] \ltimes \Omega^{\bu} (U) \otimes \fg^* [n-3] .
 \]
 \item[(2)] 
-To an open set $V \times [0,\epsilon)$, we assign the (abelian) $L_\infty$-algebra
+To an open set $V \times [0,\epsilon)$, we assign the (abelian) $L_\infty$ algebra
 \[
 \cL (V \times [0,\epsilon)) = \Omega^{\bu} (V \times [0,\epsilon)) \otimes \fg^* [n-3] .
 \]
