@@ -1383,6 +1383,39 @@ An immediate consequence of Theorem~\ref{thm:lurie1} and Theorem~\ref{thm: centr
 
 In the next section we will recall a different model for algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of constructible factorization algebras on $(n+1)$-dimensional manifolds with boundary. 
 
+\subsection{A Koszul pairing with enveloping $\EE_n$ algebras}
+
+We now briefly remark on how Corollary~\ref{cor: koszul dual to main theorem} lets us see aspects of $\EE_n$-Koszul duality in concrete terms.
+Note that $\clies(\fg)$ and $\UU_n(\fg)$ have equivalent $\EE_n$ centers.
+If we choose to view $\clies(\fg)$ as an $\EE_n$ algebra in {\em right} modules for ${\frak Z}_n(\fg)$,
+then we can consider the relative tensor product
+\[
+\clies(\fg) \otimes_{{\frak Z}_n(\fg)} \UU_n \fg
+\]
+and obtain an $\EE_n$ algebra in cochain complexes.
+Our models let us show that this relative pairing is trivial, in the following sense.
+
+\begin{lmm}
+There is an equivalence  
+\[
+k \simeq \clies(\fg) \otimes_{{\frak Z}_n(\fg)} \UU_n \fg
+\]
+of $\EE_n$ algebras.
+\end{lmm}
+
+\begin{proof}
+Our model $\bZ_n(\fg)$ is an strict associative algebra, and our models $\clies(\Omega^* \otimes \fg)$ and $\bU_n\fg$ are strict right, respectively left, modules over $\bZ_n(\fg)$.
+On each open set~$V$, we compute
+\begin{align*}
+\clies(\Omega^*(V) \otimes \fg) &\otimes^\LL_{\bZ_n(\fg)(V)} \bU_n(V) \\
+&\simeq \clies(\Omega^*(V) \otimes \fg) \otimes^\LL_{\Hom^\bullet(\cliels(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V)\otimes \fg))} \cliels(\Omega^*_c(V)\otimes \fg)
+\end{align*}
+and it is a standard argument to show that this relative tensor product is the unit.
+\end{proof}
+
+\owen{Lurie has a beautiful discussion of such pairings somewhere,
+so maybe we can borrow his riffs and extend the above in a nice way.}
+
 \subsection{How factorization homology intertwines with taking the center}
 
 A natural question in our setting is what happens to our pair $(\bZ_n(\fg), \bU_n \fg)$ when we take factorization homology.
@@ -1508,10 +1541,6 @@ In the last step we use the fact that the circle is formal as a rational space.
 We could exhibit Theorem 2.7.1 explicitly in this case for the $\EE_n$ case with enveloping algebras.}
 
 \owen{Other manifolds? Products of circles? Spheres?}
-
-\subsection{Koszul duality for enveloping $\EE_n$ algebras}
-
-\owen{Use corollary~\ref{cor: koszul dual to main theorem} to exhibit a "dual" Swiss cheese pair and then compute the relative tensor product over the center, which will be the unit $\EE_n$ algebra. Draw a picture of the strip.}
 
 \section{Centers and topological field theories}
 \label{sec: TFT}
@@ -1931,6 +1960,8 @@ By ellipticity, the inclusion $\Omega^\bu \hookrightarrow \Bar{\Omega}^\bu_c$ is
 as desired. 
 The quasi-isomorphism for the value of the factorization algebras on open sets $U \subset M \times \RR_{>0}$ is defined similarly. 
 \end{proof}
+
+\owen{Consider referring back to the Koszul pairing (in the calculus section) to talk about Neumann vs Dirichlet boundary conditions.}
 
 
 \begin{rmk} Examples
