@@ -1812,7 +1812,19 @@ is a model for the $\PP_n$-center of the $\PP_n$-{\em enveloping algebra} $\UU_{
 
 We turn towards a model for the $\EE_n$ center as a constructible factorization algebra. 
 
-\brian{I think this definition is fucked}
+Before stating the definition of this model, we introduce the following variant of the de Rham complex of differential forms on $\RR_{\geq 0}$. 
+Let $j : \RR_{>0} \hookrightarrow \RR_{\geq 0}$ be the embedding of the open ray into the closed ray. 
+Define the complex
+\[
+\begin{tikzcd}
+& \ul{0} & \ul{1} \\
+\Tilde{\Omega}^\bu (\RR_{\geq 0}) = & \Omega^0 (\RR_{\geq 0}) \ar[r, "j^* \circ \d_{\rm dR}"] & \Omega^1(\RR_{>0})  .
+\end{tikzcd}
+\]
+The commutative dg algebra structure on $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ is defined by the rule
+\[
+f \cdot (g \, \d t) = (j^* f) g\, \d t .
+\]
 
 \begin{dfn}
 \label{dfn:constructible1}
@@ -1820,12 +1832,17 @@ Let $\bC_n(\fg)$ be the following constructible factorization algebra on $M \tim
 \begin{itemize}
 \item to an open set $U \subset M \times \RR_{> 0}$, we assign the cochain complex 
 \[
-\bC_n (\fg) (U) = \clies \bigg(\fg \otimes \Omega (U) \; , \; \Sym \left(\fg \otimes \Omega_c(U) [2] \right) \bigg) .
+\bC_n (\fg) (U) = \clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) .
 \]
 \item to an open set $V \times [0,\epsilon)$ we assign the cochain complex 
 \[
-\bC_n (\fg) (V \times [0,\epsilon)) = {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon) [2] \right).
+\bC_n (\fg) (V \times [0,\epsilon)) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon))[2] \right) \bigg).
 \]
+%\brian{this is wrong
+%\[
+%\bC_n (\fg) (V \times [0,\epsilon)) = {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon) [2] \right).
+%\]
+%}
 \end{itemize}
 The structure map associated to the embedding 
 \begin{equation}\label{eqn:embed}
@@ -1834,15 +1851,26 @@ i : U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
 is given by the composition
 \[
 \begin{tikzcd}
-\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  {\rm Sym} \left(\fg \otimes \Omega^\bu_c (V\times [0,\epsilon)) [2] \right) \ar[d, "{\rm ev}_1"] \\
-\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
-\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d, "i_*"]\\
-\Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
+\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  \clies\bigg(\fg \otimes \Omega^\bu(V) \otimes \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon))[2] \right) \bigg) \ar[d, "\simeq"] \\
+\clies \bigg(\fg \otimes \left(\Omega^\bu (U) \oplus \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \right) \; , \; \Sym \left(\fg \otimes \left(\Omega^\bu_c(U) [2] \oplus \Omega^\bu_c(V \times [0,\epsilon)) [2]\right)\right) \bigg) \ar[d, "i^* \otimes i_*"] \\
+\clies\bigg(\fg \otimes \Omega^\bu(V') \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon'))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V' \times [0,\epsilon'))[2] \right) \bigg).
 \end{tikzcd}
 \]
-The first map ${\rm ev}_1$ evaluates the unit $1$ in $\Sym\left(\fg \otimes \Omega^\bu(U)\right)$ and the second map uses the fact that the symmetric algebra functor is monoidal. 
-Finally, the third map is induced by the extension of compactly supported de Rham forms along the embedding (\ref{eqn:embed}). 
+
+%\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
+%\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d, "i_*"]\\
+%\Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
+The first map uses the fact that the symmetric algebra functor is monoidal. 
+The second map is induced from restriction and extension of de Rham forms and compactly supported de Rham forms along the embedding (\ref{eqn:embed}). 
 \end{dfn}
+
+\begin{rmk}
+Here, we remark that pulling back along an embedding $\iota : U \hookrightarrow V \times [0,\epsilon)$, where $U \subset M \times \RR_{>0}$ determines a composition of cochain complexes
+\[
+\Omega^\bu (V') \otimes \Tilde{\Omega}^\bu([0,\epsilon)) \xto{j^*}  \Omega^\bu (V') \Hat{\otimes} \Omega^\bu((0,\epsilon)) \cong \Omega^\bu(V \times (0,\epsilon)) \xto{\iota^*} \Omega^\bu(U) .
+\]
+This is our model for restriction $\iota^*$ of de Rham forms that is used in the definition above.
+\end{rmk}
 
 On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a commutative dg algebra. 
 In fact, it has the structure of a $\PP_0$ algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
@@ -1907,6 +1935,7 @@ which on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>
 Using the retract $r_\phi$, we see that this is a quasi-isomorphism of factorization algebras on $M$. 
 
 Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras $\int_{\RR_{\geq 0}} : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg)$.
+\brian{I should spell this out now.}
 
 The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization sc-pairs. 
 The compatibility of this quasi-isomorphism with Poisson brackets is a direct calculation. 
@@ -2045,6 +2074,7 @@ There is a quasi-isomorphism of constructible factorization algebras on $M \time
 \owen{$\PP_0$ algebras?}
 
 \begin{proof}
+\brian{we should just cite our paper with Eugene for this, with a few comments about what changes}
 Suppose $V \times [0,\epsilon) \subset M \times \RR_{\geq 0}$ is an open set. 
 Then, as cochain complexes 
 \[
