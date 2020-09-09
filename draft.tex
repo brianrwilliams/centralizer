@@ -58,11 +58,11 @@ Our central goal here is to generalize the some well-known results about the env
 \end{enumerate}
 \owen{And keep going just a little.}
 %
-%Our results pertains to (1) by taking $N \to \infty$, and to (2) through the derived {\em centralizer} of the map $\UU_n\sl_\infty \hookrightarrow \UU_n\gl_\infty(A)$, where $A$ is a dg algebra. Note that the usual derived center is the centralizer of the identity map $\UU_n\fg \to \UU_n\fg$.
+%Our results pertains to (1) by taking $N \to \infty$, and to (2) through the derived {\em centralizer} of the map $\UU_n\sl_\infty \hookrightarrow \UU_n\fgl_\infty(A)$, where $A$ is a dg algebra. Note that the usual derived center is the centralizer of the identity map $\UU_n\fg \to \UU_n\fg$.
 %
 %We will review these notions and describe our results in detail Min the next section. When $n=1$,  \owen{state the classical thing here!}
 %
-%Our primary tool here is the Loday-Quillen-Tsygan (LQT) theorem which describes the large $N$ limit of the Lie algebra homology of $\gl_N(A)$, for a dg associative algebra $A$. Since the enveloping $\EE_n$ algebra of a Lie algebra can be constructed as a locally constant factorization algebra made out of the shifted Chevalley-Eilenberg chains \cite{}, the relevance of the LQT theorem in this context  should be apparent. From this point of view, one can think of our main result as an $\EE_n$ generalization of the LQT theorem. We hope these ideas have exciting applications in quantum field theory and random matrix theory, as well as to other large $N$ limit phenomena.
+%Our primary tool here is the Loday-Quillen-Tsygan (LQT) theorem which describes the large $N$ limit of the Lie algebra homology of $\fgl_N(A)$, for a dg associative algebra $A$. Since the enveloping $\EE_n$ algebra of a Lie algebra can be constructed as a locally constant factorization algebra made out of the shifted Chevalley-Eilenberg chains \cite{}, the relevance of the LQT theorem in this context  should be apparent. From this point of view, one can think of our main result as an $\EE_n$ generalization of the LQT theorem. We hope these ideas have exciting applications in quantum field theory and random matrix theory, as well as to other large $N$ limit phenomena.
 
 \subsection{Overview of the paper}
 
@@ -910,8 +910,6 @@ Hence the map $\theta_{\bf f}$ is a quasi-isomorphism on any disk, as needed.
 
 We apply our central result to important classes of Lie algebras: 
 abelian, semisimple, and free.
-We also indicate the large $N$ behavior of enveloping algebras for the infinite families $\frak{gl}_N$, $\frak{sp}_N$, and $\frak{so}_N$,
-by exploiting the Loday-Quillen-Tsygan theorem and its cousins.
 
 \subsection{Abelian Lie algebras and an $\EE_n$ Hochschild-Kostant-Rosenberg theorem}
 
@@ -1036,79 +1034,6 @@ Further, by the Chevalley restriction theorem one has
 \[
 \Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
 \]
-\end{proof}
-
-\subsection{The large $N$ limit of the center ${\frak Z}_n(\UU_n \frak{gl}_N)$ and cyclic cohomology}
-
-\owen{Please check this carefully, Greg. The lemma is meaningful even if the proposition is bogus.}
-
-In the case of the infinite series of Lie algebras, 
-there are theorems that tell us about the limiting behavior of Lie algebra chains and cochains as $N$ goes to infinity.
-These can be applied to our models of the center to obtain novel $\EE_n$ algebras.
-
-Let $\Cyc_*(A)$ denote the {\em cyclic chains} of a dg associative algebra~$A$.
-
-\def\gl{\frak{gl}}
-
-\begin{prp}
-There is a quasi-isomorphism of $\EE_n$ algebras
-\[
-{\frak Z}_n(\frak{gl}_\infty) \xto{\simeq} \clies(\frak{\gl}_\infty) \otimes \Sym(\Cyc_*(k[-n])[1])  ,
-\]
-and so, in particular, the $N \to \infty$ limit of ${\frak Z}_n(\frak{gl}_N)$ is commutative.
-\end{prp}
-
-\begin{proof}
-The Loday-Quillen-Tsygan (LQT) theorem --- for nonunital algebras --- provides a quasi-isomorphism
-\[
-\cliels(\gl_\infty(A))^{\gl_\infty(k)} \xto{\simeq} \Sym(\Cyc_*(A)[1])
-\] 
-and it is functorial in the algebra~$A$.
-\owen{I used {\em invariants} here rather than {\em coinvariants}. Is that allowed?}
-Now
-\[
-\clies(\gl_\infty, \cliels(\gl_\infty(A)) \simeq \cliels(\gl_\infty) \otimes \cliels(\gl_\infty(A))^{\gl_\infty(k)},
-\]
-as shown in the proof of the LQT theorem.
-
-We take $A = \Omega^*_c(V)$ and use the functoriality to see that we get a quasi-isomorphism of prefactorization algebras, as claimed.
-\end{proof}
-
-There are immediate analogs of this theorem where we replace $\gl_N$ by $\frak{so}_N$ or $\frak{sp}_N$ and where we replace cyclic chains by dihedral chains.
-
-A striking consequence of the LQT map appears at the level of factorization homology.
-
-\begin{lmm}
-For a closed $n$-dimensional manifold~$M$, 
-\begin{align*}
-\int_M {\frak Z}_n(\frak{gl}_\infty) 
-&\simeq \clies(\Omega^*(M) \otimes \gl_\infty, \Sym(\Cyc_*(\Omega^*(M))[1])) \\
-&\simeq \clies(\Omega^*(M) \otimes \gl_\infty, \Sym(\Omega^*(LM/^h S^1))[1]))
-\end{align*}
-where $\Omega^*(LM/^h S^1)$ denotes some cochain model for the cochains of the homotopy quotient of the free loop space under the canonical rotation action on loops.
-\end{lmm}
-
-\owen{That phrasing could be improved.}
-
-Implicit in the statement is that one must describe the needed (and non-obvious) action of $\gl_\infty(\Omega^*(M))$ on a symmetric algebra generated by cyclic chains, respectively the rotation-equivariant cochains on the free loop space~$LM$.
-
-What makes this result striking is that it shows how the {\em cyclic loop space} $LM/^h S^1$ appears out of taking a large $N$ limit of factorization homology.
-This kind of result is especially interesting from the perspective of physics, 
-as a kind of topological gauge/string duality.
-In Section~\ref{sec: TFT} we explain how the center $\frak{Z}_n(\gl_\infty)$ can be understood as the {\em quantum observables} of topological BF theory for the Lie algebra $\gl_\infty$.
-In this sense, the left hand side of the lemma $\int_M {\frak Z}_n(\frak{gl}_\infty)$ describes the global quantum observables over the manifold $M$.
-On the right hand side, we see the cyclic loop space of $M$,
-which arises naturally as the configuration space of a closed string theory with target~$M$.
-
-\begin{proof}
-As $\Omega^*_c(M) = \Omega^*(M)$ because $M$ is closed, 
-one applies the LQT theorem for {\em unital} algebras
-\[
-\cliels(\gl_\infty(\Omega^*(M))) \xto{\simeq} \Sym(\Cyc_*(\Omega^*(M))[1])
-\]
-to obtain the first weak equivalence.
-(In fact, one must transfer the $\gl_\infty(\Omega^*(M))$ along the LQT map.)
-Then Jones' theorem \cite{} provides the second weak equivalence.
 \end{proof}
 
 \subsection{Free Lie algebras and free $\EE_n$ algebras}
@@ -1574,9 +1499,10 @@ In the case $k = 0$, we have the immediate corollary that
 \int_{S} \fZ_n(\fg) \simeq \fZ_0 \left( \int_S \UU_n \fg \right) ,
 \]
 which unwinds to 
-\[
+\begin{equation}
+\label{eqn: taut}
 \clies(\fg \otimes \Omega^\bu(S), \cliels(\fg \otimes \Omega^\bu(S)) \simeq \End^\bullet(\cliels(\fg \otimes \Omega^\bu(S))),
-\]
+\end{equation}
 which looks rather tautological.
 Nonetheless, by using other models for factorization homology,
 one obtains less obvious identifications.
@@ -1611,6 +1537,93 @@ We could describe an $\EE_n$ generalization?}
 
 \owen{Other manifolds? Products of circles? Spheres?}
 
+\subsection{Cyclic homology and the large $N$ limits of $\UU_n \fgl_N$ and ${\frak Z}_n(\fgl_N)$}
+
+In the case of the infinite series of Lie algebras, 
+there are theorems that tell us about the limiting behavior of Lie algebra chains and cochains as $N$ goes to infinity.
+These can be applied to our models to obtain striking results about factorization homology.
+
+\def\Dih{{\rm Dih}}
+
+Let $\Cyc_*(A)$ denote the {\em cyclic chains} of a dg associative algebra~$A$.
+A key theorem --- one of the original motivations for cyclic homology --- is the Loday-Quillen-Tsygan (LQT) theorem \cite{},
+which provides an explicit quasi-isomorphism
+\begin{equation}
+\label{eqn: LQT}
+\cliels(\fgl_\infty(A)) \xto{\simeq} \Sym(\Cyc_*(A)[1])
+\end{equation}
+for any unital dg associative algebra~$A$.
+A similar result \cite{} holds when we replace $\fgl_N$ by $\frak{so}_N$ or $\frak{sp}_N$, with
+\[
+\label{eqn: LQT}
+\cliels({\frak{so}}_\infty(A)) \xto{\simeq} \Sym(\Dih_*(A)[1]),
+\]
+with $\Dih_*$ denoting the dihedral chains.
+Note that one can use either $\frak{so}_N$ or $\frak{sp}_N$ on the left hand side.
+
+\owen{Please verify my conditions, as I got a bit confused between different sources.}
+
+Another key theorem, due to Jones \cite{} for cyclic chains and extend to dihedral chains by Ungheretti \cite{},
+is that
+\[
+\Cyc_*(\Omega^*(M)) \simeq \Omega^*(LM/^h S^1)
+\]
+for a simply connected manifold $M$, 
+where $LM/^h S^1$ denotes the homotopy quotient of the free loop space $LM$ under the canonical rotation action on loops,
+and where we mean some model of cochains on the right hand side.
+In other words, the right hand side is the $S^1$-equivariant cochains of the free loop space.
+(This result holds, more generally, for a simply connected topological space of finite type, so long as one uses an appropriate model of cochains of the space, 
+but we focus here on manifolds.)
+
+From hereon we will work only with cyclic chains and $\fgl$,
+but one obtains immediate analogs by replacing those with dihedral chains and $\frak{so}$ or~$\frak{sp}$.
+
+As a first observation, let us see what this result implies about factorization homology of the enveloping $\EE_n$ algebra.
+
+\begin{lmm}
+For a closed $n$-dimensional manifold~$M$, 
+\begin{align*}
+\int_M \UU_n(\frak{gl}_\infty)
+&\simeq \cliels(\Omega^*(M) \otimes \fgl_\infty) \\
+&\simeq \Sym(\Cyc_*(\Omega^*(M))[1]) \\
+&\simeq \Sym(\Omega^*(LM/^h S^1))[1])).
+\end{align*}
+\end{lmm}
+
+Although this result is immediate from the theorems we just mentioned,
+it is rather surprising to see the {\em cyclic loop space} $LM/^h S^1$ appears out of taking a large $N$ limit of factorization homology.
+Note that this identification provides a commutative algebra structure on the factorization homology for $\fgl_\infty$, 
+which is nowhere to be seen for~$\fgl_N$.
+
+\begin{qtn}
+Is there some local version of this relationship? That is, can we obtain a version of the LQT theorem at the level of $\EE_n$ algebras such that factorization homology recovers the quasi-isomorphism of this lemma?
+\end{qtn}
+
+This kind of result is especially interesting from the perspective of physics, 
+as a kind of topological gauge/string duality.
+In Section~\ref{sec: TFT} we explain how $\UU_n(\fgl_\infty)$ can be understood as the {\em quantum observables} of a gauge theory for the Lie algebra $\fgl_\infty$.
+In this sense, the left hand side of the lemma $\int_M \UU_n(\frak{gl}_\infty)$ describes the global quantum observables over the manifold $M$.
+On the right hand side, we see the cyclic loop space of $M$,
+which arises naturally as the configuration space of a closed string theory with target~$M$.
+Indeed, those familiar with closed string field theory will recognize the right hand side as related to the ``Fock space'' of such a theory.
+\owen{Check me, Bri-guy.}
+
+Now let's examine what our calculus results imply;
+we simply apply quasi-isomorphism~\eqref{eqn: taut} in conjunction with the theorems.
+
+\begin{lmm}
+For a closed $n$-dimensional manifold~$M$, 
+\[
+\clies(\fgl_\infty \otimes \Omega^\bu(M), \cliels(\fgl_\infty \otimes \Omega^\bu(M)) \simeq \End^\bullet(\Sym(\Omega^*(LM/^h S^1))[1])))
+\]
+where the left hand side is the factorization homology of $\EE_n$ center ${\frak Z}_n(\fgl_\infty)$ and the right hand side is the $\EE_0$ center of the factorization homology of~$\UU_n \fgl_\infty$.
+\end{lmm}
+
+In physical terms, the right hand side encodes the algebra of operators on the Fock space of a closed string field theory.
+Hence this statement provides a novel way to construct that algebra.
+Even better, in Section~\ref{sec: TFT}, we identify the left hand side as the quantum observables of the topological BF theory for $\fgl_N$ on $M \times \RR$.
+In this sense we have deepened the topological gauge/string duality just introduced.
+
 \section{Centers and topological field theories}
 \label{sec: TFT}
 %
@@ -1634,7 +1647,8 @@ In this section, we turn to an interpretation of the $\EE_n$ center of an $\EE_n
 Given an $\EE_n$ algebra $A$, the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
 The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $\EE_n$ enveloping algebra. 
 
-\begin{prp} \label{prp:swiss1}
+\begin{prp}
+\label{prp:swiss1}
 Let $\fg$ be an $L_\infty$ algebra. 
 The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-category of algebras over the $(n+1)$-dimensional Swiss cheese operad. 
 The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
