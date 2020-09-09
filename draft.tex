@@ -115,7 +115,7 @@ We review these notions more fully in Section~\ref{sec: background}.
 Our work here relies on a concrete and convenient model for these enveloping $\EE_n$ algebras by factorization algebras.
 In particular, thanks again to \cite{Knudsen}, 
 we know that the $\EE_n$ enveloping algebra $\UU_n \fg$ admits a model $\bU_n \fg$ whose underlying functor on the poset of open sets in $\RR^n$ assigns $\cliels(\Omega_c^*(V) \otimes \fg)$ to each open set~$V$.
-There is another factorization algebra whose underlying assigns $\clies(\Omega^*(V) \otimes \fg)$ to each open~$V$.
+There is another factorization algebra whose underlying assigns $\clies(\Omega^\bu(V) \otimes \fg)$ to each open~$V$.
 Our paper shows that such factorization algebras model other important $\EE_n$ algebras, notably centralizers.
 
 \begin{thm}
@@ -130,10 +130,10 @@ This map determines functorially a map of $\EE_n$ algebras
 between their enveloping $\EE_n$ algebras.
 The centralizer of this map ${\frak Z}_n(\UU_n f)$ is an $\EE_n$ algebra modeled by the factorization algebra 
 \[
-\clies(\Omega^* \otimes \fg, \cliels(\Omega^*_c \otimes \fh)_f)
+\clies(\Omega^\bu \otimes \fg, \cliels(\Omega^\bu_c \otimes \fh)_f)
 \]
 equipped with a convolution-type product,
-where the subscript $f$ indicates how $\cliels(\Omega^*_c \otimes \fh)$ is a module over $\Omega^* \otimes \fg$.
+where the subscript $f$ indicates how $\cliels(\Omega^\bu_c \otimes \fh)$ is a module over $\Omega^\bu \otimes \fg$.
 \end{thm}
 
 {\em Nota bene:}\/ For concision --- and since it is essentially the only kind of map we deal with in this paper --- we simply write $f: \UU_n \fg \to \UU_n \fh$ for the map $\UU_n(f)$ arising from the $L_\infty$ map $f: \fg \rightsquigarrow \fh$.
@@ -186,14 +186,14 @@ The center ${\frak Z}_n(\fg)$ of the enveloping $\EE_n$ algebra $\UU_n\fg$ is th
 When $k$ is $\RR$ or $\CC$, the 
 center is modeled by the locally constant factorization algebra that assigns
 \[
-\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\clies(\fg \otimes \Omega^\bu(U), \cliels( \fg \otimes \Omega^\bu_c(U)))
 \]
 to each open set $U \subset \RR^n$.
 \end{cor}
 
 This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, 
 since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns
-$\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
+$\cliels (\fg \otimes \Omega^\bu_c(U))$ to each open $U \subset \RR$. 
 
 \greg{We could relate this to $P_n$-center of $\fg$. That shall also (but I have to think about the proof more), 
 at least up to formality gives the $P_{n+1}$-structure on it. }\owen{Brian now does this in the TFT section.}
@@ -205,7 +205,7 @@ In this case, we obtain a version of Koszul duality as the corollary.
 \label{thm: koszul duality}
 The centralizer of the augmentation $\epsilon: \UU_n \fg \to k$ is equivalent to $\clies(\fg)$ viewed as an $\EE_n$ algebra. It is modeled by the locally constant factorization algebra that assigns
 \[
-\clies(\fg \otimes \Omega^*(V))
+\clies(\fg \otimes \Omega^\bu(V))
 \]
 to each open set $V \subset \RR^n$.
 \end{cor}
@@ -225,9 +225,9 @@ The enveloping $\EE_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathr
 and hence determines a factorization algebra on any un-oriented $n$-dimensional manifold \cite{Knudsen}.
 Therefore, for a closed $n$-dimensional manifold $M$, one has
 \[
-\int_M {\frak Z}_n(\UU_n \rho) \simeq \clies(\fg \otimes \Omega^*(M), \cliels( \fh \otimes \Omega^*(M))).
+\int_M {\frak Z}_n(\UU_n \rho) \simeq \clies(\fg \otimes \Omega^\bu(M), \cliels( \fh \otimes \Omega^\bu(M))).
 \]
-Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal variable with $|\epsilon_n| = n$ and $\epsilon_n^2 = 0$, we have
+Since $\Omega^\bu(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal variable with $|\epsilon_n| = n$ and $\epsilon_n^2 = 0$, we have
 \[
 \int_{S^n} {\frak Z}_n(\UU_n \rho) \simeq \clies(\fg[\epsilon_n], \cliels( \fh[\epsilon_n]))
 \]
@@ -256,7 +256,7 @@ A ${\rm Disk}^\sqcup_M$ algebra $A$ is {\em locally constant} if for any embeddi
 When $M = \RR^n$, it is a result of Lurie that the theory of locally constant ${\rm Disk}^\sqcup_n$ algebras is equivalent to the theory of $\EE_n$ algebras. 
 
 \begin{thm}[\cite{LurieHA} Proposition 5.4.5.15]
-\label{thm:lurie0} 
+\label{thm:lurie1} 
 There is a fully faithful embedding of $\infty$-categories
 \[
 {\rm Alg}_{\EE_n} \to {\rm Alg}_{{\rm Disk}^\sqcup_n}
@@ -396,7 +396,7 @@ We now turn to proving Theorem~\ref{thm: centralizer}.
 \section{Proof of Theorem \ref{thm: centralizer}}
 
 Recall the overall strategy.
-First, we define a factorization algebra $\clies(\Omega^* \otimes \fg, (\bU_n \fh)_f)$ as a kind of convolution factorization algebra.
+First, we define a factorization algebra $\clies(\Omega^\bu \otimes \fg, (\bU_n \fh)_f)$ as a kind of convolution factorization algebra.
 Then we get to the heart of the construction:
 we show that this convolution algebra naturally sits inside a centralizer diagram.
 By the universal property of the centralizer, we then obtain 
@@ -417,11 +417,9 @@ and we use ${\bf f}: \bU_n \fg \to \bU_n \fh$ for the factorization model of the
 \subsection{Standard manipulations with $L_\infty$ algebras and their modules}
 \label{sec: review of linfty}
 
-\owen{Please read and comment if it is too fast or cryptic (or wrong due, e.g., to sloppy shifts).}
-
 We assume the reader is familiar with Lie algebras and $L_\infty$ algebras and with standard constructions,
 such as the Chevalley-Eilenberg chains or cochains, which we may also call the Lie algebra (co)chains.
-A nice reference is \owen{Loday-Vallette???}
+A nice reference is \cite{LodayVallette}.
 Nonetheless, we review a few aspects that play a crucial role below.
 
 First, recall that an $L_\infty$ algebra $\fg$, with its collection of brackets $\{\ell_n\}_{n \geq 1}$ is fully encoded by its dg conilpotent cocommutative coalgebra
@@ -439,7 +437,7 @@ In short,
 \[
 \cliels(\fg) = k \oplus \overline{\cliels(\fg)}
 \]
-as complexes.
+as cochain complexes.
 
 This construction is symmetric monoidal.
 The {\em product} of two $L_\infty$ algebras $\fg \times \fh$ is the direct sum of the underlying graded vector spaces $\fg \oplus \fh$ equipped with the brackets encoded by the tensor product of their chains
@@ -497,12 +495,13 @@ sending $(1 + g, x)$ to $f(x) + g(x)$, where $g \in \Hom^\bullet(\overline{\clie
 In this sense, we see how $\clies(\fg,\cliels(\fh)_f)$ encodes deformations of~$f$.
 
 \owen{Probably need to mention somewhere that it's better to work with $\clies(\fg)$ as a completed object.}
+\brian{I think you've got around this issue by talking about Homs}
 
 \subsection{Defining the convolution factorization algebra}
 \label{sec: dfn of centralizer fact alg}
 
 Our goal here is to construct the factorization algebra that models the centralizer.
-First, we need to show that there is a well-defined functor (in the 1-categorical sense) ${\rm Opens}_{\RR^n} \to \Ch_k$ assigning $\clies(\Omega^*(V) \otimes \fg, \bU_n \fh(V))$ to each open set $V$.
+First, we need to show that there is a well-defined functor (in the 1-categorical sense) ${\rm Opens}_{\RR^n} \to \Ch_k$ assigning $\clies(\Omega^\bu(V) \otimes \fg, \bU_n \fh(V))$ to each open set $V$.
 Once that is in place, it is straightforward to describe the structure maps of the prefactorization algebra and to verify it forms a factorization algebra.
 
 \begin{rmk}
@@ -513,47 +512,47 @@ See, e.g., \cite{CG1} \owen{stuff by Greg and others} for more.
 Consider now a fixed open set $V \subset \RR^n$.
 Then the $L_\infty$ map $f: \fg \rightsquigarrow \fh$ induces canonically an $L_\infty$ map 
 \[
-\tilde{f}: \Omega^*_c(V) \otimes \fg \rightsquigarrow \Omega^*_c(V) \otimes \fh
+\tilde{f}: \Omega^\bu_c(V) \otimes \fg \rightsquigarrow \Omega^\bu_c(V) \otimes \fh
 \]
-by base change along the map $k \to \Omega^*_c(V)$ of dg commutative algebras,
+by base change along the map $k \to \Omega^\bu_c(V)$ of dg commutative algebras,
 as the compactly supported de Rham forms form a dg commutative algebra under wedge product.
-In consequence, we see that $\Omega^*_c(V) \otimes \fg$ acts on $\Omega^*_c(V) \otimes \fh$ and hence equips it with the structure of an $L_\infty$ module over $\Omega^*_c(V) \otimes \fg$.
+In consequence, we see that $\Omega^\bu_c(V) \otimes \fg$ acts on $\Omega^\bu_c(V) \otimes \fh$ and hence equips it with the structure of an $L_\infty$ module over $\Omega^\bu_c(V) \otimes \fg$.
 We denote this module as
 \[
-(\Omega^*_c(V) \otimes \fh)_f
+(\Omega^\bu_c(V) \otimes \fh)_f
 \]
 to emphasize the dependence on the original map~$f$.
 In this action, the wedge product of forms intertwines with the $L_\infty$ structure on $\fg$ in a very simple way: 
 they simply happen side by side, but do not affect each other.
 
-Observe that $\Omega^*_c(V)$ is a module over the dg commutative algebra $\Omega^*(V)$ of {\em non}\/compactly supported forms.
-This action extends immediately to the module $(\Omega^*_c(V) \otimes \fh)_f$, 
-so we now view it as an $L_\infty$ module over $\Omega^*(V) \otimes \fg$ as well.
-We now need to explain how to make $\cliels(\Omega^*_c(V) \otimes \fh)$ into an $L_\infty$-module over $\Omega^*(V) \otimes \fg$.
+Observe that $\Omega^\bu_c(V)$ is a module over the dg commutative algebra $\Omega^\bu(V)$ of {\em non}\/compactly supported forms.
+This action extends immediately to the module $(\Omega^\bu_c(V) \otimes \fh)_f$, 
+so we now view it as an $L_\infty$ module over $\Omega^\bu(V) \otimes \fg$ as well.
+We now need to explain how to make $\cliels(\Omega^\bu_c(V) \otimes \fh)$ into an $L_\infty$-module over $\Omega^\bu(V) \otimes \fg$.
 Here we rely on the fact that modules over an $L_\infty$ algebra are symmetric monoidal over $\otimes_k$, 
 so that we can construct new modules from a given module by taking symmetric powers.
 Since
 \[
-\cliels(\Omega^*_c(V) \otimes \fh) = \bigoplus_{n \geq 0} \Sym^n(\Omega^*_c(V) \otimes \fh[1])
+\cliels(\Omega^\bu_c(V) \otimes \fh) = \bigoplus_{n \geq 0} \Sym^n(\Omega^\bu_c(V) \otimes \fh[1])
 \]
 as cochain complexes,
-we see that $\cliels(\Omega^*_c(V) \otimes \fh)$ acquires a canonical action of $\Omega^*(V) \otimes \fg$.
+we see that $\cliels(\Omega^\bu_c(V) \otimes \fh)$ acquires a canonical action of $\Omega^\bu(V) \otimes \fg$.
 In consequence, we have a cochain complex
 \[
-\clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
+\clies(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V) \otimes \fh)_f)
 \]
 on each open set~$V$.
 
 The next step is to verify functoriality of this construction over the poset of opens.
 This property follows quickly from the fact that wedge product of forms preserves support.
-Given an inclusion $i: V' \subset V$ of opens, if we take a form $\alpha \in \Omega^*(V)$ and a compactly supported form $\beta \in \Omega^*_c(V')$, then the wedge product $\alpha \wedge i_* \beta \in \Omega^*_c(V)$ after applying the extension-by-zero map $i_*: \Omega^*_c(V') \to \Omega^*_c(V)$ equals the wedge product $i_*(i^*\alpha \wedge \beta)$ arising from the restriction $i^* \alpha$ of $\alpha$ to~$V'$.
-In consequence, the action of $\Omega^*(V) \otimes \fg$ on $\cliels(\Omega^*_c(V') \otimes \fh)_f$ arising from the restriction map $\Omega^*(V) \otimes \fg \to \Omega^*(V') \otimes \fg$ of $L_\infty$ algebras agrees with action induced by the inclusion of $\cliels(\Omega^*_c(V') \otimes \fh)_f$ as a (strict) submodule of~$\cliels(\Omega^*_c(V) \otimes \fh)_f$.
+Given an inclusion $i: V' \subset V$ of opens, if we take a form $\alpha \in \Omega^\bu(V)$ and a compactly supported form $\beta \in \Omega^\bu_c(V')$, then the wedge product $\alpha \wedge i_* \beta \in \Omega^\bu_c(V)$ after applying the extension-by-zero map $i_*: \Omega^\bu_c(V') \to \Omega^\bu_c(V)$ equals the wedge product $i_*(i^*\alpha \wedge \beta)$ arising from the restriction $i^* \alpha$ of $\alpha$ to~$V'$.
+In consequence, the action of $\Omega^\bu(V) \otimes \fg$ on $\cliels(\Omega^\bu_c(V') \otimes \fh)_f$ arising from the restriction map $\Omega^\bu(V) \otimes \fg \to \Omega^\bu(V') \otimes \fg$ of $L_\infty$ algebras agrees with action induced by the inclusion of $\cliels(\Omega^\bu_c(V') \otimes \fh)_f$ as a (strict) submodule of~$\cliels(\Omega^\bu_c(V) \otimes \fh)_f$.
 This argument is manifestly associative under composition of inclusions, so we have shown our first claim.
 
 \begin{lmm}
 The assignment
 \[
-V \mapsto \clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
+V \mapsto \clies(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V) \otimes \fh)_f)
 \]
 determines a functor from ${\rm Opens}_{\RR^n}$ to~$\Ch_k$.
 \end{lmm}
@@ -563,21 +562,21 @@ We now turn to extending this functor to an algebra over the colored operad ${\r
 The key fact is that the functors $\cliels$ and $\clies$ are suitably symmetric monoidal:
 they send a product of $L_\infty$ algebras to a tensor product of cochain complexes.
 Hence it suffices to examine the underlying functors to $L_\infty$ algebras.
-As the functors $\Omega^*$ and $\Omega^*_c$ send finite disjoint unions of opens to the direct product of cochain complexes, 
-the functors like $\Omega^* \otimes \fg$ and $\Omega^*_c \otimes \fh$ send finite disjoint unions of opens to products of $L_\infty$ algebras.
+As the functors $\Omega^\bu$ and $\Omega^\bu_c$ send finite disjoint unions of opens to the direct product of cochain complexes, 
+the functors like $\Omega^\bu \otimes \fg$ and $\Omega^\bu_c \otimes \fh$ send finite disjoint unions of opens to products of $L_\infty$ algebras.
 In consequence, we obtain the desired second claim.
 
 \begin{lmm}
 The assignment
 \[
-V \mapsto \clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f)
+V \mapsto \clies(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V) \otimes \fh)_f)
 \]
 determines a prefactorization algebra, i.e., a strict algebra over ${\rm Opens}_{\RR^n}^\sqcup$ with values in~$\Ch_k^\otimes$.
 \end{lmm}
 
 Due to the Poincar\'e lemma, the inclusion of a disk into a bigger disk $D \hookrightarrow D'$ makes the structure map 
 \[
-\clies(\Omega^*(D) \otimes \fg, \cliels(\Omega^*_c(D) \otimes \fh)_f) \xto{\simeq} \clies(\Omega^*(D) \otimes \fg, \cliels(\Omega^*_c(D) \otimes \fh)_f)
+\clies(\Omega^\bu(D) \otimes \fg, \cliels(\Omega^\bu_c(D) \otimes \fh)_f) \xto{\simeq} \clies(\Omega^\bu(D) \otimes \fg, \cliels(\Omega^\bu_c(D) \otimes \fh)_f)
 \]
 a quasi-isomorphism.
 Hence this prefactorization algebra is locally constant in a homotopical sense.
@@ -586,20 +585,21 @@ In fact, it defines a {\em factorization} algebra, by arguments that can be foun
 
 \begin{dfn}
 \label{dfn: centralizer for f}
-Let $\clies(\Omega^* \otimes \fg, (\bU_n \fh)_f)$ denote this factorization algebra on $\RR^n$ arising from the map $f: \fg \rightsquigarrow \fh$.
+Let $\clies(\Omega^\bu \otimes \fg, (\bU_n \fh)_f)$ denote this factorization algebra on $\RR^n$ arising from the map $f: \fg \rightsquigarrow \fh$.
 \end{dfn}
 
 \begin{rmk}
 For those coming from an operadic background, it may be helpful to recognize that our approach is a variant of a familiar convolution construction.
-The functor $\bU_n \fh = \cliels(\Omega^*_c \otimes \fh)$ determines an algebra over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$,
-while the functor $\cliels(\Omega^* \otimes \fg)$ determines a {\em co}\/algebra over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$.
-The algebra $\clies(\Omega^* \otimes \fg, (\bU_n \fh)_f)$ assigns the graded vector space
+The functor $\bU_n \fh = \cliels(\Omega^\bu_c \otimes \fh)$ determines an algebra over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$,
+while the functor $\cliels(\Omega^\bu \otimes \fg)$ determines a {\em co}\/algebra over the colored operad ${\rm Opens}_{\RR^n}^\sqcup$.
+The algebra $\clies(\Omega^\bu \otimes \fg, (\bU_n \fh)_f)$ assigns the graded vector space
 \[
-\Hom^\bullet(\cliels(\Omega^*(V) \otimes \fg), \cliels(\Omega^*_c(V) \otimes \fh))
+\Hom^\bullet(\cliels(\Omega^\bu(V) \otimes \fg), \cliels(\Omega^\bu_c(V) \otimes \fh))
 \] 
 to each open set $V$,
 twining together this coalgebra and algebra.
 \owen{This has a name, but I'm blanking at the moment.}
+\brian{convolution?}
 The differential can be seen as a twisting cocycle arising from a choice of map $f$;
 there is a natural basepoint to the space of differentials on this graded vector space by taking the usual differential of a hom-complex.
 \end{rmk}
@@ -618,7 +618,7 @@ there is a natural basepoint to the space of differentials on this graded vector
 
 Our goal in this subsection is to construct a map of factorization algebras
 \[
-\ev_{{\bf f}}: \clies(\Omega^* \otimes \fg, (\Omega^*_c \otimes \fh)_f) \otimes \bU_n \fg \to \bU_n \fh,
+\ev_{{\bf f}}: \clies(\Omega^\bu \otimes \fg, (\Omega^\bu_c \otimes \fh)_f) \otimes \bU_n \fg \to \bU_n \fh,
 \]
 while in the next subsection we will show it fits into a centralizer diagram.
 To produce our map, we first construct it separately on each open subset and then explain why the construction is functorial. 
@@ -626,15 +626,15 @@ To produce our map, we first construct it separately on each open subset and the
 Let $V \subset \RR^n$ be open.
 The canonical pairing between Lie algebra chains and cochains provides a canonical cochain map
 \[
-\clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f) \otimes \cliels(\Omega^*(V) \otimes \fg) \to \cliels(\Omega^*_c(V) \otimes \fh)_f.
+\clies(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V) \otimes \fh)_f) \otimes \cliels(\Omega^\bu(V) \otimes \fg) \to \cliels(\Omega^\bu_c(V) \otimes \fh)_f.
 \]
-The canonical inclusion $\Omega^*_c(V) \otimes \fg \hookrightarrow \Omega^*(V) \otimes \fg$ induces a canonical inclusion 
+The canonical inclusion $\Omega^\bu_c(V) \otimes \fg \hookrightarrow \Omega^\bu(V) \otimes \fg$ induces a canonical inclusion 
 \[
-\cliels(\Omega^*_c(V) \otimes \fg) \hookrightarrow \cliels(\Omega^*(V) \otimes \fg)
+\cliels(\Omega^\bu_c(V) \otimes \fg) \hookrightarrow \cliels(\Omega^\bu(V) \otimes \fg)
 \]
 and hence, precomposing this inclusion with the pairing, we obtain our desired map
 \[
-\ev_{{\bf f}}(V): \clies(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V) \otimes \fh)_f) \otimes \bU_n \fg(V) \to \bU_n \fh(V)
+\ev_{{\bf f}}(V): \clies(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V) \otimes \fh)_f) \otimes \bU_n \fg(V) \to \bU_n \fh(V)
 \]
 for each open~$V$.
 
@@ -654,10 +654,10 @@ determines a natural transformation between functors from ${\rm Opens}_{\RR^n}$ 
 %\greg{
 %We start by defining a pairing between the factorization algebras of Chevalley-Eilenberg (co)chains in order to use the universal property of centralizers.\\
 %First note that compactly supported form embeds in all forms, therefore we can apply 
-%any element of $\cliels\big(\fg \otimes \Omega^* , B\big)$ 
+%any element of $\cliels\big(\fg \otimes \Omega^\bu , B\big)$ 
 %to any element of $\cliels\big(\fg \otimes \Omega_c^* \big)$. Therefore, for any  $p\in \bN$, we have an evaluation 
-%\begin{equation} \label{eqdef:ev} \begin{array}{c}\ev: Sym^p \big( \fg \otimes \Omega^* (U)[-1] ,B(U)\big)
-%\otimes  Sym^p( \fg\otimes \Omega^*_c(U) [1]) \stackrel{ev}\longrightarrow B(U)  
+%\begin{equation} \label{eqdef:ev} \begin{array}{c}\ev: Sym^p \big( \fg \otimes \Omega^\bu (U)[-1] ,B(U)\big)
+%\otimes  Sym^p( \fg\otimes \Omega^\bu_c(U) [1]) \stackrel{ev}\longrightarrow B(U)  
 %  \\
 % (x,\Phi) \,\longmapsto\, (-1)^{p(|x|+p) } \Phi (x)\end{array}
 %\end{equation} induced by this embedding  in all forms followed by evaluating on a function.\\
@@ -667,14 +667,14 @@ determines a natural transformation between functors from ${\rm Opens}_{\RR^n}$ 
 %\[\xymatrix{ k(U)=k  \ar[r]^{\quad \cong}& 
 %B(\emptyset) \ar[r] & B(U)  } 
 % \] where the last map is given by the factorization algebra structure of $B$. This gives the canonical element element 
-% $\mathbf{1}\in \clies(\fg\otimes \Omega^*, B) )$ which is the unit $k\to \clies(\fg\otimes \Omega^*, B) )$
+% $\mathbf{1}\in \clies(\fg\otimes \Omega^\bu, B) )$ which is the unit $k\to \clies(\fg\otimes \Omega^\bu, B) )$
 % of the factorization structure of 
 % the Chevalley-Eilenberg cochain factorization algebras~\ref{dfn:CEofFact}.  
 % The augmentation map is given by $\varphi\mapsto \varepsilon \circ \varphi \circ 
 % \iota$ where $\iota: k(U) \cong k \hookrightarrow Sym(\fg \otimes \Omega (U) [1]) $ is the inclusion and $\varepsilon B(U)\to k(U)$ is the augmentation of 
 % $B$. We therefore obtain a canonical splitting of factorization algebras 
 % \begin{equation}\label{eq:splittingbyaugm}
-%   \clies\big(\fg\otimes \Omega^*, B\big)  \, \cong \, k \oplus \overline{ \clies(\fg\otimes \Omega^*, B) )}
+%   \clies\big(\fg\otimes \Omega^\bu, B\big)  \, \cong \, k \oplus \overline{ \clies(\fg\otimes \Omega^\bu, B) )}
 % \end{equation}
 %given by the augmentation. Below~\ref{Rmk:defgraduationclie}, we refine  this splitting, using it  freely  on each-connected component, to obtain 
 %a natural grading on it.\\
@@ -705,7 +705,7 @@ determines a natural transformation between functors from ${\rm Opens}_{\RR^n}$ 
 %\stackrel{\simeq}\longrightarrow B(U)$, we obtain the 
 % (natural) decomposition 
 %\begin{multline}\label{eq:defgraduationoncentralizernonconnected}
-% \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, 
+% \clies\big(\fg\otimes \Omega^\bu(U), B(U)\big)  \, \cong \, 
 % \Hom\left(\bigotimes\limits_{i\in I} Sym\Big(\fg\otimes \Omega (U_i)[-1]), 
 % \bigotimes\limits_{i\in I} B(U_i)\right) \\ \cong \, 
 % \bigotimes\limits_{i\in I}\left( k(U_i) \oplus \overline{\clies (\fg\otimes \Omega (U_i), B(U_i))  }\right).
@@ -730,22 +730,22 @@ determines a natural transformation between functors from ${\rm Opens}_{\RR^n}$ 
 %is compatible (by the same argument as Lemma~\ref{L:pairingCE}) with the factorization algebra structure maps of
 %$\clies(\fg\otimes \Omega, B)$} graded by the subsets of its connected components:
 % \begin{equation}\label{eq:defgraduationoncentralizernonconnected2}
-% \clies\big(\fg\otimes \Omega^*(U), B(U)\big)  \, \cong \, \bigoplus\limits_{J\subset I} {\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) 
+% \clies\big(\fg\otimes \Omega^\bu(U), B(U)\big)  \, \cong \, \bigoplus\limits_{J\subset I} {\clies}^{(J)}\big(\fg\otimes \Omega^\bu(U), B(U)\big) 
 %\end{equation}
 %where $J$ runs through all the (possibly empty) subsets of $I$.  Precisely, the $J$-piece is
 %\begin{multline*}
-%{\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big) = 
+%{\clies}^{(J)}\big(\fg\otimes \Omega^\bu(U), B(U)\big) = 
 %\left(\bigotimes\limits_{j\in I\setminus J} k(U_j)\right) \otimes \left(\bigotimes\limits_{j\in J}
 %\overline{\clies (\fg\otimes \Omega (U_j), B(U_j))  }\right) \\ \cong 
 %\overline{\clies (\fg\otimes \Omega (\coprod\limits_{j\in_J}U_j), B(\coprod\limits_{j\in_J}U_j))  }.
 %\end{multline*}
-%We think of an element of ${\clies}^{(J)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ has an element of ${\clies}\big(\fg\otimes \Omega^*(U), B(U)\big)$
+%We think of an element of ${\clies}^{(J)}\big(\fg\otimes \Omega^\bu(U), B(U)\big)$ has an element of ${\clies}\big(\fg\otimes \Omega^\bu(U), B(U)\big)$
 %\emph{with support $\coprod\limits_{j\in J} U_j$}.   
 %Note that the component $k$ in the decomposition~\eqref{eq:splittingbyaugm} is precisely the component 
-%${\clies}^{(\emptyset)}\big(\fg\otimes \Omega^*(U), B(U)\big)$ corresponding to the empty family.
+%${\clies}^{(\emptyset)}\big(\fg\otimes \Omega^\bu(U), B(U)\big)$ corresponding to the empty family.
 %\end{rmk}
 %In other words, if $\varphi = \sum_{J\subset I} \varphi^{(J)}$ is the decomposition of $\varphi$ in its graded pieces, for all 
-%$X= \bigotimes\limits_{i\in I} X_i \in \bigotimes\limits_{I}\cliels(\fg\otimes \Omega_c^*(U_i)) \cong \cliels(\fg\otimes \Omega^*_c(U))$, we 
+%$X= \bigotimes\limits_{i\in I} X_i \in \bigotimes\limits_{I}\cliels(\fg\otimes \Omega_c^*(U_i)) \cong \cliels(\fg\otimes \Omega^\bu_c(U))$, we 
 %have the following formula generalizing the one for connected open  subsets:
 %\begin{equation} \ev_f^U(\varphi\otimes X)= \sum_{J\subset I} \mu_B\left(\mathbf{f}\Big(\bigotimes\limits_{i\in I\setminus J} 
 %X_i\Big)\otimes  \varphi^{(J)}\Big(\bigotimes\limits_{j\in J} 
@@ -773,7 +773,7 @@ to provide a canonical map
 \[
 \clies(\fX \times \fY, M \oplus N) \otimes \cliels(\fX \times \fY) \to M \otimes N.
 \]
-In light of this observation and the fact that functors such as $\Omega^* \otimes \fg$ and $\Omega^*_c \otimes \fh$ send disjoint unions to products of $L_\infty$ algebras,
+In light of this observation and the fact that functors such as $\Omega^\bu \otimes \fg$ and $\Omega^\bu_c \otimes \fh$ send disjoint unions to products of $L_\infty$ algebras,
 we deduce the desired result.
 
 \begin{lmm}
@@ -863,8 +863,8 @@ The notation $\int_{S^{n-1}}\UU_n\fg$ produces a factorization algebra on $\RR$.
 Indeed,
 \begin{align*}
 \int_{S^{n-1}}\UU_n\fg 
-&\simeq \cliels(\Omega^*_c(\RR_{> 0} \times S^{n-1}) \otimes \fg)\\
-&\simeq \cliels(\Omega^*_c(\RR_{> 0}) \otimes H^*(S^{n-1}) \otimes \fg)
+&\simeq \cliels(\Omega^\bu_c(\RR_{> 0} \times S^{n-1}) \otimes \fg)\\
+&\simeq \cliels(\Omega^\bu_c(\RR_{> 0}) \otimes H^*(S^{n-1}) \otimes \fg)
 \end{align*}
 because $(n-1)$-sphere is formal over the rationals (or reals). 
 We thus see that 
@@ -913,7 +913,7 @@ abelian, semisimple, and free.
 We also indicate the large $N$ behavior of enveloping algebras for the infinite families $\frak{gl}_N$, $\frak{sp}_N$, and $\frak{so}_N$,
 by exploiting the Loday-Quillen-Tsygan theorem and its cousins.
 
-\subsection{Abelian Lie algebras and an $\EE_n$ HKR theorem}
+\subsection{Abelian Lie algebras and an $\EE_n$ Hochschild-Kostant-Rosenberg theorem}
 
 Given a free dg commutative algebra $A = \Sym(V^\bullet)$ generated by a cochain complex $V^\bullet$,
 one can view it as an $\EE_n$ algebra via the forgetful functor determined by the operad map $\EE_n \to E_\infty$.
@@ -949,7 +949,7 @@ by the natural quotient map and hence determines a canonical quasi-isomorphism
 This map makes sense on any ball in $\RR^n$ and thus implies that $\bU_n \fg_V$ is quasi-isomorphic as a $\Disk_n$ algebra to~$\Sym(V^\bullet)$.
 Applying our central theorem, we see
 \begin{align*}
-\bZ_n(\fg_V) &= \clies(\Omega^* \otimes \fg_V, \bU_n \fg_V) \\
+\bZ_n(\fg_V) &= \clies(\Omega^\bu \otimes \fg_V, \bU_n \fg_V) \\
 &= \Sym((\Omega^\bu \otimes \fg_V)^\vee[-1]) \otimes \Sym(\Omega^\bu_c \otimes \fg_V[1])\\
 & \simeq \Sym(V^\bullet \oplus (V\bullet)^\vee[-n])
 \end{align*}
@@ -1015,11 +1015,12 @@ The following result generalizes (and implies) the Harish--Chandra isomorphism f
 For $\fg$ a reductive \owen{semisimple?} Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, 
 there is a quasi-isomorphism of $\EE_{n+1}$ algebras
 \[
-{\frak Z}_n(\UU_n \fg) \simeq H^\bu_{\rm Lie}(\fg) \otimes \Sym(\fh[1-n])^W.
+{\frak Z}_n(\UU_n \fg) \simeq \clies (\fg) \otimes \Sym(\fh[1-n])^W.
 \]
 \end{prp}
 
 \brian{Is there an explicit description of the $\EE_{n+1}$-structure for the RHS?}
+\brian{Is the RHS formal, can we replace by Lie algebra cohomology.}
 
 \begin{proof}
 By the Poincar\'{e} lemma for de Rham forms and compactly supported de Rham forms, one has a canonical quasi-isomorphism
@@ -1028,7 +1029,7 @@ By the Poincar\'{e} lemma for de Rham forms and compactly supported de Rham form
 \]
 Since $\fg$ is reductive, there is a quasi-isomorphism \brian{do we actually need semisimple here?}
 \[
-\clies(\fg, \Sym(\fg[1-n]) \simeq H^\bu_{\rm Lie} (\fg) \otimes \Sym(\fg[1-n])^G 
+\clies(\fg, \Sym(\fg[1-n]) \simeq \clies (\fg) \otimes \Sym(\fg[1-n])^G 
 \]
 where $G$ is a compact connected Lie group whose Lie algebra is $\fg$. 
 Further, by the Chevalley restriction theorem one has 
@@ -1039,7 +1040,7 @@ Further, by the Chevalley restriction theorem one has
 
 \subsection{The large $N$ limit of the center ${\frak Z}_n(\UU_n \frak{gl}_N)$ and cyclic cohomology}
 
-\owen{Point out how to use LQT map and deduce existence of $\EE_n$ algebra structure on a shifted copy of cyclic cohomology of~$\Omega^*_c$. Also do the Loday versions that use the other infinite series.}
+\owen{Point out how to use LQT map and deduce existence of $\EE_n$ algebra structure on a shifted copy of cyclic cohomology of~$\Omega^\bu_c$. Also do the Loday versions that use the other infinite series.}
 
 \owen{The weird and interesting bit is to compute the factorization homology over a nontrivial (closed) manifold.}
 
@@ -1114,11 +1115,11 @@ First, as discussed in Section~\ref{sec: dfn of centralizer fact alg},
 given $L_\infty$ maps $f: \fg \to \fh$ and $g: \fh \to \fl$,
 we obtain canonical $L_\infty$ maps
 \[
-\tilde{f}: \Omega^*_c(V) \otimes \fg \rightsquigarrow \Omega^*_c(V) \otimes \fh
+\tilde{f}: \Omega^\bu_c(V) \otimes \fg \rightsquigarrow \Omega^\bu_c(V) \otimes \fh
 \]
 and
 \[
-\tilde{g}: \Omega^*_c(V) \otimes \fh \rightsquigarrow \Omega^*_c(V) \otimes \fl
+\tilde{g}: \Omega^\bu_c(V) \otimes \fh \rightsquigarrow \Omega^\bu_c(V) \otimes \fl
 \]
 for each open set~$V$,
 which are functorial in opens.
@@ -1135,22 +1136,22 @@ of factorization algebras.
 
 Now recall that
 \[
-\clies(\Omega^* \otimes \fg, (\bU_n \fh)_f) = \Hom^\bullet(\cliels(\Omega^* \otimes \fg), \cliels(\Omega^*_c \otimes \fh)_f)
+\clies(\Omega^\bu \otimes \fg, (\bU_n \fh)_f) = \Hom^\bullet(\cliels(\Omega^\bu \otimes \fg), \cliels(\Omega^\bu_c \otimes \fh)_f)
 \]
 and similarly for the centralizer~$\bZ_n(g)$.
 As linear maps compose and hence produce pairings between Hom-complexes,
 we expect it should be obvious to produce the desired map
 \begin{align*}
-\Hom^\bullet(\cliels(\Omega^* \otimes \fh), \cliels(\Omega^*_c \otimes \fl)) 
-\otimes \Hom^\bullet(&\cliels(\Omega^* \otimes \fg), \cliels(\Omega^*_c \otimes \fh))\\
- &\xto{{\rm comp}} \Hom^\bullet(\cliels(\Omega^* \otimes \fg), \cliels(\Omega^*_c \otimes \fl)).
+\Hom^\bullet(\cliels(\Omega^\bu \otimes \fh), \cliels(\Omega^\bu_c \otimes \fl)) 
+\otimes \Hom^\bullet(&\cliels(\Omega^\bu \otimes \fg), \cliels(\Omega^\bu_c \otimes \fh))\\
+ &\xto{{\rm comp}} \Hom^\bullet(\cliels(\Omega^\bu \otimes \fg), \cliels(\Omega^\bu_c \otimes \fl)).
 \end{align*}
-This map is easily concocted thanks to the canonical inclusion $\iota_V: \Omega^*_c(V) \hookrightarrow \Omega^*(V)$ for any open set~$V$.
-Indeed, for any $\varphi \in \Hom^\bullet(\cliels(\Omega^* \otimes \fg), \cliels(\Omega^*_c \otimes \fh))$,
-the composite $\iota_V \circ \varphi|_V$ lives in $\Hom^\bullet(\cliels(\Omega^*(V) \otimes \fg), \cliels(\Omega^*(V) \otimes \fh))$,
+This map is easily concocted thanks to the canonical inclusion $\iota_V: \Omega^\bu_c(V) \hookrightarrow \Omega^\bu(V)$ for any open set~$V$.
+Indeed, for any $\varphi \in \Hom^\bullet(\cliels(\Omega^\bu \otimes \fg), \cliels(\Omega^\bu_c \otimes \fh))$,
+the composite $\iota_V \circ \varphi|_V$ lives in $\Hom^\bullet(\cliels(\Omega^\bu(V) \otimes \fg), \cliels(\Omega^\bu(V) \otimes \fh))$,
 and so we define
 \[
-{\rm comp}(\psi, \varphi)|_V = \psi|_V \circ \iota_V \circ \varphi|_V \in \Hom^\bullet(\cliels(\Omega^*(V) \otimes \fg), \cliels(\Omega^*_c(V) \otimes \fl))
+{\rm comp}(\psi, \varphi)|_V = \psi|_V \circ \iota_V \circ \varphi|_V \in \Hom^\bullet(\cliels(\Omega^\bu(V) \otimes \fg), \cliels(\Omega^\bu_c(V) \otimes \fl))
 \]
 on each open~$V$.
 This construction is functorial in the open $V$ and hence determines the desired map ${\rm comp}$.
@@ -1181,11 +1182,11 @@ For any open set $V$, we define the composition
 as follows.
 For any element
 \[
-\psi=\lambda_\psi {\bf 1_g} +\overline{\psi} \in \bZ_n(g)(V) = \clies(\fh \otimes \Omega^*(V), (\bU_n \fl (V))_g  )
+\psi=\lambda_\psi {\bf 1_g} +\overline{\psi} \in \bZ_n(g)(V) = \clies(\fh \otimes \Omega^\bu(V), (\bU_n \fl (V))_g  )
 \]
 and any element
 \[
-\varphi =\lambda_\varphi {\bf 1_f} +\overline{\varphi}\in \bZ_n(f)(V) = \clies(\fg \otimes \Omega^*(V), (\bU_n \fh (V))_f  ),
+\varphi =\lambda_\varphi {\bf 1_f} +\overline{\varphi}\in \bZ_n(f)(V) = \clies(\fg \otimes \Omega^\bu(V), (\bU_n \fh (V))_f  ),
 \] 
 set
 \[
@@ -1195,7 +1196,7 @@ set
 + \lambda_{\varphi}\, \overline{\psi} \circ \iota_V \circ f 
 +\overline{\psi} \circ \iota_V \circ \overline{\varphi} 
 \]
-where the inclusion $\iota_V: \Omega^*_c(V) \hookrightarrow \Omega^*(V)$ is extended in the obvious, functorial way to this setting.
+where the inclusion $\iota_V: \Omega^\bu_c(V) \hookrightarrow \Omega^\bu(V)$ is extended in the obvious, functorial way to this setting.
 \end{dfn}
 
 Since $\iota_V$ is an embedding for every open $V$, 
@@ -1228,7 +1229,7 @@ the equality
 \[ 
 (\gamma\star \psi)\star \varphi \;=\; \gamma\star (\psi \star \varphi)  
 \]
-holds in $\clies\big(\fg\otimes \Omega^*, (\bU_n \fk)_{h \circ g \circ f} \big)$.
+holds in $\clies\big(\fg\otimes \Omega^\bu, (\bU_n \fk)_{h \circ g \circ f} \big)$.
 \end{lmm}
 
 The second verifies that augmentations are preserved.
@@ -1243,7 +1244,7 @@ the following equalities
 \mathbf{1_g}\star \varphi &\;=\;  (\lambda_\varphi \mathbf{1_{g \circ f}}, g\circ \overline{\varphi})\\
 \psi \star \mathbf{1_f} &\;=\; (\lambda_\psi \mathbf{1_{g \circ f}}, \overline{\psi} \circ f) 
 \end{align}
-hold in $\bZ_n(g \circ f) = k  \oplus \overline{\clies\big(\fg \otimes \Omega^*, (\bU_n \fl)_{g \circ f}  \big)}$.
+hold in $\bZ_n(g \circ f) = k  \oplus \overline{\clies\big(\fg \otimes \Omega^\bu, (\bU_n \fl)_{g \circ f}  \big)}$.
 In particular, $\mathbf{1_g} \star \mathbf{1_f} =\mathbf{1_{g \circ f}}$.
 \end{lmm}
 
@@ -1333,7 +1334,7 @@ In Section \ref{sec:swiss} below, we will recall an elegant operadic articulatio
 and then we rephrase it in terms of {\em constructible factorization algebras} on a half-space~$\HH^{n+1}$. 
 \owen{Mention lots of prior work, e.g., Greg et al, Ayala-Francis, Geoffroy Horel, and so on}.
 
-\subsection{Swiss cheese pairs well with centers}
+\subsection{Swiss cheese pairs well with centers} \label{sec:swiss}
 
 We review now the notion of Swiss cheese algebras.
 As with the $\EE_n$ operad, we will first fix a specific presentation but will then use Swiss cheese to mean any equivalent operadic structure.
@@ -1404,11 +1405,11 @@ of $\EE_n$ algebras.
 \end{lmm}
 
 \begin{proof}
-Our model $\bZ_n(\fg)$ is an strict associative algebra, and our models $\clies(\Omega^* \otimes \fg)$ and $\bU_n\fg$ are strict right, respectively left, modules over $\bZ_n(\fg)$.
+Our model $\bZ_n(\fg)$ is an strict associative algebra, and our models $\clies(\Omega^\bu \otimes \fg)$ and $\bU_n\fg$ are strict right, respectively left, modules over $\bZ_n(\fg)$.
 On each open set~$V$, we compute
 \begin{align*}
-\clies(\Omega^*(V) \otimes \fg) &\otimes^\LL_{\bZ_n(\fg)(V)} \bU_n(V) \\
-&\simeq \clies(\Omega^*(V) \otimes \fg) \otimes^\LL_{\Hom^\bullet(\cliels(\Omega^*(V) \otimes \fg, \cliels(\Omega^*_c(V)\otimes \fg))} \cliels(\Omega^*_c(V)\otimes \fg)
+\clies(\Omega^\bu(V) \otimes \fg) &\otimes^\LL_{\bZ_n(\fg)(V)} \bU_n(V) \\
+&\simeq \clies(\Omega^\bu(V) \otimes \fg) \otimes^\LL_{\Hom^\bullet(\cliels(\Omega^\bu(V) \otimes \fg, \cliels(\Omega^\bu_c(V)\otimes \fg))} \cliels(\Omega^\bu_c(V)\otimes \fg)
 \end{align*}
 and it is a standard argument to show that this relative tensor product is the unit.
 \end{proof}
@@ -1469,20 +1470,20 @@ Let $S$ be the closed $n-k$-dimensional manifold of the proposition,
 and let $V$ be an arbitrary manifold without boundary.
 Then there is a canonical map
 \[
-\Omega^*(V) \otimes \Omega^*(S) \to \Omega^*(V \times S),
+\Omega^\bu(V) \otimes \Omega^\bu(S) \to \Omega^\bu(V \times S),
 \]
 by wedge product after pulling back along the two projection maps.
 It is a quasi-isomorphism, by K\"unneth.
 Similarly, the canonical map
 \[
-\Omega_c^*(V) \otimes \Omega^*(S) \to \Omega_c^*(V \times S),
+\Omega_c^*(V) \otimes \Omega^\bu(S) \to \Omega_c^*(V \times S),
 \]
 is a quasi-isomorphism, as $S$ is compact.
 
-Let $\fg_S$ denote the $L_\infty$ algebra $\Omega^*(S) \otimes \fg$. 
+Let $\fg_S$ denote the $L_\infty$ algebra $\Omega^\bu(S) \otimes \fg$. 
 Then these quasi-isomorphisms above imply there are quasi-isomorphisms of $L_\infty$ algebras
 \begin{align*}
-\Omega^*(V) \otimes \fg_S &\xto{\simeq} \Omega^*(V \times S) \otimes \fg \\
+\Omega^\bu(V) \otimes \fg_S &\xto{\simeq} \Omega^\bu(V \times S) \otimes \fg \\
 \Omega_c^*(V) \otimes \fg_S &\xto{\simeq} \Omega_c^*(V \times S) \otimes \fg 
 \end{align*}
 and hence a quasi-isomorphism
@@ -1494,7 +1495,7 @@ of factorization algebras.
 Likewise, on each open set $V \subset \RR^k$, 
 we obtain a quasi-isomorphism
 \[
-\bZ_k(\fg_S)(V) \cong \clies( \Omega^*(V) \otimes \fg_S, \bU_k \fg_S) \xto{\simeq} \clies(\Omega^*(V \times S) \otimes \fg, \bU_n(V \times S))
+\bZ_k(\fg_S)(V) \cong \clies( \Omega^\bu(V) \otimes \fg_S, \bU_k \fg_S) \xto{\simeq} \clies(\Omega^\bu(V \times S) \otimes \fg, \bU_n(V \times S))
 \]
 and this map is functorial in opens.
 The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
@@ -1507,7 +1508,7 @@ In the case $k = 0$, we have the immediate corollary that
 \]
 which unwinds to 
 \[
-\clies(\fg \otimes \Omega^*(S), \cliels(\fg \otimes \Omega^*(S)) \simeq \End^\bullet(\cliels(\fg \otimes \Omega^*(S))),
+\clies(\fg \otimes \Omega^\bu(S), \cliels(\fg \otimes \Omega^\bu(S)) \simeq \End^\bullet(\cliels(\fg \otimes \Omega^\bu(S))),
 \]
 which looks rather tautological.
 Nonetheless, by using other models for factorization homology,
@@ -1523,7 +1524,7 @@ The algebra structure is given by a special case of the convolution product as i
 
 On the other hand, our model for the derived center ${\frak Z}(U(\fg))$ of $U \fg$ is the one-dimensional factorization algebra assigning the cochain complex
 \[
-\clies(\fg \otimes \Omega^*(U), \cliels( \fg \otimes \Omega^*_c(U)))
+\clies(\fg \otimes \Omega^\bu(U), \cliels( \fg \otimes \Omega^\bu_c(U)))
 \]
 to each open set $U \subset \RR$.
 In the case that $U$ is an interval, this cochain complex is quasi-isomorphic to $\clies (\fg , U\fg^{ad})$.
@@ -1531,7 +1532,7 @@ Furthermore, one can verify that the resulting $E_1$ algebra structure agrees wi
 
 Our model also gives us a simple description of the factorization homology of the derived center along the circle~$S^1$:
 \begin{align*}
-\Hoch_*(\Hoch^*(U \fg, U\fg)) 
+\Hoch_\bu(\Hoch^\bu(U \fg, U\fg)) 
 &\simeq \int_{S^1} {\frak Z}(U(\fg)) \\
 &\simeq \clies(\fg[\epsilon], \cliels( \fg[\epsilon])),
 \end{align*}
@@ -1706,7 +1707,20 @@ Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm G
 \[
 \clie^\bu\bigg(\fg \otimes \Omega^\bu (U) \; , \; {\rm Sym} \left(\fg \otimes \Omega^\bu_c(U) [1]\right) \bigg) = {\rm Hom}^\bu \bigg(\cliels(\fg \otimes \Omega^\bu(U)) , \cliels (\fg \otimes \Omega^\bu_c(U)) \bigg).
 \]
-\brian{how to handle homs}.
+For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\fg)(U)$ is of the form
+\[
+{\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
+\]
+Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U)[1] \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [1]$. 
+Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
+and $y \otimes \beta$ is defined by
+\begin{align*}
+\{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+\{x^* \otimes \alpha , x'^* \otimes \alpha' \} & = 0 \\
+\{y \otimes \beta , y' \otimes \beta'\} & = 0 . 
+\end{align*}
+Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+\brian{how to say this now}
 \end{proof}
 
 The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
@@ -1730,6 +1744,8 @@ is a model for the $\PP_n$-center of the $\PP_n$-{\em enveloping algebra} $\UU_{
 \subsection{The bulk factorization algebra} \label{sec:bulk}
 
 We turn towards a model for the $\EE_n$ center as a constructible factorization algebra. 
+
+\brian{I think this definition is fucked}
 
 \begin{dfn}
 \label{dfn:constructible1}
@@ -2066,7 +2082,7 @@ Kapustin-Witten.
 We call $\ev_f$ the 
 $g: Sym(\fg \otimes \Omega (U_J) [1]) \longrightarrow B(U_J) $
 let $f\otimes X  $ be an 
-element in $\cliels\big(\fg \otimes \Omega^* , B\big) \otimes \cliels\big(\fg \otimes \Omega_c^* \big)$.  
+element in $\cliels\big(\fg \otimes \Omega^\bu , B\big) \otimes \cliels\big(\fg \otimes \Omega_c^* \big)$.  
 Let 
 
 
@@ -2080,12 +2096,12 @@ The unital factorization algebra is given, for any open $U$, by $k(U)=k$.
 
 which gives us,  for any integer $n$, maps 
 \begin{multline}
- Sym^n\big(\fg \otimes \Omega^*_c(U)[1]\big) \otimes Sym^p \big( \fg \otimes \Omega^* (U)[-1] ,B(U)\big) \\
+ Sym^n\big(\fg \otimes \Omega^\bu_c(U)[1]\big) \otimes Sym^p \big( \fg \otimes \Omega^\bu (U)[-1] ,B(U)\big) \\
  \stackrel{\Delta \otimes id}\longrightarrow 
- \bigoplus_{q} Sym^{n-q}\big(\fg \otimes \Omega^*_c(U)[1]\big) \otimes  Sym^q\big(\fg \otimes \Omega^*_c(U)[1]\big) 
- \otimes Sym^p \big( \fg \otimes \Omega^* (U)[-1] , B(U)\big)
+ \bigoplus_{q} Sym^{n-q}\big(\fg \otimes \Omega^\bu_c(U)[1]\big) \otimes  Sym^q\big(\fg \otimes \Omega^\bu_c(U)[1]\big) 
+ \otimes Sym^p \big( \fg \otimes \Omega^\bu (U)[-1] , B(U)\big)
  \\ 
- \stackrel{\id \otimes ev}\longrightarrow Sym^{n-p}\big(\fg \otimes \Omega^*_c(U)\big) \otimes B(U)  \hookrightarrow
+ \stackrel{\id \otimes ev}\longrightarrow Sym^{n-p}\big(\fg \otimes \Omega^\bu_c(U)\big) \otimes B(U)  \hookrightarrow
  \cliels\big(\fg \otimes \Omega_c^*(U), B(U) \big) 
 \end{multline}
 
@@ -2128,13 +2144,13 @@ where the lower map $\check{\rho}_{\cU}^{(\phi_i)}$ is given by $\phi_i(W'_i): \
 \end{proof}
 
 
-We now apply this to the special case of $\UU_n(\fg)$, that is for $\cA= \cliels(\Omega^*_c \otimes \fg)$ as we have seen. 
+We now apply this to the special case of $\UU_n(\fg)$, that is for $\cA= \cliels(\Omega^\bu_c \otimes \fg)$ as we have seen. 
 \begin{lmm}
  There is a commutative diagram 
- \[ \xymatrix{ \Sym( \fg[1-n])^{\otimes r} \ar[r]^{\simeq}& \bigotimes_{i=1}^r\cliels(\Omega^*_c(U_i) \otimes \fg) \ar[d]^{\rho} \ar[r]^{\bigotimes \phi_i(U_i)}  & \cB_f(U_1)\otimes \cdots \otimes B_f(U_r) \ar[d]^{\rho} \\ 
-\Sym( \fg[1-n]) \ar[u]^{\delta^{r}} \ar[r]^{\simeq} & \cliels(\Omega^*_c(V) \otimes \fg) \ar[r]_{\rho_{\cU}^{(\phi_i)}(V)}& \cB_f(V)  } \] where $\delta^r$ is the iterated cocommuative coproduct. 
+ \[ \xymatrix{ \Sym( \fg[1-n])^{\otimes r} \ar[r]^{\simeq}& \bigotimes_{i=1}^r\cliels(\Omega^\bu_c(U_i) \otimes \fg) \ar[d]^{\rho} \ar[r]^{\bigotimes \phi_i(U_i)}  & \cB_f(U_1)\otimes \cdots \otimes B_f(U_r) \ar[d]^{\rho} \\ 
+\Sym( \fg[1-n]) \ar[u]^{\delta^{r}} \ar[r]^{\simeq} & \cliels(\Omega^\bu_c(V) \otimes \fg) \ar[r]_{\rho_{\cU}^{(\phi_i)}(V)}& \cB_f(V)  } \] where $\delta^r$ is the iterated cocommuative coproduct. 
 \end{lmm}
 \begin{proof}
- The commtativity of the right square follows from~\eqref{eq:Cechassociatedtoconfofdisks}. For the left square, note that the factorization algebra structure maps on $\cliels(\Omega^*_c \otimes \fg)$ 
- are induced by applying the Chevalley-Eilenberg chain functor to the canonical maps of cosheaves of Lie algebras $\bigoplus_{i=1}^{r} (\Omega^*_c(U_i)\otimes \fg) \cong \Omega^*_c(\coprod U_i) \otimes \fg \longrightarrow  \Omega^*_c(V)\otimes \fg $. 
+ The commtativity of the right square follows from~\eqref{eq:Cechassociatedtoconfofdisks}. For the left square, note that the factorization algebra structure maps on $\cliels(\Omega^\bu_c \otimes \fg)$ 
+ are induced by applying the Chevalley-Eilenberg chain functor to the canonical maps of cosheaves of Lie algebras $\bigoplus_{i=1}^{r} (\Omega^\bu_c(U_i)\otimes \fg) \cong \Omega^\bu_c(\coprod U_i) \otimes \fg \longrightarrow  \Omega^\bu_c(V)\otimes \fg $. 
 \end{proof}
