@@ -195,13 +195,10 @@ This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\f
 since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns
 $\cliels (\fg \otimes \Omega^*_c(U))$ to each open $U \subset \RR$. 
 
-\owen{Add remark that by Dunn's additivity theorem, the center has a natural $E_{n+1}$ algebra structure.}
-\greg{I will add stuff and rewrite that later, hopefully to explain ``how'' to see the $E_{n+1}$-structure}
-
 \greg{We could relate this to $P_n$-center of $\fg$. That shall also (but I have to think about the proof more), 
-at least up to formality gives the $P_{n+1}$-structure on it. }
+at least up to formality gives the $P_{n+1}$-structure on it. }\owen{Brian now does this in the TFT section.}
 
-If $\epsilon: \fg \to 0$ is the trivial map, then we obtain the canonical augmentation $\epsilon: \UU_n \fg \to k$ of $\EE_n$ algebras.
+If $\epsilon: \fg \to 0$ is the trivial map, then by taking the enveloping $\EE_n$ algebras, we obtain the canonical augmentation $\epsilon: \UU_n \fg \to k$ of $\EE_n$ algebras.
 In this case, we obtain a version of Koszul duality as the corollary.
 
 \begin{cor}
@@ -237,8 +234,6 @@ Since $\Omega^*(S^n) \simeq \CC[\epsilon_n]$, where $\epsilon_n$ is a formal var
 For $n=1$, this recovers a theorem of Tamarkin and Tsygan \cite{TT} on the Hochschild cohomology of differential operators on a Lie group $G$;
 see Example~\ref{eg: TT}. 
 
-\greg{Somewhere we should recall that $\UU_n$ and its center are unoriented $\EE_n$ algebras and define factorization algebras over any manifold that came from the formula}
-
 \subsection{Comments on a generalization}
 
 \owen{I think we can conjecture here the general statement that we almost proved and sketch an approach.}
@@ -246,7 +241,7 @@ see Example~\ref{eg: TT}.
 \section{Background}
 \label{sec: background}
 
-\owen{Add overview}
+In this section we review key definitions and facts from the literature on $\EE_n$ and factorization algebras.
 
 \subsection{Recollections on $\EE_n$ algebras and prefactorization algebras}
 \label{sec: en background}
@@ -295,25 +290,28 @@ The homotopy coherent $\EE_n$ algebras will be denoted by blackboard font, e.g. 
 \subsection{Enveloping $\EE_n$ algebras of Lie algebras}
 \label{sec: enveloping}
 
-Although \cite{Knudsen} develops an adjunction between Lie and $\EE_n$ algebras \mahmoud{non-unital?}\greg{Both I think}\owen{augmented is probably best for us}
+Although \cite{Knudsen} develops an adjunction between Lie and augmented $\EE_n$ algebras
 in any presentable symmetric monoidal stable $\infty$-category $\cC$,
-we only work in the $\infty$-category of chain complexes $(\Mod_k, \otimes_k)$, 
+we only work in the $\infty$-category of cochain complexes $(\Ch_k, \otimes_k)$, 
 where $k$ is a field of characteristic zero.
 We summarize Knudsen's result in this setting as follows.
 
 \begin{thm}\label{T:UnofLie}
-There is a commuting square of adjunctions
+There is an adjunction of $\infty$-categories
 \[
 \begin{tikzcd}
-\Alg_\Lie(\Mod_k) \arrow[r, bend left=20, shift left=.5ex,"\UU_n"] \arrow[dd] & \Alg_{\EE_n}(\Mod_k) \arrow[l, shift left=.5ex, "\oblv_n"] \arrow[dd]\\
-&\\
-\Mod_k \arrow[r, bend left=20, shift left=.5ex, "\Sigma^{1-n}"] \arrow[uu, bend left=20, shift left=.5ex, "\Free_\Lie"] & \Mod_k \arrow[l, shift left=.5ex,"\Sigma^{n-1}"] \arrow[uu, bend right=20, shift right=.5ex, "\Free_{\EE_n}"']
+\Alg_\Lie(\Ch_k) \arrow[r, bend left=20, shift left=.5ex,"\UU_n"]  & \Alg_{\EE_n}(\Ch_k) \arrow[l, shift left=.5ex, "\oblv_n"]
 \end{tikzcd}
 \]
-\greg{Also explains what commutatrive means here ? Meaning the curved arrow diagram and the straight arrow diagram only; not combos of such}
-\mahmoud{explain what oblv stands for}
-where $\Sigma$ denotes suspension \owen{because tikzcd does weird things with ``[1-n]'' instead}, \mahmoud{earlier we denoted the shift by [n]. should we use $\Sigma^n$ everywhere?}.
-(Curving arrows denote left adjoints.)
+where $\oblv_n$ denotes a ``forgetful'' functor from $\EE_n$ algebras to Lie algebras.
+
+Both $\infty$-categories admit canonical forgetful functors to $\Ch_k$ and we denote both functors by $\oblv$;
+these functors have left adjoints $\Free_\Lie$ and $\Free_{\EE_n}$, respectively.
+There is a natural equivalence
+\[
+\UU_n (\Free_\Lie V) \simeq \Free_{\EE_n}(V[1-n])
+\]
+for every cochain complex~$V$.
 
 When $k$ is $\RR$ or $\CC$, 
 the enveloping $\EE_n$ algebra $\UU_n \fg$ of a dg Lie algebra $\fg$ is modeled by the locally constant factorization algebra $\bU_n \fg$ that assigns
@@ -323,14 +321,18 @@ the enveloping $\EE_n$ algebra $\UU_n \fg$ of a dg Lie algebra $\fg$ is modeled 
 to each open set $V \subset \RR^n$.
 \end{thm}
 
-The second part of this result leads to the explicit models in our theorems.
+The final part of this result leads to the explicit models in our theorems.
 
-\owen{Add discussion of how this makes sense even on unoriented manifolds.}
+\begin{rmk}
+An appealing aspect of this result is that it makes manifest why such enveloping $\EE_n$ algebras determine factorization algebras on all $n$-dimensional manifolds, whether framed or oriented or unoriented.
+The key point is that the model uses the compactly supported de Rham complex (or some other model of chains)
+and hence makes sense on general manifolds.
+\end{rmk}
 
 In fact, Knudsen shows a stronger version of the second part.
 if one restricts to working with open balls in $\RR^n$ (rather than arbitrary open sets)
 then there is a $\Disk_n$-algebra ${\tt U}_n \fg$ assigning $\cliels(\fg[-n]) = \Sym(\fg[1-n])$ to each ball and it is manifestly locally constant.
-This algebra ${\tt U}_n \fg$ is a model for~$\UU_n \fg$.
+This $\Disk_n$-algebra ${\tt U}_n \fg$ is another model for~$\UU_n \fg$.
 
 \begin{rmk}
 It follows from theorem~\ref{T:UnofLie} that for any $\EE_n$ algebra $B$, 
