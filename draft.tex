@@ -1899,8 +1899,8 @@ For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\
 \[
 {\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
 \]
-Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U) \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [2]$. 
-Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
+Let $x^* \otimes \alpha$ denote an homomorphism of the form $\fg \otimes \Omega (U) \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [2]$. 
+The bracket between these linear elements $x^* \otimes \alpha$ 
 and $y \otimes \beta$ is defined by
 \begin{align*}
 \{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
@@ -1952,8 +1952,8 @@ Using the retract $r_\phi$, we see that this is a quasi-isomorphism of factoriza
 Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras $\int_{\RR_{\geq 0}} : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg)$.
 \brian{I should spell this out now.}
 
-The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization sc-pairs. 
-The compatibility of this quasi-isomorphism with Poisson brackets is a direct calculation. 
+The pair of maps $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphism of factorization sc-pairs. 
+An explicit and direct calculation verifies that this quasi-isomorphism respects the Poisson brackets. 
 \end{proof}
 
 \subsection{Bulk-boundary topological field theory}
@@ -2117,88 +2117,21 @@ Kapustin-Witten.
 
 \subsection{Factorization homology on manifolds with boundary}
 
-\brian{spectral sequence}
+We conclude by describing a useful application of this work back in algebraic topology.
+The factorization sc-pair $(\bZ_n(\fg), \bU_n \fg)$ makes it quick and convenient to compute factorization homology over an $n$-dimensional manifold,
+but that model is not amenable to computations over $n+1$-dimensional manifolds with boundary,
+because $\bZ_n(\fg)$ is not explicitly described as a factorization algebra on $n+1$-dimensional manifolds.
+Our work in this section does provide, however, an explicit description of~$\Gr {\frak Z}_n(\fg)$. 
+Thus, we have access to the beginning of a spectral sequence.
 
-%\subsection{The bulk TFT}
-%
-%Let us place the locally constant factorization algebra model of the $\EE_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
-%This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
-%
-%\begin{dfn}
-%For an open set $V \subset M \times (0,1)$ let $\Obs^{\rm cl}_{\rm BF} (V)$ be the cochain complex 
-%\[
-%\Obs^{\rm cl}_{\rm BF} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
-%\]
-%The assignment $V \mapsto \Obs^{\rm cl}_{\rm BF}(V)$ defines a locally constant factorization algebra on $M \times (0,1)$. 
-%\end{dfn}
-%
-%We note that $\Obs_{\rm BF}^{\rm cl}$ is a factorization algebra with values in commutative dg algebras. 
-%In fact, it is given by the ``classical observables" of a topological field theory on $M \times (0,1)$ known as ``topological BF theory". 
-%
-%We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm BF}$ on $M$.
-%Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $\EE_n$-center of $\UU_n \fg$.
-%Recall, this model is given by the factorization algebra on $M$:
-%\begin{equation}\label{eqn:centerTFT}
-%\bZ_n(\fg) = \clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
-%\end{equation}
-%
-%The ``dequantization" is defined using the following filtration of this model.
-%For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
-%
-%\begin{dfn}
-%Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
-%\[
-%F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
-%\]
-%\end{dfn}
-%
-%This is a filtration of factorization algebras on $M$. 
-%The associated graded factorization algebra is
-%\[
-%{\rm Gr} \; \bZ_n(\fg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
-%\]
-%Notice this is similar to the model $\EE_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
-%
-% \begin{lmm}
-%There is a quasi-isomorphism of commutative factorization algebras on $M$:
-%\[
-%\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
-%\]
-%\end{lmm}
-%
-%In fact, we will show that this quasi-isomorphism is a deformation retraction. 
-%
-%\begin{proof}
-%To exhibit this quasi-isomorphism, we introduce the following cochain maps.
-%For an open set $U \subset M$ let
-%\[
-%\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
-%\] 
-%be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
-%This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
-%Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
-%\[
-%r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
-%\]
-%by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
-%\end{proof}
-
-%\begin{lmm}
-%Consider the locally constant factorization algebra $\cF_{\rm bulk}$ on $M \times \RR$ which assigns to an open set $U \subset M \times \RR$
-%\[
-%\cF_{\rm bulk} = \clie \left(\fg \otimes \Omega (U) \; , \; \clieu (\fg \otimes \Omega_c (U)[1]) \right) .
-%\]
-%Then, 
-%\end{lmm}
-%
-%\begin{proof}
-%For $V \subset M$, the integration of compactly supported de Rham forms along $\RR$ 
-%\[
-%\fg \otimes \Omega_c (\pi^{-1} (V)) = \fg \otimes \Omega_c (V \times \RR) \xto{\int_{\RR}} \fg \otimes \Omega_c (V) [-1] .
-%\]
-%is a quasi-isomorphism. 
-%
-%\end{proof}
+\begin{prp}
+Let $M$ be an $n+1$-dimensional manifold with boundary $\partial M$. 
+As $(\frak{Z}_n(\fg), \UU_n \fg)$ form a filtered algebra over the Swiss cheese operad, 
+there is a spectral sequence
+\[
+\int_{(M,\partial M)} (\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg) \Longrightarrow \int_{(M,\partial M)} (\frak{Z}_n(\fg), \UU_n \fg).
+\]
+\end{prp}
 
 \bibliographystyle{alpha}  
 \bibliography{centralize}
