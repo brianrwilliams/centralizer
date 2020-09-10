@@ -54,7 +54,7 @@ Knudsen \cite{Knudsen} developed these ideas extensively and offered a useful fa
 Our central goal here is to generalize the some well-known results about the enveloping algebra $U\fg$ to $\UU_n\fg$, for all $n$, such as
 \begin{enumerate}
 \item[(1)] the (underived) center of $U\sl_{N+1}$ is isomorphic to $(\Sym(\CC^{N}))^{S_N}$, where $\CC^{N}$ denotes the Cartan subalgebra of $\sl_{N+1}$ and $S_N$ is the Weyl group of $SL_{N+1}$, and
-\item[(2)] the derived center of the enveloping algebra $U\fg$ is given by derived invariants of the adjoint action of $\fg$ on $U\fg$. That is to say $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$.
+\item[(2)] the derived center of the enveloping algebra $U\fg$ is given by derived invariants of the adjoint action of $\fg$ on $U\fg$. That is to say $\Hoch^\bu(U\fg,U\fg) \simeq \clies(\fg, U\fg)$.
 \end{enumerate}
 \owen{And keep going just a little.}
 %
@@ -114,7 +114,7 @@ We review these notions more fully in Section~\ref{sec: background}.
 
 Our work here relies on a concrete and convenient model for these enveloping $\EE_n$ algebras by factorization algebras.
 In particular, thanks again to \cite{Knudsen}, 
-we know that the enveloping $\EE_n$ algebra $\UU_n \fg$ admits a model $\bU_n \fg$ whose underlying functor on the poset of open sets in $\RR^n$ assigns $\cliels(\Omega_c^*(V) \otimes \fg)$ to each open set~$V$.
+we know that the enveloping $\EE_n$ algebra $\UU_n \fg$ admits a model $\bU_n \fg$ whose underlying functor on the poset of open sets in $\RR^n$ assigns $\cliels(\Omega_c^\bu(V) \otimes \fg)$ to each open set~$V$.
 There is another factorization algebra whose underlying assigns $\clies(\Omega^\bu(V) \otimes \fg)$ to each open~$V$.
 Our paper shows that such factorization algebras model other important $\EE_n$ algebras, notably centralizers.
 
@@ -160,16 +160,16 @@ In \S2 we review these results in more detail with an emphasis on what we need f
 
 Here is an outline of our proof:
 \begin{enumerate}
-\item Let ${\bf f}: \cliels(\Omega_c^* \otimes \fg) \to \cliels(\Omega_c^* \otimes \fh)$ denote a map of factorization algebras that models with map $\UU_n f$ between enveloping algebras. 
-We use it to produce an explicit factorization algebra $\clies(\Omega \otimes \fg, \cliels(\Omega_c^* \otimes \fh)_f)$ as a kind of ``convolution factorization algebra.'' 
+\item Let ${\bf f}: \cliels(\Omega_c^\bu \otimes \fg) \to \cliels(\Omega_c^\bu \otimes \fh)$ denote a map of factorization algebras that models with map $\UU_n f$ between enveloping algebras. 
+We use it to produce an explicit factorization algebra $\clies(\Omega \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f)$ as a kind of ``convolution factorization algebra.'' 
 \item We show this object fits canonically into a centralizer diagram: there is a map of factorization algebras
 \[
-\clies(\Omega \otimes \fg, \cliels(\Omega_c^* \otimes \fh)_f) \otimes \bU_n \fg \to \cliels(\Omega_c^* \otimes \fh)
+\clies(\Omega \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f) \otimes \bU_n \fg \to \cliels(\Omega_c^\bu \otimes \fh)
 \]
 such that precomposing with the map $1 \otimes \id_{\UU_n \fg}$ is the map~${\bf f}$.
 Fitting into such a diagram guarantees a canonical map 
 \[
-\clies(\Omega \otimes \fg, \cliels(\Omega_c^* \otimes \fh)_f) \to \bZ_n({\bf f})
+\clies(\Omega \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f) \to \bZ_n({\bf f})
 \]
 as factorization algebras, where $\bZ({\bf f})$ is some factorization algebra modeling the centralizer~${\frak Z}_n(f)$. 
 \item We then verify that this map is a quasi-isomorphism on disks, by the Francis-Lurie result mentioned above. 
@@ -191,7 +191,7 @@ center is modeled by the locally constant factorization algebra that assigns
 to each open set $U \subset \RR^n$.
 \end{cor}
 
-This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, 
+This result generalizes the fact that $\Hoch^\bu(U\fg,U\fg) \simeq \clies(\fg, U\fg)$, 
 since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns
 $\cliels (\fg \otimes \Omega^\bu_c(U))$ to each open $U \subset \RR$. 
 
@@ -370,7 +370,7 @@ See Theorem 5.3.1.30 of~\cite{LurieHA}, or Proposition 6.22 in~\cite{GTZ3}, for 
 The centralizer ${\frak Z}_n(f)$ exists and can be identified with the classifying object for maps from $A$ to $B$ in the $\infty$-category $\Mod^{\EE_n}_A(\cC)$. \mahmoud{we should probably spell out the meaning of the classifying object in this case to make it obvious that the centralizer is the classifying object}
 \end{prp} 
 
-When $n=1$ and $\cC$ is chain complexes over the field $k$, then $\Mod^{E_1}_A(\cC)$ is equivalent to $A\otimes A^{op}$-modules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^*(A,B_f)$,
+When $n=1$ and $\cC$ is chain complexes over the field $k$, then $\Mod^{E_1}_A(\cC)$ is equivalent to $A\otimes A^{op}$-modules and hence ${\frak Z}_{E_1}(f) \simeq {\rm Hoch}^\bu(A,B_f)$,
 where $B_f$ denotes $B$ viewed as an $A\otimes A^{op}$-modules via the map~$f$.
 
 We record a key fact drawn from \cite{LurieHA},~\cite{FrancisHH}  and \cite{GG-Notes}, which generalizes this situation.
@@ -864,19 +864,19 @@ Indeed,
 \begin{align*}
 \int_{S^{n-1}}\UU_n\fg 
 &\simeq \cliels(\Omega^\bu_c(\RR_{> 0} \times S^{n-1}) \otimes \fg)\\
-&\simeq \cliels(\Omega^\bu_c(\RR_{> 0}) \otimes H^*(S^{n-1}) \otimes \fg)
+&\simeq \cliels(\Omega^\bu_c(\RR_{> 0}) \otimes H^\bu(S^{n-1}) \otimes \fg)
 \end{align*}
 because $(n-1)$-sphere is formal over the rationals (or reals). 
 We thus see that 
 \[
-\int_{S^{n-1}}\UU_n\fg \simeq \UU_1 (H^*(S^{n-1}) \otimes \fg)
+\int_{S^{n-1}}\UU_n\fg \simeq \UU_1 (H^\bu(S^{n-1}) \otimes \fg)
 \]
 The cohomology of the $(n-1)$-sphere is 
 \[
 R_n = k[\epsilon_{n-1}]/(\epsilon_{n-1}^2),
 \] 
 where $|\epsilon_{n-1}| = n-1$.
-Since $\UU_1 (H^*(S^{n-1}) \otimes \fg)$ is manifestly equivalent to the dg algebra~$U(\fg \otimes R_n)$,
+Since $\UU_1 (H^\bu(S^{n-1}) \otimes \fg)$ is manifestly equivalent to the dg algebra~$U(\fg \otimes R_n)$,
 we find that 
 \[
 \int_{S^{n-1}}\UU_n\fg \simeq U(\fg \otimes R_n)
@@ -1470,7 +1470,7 @@ by wedge product after pulling back along the two projection maps.
 It is a quasi-isomorphism, by K\"unneth.
 Similarly, the canonical map
 \[
-\Omega_c^*(V) \otimes \Omega^\bu(S) \to \Omega_c^*(V \times S),
+\Omega_c^\bu(V) \otimes \Omega^\bu(S) \to \Omega_c^\bu(V \times S),
 \]
 is a quasi-isomorphism, as $S$ is compact.
 
@@ -1478,7 +1478,7 @@ Let $\fg_S$ denote the $L_\infty$ algebra $\Omega^\bu(S) \otimes \fg$.
 Then these quasi-isomorphisms above imply there are quasi-isomorphisms of $L_\infty$ algebras
 \begin{align*}
 \Omega^\bu(V) \otimes \fg_S &\xto{\simeq} \Omega^\bu(V \times S) \otimes \fg \\
-\Omega_c^*(V) \otimes \fg_S &\xto{\simeq} \Omega_c^*(V \times S) \otimes \fg 
+\Omega_c^\bu(V) \otimes \fg_S &\xto{\simeq} \Omega_c^\bu(V \times S) \otimes \fg 
 \end{align*}
 and hence a quasi-isomorphism
 \[
@@ -1512,7 +1512,7 @@ one obtains less obvious identifications.
 Consider first the case $n=1$ and $B = U \fg$. 
 A classic result of \cite{HochSerre} is that the Hochschild cohomology of $U \fg$ can be expressed in terms of Lie algebra cohomology as 
 \[
-\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad}).
+\Hoch^\bu(U\fg,U\fg) \simeq \clies(\fg, U\fg^{ad}).
 \] 
 On the right-hand side, we take the Chevalley--Eilenberg cochain complex with values in the module $U \fg$ equipped with the adjoint action.
 The algebra structure is given by a special case of the convolution product as in Section~\ref{??}. 
@@ -1547,20 +1547,20 @@ These can be applied to our models to obtain striking results about factorizatio
 
 \def\Dih{{\rm Dih}}
 
-Let $\Cyc_*(A)$ denote the {\em cyclic chains} of a dg associative algebra~$A$.
+Let $\Cyc_\bu(A)$ denote the {\em cyclic chains} of a dg associative algebra~$A$.
 A key theorem --- one of the original motivations for cyclic homology --- is the Loday-Quillen-Tsygan (LQT) theorem \cite{},
 which provides an explicit quasi-isomorphism
 \begin{equation}
 \label{eqn: LQT}
-\cliels(\fgl_\infty(A)) \xto{\simeq} \Sym(\Cyc_*(A)[1])
+\cliels(\fgl_\infty(A)) \xto{\simeq} \Sym(\Cyc_\bu(A)[1])
 \end{equation}
 for any unital dg associative algebra~$A$.
 A similar result \cite{} holds when we replace $\fgl_N$ by $\frak{so}_N$ or $\frak{sp}_N$, with
 \[
 \label{eqn: LQT}
-\cliels({\frak{so}}_\infty(A)) \xto{\simeq} \Sym(\Dih_*(A)[1]),
+\cliels({\frak{so}}_\infty(A)) \xto{\simeq} \Sym(\Dih_\bu(A)[1]),
 \]
-with $\Dih_*$ denoting the dihedral chains.
+with $\Dih_\bu$ denoting the dihedral chains.
 Note that one can use either $\frak{so}_N$ or $\frak{sp}_N$ on the left hand side.
 
 \owen{Please verify my conditions, as I got a bit confused between different sources.}
@@ -1568,7 +1568,7 @@ Note that one can use either $\frak{so}_N$ or $\frak{sp}_N$ on the left hand sid
 Another key theorem, due to Jones \cite{} for cyclic chains and extend to dihedral chains by Ungheretti \cite{},
 is that
 \[
-\Cyc_*(\Omega^*(M)) \simeq \Omega^*(LM/^h S^1)
+\Cyc_\bu(\Omega^\bu(M)) \simeq \Omega^\bu(LM/^h S^1)
 \]
 for a simply connected manifold $M$, 
 where $LM/^h S^1$ denotes the homotopy quotient of the free loop space $LM$ under the canonical rotation action on loops,
@@ -1586,9 +1586,9 @@ As a first observation, let us see what this result implies about factorization 
 For a closed $n$-dimensional manifold~$M$, 
 \begin{align*}
 \int_M \UU_n(\frak{gl}_\infty)
-&\simeq \cliels(\Omega^*(M) \otimes \fgl_\infty) \\
-&\simeq \Sym(\Cyc_*(\Omega^*(M))[1]) \\
-&\simeq \Sym(\Omega^*(LM/^h S^1))[1])).
+&\simeq \cliels(\Omega^\bu(M) \otimes \fgl_\infty) \\
+&\simeq \Sym(\Cyc_\bu(\Omega^\bu(M))[1]) \\
+&\simeq \Sym(\Omega^\bu(LM/^h S^1))[1])).
 \end{align*}
 \end{lmm}
 
@@ -1615,7 +1615,7 @@ we simply apply quasi-isomorphism~\eqref{eqn: taut} in conjunction with the theo
 \begin{lmm}
 For a closed $n$-dimensional manifold~$M$, 
 \[
-\clies(\fgl_\infty \otimes \Omega^\bu(M), \cliels(\fgl_\infty \otimes \Omega^\bu(M)) \simeq \End^\bullet(\Sym(\Omega^*(LM/^h S^1))[1])))
+\clies(\fgl_\infty \otimes \Omega^\bu(M), \cliels(\fgl_\infty \otimes \Omega^\bu(M)) \simeq \End^\bullet(\Sym(\Omega^\bu(LM/^h S^1))[1])))
 \]
 where the left hand side is the factorization homology of $\EE_n$ center ${\frak Z}_n(\fgl_\infty)$ and the right hand side is the $\EE_0$ center of the factorization homology of~$\UU_n \fgl_\infty$.
 \end{lmm}
@@ -1958,13 +1958,13 @@ be the map which integrates a compactly supported form on $V \times \RR_{> 0}$ o
 This map is a quasi-isomorphism for any $U$ and, in fact, admits the following explicit retract. 
 Let $\phi$ be a fixed compactly supported function on $\RR_{\geq 0}$ of mass $1$ and define
 \[
-r_\phi : \Omega^*_c(U) [1] \to \Omega^*_c (U \times \RR_{\geq 0})
+r_\phi : \Omega^\bu_c(U) [1] \to \Omega^\bu_c (U \times \RR_{\geq 0})
 \]
 by $r_\phi (\alpha) = \pi^*\alpha \wedge \phi \, \d t$. 
 
 Notice that for an open set $V \subset M$ we have 
 \[
-\bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega^* (V \times \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega^*_c(V \times \RR_{>0}) [2] \right) \bigg)  .
+\bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega^\bu (V \times \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(V \times \RR_{>0}) [2] \right) \bigg)  .
 \]
 Integration along $\RR_{>0}$ induces a map of factorization algebras on $M$
 \[
@@ -2215,7 +2215,7 @@ there is a spectral sequence
 We call $\ev_f$ the 
 $g: Sym(\fg \otimes \Omega (U_J) [1]) \longrightarrow B(U_J) $
 let $f\otimes X  $ be an 
-element in $\cliels\big(\fg \otimes \Omega^\bu , B\big) \otimes \cliels\big(\fg \otimes \Omega_c^* \big)$.  
+element in $\cliels\big(\fg \otimes \Omega^\bu , B\big) \otimes \cliels\big(\fg \otimes \Omega_c^\bu \big)$.  
 Let 
 
 
@@ -2223,7 +2223,7 @@ Let
 
 
 
-Recall that we have a factorization algebra map~\eqref{eq:DefofFonFaclevel}  $\mathbf{f}: \cliels(\fg \otimes \Omega_c^* \to B$.
+Recall that we have a factorization algebra map~\eqref{eq:DefofFonFaclevel}  $\mathbf{f}: \cliels(\fg \otimes \Omega_c^\bu \to B$.
 The unital factorization algebra is given, for any open $U$, by $k(U)=k$.
 
 
@@ -2235,7 +2235,7 @@ which gives us,  for any integer $n$, maps
  \otimes Sym^p \big( \fg \otimes \Omega^\bu (U)[-1] , B(U)\big)
  \\ 
  \stackrel{\id \otimes ev}\longrightarrow Sym^{n-p}\big(\fg \otimes \Omega^\bu_c(U)\big) \otimes B(U)  \hookrightarrow
- \cliels\big(\fg \otimes \Omega_c^*(U), B(U) \big) 
+ \cliels\big(\fg \otimes \Omega_c^\bu(U), B(U) \big) 
 \end{multline}
 
 
