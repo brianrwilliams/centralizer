@@ -114,7 +114,7 @@ We review these notions more fully in Section~\ref{sec: background}.
 
 Our work here relies on a concrete and convenient model for these enveloping $\EE_n$ algebras by factorization algebras.
 In particular, thanks again to \cite{Knudsen}, 
-we know that the $\EE_n$ enveloping algebra $\UU_n \fg$ admits a model $\bU_n \fg$ whose underlying functor on the poset of open sets in $\RR^n$ assigns $\cliels(\Omega_c^*(V) \otimes \fg)$ to each open set~$V$.
+we know that the enveloping $\EE_n$ algebra $\UU_n \fg$ admits a model $\bU_n \fg$ whose underlying functor on the poset of open sets in $\RR^n$ assigns $\cliels(\Omega_c^*(V) \otimes \fg)$ to each open set~$V$.
 There is another factorization algebra whose underlying assigns $\clies(\Omega^\bu(V) \otimes \fg)$ to each open~$V$.
 Our paper shows that such factorization algebras model other important $\EE_n$ algebras, notably centralizers.
 
@@ -1598,7 +1598,7 @@ Note that this identification provides a commutative algebra structure on the fa
 which is nowhere to be seen for~$\fgl_N$.
 
 \begin{qtn}
-Is there some local version of this relationship? That is, can we obtain a version of the LQT theorem at the level of $\EE_n$ algebras such that factorization homology recovers the quasi-isomorphism of this lemma?
+Is there a local version of this relationship? That is, can we obtain a version of the LQT theorem at the level of $\EE_n$ algebras such that factorization homology recovers the quasi-isomorphism of this lemma?
 \end{qtn}
 
 This kind of result is especially interesting from the perspective of physics, 
@@ -1644,10 +1644,10 @@ In this sense we have deepened the topological gauge/string duality just introdu
 %In this sense, topological BF theory is the universal $(n+1)$-dimensional field theory which has the $\EE_n$-enveloping algebra as a boundary condition. 
 %This partially confirms the terminology used in \cite{ButsonYoo}  of topological BF theory as the ``universal bulk theory" of $\UU_n(\fg)$. 
 
-In this section, we turn to an interpretation of the $\EE_n$ center of an $\EE_n$ enveloping algebra in terms of a certain topological field theory (TFT).
+In this section, we turn to an interpretation of the $\EE_n$ center of an enveloping $\EE_n$ algebra in terms of a certain topological field theory (TFT).
 
 Given an $\EE_n$ algebra $A$, the pair $(\fZ_n (A) , A)$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an $\EE_n$ enveloping algebra. 
+The first objective is to define a certain ``classical limit" of this pair in the case that $A$ is an enveloping $\EE_n$ algebra. 
 
 \begin{prp}
 \label{prp:swiss1}
@@ -1656,7 +1656,7 @@ The pair $(\fZ_n(\fg) , \UU_n(\fg))$ is a filtered object in the $\infty$-catego
 The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ is a commutative algebra object.
 \end{prp}
 
-The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$ center and our model $\bU_n (\fg)$ for the $\EE_n$ enveloping algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
+The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$ center and our model $\bU_n (\fg)$ for the enveloping $\EE_n$ algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
 Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
 If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$ algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
@@ -1735,7 +1735,7 @@ The associated graded cochain complex is the free symmetric algebra on $\fh[1]$ 
 \]
 Here, the differential on the right-hand side is simply the underlying linear differential of $\fh$ (in terms of $L_\infty$ algebras, this is the $1$-ary operation $\ell_1$). 
 
-Consider our factorization model for the $\EE_n$ enveloping algebra $\bU_n(\fg) = \cliels (\fg \otimes \Omega^\bu_c)$. 
+Consider our factorization model for the enveloping $\EE_n$ algebra $\bU_n(\fg) = \cliels (\fg \otimes \Omega^\bu_c)$. 
 The filtration on Chevalley--Eilenberg chains equips $\bU_n(\fg)$ with a filtration as a factorization algebra. 
 
 There is a similar filtration on our model for the $\EE_n$ center $\bZ_n(\fg)$ defined by
@@ -1784,7 +1784,7 @@ Then
 \begin{proof}
 For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$ algebra.
 It is given by the sum of the $L_\infty$-operations $\ell_2 + \ell_3 + \cdots$. 
-This implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
+This observation implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
 
 Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm Gr} \; \bZ_n (\fg)$ assigns the cochain complex
 \[
@@ -1810,13 +1810,13 @@ We extend this to a bracket on the full complex by the graded Leibniz rule.
 \end{proof}
 
 The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
-At the level of the associated graded algebras, we obtain an algebra over a certain classical limit of this operad which takes into account the aforementioned Poisson structures.
-
-The definition of this two-colored operad $\PP_{[n+1,n]}$ can be found in \cite{SafronovCoiso}. 
-A $\PP_{[n+1,n]}$ algebra consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$ algebra and $B$ is a $\PP_n$ algebra which receives an action by $A$. 
+At the level of the associated graded algebras, 
+we obtain an algebra over a certain classical limit of this operad that takes into account the aforementioned Poisson structures.
+The definition of this two-colored operad $\PP_{[n+1,n]}$ can be found in~\cite{SafronovCoiso}. 
+A {\em $\PP_{[n+1,n]}$ algebra} consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$ algebra and $B$ is a $\PP_n$ algebra that receives an action by $A$. 
 
 The action of $\bZ_n(\fg)$ on $\bU_n(\fg)$ descends to an action at the level of the associated graded factorization algebras
-Together with Lemma \ref{lmm:pois1}, we obtain Proposition \ref{prp:poisson}. 
+Together with Lemma~\ref{lmm:pois1}, we obtain Proposition~\ref{prp:poisson}. 
 
 \begin{rmk}
 One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$ algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$ center} of the $\PP_n$ algebra $B$. 
@@ -1829,7 +1829,7 @@ is a model for the $\PP_n$ center of the {\em enveloping $\PP_n$ algebra} $\UU_{
 
 \subsection{The bulk factorization algebra} \label{sec:bulk}
 
-We turn towards a model for the $\EE_n$-center as a constructible factorization algebra on an $(n+1)$-manifold with boundary.
+We turn towards a model for the $\EE_n$ center as a constructible factorization algebra on an $(n+1)$-manifold with boundary.
 
 Before stating the definition of this model, we introduce the following variant of the de Rham complex of differential forms on $\RR_{\geq 0}$. 
 Let $j : \RR_{>0} \hookrightarrow \RR_{\geq 0}$ be the embedding of the open ray into the closed ray. 
@@ -1884,7 +1884,7 @@ For an open $U \subset M \times \RR_{>0}$, pulling back along an embedding $\iot
 \[
 \Omega^\bu (V') \otimes \Tilde{\Omega}^\bu([0,\epsilon)) \xto{j^*}  \Omega^\bu (V') \Hat{\otimes} \Omega^\bu((0,\epsilon)) \cong \Omega^\bu(V \times (0,\epsilon)) \xto{\iota^*} \Omega^\bu(U) .
 \]
-This is our model for restriction $\iota^*$ of de Rham forms that is used in the definition above.
+This composition provides the version of restriction $\iota^*$ of de Rham forms used in the definition above.
 \end{rmk}
 
 On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a dg commutative algebra. 
@@ -1949,30 +1949,33 @@ In fact, this construction determines a functor from the category of constructib
 We are now ready to prove Proposition \ref{prp:pair}.
 
 \begin{proof}[Proof of Proposition \ref{prp:pair}]
-To exhibit this quasi-isomorphism, we introduce the following cochain maps.
+To exhibit the desired quasi-isomorphism, 
+we first construct a map of factorization algebras and then provide a retract that shows it is a quasi-isomorphism.
+
+We will use the following cochain maps in our constructions.
 For an open set $V \subset M$ let
 \[
-\int_{\RR_{>0}} : \Omega_c(V \times \RR_{>0}) \to \Omega_c (U) [1] 
+\int_{\RR_{>0}} : \Omega^*_c(V \times \RR_{>0}) \to \Omega^*_c (U) [1] 
 \] 
 be the map which integrates a compactly supported form on $U \times \RR_{> 0}$ along $\RR_{> 0}$. 
 This map is a quasi-isomorphism for any $U$ and, in fact, admits the following explicit retract. 
 Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
 \[
-r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR_{\geq 0})
+r_\phi : \Omega^*_c(U) [1] \to \Omega^*_c (U \times \RR_{\geq 0})
 \]
 by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
 
 Notice that for an open set $V \subset M$ we have 
 \[
-\bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega (V \times \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega_c(V \times \RR_{>0}) [2] \right) \bigg)  .
+\bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega^* (V \times \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega^*_c(V \times \RR_{>0}) [2] \right) \bigg)  .
 \]
 Integration along $\RR_{>0}$ induces a map of factorization algebras on $M$
 \[
 I^{\circ} : \bC_n(\fg)^\circ \to {\rm Gr} \; \bZ_n (\fg)
 \]
-which on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>0})$ sends $x \otimes \alpha \in \Omega^\bu_c(V \times \RR_{>0})[2]$ to $x \otimes \int_{\RR_{>0}} \alpha \in \Omega^\bu_c (V)[1]$. 
+that on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>0}))$ sends $x \otimes \alpha \in \fg \otimes \Omega^\bu_c(V \times \RR_{>0})[2]$ to $x \otimes \int_{\RR_{>0}} \alpha \in \fg \otimes \Omega^\bu_c (V)[1]$. 
 
-Next, using the map $r_\phi$, wedefine a map of factorization algebras
+Next, using the map $r_\phi$, we define a map of factorization algebras
 \[
 r_\phi^\circ : {\rm Gr} \; \bZ_n (\fg) \to \bC_n(\fg)^\circ
 \]
@@ -1982,13 +1985,15 @@ For an open set $V \subset M$, define $r_{\phi}^\circ (V)$ on linear elements $x
 r_\phi^\circ (U) (x \otimes \alpha) = x \otimes (\pi^* \alpha \wedge \phi \d t)  .
 \]
 This map can be extended to all of ${\rm Gr} \; \bZ_n(\fg)$ in a similar fashion. 
-One can show that $r_\phi^\circ$ is a deformation retract of $I^\partial$.
-In particular, $I^\partial$ is a quasi-isomorphism of factorization algebras on $M$.
+A quick computation shows that $r_\phi^\circ$ is a deformation retract of $I^\circ$.
+In consequence, $I^\circ$ is a quasi-isomorphism of factorization algebras on~$M$.
 
-Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras 
+Similarly, we now use integration of compactly supported forms along $\RR_{\geq 0}$ to produce  a quasi-isomorphism of factorization algebras 
 \[
 I^\partial : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg) .
 \]
+We begin by constructing this map and then provide a retract that shows it is a quasi-isomorphism.
+
 Recall that for $V \subset M$ we have
 \[
 \bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) .
