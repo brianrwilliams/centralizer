@@ -1952,18 +1952,16 @@ We are now ready to prove Proposition \ref{prp:pair}.
 To exhibit the desired quasi-isomorphism, 
 we first construct a map of factorization algebras and then provide a retract that shows it is a quasi-isomorphism.
 
-We will use the following cochain maps in our constructions.
-For an open set $V \subset M$ let
-\[
-\int_{\RR_{>0}} : \Omega^*_c(V \times \RR_{>0}) \to \Omega^*_c (U) [1] 
-\] 
-be the map which integrates a compactly supported form on $U \times \RR_{> 0}$ along $\RR_{> 0}$. 
+We will use the following cochain maps defined at the level of differential forms in our constructions.
+For an open set $V \subset M$ let $\int_{\RR_{>0}}$
+(or $\int_{\RR_{\geq 0}}$)
+be the map which integrates a compactly supported form on $V \times \RR_{> 0}$ or ($V \times \RR_{\geq 0}$) along $\RR_{> 0}$ (or $\RR_{\geq 0}$).
 This map is a quasi-isomorphism for any $U$ and, in fact, admits the following explicit retract. 
-Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
+Let $\phi$ be a fixed compactly supported function on $\RR_{\geq 0}$ of mass $1$ and define
 \[
 r_\phi : \Omega^*_c(U) [1] \to \Omega^*_c (U \times \RR_{\geq 0})
 \]
-by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
+by $r_\phi (\alpha) = \pi^*\alpha \wedge \phi \, \d t$. 
 
 Notice that for an open set $V \subset M$ we have 
 \[
@@ -1973,18 +1971,31 @@ Integration along $\RR_{>0}$ induces a map of factorization algebras on $M$
 \[
 I^{\circ} : \bC_n(\fg)^\circ \to {\rm Gr} \; \bZ_n (\fg)
 \]
-that on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>0}))$ sends $x \otimes \alpha \in \fg \otimes \Omega^\bu_c(V \times \RR_{>0})[2]$ to $x \otimes \int_{\RR_{>0}} \alpha \in \fg \otimes \Omega^\bu_c (V)[1]$. 
+which is defined on basic elements as follows.
+On linear elements of the form $G : k \to \fg \otimes \Omega^\bu_c (V \times \RR_{>0})[2]$ the element $I^\circ(G)$ is given by the composition
+\[
+k \xto{G} \fg \otimes \Omega^\bu_c (V \times \RR_{>0})[2] \xto{1 \otimes \int_{\RR_{> 0}}} \fg \otimes \Omega^\bu_c(V) [1] .
+\]
+On linear elements of the form $F : \fg \otimes \Omega^\bu(V \times \RR_{>0})[1] \to k$ the element $I^{\circ} (F)$ is the composition
+\[
+\fg \otimes \Omega^\bu(V) [1] \xto{\pi^*} \fg \otimes \Omega^\bu(V \times \RR_{>0}) [1] \xto{F} k  .
+\]
 
 Next, using the map $r_\phi$, we define a map of factorization algebras
 \[
 r_\phi^\circ : {\rm Gr} \; \bZ_n (\fg) \to \bC_n(\fg)^\circ
 \]
 as follows. 
-For an open set $V \subset M$, define $r_{\phi}^\circ (V)$ on linear elements $x \otimes \alpha$ in $\Sym(\fg \otimes \Omega^\bu(V)_c[1])$ by
+For an open set $V \subset M$, it is defined on basic elements as follows.
+On linear elements $G : k \to \fg \otimes \Omega^\bu(V)_c[1]$ the element $r_\phi^\circ (G)$ is defined by
 \[
-r_\phi^\circ (U) (x \otimes \alpha) = x \otimes (\pi^* \alpha \wedge \phi \d t)  .
+k \xto{G} \fg \otimes \Omega^\bu(V)_c[1] \xto{1 \otimes r_\phi} \fg \otimes \Omega^\bu_c (V \times \RR_{>0}) [2]  .
 \]
-This map can be extended to all of ${\rm Gr} \; \bZ_n(\fg)$ in a similar fashion. 
+On linear elements $F : \fg \otimes \Omega^\bu(V)[1] \to k$ the element $r_\phi^\circ (F)$ is defined by
+\[
+\fg \otimes \Omega^\bu (V \times \RR_{>0}) [1] \xto{1 \otimes \int_{\RR_{>0}} (-) \wedge \phi \d t} \fg \otimes \Omega^\bu(V) [1] \xto{F} k .
+\]
+
 A quick computation shows that $r_\phi^\circ$ is a deformation retract of $I^\circ$.
 In consequence, $I^\circ$ is a quasi-isomorphism of factorization algebras on~$M$.
 
@@ -1998,7 +2009,7 @@ Recall that for $V \subset M$ we have
 \[
 \bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) .
 \]
-On $V$, the map $I^\partial (V)$ is defined by the composition
+On $V$, the map $I^\partial$ is defined by the composition
 \[
 \begin{tikzcd}
 \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \otimes \Omega^\bu_c (V)[1] \right) .
@@ -2007,13 +2018,14 @@ On $V$, the map $I^\partial (V)$ is defined by the composition
 The first map ${\rm ev}_1$ evaluates the unit in $\Sym \left(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})\right)$ and the second map is induced by integration along $\RR_{\geq 0}$. 
 It is quick to check that $I^{\partial}$ extends to a map of factorization algebras. 
 
-For an open set $V$ the cochain map $I^{\partial}(V)$ admits an explicit retract $r_\phi^\partial(V)$ defined on linear elements $x \otimes \alpha$ in $\Sym (\fg \otimes \Omega^\bu_c(V)[1])$ by the formula
+On an open set $V$ the cochain map $I^{\partial}$ admits an explicit retract $r_\phi^\partial$ defined on linear elements $x \otimes \alpha$ in $\Sym (\fg \otimes \Omega^\bu_c(V)[1])$ by the formula
 \[
 r_{\phi}^\partial (x \otimes \alpha) = x \otimes (\pi^* \alpha \wedge \phi \d t) \pm \d_{\rm CE} (x \otimes \pi^* \alpha \phi ) .
 \]
-The map $r_\phi^\partial (V)$ is extended to the entire symmetric algebra in the obvious way. 
+The map $r_\phi^\partial$ is extended to the entire symmetric algebra in the obvious way. 
+It is a more involved, yet straightforward, computation to see that $r^\partial_\phi$ is a deformation retract, as factorization algebras, of $I^\partial$. 
 
-We have shown that $(I^{\circ}, I^\partial)$ is a quasi-isomorphism of factorization sc-pairs. 
+In conclusion, $(I^{\circ}, I^\partial)$ is a quasi-isomorphism of factorization sc-pairs. 
 A direct calculation verifies that this quasi-isomorphism respects Poisson brackets. 
 \end{proof}
 
