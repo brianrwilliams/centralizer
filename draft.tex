@@ -1788,20 +1788,24 @@ Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm G
 \[
 \clie^\bu\bigg(\fg \otimes \Omega^\bu (U) \; , \; {\rm Sym} \left(\fg \otimes \Omega^\bu_c(U) [1]\right) \bigg) = {\rm Hom}^\bu \bigg(\cliels(\fg \otimes \Omega^\bu(U)) , \cliels (\fg \otimes \Omega^\bu_c(U)) \bigg).
 \]
-For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\fg)(U)$ is of the form
+We first define the bracket $\{F,G\}$ between the following simple elements $F : \fg \otimes \Omega^\bu (U)[1] \to k$ and $G : k \to \fg \otimes \Omega^\bu_c(U)[1]$. 
+Define $\{F, G\} \in k$ by the composition
 \[
-{\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
+k \xto{G} \fg \otimes \Omega^\bu_c(U)[1] \hookrightarrow \fg \otimes \Omega^\bu(U)[1] \xto{F} k
 \]
-Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U)[1] \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [1]$. 
-Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
-and $y \otimes \beta$ is defined by
-\begin{align*}
-\{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
-\{x^* \otimes \alpha , x'^* \otimes \alpha' \} & = 0 \\
-\{y \otimes \beta , y' \otimes \beta'\} & = 0 . 
-\end{align*}
-Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
-\brian{how to say this now}
+where the middle arrow uses the obvious inclusion of compactly supported de Rham forms inside of all de Rham forms. 
+We extend this to a bracket on the full complex by the graded Leibniz rule. 
+
+%Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U)[1] \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [1]$. 
+%Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
+%and $y \otimes \beta$ is defined by
+%\begin{align*}
+%\{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
+%\{x^* \otimes \alpha , x'^* \otimes \alpha' \} & = 0 \\
+%\{y \otimes \beta , y' \otimes \beta'\} & = 0 . 
+%\end{align*}
+%Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. 
+%\brian{how to say this now}
 \end{proof}
 
 The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional Swiss cheese operad. 
@@ -1824,16 +1828,13 @@ is a model for the $\PP_n$-center of the $\PP_n$-{\em enveloping algebra} $\UU_{
 
 \subsection{The bulk factorization algebra} \label{sec:bulk}
 
-We turn towards a model for the $\EE_n$ center as a constructible factorization algebra. 
+We turn towards a model for the $\EE_n$-center as a constructible factorization algebra on an $(n+1)$-manifold with boundary.
 
 Before stating the definition of this model, we introduce the following variant of the de Rham complex of differential forms on $\RR_{\geq 0}$. 
 Let $j : \RR_{>0} \hookrightarrow \RR_{\geq 0}$ be the embedding of the open ray into the closed ray. 
-Define the complex
+Let $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ be the two-term complex
 \[
-\begin{tikzcd}
-& \ul{0} & \ul{1} \\
-\Tilde{\Omega}^\bu (\RR_{\geq 0}) = & \Omega^0 (\RR_{\geq 0}) \ar[r, "j^* \circ \d_{\rm dR}"] & \Omega^1(\RR_{>0})  .
-\end{tikzcd}
+\Omega^0(\RR_{\geq 0}) \xto{j^* \circ \d_{\rm dR}} \Omega^1(\RR_{>0})[-1]  .
 \]
 The commutative dg algebra structure on $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ is defined by the rule
 \[
@@ -1898,16 +1899,39 @@ For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\
 \[
 {\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
 \]
-Let $x^* \otimes \alpha$ denote an homorphism of the form $\fg \otimes \Omega (U) \to \Sym^0 = k$ and $y \otimes \beta$ denote a homomorphism $k = \Sym^0 \to \fg \otimes \Omega_c(U) [2]$. 
-Then, the bracket involving the linear elements $x^* \otimes \alpha$ 
-and $y \otimes \beta$ is defined by
-\begin{align*}
-\{x^* \otimes \alpha  , y \otimes \beta \} & = \<x^*, y\>_\fg \int_U \alpha \beta \\
-\{x^* \otimes \alpha , x'^* \otimes \alpha' \} & = 0 \\
-\{y \otimes \beta , y' \otimes \beta'\} & = 0 . 
-\end{align*}
-Here, $\<x^*, y\>_\fg$ denotes the linear pairing between $\fg$ and $\fg^*$ and $\int_U\alpha \beta$ denotes the linear pairing between compactly supported distributional differential forms and differential forms. \brian{how to say this now}
-The bracket is extended to the entire symmetric algebra by using the graded Leibniz rule.
+The Poisson structure is described in a similar way as in the proof of Lemma \ref{lmm:pois1}. 
+We first define the bracket $\{F,G\}$ between the following simple elements $F : \fg \otimes \Omega^\bu (U)[2] \to k$ and $G : k \to \fg \otimes \Omega^\bu_c(U)[2]$. 
+Define $\{F, G\} \in k$ by the composition
+\[
+k \xto{G} \fg \otimes \Omega^\bu_c(U)[2] \hookrightarrow \fg \otimes \Omega^\bu(U)[2] \xto{F} k
+\]
+where the middle arrow uses the obvious inclusion of compactly supported de Rham forms inside of all de Rham forms. 
+Notice that this bracket has cohomological degree $+1$ as desired.
+We extend this to a bracket on the full complex by the graded Leibniz rule. 
+
+Next, we define the $\PP_0$-bracket for the value of the factorization algebra on open sets of the form $V \times [0,\epsilon)$. 
+Notice that the underlying graded vector space of $\bC_n(\fg)(V \times [0,\epsilon))$ is of the form
+\[
+{\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (V) \otimes \Tilde{\Omega}^\bu ([0,\epsilon))) [1]) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon)) [2] \right) \right)  .
+\]
+We first define the bracket $\{F,G\}$ between the following simple elements 
+\[
+F : \fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) [2] \to k
+\]
+and 
+\[
+G : k \to \fg \otimes \Omega^\bu_c(V \times [0,\epsilon))[2] .
+\]
+Define $\{F, G\}$ by the composition
+\[
+\begin{tikzcd}
+k \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[rdd, dotted, "{\{F,G\}}"'] \ar[r, "G \otimes 1"] & 
+\bigg(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon)) [2]\bigg) \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[d,"{[\cdot, \cdot]}"] \\
+& \fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) [2] \ar[d, "F"] \\ & k
+\end{tikzcd}
+\]
+The middle bracket is induced from the Lie bracket on $\fg$ and the wedge product of differential forms.
+Again, this bracket is extended to the full algebra by the Leibniz rule.
 \end{proof}
 
 Next, we provide a construction of a factorization sc-pair on the manifold $M$ from the data of a constructible factorization algebra on $M \times \RR_{\geq 0}$. 
@@ -1941,17 +1965,49 @@ Notice that for an open set $V \subset M$ we have
 \[
 \bC_n(\fg)^{\circ} (V) = \clies \bigg(\fg \otimes \Omega (V \otimes \RR_{>0} ) \; , \; \Sym \left(\fg \otimes \Omega_c(V \times \RR_{>0}) [2] \right) \bigg)  .
 \]
-The map $\int_{\RR_{>0}}$ induces a map of factorization algebras on $M$
+Integration along $\RR_{>0}$ induces a map of factorization algebras on $M$
 \[
-\int_{\RR_{>0}} : \bC_n(\fg)^\circ \to {\rm Gr} \; \bZ_n (\fg)
+I^{\circ} : \bC_n(\fg)^\circ \to {\rm Gr} \; \bZ_n (\fg)
 \]
 which on linear elements in ${\rm Sym}(\fg \otimes \Omega^\bu_c (V \times \RR_{>0})$ sends $x \otimes \alpha \in \Omega^\bu_c(V \times \RR_{>0})[2]$ to $x \otimes \int_{\RR_{>0}} \alpha \in \Omega^\bu_c (V)[1]$. 
-Using the retract $r_\phi$, we see that this is a quasi-isomorphism of factorization algebras on $M$. 
 
-Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras $\int_{\RR_{\geq 0}} : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg)$.
-\brian{I should spell this out now.}
+Next, using the map $r_\phi$, define a map of factorization algebras
+\[
+r_\phi^\circ : {\rm Gr} \; \bZ_n (\fg) \to \bC_n(\fg)^\circ
+\]
+as follows. 
+For an open set $V \subset M$, define $r_{\phi}^\circ (V)$ on linear elements $x \otimes \alpha$ in $\Sym(\fg \otimes \Omega^\bu(V)_c[1])$ by
+\[
+r_\phi^\circ (U) (x \otimes \alpha) = x \otimes (\pi^* \alpha \wedge \phi \d t)  .
+\]
+This map can be extended to all of ${\rm Gr} \; \bZ_n(\fg)$ in a similar fashion. 
+One can show that $r_\phi^\circ$ is a deformation retract of $I^\partial$.
+In particular, $I^\partial$ is a quasi-isomorphism of factorization algebras on $M$.
 
-The pair $(\int_{\RR_{>0}} , \int_{\RR_{\geq 0}})$ is a quasi-isomorphisms of factorization sc-pairs. 
+Similarly, integration of compactly supported forms along $\RR_{\geq 0}$ determines a quasi-isomorphism of factorization algebras 
+\[
+I^\partial : \bC_n(\fg)^\partial \to {\rm Gr} \; \bU_n(\fg) .
+\]
+Recall that for $V \subset M$ we have
+\[
+\bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) .
+\]
+On $V$, the map $I^\partial (V)$ is defined by the composition
+\[
+\begin{tikzcd}
+\clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \otimes \Omega^\bu_c (V)[1] \right) .
+\end{tikzcd}
+\]
+The first map ${\rm ev}_1$ evaluates the unit in $\Sym \left(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})\right)$ and the second map is induced by integration along $\RR_{\geq 0}$. 
+It is immediate to check that $I^{\partial}$ extends to a map of factorization algebras. 
+
+For an open set $V$ the cochain map $I^{\partial}(V)$ admits the following explicit retract $r_\phi^\partial(V)$ defined on linear elements $x \otimes \alpha$ in $\Sym (\fg \otimes \Omega^\bu_c(V)[1])$ by the formula
+\[
+r_{\phi}^\partial (x \otimes \alpha) = x \otimes (\pi^* \alpha \wedge \phi \d t) \pm \d_{\rm CE} (x \otimes \pi^* \alpha \phi ) .
+\]
+The map $r_\phi^\partial (V)$ is extended to the entire symmetric algebra in the obvious way. 
+
+We have shown that $(I^{\circ}, I^\partial)$ is a quasi-isomorphism of factorization sc-pairs. 
 The compatibility of this quasi-isomorphism with Poisson brackets is a direct calculation. 
 \end{proof}
 
@@ -2003,11 +2059,10 @@ is then equipped with a $(-1)$-shifted symplectic structure.
 From the point of view of classical physics, 
 we view the algebra of functions $\cO_X$ on $X$ as the {\em classical observables} of topological BF theory with these boundary conditions.
 
-\owen{Brian: please edit this paragraph.}
 Although we have started here with a Lie group $G$, 
-one can replace $T^*[n] {\rm B}G$ with {\em any} $n$-shifted symplectic derived stack.
+one can replace ${\rm T}^*[n] {\rm B}G$ with {\em any} $n$-shifted symplectic derived stack.
 Such AKSZ theories encompass examples of interest in physics (e.g., the A- and B-models or Rozansky-Witten theories).
-Of particular interest to us here are the shifted cotangent spaces~$T^*[n] X$.
+Of particular interest to us here are the shifted cotangent spaces~${\rm T}^*[n] X$.
 
 We now turn to relating these ideas to the constructions of this paper.
 
