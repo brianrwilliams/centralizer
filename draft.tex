@@ -195,8 +195,8 @@ This result generalizes the fact that $\Hoch^*(U\fg,U\fg) \simeq \clies(\fg, U\f
 since the associative algebra $U\fg$ is modeled by the locally constant one-dimensional factorization algebra that assigns
 $\cliels (\fg \otimes \Omega^\bu_c(U))$ to each open $U \subset \RR$. 
 
-\greg{We could relate this to $P_n$-center of $\fg$. That shall also (but I have to think about the proof more), 
-at least up to formality gives the $P_{n+1}$-structure on it. }\owen{Brian now does this in the TFT section.}
+\greg{We could relate this to $P_n$ center of $\fg$. That shall also (but I have to think about the proof more), 
+at least up to formality gives the $P_{n+1}$ structure on it. }\owen{Brian now does this in the TFT section.}
 
 If $\epsilon: \fg \to 0$ is the trivial map, then by taking the enveloping $\EE_n$ algebras, we obtain the canonical augmentation $\epsilon: \UU_n \fg \to k$ of $\EE_n$ algebras.
 In this case, we obtain a version of Koszul duality as the corollary.
@@ -1000,14 +1000,14 @@ there is a quasi-isomorphism
 
 \subsection{Reductive Lie algebras and a generalized Harish-Chandra homomorphism}
 
-For a reductive Lie algebra $\fg$, the Harish-Chandra isomorphism is an isomorphism of commutative algebras
+For a reductive Lie group $G$, the Harish-Chandra isomorphism is an isomorphism of commutative algebras
 \[
-Z(U(\fg)) \xto{\cong} {\rm Sym} (\fh)^W
+Z(U(\fg)) \xto{\cong} {\rm Sym} (\fh)^W,
 \]
-where $\fh$ is a Cartan subalgebra and $W$ is the Weyl group of $\fg$. 
-Here $Z(U(\fg))$ denotes the ordinary center of the associative algebra $U(\fg)$. 
+where $\fh$ is a Cartan subalgebra of the Lie algebra $\fg$ of $G$ and $W$ is the Weyl group of $G$. 
+Here $Z(U(\fg))$ denotes the ordinary center of the associative algebra~$U(\fg)$. 
 
-The following result generalizes (and implies) the Harish--Chandra isomorphism for the $\EE_n$-center of the $\EE_n$-enveloping algebra. 
+The following result generalizes the Harish--Chandra isomorphism to the $\EE_n$ center of the  enveloping $\EE_n$ algebra. 
 
 \begin{prp}
 For $\fg$ a reductive \owen{semisimple?} Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, 
@@ -1035,6 +1035,8 @@ Further, by the Chevalley restriction theorem one has
 \Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
 \]
 \end{proof}
+
+\owen{I think the usual Chevalley theorem only applies when $1-n$ is an even integer. I'm not sure what the theorem is called when $1-n$ is odd.}
 
 \subsection{Free Lie algebras and free $\EE_n$ algebras}
 
@@ -1818,12 +1820,12 @@ The action of $\bZ_n(\fg)$ on $\bU_n(\fg)$ descends to an action at the level of
 Together with Lemma \ref{lmm:pois1}, we obtain Proposition \ref{prp:poisson}. 
 
 \begin{rmk}
-One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$ algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$-center} of the $\PP_n$ algebra $B$. 
+One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$ algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$ center} of the $\PP_n$ algebra $B$. 
 By a similar proof as in the main part of the paper, we expect that one can see that the factorization algebra
 \[
 \clies \bigg(\Omega^\bu \otimes \fg \; ; \; {\rm Sym} \left(\Omega^\bu_c \otimes \fg [1] \right) \bigg)
 \]
-is a model for the $\PP_n$-center of the $\PP_n$-{\em enveloping algebra} $\UU_{\PP_n} (\fg) = {\rm Sym} (\fg [1-n])$. 
+is a model for the $\PP_n$ center of the {\em enveloping $\PP_n$ algebra} $\UU_{\PP_n} (\fg) = {\rm Sym} (\fg [1-n])$. 
 \end{rmk}
 
 \subsection{The bulk factorization algebra} \label{sec:bulk}
@@ -1871,7 +1873,6 @@ is given by the composition
 \clies\bigg(\fg \otimes \Omega^\bu(V') \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon'))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V' \times [0,\epsilon'))[2] \right) \bigg).
 \end{tikzcd}
 \]
-
 %\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
 %\Sym\left(\fg \otimes \left(\Omega^\bu_c(U) \oplus \Omega^\bu_c(V \times [0,\epsilon)) \right) [2] \right) \ar[d, "i_*"]\\
 %\Sym \left( \fg \otimes \Omega^\bu_c(V' \times [0,\epsilon')) [2] \right)
@@ -1880,18 +1881,18 @@ The second map is induced from restriction and extension of de Rham forms and co
 \end{dfn}
 
 \begin{rmk}
-Here, we remark that pulling back along an embedding $\iota : U \hookrightarrow V \times [0,\epsilon)$, where $U \subset M \times \RR_{>0}$ determines a composition of cochain complexes
+For an open $U \subset M \times \RR_{>0}$, pulling back along an embedding $\iota : U \hookrightarrow V \times [0,\epsilon)$ determines a composition of cochain complexes
 \[
 \Omega^\bu (V') \otimes \Tilde{\Omega}^\bu([0,\epsilon)) \xto{j^*}  \Omega^\bu (V') \Hat{\otimes} \Omega^\bu((0,\epsilon)) \cong \Omega^\bu(V \times (0,\epsilon)) \xto{\iota^*} \Omega^\bu(U) .
 \]
 This is our model for restriction $\iota^*$ of de Rham forms that is used in the definition above.
 \end{rmk}
 
-On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a commutative dg algebra. 
+On each open set $U \subset M \times \RR_{\geq 0}$, the cochain complex $\bC_n(\fg) (U)$ is a dg commutative algebra. 
 In fact, it has the structure of a $\PP_0$ algebra where the $1$-shifted bracket $\{\cdot, \cdot\}$ is defined as follows.
 
 \begin{lmm}
-$\bC_n(\fg)$ admits the structure of a constructible $\PP_0$-factorization algebra on~$M \times \RR_{\geq 0}$. 
+$\bC_n(\fg)$ admits the structure of a constructible $\PP_0$ factorization algebra on~$M \times \RR_{\geq 0}$. 
 \end{lmm}
 
 \begin{proof}
@@ -1899,6 +1900,7 @@ For $U \subset M \times \RR_{>0}$ the underlying graded vector space of $\bC_n(\
 \[
 {\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (U)[1]) \; , \; {\rm Sym}  \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \right)  .
 \]
+
 The Poisson structure is described in a similar way as in the proof of Lemma \ref{lmm:pois1}. 
 We first define the bracket $\{F,G\}$ between the following simple elements $F : \fg \otimes \Omega^\bu (U)[2] \to k$ and $G : k \to \fg \otimes \Omega^\bu_c(U)[2]$. 
 Define $\{F, G\} \in k$ by the composition
@@ -2019,8 +2021,8 @@ This theory admits a natural description via the AKSZ formalism \cite{AKSZ}, whi
 For any Lie group $G$, there is a gauge theory defined in any dimension known as {\em topological BF theory}.
 Let the ``spacetime'' be an $(n+1)$-dimensional manifold $N$, 
 which for now we assume has no boundary $\partial N = \emptyset$. 
-As a field theory, there is a system of PDE known as the ``solutions to the equations of motion.''
-When $N$ is compact, the moduli space of solutions to these equations of motion for topological BF theory can be described as the mapping space 
+For a field theory, there is a system of PDE, known as the equations of motion, that govern the behavior of the system.
+When $N$ is compact, the moduli space of ``solutions to the equations of motion'' for topological BF theory is provided the mapping space 
 \begin{equation} 
 \label{stack1}
 {\rm Map}(N_{\rm dR} ,  {\rm T}^*[n] {\rm B} G),
@@ -2067,7 +2069,7 @@ Of particular interest to us here are the shifted cotangent spaces~${\rm T}^*[n]
 We now turn to relating these ideas to the constructions of this paper.
 
 It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra. 
-Moreover, the observables are equipped with the structure of a $\PP_0$-factorization algebra.
+Moreover, the observables are equipped with the structure of a $\PP_0$ factorization algebra.
 
 Perturbative BF theory for the group $G$ is the formal moduli space is defined by the formal neighborhood of a point in a derived mapping space such as (\ref{stack1}). 
 For simplicity, consider working around the trivial $G$-bundle. 
@@ -2102,7 +2104,7 @@ which we will do for the remainder of this section.
 The $L_\infty$ algebra $\cL$ in (\ref{eqn:fields}) can be enhanced to a sheaf of $L_\infty$ algebras,
 and it can be understood as a generalized topological BF theory. 
 In the setup of \cite{CG2}, the factorization algebra of classical observables of generalized topological BF theory is given by the Chevalley--Eilenberg cochains $\clies (\cL)$.   
-The $\PP_0$-structure is induced from the explicit $(-1)$-symplectic pairing $\int A \wedge B$ at the level of the fields. 
+The $\PP_0$ structure is induced from the explicit $(-1)$-symplectic pairing $\int A \wedge B$ at the level of the fields. 
 \end{rmk}
 
 So far, we have provided a description of perturbative BF theory on manifolds without boundary. 
@@ -2171,88 +2173,21 @@ Kapustin-Witten.
 
 \subsection{Factorization homology on manifolds with boundary}
 
-\brian{spectral sequence}
+We conclude by describing a useful application of this work back in algebraic topology.
+The factorization sc-pair $(\bZ_n(\fg), \bU_n \fg)$ makes it quick and convenient to compute factorization homology over an $n$-dimensional manifold,
+but that model is not amenable to computations over $n+1$-dimensional manifolds with boundary,
+because $\bZ_n(\fg)$ is not explicitly described as a factorization algebra on $n+1$-dimensional manifolds.
+Our work in this section does provide, however, an explicit description of~$\Gr {\frak Z}_n(\fg)$. 
+Thus, we have access to the beginning of a spectral sequence.
 
-%\subsection{The bulk TFT}
-%
-%Let us place the locally constant factorization algebra model of the $\EE_n$-enveloping algebra $\bU_n (\fg) = \clieu(\fg \otimes \Omega_c)$ on the $n$-manifold $M$.
-%This factorization algebra is equivalent to the pushforward of a factorization algebra $\Obs_{\rm BF}$ on the $(n+1)$-dimensional manifold $M \times \RR$ along the projection $\pi : M \times (0,1) \to M$ which we proceed to construct. 
-%
-%\begin{dfn}
-%For an open set $V \subset M \times (0,1)$ let $\Obs^{\rm cl}_{\rm BF} (V)$ be the cochain complex 
-%\[
-%\Obs^{\rm cl}_{\rm BF} (V) = \clie \bigg(\fg \otimes \Omega (V) \; , \; \Sym \left(\fg \otimes \Omega_c(V) [2] \right) \bigg) .
-%\]
-%The assignment $V \mapsto \Obs^{\rm cl}_{\rm BF}(V)$ defines a locally constant factorization algebra on $M \times (0,1)$. 
-%\end{dfn}
-%
-%We note that $\Obs_{\rm BF}^{\rm cl}$ is a factorization algebra with values in commutative dg algebras. 
-%In fact, it is given by the ``classical observables" of a topological field theory on $M \times (0,1)$ known as ``topological BF theory". 
-%
-%We now consider the pushforward factorization algebra $\pi_* \Obs^{\rm cl}_{\rm BF}$ on $M$.
-%Locally, on disks, we will see that it is quasi-isomorphic to a certain limit, or ``dequantization", of our model for the $\EE_n$-center of $\UU_n \fg$.
-%Recall, this model is given by the factorization algebra on $M$:
-%\begin{equation}\label{eqn:centerTFT}
-%\bZ_n(\fg) = \clie\left(\fg \otimes \Omega \, , \, \clieu (\fg \otimes \Omega_c) \right) .
-%\end{equation}
-%
-%The ``dequantization" is defined using the following filtration of this model.
-%For any Lie algebra $\fh$, let $\clieu_{\leq k} (\fh)$ be the subcomplex of Chevalley--Eilenberg chains which is $\Sym^{\leq k} (\fh[1])$ as an underlying graded vector space. 
-%
-%\begin{dfn}
-%Introduce the filtration on the factorization algebra on $M$ in (\ref{eqn:centerTFT}) by 
-%\[
-%F^k \bZ_n(\fg) = \clie \bigg(\fg \otimes \Omega \; , \; \clieu_{\leq k} (\fg \otimes \Omega_c) \bigg) .
-%\]
-%\end{dfn}
-%
-%This is a filtration of factorization algebras on $M$. 
-%The associated graded factorization algebra is
-%\[
-%{\rm Gr} \; \bZ_n(\fg) \; = \; \clie \bigg(\fg \otimes \Omega \; , \; \Sym \left(\fg \otimes \Omega_c [1] \right) \bigg) .
-%\]
-%Notice this is similar to the model $\EE_n$-center except we have turned off the Chevalley--Eilenberg differential on chains. 
-%
-% \begin{lmm}
-%There is a quasi-isomorphism of commutative factorization algebras on $M$:
-%\[
-%\pi_* \Obs^{\rm cl}_{\rm BF} \; \xto{\simeq} \; {\rm Gr} \; \bZ_n(\fg) .
-%\]
-%\end{lmm}
-%
-%In fact, we will show that this quasi-isomorphism is a deformation retraction. 
-%
-%\begin{proof}
-%To exhibit this quasi-isomorphism, we introduce the following cochain maps.
-%For an open set $U \subset M$ let
-%\[
-%\int_\RR : \Omega_c(U \times \RR) \to \Omega_c (U) [1] 
-%\] 
-%be the map which integrates a compactly supported form on $U \times \RR$ along $\RR$. 
-%This map is a quasi-isomorphism for any $U $ and admits the following explicit retract. 
-%Let $\phi$ be a fixed compactly supported function on $\RR$ of mass $1$ and define
-%\[
-%r_\phi : \Omega_c(U) [1] \to \Omega_c (U \times \RR)
-%\]
-%by $r_\phi (\alpha) = \alpha \wedge \phi \, \d t$. 
-%\end{proof}
-
-%\begin{lmm}
-%Consider the locally constant factorization algebra $\cF_{\rm bulk}$ on $M \times \RR$ which assigns to an open set $U \subset M \times \RR$
-%\[
-%\cF_{\rm bulk} = \clie \left(\fg \otimes \Omega (U) \; , \; \clieu (\fg \otimes \Omega_c (U)[1]) \right) .
-%\]
-%Then, 
-%\end{lmm}
-%
-%\begin{proof}
-%For $V \subset M$, the integration of compactly supported de Rham forms along $\RR$ 
-%\[
-%\fg \otimes \Omega_c (\pi^{-1} (V)) = \fg \otimes \Omega_c (V \times \RR) \xto{\int_{\RR}} \fg \otimes \Omega_c (V) [-1] .
-%\]
-%is a quasi-isomorphism. 
-%
-%\end{proof}
+\begin{prp}
+Let $M$ be an $n+1$-dimensional manifold with boundary $\partial M$. 
+As $(\frak{Z}_n(\fg), \UU_n \fg)$ form a filtered algebra over the Swiss cheese operad, 
+there is a spectral sequence
+\[
+\int_{(M,\partial M)} (\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg) \Longrightarrow \int_{(M,\partial M)} (\frak{Z}_n(\fg), \UU_n \fg).
+\]
+\end{prp}
 
 \bibliographystyle{alpha}  
 \bibliography{centralize}
