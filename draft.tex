@@ -161,7 +161,7 @@ In \S2 we review these results in more detail with an emphasis on what we need f
 Here is an outline of our proof:
 \begin{enumerate}
 \item Let ${\bf f}: \cliels(\Omega_c^\bu \otimes \fg) \to \cliels(\Omega_c^\bu \otimes \fh)$ denote a map of factorization algebras that models with map $\UU_n f$ between enveloping algebras. 
-We use it to produce an explicit factorization algebra $\clies(\Omega \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f)$ as a kind of ``convolution factorization algebra.'' 
+We use it to produce an explicit factorization algebra $\clies(\Omega^\bu \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f)$ as a kind of ``convolution factorization algebra.'' 
 \item We show this object fits canonically into a centralizer diagram: there is a map of factorization algebras
 \[
 \clies(\Omega \otimes \fg, \cliels(\Omega_c^\bu \otimes \fh)_f) \otimes \bU_n \fg \to \cliels(\Omega_c^\bu \otimes \fh)
@@ -209,16 +209,16 @@ The centralizer of the augmentation $\epsilon: \UU_n \fg \to k$ is equivalent to
 \]
 to each open set $V \subset \RR^n$.
 \end{cor}
-
-\owen{Some easy but important situations to examine:}
-\begin{itemize}
-\item When $n=0$, we see naive endomorphisms arise.
-\item When $n=1$, we recover standard Koszul duality and Hochschild cohomology examples.
-\item When $n=1$, unpack in detail how the convolution picture matches the classic view of Koszul duality for associative (co)algebras.
-\item Consider $\fg$ {\em abelian} for arbitrary $n$ and compare to the $\EE_n$ HKR theorem.
-\item Compare with $\EE_n$ HKR theorem for $\clies(\fg)$ via $\EE_n$ Koszul duality.
-\item Use these facts to compute factorization homology of centralizers on manifolds with boundary --- kind of like Chern-Simons states!
-\end{itemize}
+%
+%\owen{Some easy but important situations to examine:}
+%\begin{itemize}
+%\item When $n=0$, we see naive endomorphisms arise.
+%\item When $n=1$, we recover standard Koszul duality and Hochschild cohomology examples.
+%\item When $n=1$, unpack in detail how the convolution picture matches the classic view of Koszul duality for associative (co)algebras.
+%\item Consider $\fg$ {\em abelian} for arbitrary $n$ and compare to the $\EE_n$ HKR theorem.
+%\item Compare with $\EE_n$ HKR theorem for $\clies(\fg)$ via $\EE_n$ Koszul duality.
+%\item Use these facts to compute factorization homology of centralizers on manifolds with boundary --- kind of like Chern-Simons states!
+%\end{itemize}
 
 Having an explicit presentation for the centralizer of a map of $\EE_n$ algebras leads to a calculation of factorization homology.
 The enveloping $\EE_n$ algebra is the homotopy $O(n)$-fixed points, or a $\mathrm{Disk}_n$ algebra in the sense of~\cite{AF},
@@ -1017,6 +1017,8 @@ there is a quasi-isomorphism of $\EE_{n+1}$ algebras
 \]
 \end{prp}
 
+\owen{I think the usual Chevalley theorem only applies when $1-n$ is an even integer. I'm not sure if or what the theorem is when $1-n$ is odd.}
+
 \brian{Is there an explicit description of the $\EE_{n+1}$-structure for the RHS?}
 \brian{Is the RHS formal, can we replace by Lie algebra cohomology.}
 
@@ -1035,8 +1037,6 @@ Further, by the Chevalley restriction theorem one has
 \Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
 \]
 \end{proof}
-
-\owen{I think the usual Chevalley theorem only applies when $1-n$ is an even integer. I'm not sure what the theorem is called when $1-n$ is odd.}
 
 \subsection{Free Lie algebras and free $\EE_n$ algebras}
 
