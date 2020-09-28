@@ -964,27 +964,54 @@ This identification concludes the argument.
 
 This result is the simplest case of a generalized Hochschild-Kostant-Rosenberg theorem for commutative algebras viewed as $\EE_n$ algebras.
 (The classic theorem proves the $n=1$ situation.)
-Such a result is proved by very different methods in~\cite{CalWil}.
+Such a result is proved by very different methods in~\cite{CalWil, ToenBranes}.
 Now we swiftly describe how to use methods like those in this paper to prove a version of this powerful result.
 
-Our approach applies only to a certain class of dg commutative algebras,
-due to a technical hypothesis necessary to apply our methods.
-We need as input an augmented dg commutative algebra $\epsilon: A \to k$ that admits a semifree resolution of the form $(\Sym(V^\vee), \partial)$, where $V$ is some graded vector space.
-In other words, we want to know that the generators can be realized as the graded linear dual of some other graded vector space.
-We say such an $A$ is of {\em type~($\star$)}.
+\owen{Greg, please read this below.}
+First, we wish to define ${\rm Poly}_n(A)$ for an arbitrary dg commutative algebra $A$ in a way that gives the ``correct'' derived answer, i.e., the answer up to quasi-isomorphism of dg commutative algebras.
+Concretely, one should replace $A$ by a quasi-isomorphic but better behaved algebra $\widetilde{A}$, 
+such as semi-free resolution or cofibrant replacement with respect to some nice model category structure.
+Then one computes the tangent complex $\TT_{\widetilde{A}}$, i.e., the derived derivations.
+The {\em shifted polyvector fields} of $A$ means
+\[
+{\rm Poly}_n(A) \simeq \Sym_{\widetilde{A}} (\TT_{\widetilde{A}}[1-n]),
+\]
+which is again a dg commutative algebra up to quasi-isomorphism.
+
+Second, we introduce a technical hypothesis  needed to apply our methods.
+We need an {\em augmented} dg commutative algebra $\epsilon: A \to k$ that admits a semifree resolution of the form $(\Sym(V^\vee), \partial)$, where $V$ is some graded vector space.
+In other words, we need that the generators can be realized as the graded linear dual of some other graded vector space.
+We say such an algebra $A$ is of {\em type~($\star$)}.
 
 \begin{prp}
 Let $A$ be an augmented dg commutative algebra of type~($\star$).
 Then 
 \[
-{\frak Z}_n(A) \simeq {\rm Poly}_n(A) \simeq \Sym_A(\TT_A[-n]).
+{\frak Z}_n(A) \simeq {\rm Poly}_n(A).
 \]
 \end{prp}
 
-\owen{This proposition should be phrased correctly. The RHS isn't quite correct unless $A$ is good enough.}
-
 \begin{proof}
-\owen{The method described in the email.}
+By our technical hypothesis, we are free to replace $A$ by a semifree resolution $(\Sym(V^\vee), \partial)$. 
+Ignoring the differential, we see that our situation resembles our central result for an abelian Lie algebra,
+and so we now mimic the proof of our central result.
+
+There is a natural homotopy-locally constant sheaf of cochain complexes $\Omega^* \otimes V$ with differential $\d_{dR} + \partial$,
+which is a soft replacement for the locally constant sheaf $V$.
+Define the factorization algebra 
+\[
+F_A = (\Sym((\Omega* \otimes V)* ), \d_{dR} + \partial) 
+\]
+which is manifestly commutative and is quasi-isomorphic to $A$ on every disk.
+Hence $F_A$ is a commutative, locally constant factorization algebra that models~$A$.
+
+\owen{I'm partway done.}
+
+3) Define the putative center as a factorization algebra by starting with the polyvector fields for this semifree resolution
+
+4) Show this putative center fits into the commuting triangle and hence possesses a canonical map to the "true" center
+
+5) Use the Francis-Lurie recognition principle to show this map is a quasi-iso
 \end{proof}
 
 \owen{Also prove that the $\EE_n$ center of $\clies(\fg)$ is also $\clies(\fg, \UU_n \fg)$}
@@ -1492,26 +1519,26 @@ Similarly, the canonical map
 \]
 is a quasi-isomorphism, as $S$ is compact.
 
-Let $\fg_S$ denote the $L_\infty$ algebra $\Omega^\bu(S) \otimes \fg$. 
+Let $\fg^S$ denote the $L_\infty$ algebra $\Omega^\bu(S) \otimes \fg$. 
 Then these quasi-isomorphisms above imply there are quasi-isomorphisms of $L_\infty$ algebras
 \begin{align*}
-\Omega^\bu(V) \otimes \fg_S &\xto{\simeq} \Omega^\bu(V \times S) \otimes \fg \\
-\Omega_c^\bu(V) \otimes \fg_S &\xto{\simeq} \Omega_c^\bu(V \times S) \otimes \fg 
+\Omega^\bu(V) \otimes \fg^S &\xto{\simeq} \Omega^\bu(V \times S) \otimes \fg \\
+\Omega_c^\bu(V) \otimes \fg^S &\xto{\simeq} \Omega_c^\bu(V \times S) \otimes \fg 
 \end{align*}
 and hence a quasi-isomorphism
 \[
-\bU_k \fg_S \xto{\simeq} \int_S \bU_n \fg
+\bU_k \left(\fg^S\right) \xto{\simeq} \int_S \bU_n \fg
 \]
 of factorization algebras.
 
+\owen{The following does not make sense. An injective quasi-isomorphism of dg vector spaces does not induce a map of endomorphisms on the nose. But they are canonically quasi-isomorphic by a zigzag.}
 Likewise, on each open set $V \subset \RR^k$, 
 we obtain a quasi-isomorphism
 \[
-\bZ_k(\fg_S)(V) \cong \clies( \Omega^\bu(V) \otimes \fg_S, \bU_k \fg_S) \xto{\simeq} \clies(\Omega^\bu(V \times S) \otimes \fg, \bU_n(V \times S))
+\bZ_k(\fg^S)(V) \cong \clies( \Omega^\bu(V) \otimes \fg^S, \bU_k \left(\fg^S\right)) \xto{\simeq} \clies(\Omega^\bu(V \times S) \otimes \fg, \bU_n(V \times S))
 \]
 and this map is functorial in opens.
 The righthand side is, however, the pushforward $\int_S \bZ_n \fg$.
-\owen{That map is not the canonical map as it goes the ``wrong way,'' but I'm pretty sure it provides the inverse-up-to-qiso we need.}
 \end{proof}
 
 In the case $k = 0$, we have the immediate corollary that
