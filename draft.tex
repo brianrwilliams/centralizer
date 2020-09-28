@@ -998,7 +998,7 @@ there is a quasi-isomorphism
 \]
 \end{cor}
 
-\subsection{Reductive Lie algebras and a generalized Harish-Chandra homomorphism}
+\subsection{A generalized Harish-Chandra isomorphism}
 
 For a reductive Lie group $G$, the Harish-Chandra isomorphism is an isomorphism of commutative algebras
 \[
@@ -1007,35 +1007,53 @@ Z(U(\fg)) \xto{\cong} {\rm Sym} (\fh)^W,
 where $\fh$ is a Cartan subalgebra of the Lie algebra $\fg$ of $G$ and $W$ is the Weyl group of $G$. 
 Here $Z(U(\fg))$ denotes the ordinary center of the associative algebra~$U(\fg)$. 
 
-The following result generalizes the Harish--Chandra isomorphism to the $\EE_n$ center of the  enveloping $\EE_n$ algebra. 
+Using our models, we obtain a generalization of the Harish--Chandra isomorphism to the $\EE_n$ center of the  enveloping $\EE_n$ algebra. 
+The following result follows from a simple application of the Poincar\'{e} lemma for de Rham forms and compactly supported de Rham forms.
 
 \begin{prp}
-For $\fg$ a reductive \owen{semisimple?} Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, 
-there is a quasi-isomorphism of $\EE_{n+1}$ algebras
+There is a canonical quasi-isomorphism of $\EE_{n+1}$-algebras
 \[
-{\frak Z}_n(\UU_n \fg) \simeq \clies (\fg) \otimes \Sym(\fh[1-n])^W.
+\bZ_n(\UU_n \fg) \xto{\simeq} \clies\left(\fg, \Sym(\fg[1-n]) \right) .
 \]
 \end{prp}
 
-\owen{I think the usual Chevalley theorem only applies when $1-n$ is an even integer. I'm not sure if or what the theorem is when $1-n$ is odd.}
 
-\brian{Is there an explicit description of the $\EE_{n+1}$-structure for the RHS?}
-\brian{Is the RHS formal, can we replace by Lie algebra cohomology.}
+In the case that $\fg$ is semi-simple, there is the following modest refinement of the result. 
+To state it, we set up some notation. 
+Since $\fg$ is reductive, the $\fg$-invariants of the exterior algebra $\Sym(\fg[1])^\fg = \left(\oplus_{k \geq 0} \wedge^k \fg[k]\right)^\fg$ is isomorphic to the Lie algebra homology $H^{\rm Lie}_\bu(\fg)$ \cite{Cartan}.
+Similarly, if $2\ell+1$ is an odd integer, then the $\fg$ invariants of $\Sym(\fg[k])^\fg = \oplus_{k \geq 0} \wedge^k \fg[2 \ell k + k]$ is isomorphic to the regraded Lie algebra homology $\Tilde{H}_\bu^{\rm Lie} (\fg, \ell)$
+which in degrees $-2\ell k - k$, $k \in \ZZ$ is $H_{k}^{\rm Lie}(\fg)$ and zero in all other degrees.
 
+\begin{prp}
+For $\fg$ a semi-simple Lie algebra with Cartan subalgebra~$\fh$ and Weyl group~$W$, we have the following:
+\begin{itemize}
+\item if $n$ is odd, then there is a quasi-isomorphism of $\EE_{n+1}$-algebras
+\[
+{\frak Z}_n(\UU_n \fg) \simeq \clies (\fg) \otimes \Sym(\fh[1-n])^W.
+\]
+\item if $n$ is even, then there is a quasi-isomorphism of $\EE_{n+1}$-algebras
+\[
+{\frak Z}_n(\UU_n \fg) \simeq \clies (\fg) \otimes \Tilde{H}_\bu^{\rm Lie} \left(\fg, \frac{n}{2} -1\right).
+\]
+\end{itemize}
+\end{prp}
 \begin{proof}
 By the Poincar\'{e} lemma for de Rham forms and compactly supported de Rham forms, one has a canonical quasi-isomorphism
 \[
 \bZ_n(\UU_n \fg) \xto{\simeq} \clies\left(\fg, \Sym(\fg[1-n]) \right) .
 \]
-Since $\fg$ is reductive, there is a quasi-isomorphism \brian{do we actually need semisimple here?}
+Since $\fg$ is semi-simple, there is a quasi-isomorphism
 \[
 \clies(\fg, \Sym(\fg[1-n]) \simeq \clies (\fg) \otimes \Sym(\fg[1-n])^G 
 \]
 where $G$ is a compact connected Lie group whose Lie algebra is $\fg$. 
-Further, by the Chevalley restriction theorem one has 
+
+Now, when $n$ is odd, we apply the Chevalley restriction theorem to obtain an isomorphism of graded vector spaces
 \[
 \Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
 \]
+
+Similarly, when $n$ is even, we apply the discussion in the paragraph preceding the statement of this proposition 
 \end{proof}
 
 \subsection{Free Lie algebras and free $\EE_n$ algebras}
