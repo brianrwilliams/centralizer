@@ -1175,21 +1175,22 @@ In this section we pursue a few immediate corollaries of the central results abo
 We apply our central result to important classes of Lie algebras: 
 abelian, semisimple, and free.
 
-\subsection{Deformations of $\EE_n$ enveloping algebras}
-It is well-known that the Hochschild cohomology of an associative, or $\EE_1$-algebra, controls its deformations. 
-Precisely, if $A$ is an $\EE_1$-algebra then the shift of its Hochschild cohomology ${\rm Hoch}^\bu (A , A)[1]$ carries a Lie algebra structure (in the homotopical sense). 
-The Maurer--Cartan elements of this dg Lie algebra classify deformations of $A$ as an $\EE_1$-algebra. 
+\subsection{Deformations of enveloping $\EE_n$ algebras}
+It is well-known that the Hochschild cohomology of an associative, or $\EE_1$ algebra, controls its deformations. 
+Precisely, if $A$ is an $\EE_1$ algebra then the shift of its Hochschild cohomology ${\rm Hoch}^\bu (A , A)[1]$ carries a Lie algebra structure (in the homotopical sense). 
+The Maurer--Cartan elements of this dg Lie algebra classify deformations of $A$ as an $\EE_1$ algebra. 
 
-Similarly, if $A$ is an $\EE_n$-algebra, the $\EE_n$-center $\fZ_n(A)$ controls deformations of $A$ as $\EE_n$-algebra. 
-Since $\fZ_n(A)$ is an $\EE_{n+1}$-algebra, the shift $\fZ_n(A)[n]$ is equipped with a Lie bracket. 
-Maurer--Cartan elements classify deformations of $A$ as an $\EE_{n}$-algebra. 
+Similarly, if $A$ is an $\EE_n$ algebra, the $\EE_n$ center $\fZ_n(A)$ controls deformations of $A$ as $\EE_n$-algebra. 
+Since $\fZ_n(A)$ is an $\EE_{n+1}$ algebra, the shift $\fZ_n(A)[n]$ is equipped with a Lie bracket. 
+Maurer--Cartan elements classify deformations of $A$ as an $\EE_{n}$ algebra. 
 
-Using our model for the $\EE_n$-center, we obtain an explicit description 
-of deformations of $\EE_n$-enveloping algebras. 
+Using our model for the $\EE_n$ center, we obtain an explicit description 
+of deformations of $\EE_n$ enveloping algebras. 
 
 \begin{prp}\label{prop:def}
 There is a canonical quasi-isomorphism 
-\begin{equation}\label{eqn:def}
+\begin{equation}
+\label{eqn:def}
 \bZ_n(\UU_n \fg) \xto{\simeq} \clies\left(\fg, \Sym(\fg[1-n]) \right) .
 \end{equation}
 %In particular, the cochain complex on the right-hand side has the structure of an $\EE_{n+1}$ algebra. 
@@ -1206,18 +1207,16 @@ The first statement follows from the Poincar\'{e} lemma for de Rham forms and co
 The second statement follows from the fact that Maurer--Cartan elements in $\bZ_n(\UU_n \fg)[n]$ classify deformations of $\UU_n \fg$. 
 \end{proof}
 
-\begin{rmk}
 When $n=1$ the quasi-isomorphism of the above proposition produces the well-known quasi-isomorphism
 \[
-{\rm Hoch}^\bu(U \fg , U \fg) \simeq \clie^\bu(\fg , \Sym(\fg)) ,
+{\rm Hoch}^\bu(U \fg , U \fg) \simeq \clie^\bu(\fg , \Sym(\fg)).
 \]
-see \cite{LodayCyclicBook}. 
-\end{rmk}
+See~\cite{LodayCyclicBook} for discussion of Hochschild (co)homology for such ``almost commutative'' algebras. 
 
 %As a corollary of the above proposition, we obtain a concrete description for $\EE_n$-deformations of $\UU_n \fg$ when $\fg$ is an ordinary (strict) Lie algebra. 
-Suppose $\fg$ is an ordinary Lie algebra.
-It is known that if $\fg$ is semi-simple then the $\EE_1$-enveloping algebra $\UU_1 \fg$ is rigid in the sense that it admits no nontrivial deformations. 
-This follows from the above equivalence (\ref{eqn:def}) together with the fact that $H_{\rm Lie}^2(\fg , \Sym(\fg)) = 0$ when $\fg$ is semi-simple by Whitehead's theorem. 
+Consider the situation of an ordinary Lie algebra~$\fg$.
+When $\fg$ is semi-simple, the enveloping $\EE_1$ algebra $\UU_1 \fg$ is rigid in the sense that it admits no nontrivial deformations. 
+This claim follows from the above equivalence (\ref{eqn:def}) together with the fact that $H_{\rm Lie}^2(\fg , \Sym(\fg)) = 0$ for $\fg$ is semi-simple by Whitehead's theorem. 
 
 For higher $n$, the $\EE_n$-enveloping algebra is no longer rigid, even in the case of semi-simple Lie algebras. 
 For instance, consider the case $n=2$.
@@ -2362,6 +2361,89 @@ there is a spectral sequence
 \end{prp}
 
 \owen{We should "compute" the left hand side, borrowing from the GRW paper.}
+
+The left hand side is eminently computable, 
+amounting to a computing relative de Rham cohomology.
+What we really want is a convenient model for the entire factorization algebra whose behavior recovers the pair $(\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg)$.
+Thankfully, it is straightforward to find one, via classic algebraic topology.
+
+For any open subset $V$ in $M$, define
+\[
+\Omega^*_{{\rm rel }}(V) = \{ \alpha \in \Omega^*(V) \, : \, \alpha|_{\partial M} = 0\}.
+\]
+This construction models cohomology relative to the boundary.
+Note that
+\[
+\Omega^*_{{\rm rel }}(U \times [0,\epsilon)) \simeq \Omega^*)_U \otimes \Omega^*_{{\rm rel }}([0,\epsilon)) \simeq 0
+\]
+as the relative cochains $\Omega^*_{{\rm rel }}([0,\epsilon))$ are acyclic.
+
+Consider the prefactorization algebra on $M$ that assigns to the open set $V$, 
+the cochain complex
+\[
+F_{{\rm rel}}(V) =\clies(\Omega^*_{{\rm rel }}(V) \otimes \fg, \Sym(\Omega^*_c(V) \otimes \fg[2])).
+\]
+When $V$ is an open set inside $\mathring{M}$, we find $F_{{\rm rel}}(\mathring{M})$ agrees with  $\Gr \frak{Z}_n(\fg)(V)$.
+When $V$ is a product open $U \times [0,\epsilon)$ along the boundary, we find 
+\[
+F_{{\rm rel}}(V) \simeq \clies(0, \Sym(\Omega^*_c(U) \otimes \fg[1])) \simeq \Sym(\Omega^*_c(U) \otimes \fg[1]) \simeq \Gr \UU_n \fg(U),
+\]
+as desired.
+\owen{Maybe in the second factor I replace $V$ by $V \setminus (V \cap \partial M)$?}
+This construction $F_{{\rm rel}}$ defines, in fact, a factorization algebra by a mild variant of the argument from \owen{cite GRW}.
+
+We thus find
+\[
+\int_{(M,\partial M)} (\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg) \simeq F_{{\rm rel}}(M) =\clies(\Omega^*_{{\rm rel }}(M) \otimes \fg, \Sym(\Omega^*_c(\mathring{M}) \otimes \fg[2])).
+\]
+Let us now focus on the case where $M$ is compact with boundary.
+Then $\Omega^*_c(\mathring{M}) = \Omega^*_{{\rm rel}}(M)$, so
+\[
+\int_{(M,\partial M)} (\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg) 
+\simeq \clies(\Omega^*_{{\rm rel }}(M) \otimes \fg, \Sym(\Omega^*_{{\rm rel}}(M) \otimes \fg[2])),
+\]
+and so it remains to compute relative cohomology.
+
+\owen{revisit and revise}
+
+%By definition~\ref{dfn:constructible1}, we have a model for the pair $(\Gr \frak{Z}_n(\fg), \Gr \UU_n \fg)$.
+%To see this, observe that to an open subset $V$ of the interior $\mathring{M}$, 
+%the factorization algebra assigns
+%\begin{equation}
+%\label{eqn: gr Z}
+%\clies(\Omega^*(V) \otimes \fg, \Sym(\Omega^*_c(V) \otimes \fg[2])).
+%\end{equation}
+%Given an open set $U \subset \partial M$ and a small open neighborhood in $M$ of $U$ such as $U \times [0,\epsilon)$ (depending on a choice of local collar coordinate), 
+%the factorization algebra assigns
+%\[
+%\Sym(\Omega^*_c(U)\otimes \fg[1]),
+%\]
+%up to quasi-isomorphism.
+%
+%What we really want is a convenient model for this entire factorization algebra whose behavior recovers with the values above.
+%Thankfully, it is straightforward to find one, via classic algebraic topology.
+%For any open subset $V$ in $M$, define
+%\[
+%\Omega^*_{{\rm rel }}(V) = \{ \alpha \in \Omega^*(V) \, : \, \alpha|_{\partial M} = 0\}.
+%\]
+%This construction models cohomology relative to the boundary.
+%Note that
+%\[
+%\Omega^*_{{\rm rel }}(U \times [0,\epsilon)) \simeq \Omega^*)_U \otimes \Omega^*_{{\rm rel }}([0,\epsilon)) \simeq 0
+%\]
+%as the relative cochains $\Omega^*_{{\rm rel }}([0,\epsilon))$ are acyclic.
+%
+%Consider the prefactorization algebra on $M$ that assigns to the open set $V$, 
+%the cochain complex
+%\[
+%F_{{\rm rel}}(V) =\clies(\Omega^*_{{\rm rel }}(V) \otimes \fg, \Sym(\Omega^*_c(V) \otimes \fg[2])).
+%\]
+%When $V$ is an open set inside $\mathring{M}$, we find $F_{{\rm rel}}(\mathring{M})$ recovers \eqref{eqn: gr Z} from above.
+%When $V$ is a product open $U \times [0,\epsilon)$ along the boundary, we find 
+%\[
+%F_{{\rm rel}}(V) \simeq \clies(0, \Sym(\Omega^*_c(V) \otimes \fg)) \simeq \Sym(\Omega^*_c(V) \otimes \fg),
+%\]
+%as desired.
 
 \bibliographystyle{alpha}  
 \bibliography{centralize}
