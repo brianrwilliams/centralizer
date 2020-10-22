@@ -1961,7 +1961,8 @@ is a model for the $\PP_n$ center of the {\em enveloping $\PP_n$ algebra} $\UU_{
 
 We turn towards a model for the $\EE_n$ center as a constructible factorization algebra on an $(n+1)$-manifold with boundary.
 
-Before stating the definition of this model, we introduce the following variant of the de Rham complex of differential forms on $\RR_{\geq 0}$. 
+Before stating the definition of this model, we introduce the following variants of the de Rham complex of differential forms on $\RR_{\geq 0}$ and compactly supported differential forms.
+
 Let $j : \RR_{>0} \hookrightarrow \RR_{\geq 0}$ be the embedding of the open ray into the closed ray. 
 Let $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ be the two-term complex
 \[
@@ -1970,6 +1971,11 @@ Let $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ be the two-term complex
 The dg commutative algebra structure on $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ is defined by the formula
 \[
 f \cdot (g \, \d t) = (j^* f) g\, \d t .
+\]
+
+Next, let $\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) \subset \Omega^{\bu}_{c}(\RR_{\geq 0})$ be the sub dg algebra of compactly supported de Rham forms defined by
+\[
+\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) = \{\alpha_{0} + \alpha_{1} \d t \; | \; \alpha_{0} (t = 0) = 0 \} .
 \]
 
 \begin{dfn}
@@ -1982,7 +1988,7 @@ Let $\bC_n(\fg)$ be the constructible factorization algebra on $M \times \RR_{\g
 \]
 \item to an open set $V \times [0,\epsilon)$ we assign the cochain complex 
 \[
-\bC_n (\fg) (V \times [0,\epsilon)) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon))[2] \right) \bigg).
+\bC_n (\fg) (V \times [0,\epsilon)) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}([0,\epsilon))[2] \right) \bigg).
 \]
 %\brian{this is wrong
 %\[
@@ -1997,9 +2003,9 @@ i : U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
 is given by the composition
 \[
 \begin{tikzcd}
-\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  \clies\bigg(\fg \otimes \Omega^\bu(V) \otimes \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon))[2] \right) \bigg) \ar[d, "\simeq"] \\
-\clies \bigg(\fg \otimes \left(\Omega^\bu (U) \oplus \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \right) \; , \; \Sym \left(\fg \otimes \left(\Omega^\bu_c(U) [2] \oplus \Omega^\bu_c(V \times [0,\epsilon)) [2]\right)\right) \bigg) \ar[d, "i^* \otimes i_*"] \\
-\clies\bigg(\fg \otimes \Omega^\bu(V') \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon'))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V' \times [0,\epsilon'))[2] \right) \bigg).
+\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  \clies\bigg(\fg \otimes \Omega^\bu(V) \otimes \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}([0,\epsilon))[2] \right) \bigg) \ar[d, "\simeq"] \\
+\clies \bigg(\fg \otimes \left(\Omega^\bu (U) \oplus \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \right) \; , \; \Sym \left(\fg \otimes \left(\Omega^\bu_c(U) [2] \oplus \Omega^\bu_c(V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}([0,\epsilon)) [2]\right)\right) \bigg) \ar[d, "i^* \otimes i_*"] \\
+\clies\bigg(\fg \otimes \Omega^\bu(V') \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon'))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V') \Hat{\otimes} \Tilde{\Omega}^{\bu}_{c}([0,\epsilon'))[2] \right) \bigg).
 \end{tikzcd}
 \]
 %\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
@@ -2057,7 +2063,7 @@ Define $\{F, G\}$ by the composition
 \[
 \begin{tikzcd}
 k \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[rdd, dotted, "{\{F,G\}}"'] \ar[r, "G \otimes 1"] & 
-\bigg(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon)) [2]\bigg) \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[d,"{[\cdot, \cdot] \otimes \wedge}"] \\
+\bigg(\fg \otimes \Omega^\bu_c(V) \Hat{\otimes} \Tilde{\Omega}^{\bu}_{c}([0,\epsilon)) [2]\bigg) \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[d,"{[\cdot, \cdot] \otimes \wedge}"] \\
 & \fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) [2] \ar[d, "F"] \\ & k
 \end{tikzcd}
 \]
@@ -2137,12 +2143,12 @@ We begin by constructing this map and then provide a retract that shows it is a 
 
 Recall that for $V \subset M$ we have
 \[
-\bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) .
+\bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}(\RR_{\geq 0})[2] \right) \bigg) .
 \]
 On $V$, the map $I^\partial$ is defined by the composition
 \[
 \begin{tikzcd}
-\clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \otimes \Omega^\bu_c (V)[1] \right) .
+\clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}(\RR_{\geq 0})[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \times \Omega^\bu_c (V)[1] \right) .
 \end{tikzcd}
 \]
 The first map ${\rm ev}_1$ evaluates the unit in $\Sym \left(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})\right)$ and the second map is induced by integration along $\RR_{\geq 0}$. 
