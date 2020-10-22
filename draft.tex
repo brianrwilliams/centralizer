@@ -860,7 +860,7 @@ where
 \end{itemize}
 In the case at hand, this object is eminently computable.
 
-The notation $\int_{S^{n-1}}\UU_n\fg$ produces a factorization algebra on $\RR$.
+The construction $\int_{S^{n-1}}\UU_n\fg$ produces a factorization algebra on $\RR$.
 Indeed,
 \begin{align*}
 \int_{S^{n-1}}\UU_n\fg 
@@ -885,12 +885,13 @@ we find that
 as $E_1$ algebras.
 Recall as well that $\UU_n \fg$ is quasi-isomorphic to $\Sym(\fg[1-n])$ as cochain complexes.
 
-We have thus reduced the situation to familiar dg algebra via the equivalence
+The equivalence
 \[
 {\rm Mor}_{\LMod_{\int_{S^{n-1}} \UU_n\fg}}(\UU_n \fg, (\UU_n \fh)_f) 
 \simeq 
-{\rm Mor}_{\LMod_{U(\fg \otimes R_n)}} (\Sym(\fg[1-n]), (\Sym(\fh[1-n]))_f).
+{\rm Mor}_{\LMod_{U(\fg \otimes R_n)}} (\Sym(\fg[1-n]), (\Sym(\fh[1-n]))_f)
 \]
+thus reduces the situation to familiar dg algebra.
 By the inclusion of the unit $k \hookrightarrow R_n = k \oplus k[1-n]$,
 we obtain a canonical inclusion $i: U\fg \to U(\fg \otimes R_n)$ of dg associative algebras,
 and so
@@ -1207,27 +1208,27 @@ The first statement follows from the Poincar\'{e} lemma for de Rham forms and co
 The second statement follows from the fact that Maurer--Cartan elements in $\bZ_n(\UU_n \fg)[n]$ classify deformations of $\UU_n \fg$. 
 \end{proof}
 
-When $n=1$ the quasi-isomorphism of the above proposition produces the well-known quasi-isomorphism
+When $n=1$, the above proposition recovers the well-known quasi-isomorphism
 \[
 {\rm Hoch}^\bu(U \fg , U \fg) \simeq \clie^\bu(\fg , \Sym(\fg)).
 \]
 See~\cite{LodayCyclicBook} for discussion of Hochschild (co)homology for such ``almost commutative'' algebras. 
 
 %As a corollary of the above proposition, we obtain a concrete description for $\EE_n$-deformations of $\UU_n \fg$ when $\fg$ is an ordinary (strict) Lie algebra. 
-Consider the situation of an ordinary Lie algebra~$\fg$.
+Consider now the situation of an ordinary Lie algebra~$\fg$.
 When $\fg$ is semi-simple, the enveloping $\EE_1$ algebra $\UU_1 \fg$ is rigid in the sense that it admits no nontrivial deformations. 
 This claim follows from the above equivalence (\ref{eqn:def}) together with the fact that $H_{\rm Lie}^2(\fg , \Sym(\fg)) = 0$ for $\fg$ is semi-simple by Whitehead's theorem. 
 
 For higher $n$, the $\EE_n$-enveloping algebra is no longer rigid, even in the case of semi-simple Lie algebras. 
 For instance, consider the case $n=2$.
+
 \begin{cor}
-Deformations of $\UU_2 \fg$ are in bijective correspondence with the group
+First-order deformations of $\UU_2 \fg$ are in bijective correspondence with
 \[
 H^3_{\rm Lie}(\fg) \oplus H^2_{\rm Lie}(\fg , \fg) \oplus H^1_{\rm Lie}(\fg , \wedge^2 \fg) \oplus \wedge^3(\fg)^\fg .
 \]
+In particular, for $\fg$ simple, the middle two terms vanish and deformations are isomorphic to $k \oplus k$.
 \end{cor}
-
-In particular, when $\fg$ is semisimple the middle two terms in the above corollary vanish and we are left with a two-dimensional space of deformations $H^3_{\rm Lie}(\fg) \oplus \wedge^3 (\fg)^\fg = k \oplus k$. \brian{check me}
 
 We have not yet described explicitly the Lie algebra structure on $\bZ_n(\UU_n \fg)[n]$ which is implicitly used in the characterization of deformations above. 
 \brian{can we describe $\PP_{n+1}$ structure explicitly?}
@@ -1286,126 +1287,98 @@ This identification concludes the argument.
 This result is the simplest case of a generalized Hochschild-Kostant-Rosenberg theorem for commutative algebras viewed as $\EE_n$ algebras.
 (The classic theorem proves the $n=1$ situation.)
 Such a result is proved by very different methods in~\cite{CalWil, ToenBranes}.
-Now we swiftly describe how to use methods like those in this paper to prove a version of this powerful result.
+Our method offers another approach, pursued in~\cite{GGWZ2}.
 
-\owen{I've gotten myself pretty mixed up about this \dots too many duals with infinite dimensional vector spaces, and issues with whether you can base-change a semi-free algebra.}
-
-First, we wish to define ${\rm Poly}_n(A)$ for an arbitrary dg commutative algebra $A$ in a way that gives the ``correct'' derived answer, i.e., the answer up to quasi-isomorphism of dg commutative algebras.
-Concretely, one should replace $A$ by a quasi-isomorphic but better behaved algebra $\widetilde{A}$, 
-such as semi-free resolution or cofibrant replacement with respect to some nice model category structure.
-Then one computes the tangent complex $\TT_{\widetilde{A}}$, i.e., the derived derivations.
-The {\em shifted polyvector fields} of $A$ means
-\[
-{\rm Poly}_n(A) \simeq \Sym_{\widetilde{A}} (\TT_{\widetilde{A}}[-n]),
-\]
-which is again a dg commutative algebra up to quasi-isomorphism.
-
-%Second, we introduce a technical hypothesis  needed to apply our methods.
-%We need an {\em augmented} dg commutative algebra $\epsilon: A \to k$ that admits a semifree resolution of the form $(\Sym(V^\vee), \partial)$, where $V$ is some graded vector space.
-%In other words, we need that the generators can be realized as the graded linear dual of some other graded vector space.
-%We say such an algebra $A$ is of {\em type~($\star$)}.
-
-\begin{prp}
-Let $A$ be an augmented dg commutative algebra.
-Then 
-\[
-{\frak Z}_n(A) \simeq {\rm Poly}_n(A).
-\]
-\end{prp}
-
-\owen{This is really turning into a mess.}
-
-\begin{proof}
-We are free to replace $A$ by a semifree resolution $(\Sym(V), \partial)$,
-where $\partial$ sends $V$ to the augmentation ideal $\Sym^{> 0}(V)$.
-Below we will (abusively) use $A$ to denote this semifree resolution,
-as the original $A$ is irrelevant for us.
-Ignoring the differential, we see that our situation resembles our central result for an abelian Lie algebra,
-and so we now mimic the proof of our central result.
-
-There is a natural homotopy-locally constant sheaf of cochain complexes $\Omega^\bu$ with differential $\d_{dR}$,
-which is a soft replacement for the locally constant sheaf $\RR$.
-Taking duals, we get a cosheaf.
-In the same way, we define the factorization algebra 
-\[
-F_A = (\Sym((\Omega^\bu)^* \otimes V ), \d_{dR} + \partial) 
-\]
-which is manifestly commutative and is quasi-isomorphic to $A$ on every disk.
-Hence $F_A$ is a commutative, locally constant factorization algebra that models~$A$.
-
-Similar techniques allow us to construct a factorization algebra modeling the polyvector fields ${\rm Poly}_n(A)$.
-Define
-\[
-Z_A = (\Hom^\bu(\Sym((\Omega^\bu)^* \otimes V), \Sym(\Omega_c^* \otimes V), [\d_{dR} + \partial,-]).
-\]
-Note its similarity to our model $\bZ_\fg$ for the center of~$\bU_n \fg$.
-%There is a canonical shifted Poisson structure here by extending the canonical  pairing
-%\[
-%(\Omega^\bu \otimes V)^* \otimes \Omega^\bu_c \otimes V \to \RR
-%\]
-%arising from the inclusion $\Omega^\bu_c \otimes V \hookrightarrow \Omega^\bu \otimes V$.
-
-Let us verify that 
-\[
-Z_A(D) \simeq {\rm Poly}_n(A)
-\]
-for any open disk $D$.
-Due to the Poincar\'e lemma, we have canonical quasi-isomorphisms $(\Omega^\bu(D))^* \otimes V \xto{\simeq} V$ and $\Omega^\bu_c(D) \otimes V \xto{\simeq} V[-n]$,
-where we view $V$ as simply a graded vector space but the de Rham complexes have the differential $\d_{dR}$.
-(The differential $\partial$ will make its appearance shortly.)
-Thus we have quasi-isomorphisms
-\[
-i: \Sym((\Omega^\bu(D))^* \otimes V) \xto{\simeq} \Sym(V)
-\]
-and 
-\[
-i_c: \Sym(\Omega_c^*(D) \otimes V) \xto{\simeq} \Sym(V[-n]).
-\]
-As $\partial$ acts only on the $V$-factors and not the de Rham factors,
-we can modify all the complexes by adding $\partial$ to the differential.
-Finally, if we fix a quasi-isomorphism 
-\[
-s: \Sym(V) \xto{\simeq} \Sym((\Omega^\bu(D))^* \otimes V),
-\]
-we get a map
-\[
-\begin{array}{ccc}
-Z_A(D) & \to & \Hom^\bu(A,A)\\
-\Phi & \mapsto & i_c \circ \Phi \circ s
-\end{array}
-\]
-that is a quasi-isomorphism.
-(Note that $s$ depends on the disk~$D$. 
-We do not construct a map that intertwines with any structure maps of~$Z_A$.)
-
-We now turn to constructing a map from this factorization algebra $Z_A$ to the center ${\frak Z}_n(A)$.
-The key is to show that $Z_A$ fits into a commuting triangle as in Definition~\ref{D:centralizer},
-because then we know $Z_A$ has a canonical map to~${\frak Z}_n(A)$.
-This action is quite easy to see here: there is a canonical map
-\[
-\Hom^\bu(\Sym((\Omega^\bu)^* \otimes V), \Sym(\Omega_c^* \otimes V) \otimes \Sym((\Omega^\bu)^* \otimes V) \to \Sym((\Omega^\bu)^* \otimes V)
-\]
-that sends $\Phi \otimes x$ to $\iota(\Phi(x))$,
-where 
-\[
-\iota: \Sym(\Omega_c^\bu \otimes V) \to \Sym((\Omega^\bu)^* \otimes V)
-\]
-
-4) Show this putative center fits into the commuting triangle and hence possesses a canonical map to the "true" center
-
-5) Use the Francis-Lurie recognition principle to show this map is a quasi-iso
-\end{proof}
+\subsection{Koszul duality}
 
 \owen{Also prove that the $\EE_n$ center of $\clies(\fg)$ is also $\clies(\fg, \UU_n \fg)$}
 
-\begin{cor}
+It will be convenient for us to prove a special case of that HKR theorem.
+
+\begin{prp}
 \label{cor: koszul dual to main theorem}
 For any $L_\infty$ algebra $\fg$,
 there is a quasi-isomorphism
 \[
-{\frak Z}_n(\clies(\fg)) \simeq \clies(\fg, \UU_n \fg).
+{\frak Z}_n(\clies(\fg)) \simeq {\frak Z}_n(\UU_n \fg) \simeq \clies(\fg, \UU_n \fg).
 \]
-\end{cor}
+\end{prp}
+
+There is a structural feature to observe before we give the proof.
+Note that $\clies(\fg)$ itself arises as a centralizer:
+take the Lie algebra map $z: \fg \to 0$, 
+in which case ${\frak Z}_n(z) \simeq \clies(\fg)$ because $\UU_n(0) \simeq 1$, the unit $\EE_n$ algebra.
+The functoriality of the centralizer construction then tells us that ${\frak Z}_n(\UU_n \fg)$ acts on ${\frak Z}_n(\clies(\fg))$, by considering how the composite Lie algebra map 
+\[
+\fg \xto{\id} \fg \xto{z} 0
+\]
+determines an $\EE_n$ algebra map 
+\[
+\UU_n \fg \xto{\id} \UU_n \fg \xto{z} \UU_n(0) = 1
+\]
+and hence a map of centralizers
+\[
+{\frak Z}_n(\id) \otimes {\frak Z}_n(z) \to {\frak Z}_n(z).
+\]
+But ${\frak Z}_n(\id) = {\frak Z}_n(\fg)$ and ${\frak Z}_n(z) = \cliels(\fg)$.
+In this way, we obtain a canonical map ${\frak Z}_n(\fg) \to {{\frak Z}_n(\clies(\fg))}$.
+We wish to show it is an equivalence. 
+
+\begin{proof}
+We use the factorization algebra $\clies(\Omega^* \otimes \fg)$ as is a factorization model for $\clies(\fg)$.
+The idea is 
+\begin{enumerate}
+\item to show that our model $\bZ_n(\fg)$ for the center of $\bU_n \fg$ acts on the factorization algebra $\clies(\Omega^* \otimes \fg)$, and hence we obtain a canonical map $\bZ_n(\fg) \to {\frak Z}_n(\clies(\fg))$; and then
+\item to use the Francis-Lurie recognition principle to verify this map is a quasi-isomorphism.
+\end{enumerate}
+Just before the proof, we explained why this canonical map exists for structural reasons,
+and Theorem~\ref{T:compcentralizer} provides a completely explicit construction of it.
+
+It remains to apply the recognition principle.
+We compute
+\begin{align*}
+\int_{S^{n-1}}\clies(\fg) 
+&\simeq \clies(\Omega^\bu(\RR_{> 0} \times S^{n-1}) \otimes \fg)\\
+&\simeq \clies(H^\bu(S^{n-1}) \otimes \fg)
+\end{align*}
+because $(n-1)$-sphere is formal over the rationals (or reals). 
+This pushforward to the real line $\RR$ is a locally constant factorization algebra,
+which happens to be commutative here.
+As the cohomology of the $(n-1)$-sphere is 
+\[
+R_n = k[\epsilon_{n-1}]/(\epsilon_{n-1}^2),
+\] 
+where $|\epsilon_{n-1}| = n-1$,
+we find that 
+\[
+\int_{S^{n-1}}\clies(\fg) \simeq \clies(\fg \otimes R_n)
+\]
+as commutative algebras.
+
+Consider now the equivalence
+\[
+{\rm Mor}_{\LMod_{\int_{S^{n-1}} \clies(\fg)}}(\clies(\fg), \clies(\fg)) 
+\simeq 
+{\rm Mor}_{\LMod_{\clies(\fg \otimes R_n)}} (\clies(\fg), \clies(\fg)).
+\]
+\owen{I think it's straightforward algebra after this (along the lines of the base change for the other proof), but I'm running out of steam right now.}
+%The augmentation $R_n = k \oplus k[1-n] \to k$,
+%induces a canonical inclusion $i: \clies(\fg) \to \clies(\fg \otimes R_n)$ of dg associative algebras,
+%and so
+%\[
+%k \otimes_{U\fg} U(\fg \otimes R_n) \simeq \Sym(\fg[1-n]).
+%\]
+%Base change along $i$ thus gives rise to an equivalence 
+%\[
+%{\rm Mor}_{\LMod_{U\fg}} (k, (\Sym(\fh[1-n]))_f) \simeq {\rm Mor}_{\LMod_{U(\fg \otimes R_n)}} (\Sym(\fg[1-n]), (\Sym(\fh[1-n]))_f)
+%\]
+%of underlying cochain complexes, i.e. an equivalence after applying the forgetful functor. 
+%The left hand side is modeled by $\clies(\fg,(\Sym(\fh[1-n]))_f)$, 
+%the Lie algebra cochains of $\fg$ with coefficients in~$(\UU_n \fh)_f$, as desired.
+%Hence the map $\theta_{\bf f}$ is a quasi-isomorphism on any disk, as needed.
+\end{proof}
+
+\owen{Add a discussion of Koszul duality. In the abelian case this is really obvious.}
 
 \subsection{A generalized Harish-Chandra isomorphism}
 
@@ -1449,12 +1422,13 @@ Since $\fg$ is semi-simple, there is a further quasi-isomorphism
 \]
 where $G$ is a compact connected Lie group whose Lie algebra is $\fg$. 
 
-Now, when $n$ is odd, we apply the Chevalley restriction theorem to obtain an isomorphism of graded vector spaces
+Now, when $n$ is odd, we apply the Chevalley restriction theorem to obtain an isomorphism 
 \[
-\Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W .
+\Sym(\fg[1-n])^G \cong \Sym \left(\fh[1-n]\right)^W 
 \]
+of graded vector spaces.
 
-Similarly, when $n$ is even, we apply the discussion in the paragraph preceding the statement of this proposition 
+Similarly, when $n$ is even, we apply the discussion in the paragraph preceding the statement of this proposition.
 \end{proof}
 
 \subsection{Free Lie algebras and free $\EE_n$ algebras}
