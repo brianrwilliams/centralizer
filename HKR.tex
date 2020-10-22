@@ -1,0 +1,109 @@
+Now we swiftly describe how to use methods like those in this paper to prove a version of this powerful result.
+
+\owen{I've gotten myself pretty mixed up about this \dots too many duals with infinite dimensional vector spaces, and issues with whether you can base-change a semi-free algebra.}
+
+First, we wish to define ${\rm Poly}_n(A)$ for an arbitrary dg commutative algebra $A$ in a way that gives the ``correct'' derived answer, i.e., the answer up to quasi-isomorphism of dg commutative algebras.
+Concretely, one should replace $A$ by a quasi-isomorphic but better behaved algebra $\widetilde{A}$, 
+such as semi-free resolution or cofibrant replacement with respect to some nice model category structure.
+Then one computes the tangent complex $\TT_{\widetilde{A}}$, i.e., the derived derivations.
+The {\em shifted polyvector fields} of $A$ means
+\[
+{\rm Poly}_n(A) \simeq \Sym_{\widetilde{A}} (\TT_{\widetilde{A}}[-n]),
+\]
+which is again a dg commutative algebra up to quasi-isomorphism.
+
+%Second, we introduce a technical hypothesis  needed to apply our methods.
+%We need an {\em augmented} dg commutative algebra $\epsilon: A \to k$ that admits a semifree resolution of the form $(\Sym(V^\vee), \partial)$, where $V$ is some graded vector space.
+%In other words, we need that the generators can be realized as the graded linear dual of some other graded vector space.
+%We say such an algebra $A$ is of {\em type~($\star$)}.
+
+\begin{prp}
+Let $A$ be an augmented dg commutative algebra.
+Then 
+\[
+{\frak Z}_n(A) \simeq {\rm Poly}_n(A).
+\]
+\end{prp}
+
+\owen{This is really turning into a mess.}
+
+\begin{proof}
+We are free to replace $A$ by a semifree resolution $(\Sym(V), \partial)$,
+where $\partial$ sends $V$ to the augmentation ideal $\Sym^{> 0}(V)$.
+Below we will (abusively) use $A$ to denote this semifree resolution,
+as the original $A$ is irrelevant for us.
+Ignoring the differential, we see that our situation resembles our central result for an abelian Lie algebra,
+and so we now mimic the proof of our central result.
+
+There is a natural homotopy-locally constant sheaf of cochain complexes $\Omega^\bu$ with differential $\d_{dR}$,
+which is a soft replacement for the locally constant sheaf $\RR$.
+Taking duals, we get a cosheaf.
+In the same way, we define the factorization algebra 
+\[
+F_A = (\Sym((\Omega^\bu)^* \otimes V ), \d_{dR} + \partial) 
+\]
+which is manifestly commutative and is quasi-isomorphic to $A$ on every disk.
+Hence $F_A$ is a commutative, locally constant factorization algebra that models~$A$.
+
+Similar techniques allow us to construct a factorization algebra modeling the polyvector fields ${\rm Poly}_n(A)$.
+Define
+\[
+Z_A = (\Hom^\bu(\Sym((\Omega^\bu)^* \otimes V), \Sym(\Omega_c^* \otimes V), [\d_{dR} + \partial,-]).
+\]
+Note its similarity to our model $\bZ_\fg$ for the center of~$\bU_n \fg$.
+%There is a canonical shifted Poisson structure here by extending the canonical  pairing
+%\[
+%(\Omega^\bu \otimes V)^* \otimes \Omega^\bu_c \otimes V \to \RR
+%\]
+%arising from the inclusion $\Omega^\bu_c \otimes V \hookrightarrow \Omega^\bu \otimes V$.
+
+Let us verify that 
+\[
+Z_A(D) \simeq {\rm Poly}_n(A)
+\]
+for any open disk $D$.
+Due to the Poincar\'e lemma, we have canonical quasi-isomorphisms $(\Omega^\bu(D))^* \otimes V \xto{\simeq} V$ and $\Omega^\bu_c(D) \otimes V \xto{\simeq} V[-n]$,
+where we view $V$ as simply a graded vector space but the de Rham complexes have the differential $\d_{dR}$.
+(The differential $\partial$ will make its appearance shortly.)
+Thus we have quasi-isomorphisms
+\[
+i: \Sym((\Omega^\bu(D))^* \otimes V) \xto{\simeq} \Sym(V)
+\]
+and 
+\[
+i_c: \Sym(\Omega_c^*(D) \otimes V) \xto{\simeq} \Sym(V[-n]).
+\]
+As $\partial$ acts only on the $V$-factors and not the de Rham factors,
+we can modify all the complexes by adding $\partial$ to the differential.
+Finally, if we fix a quasi-isomorphism 
+\[
+s: \Sym(V) \xto{\simeq} \Sym((\Omega^\bu(D))^* \otimes V),
+\]
+we get a map
+\[
+\begin{array}{ccc}
+Z_A(D) & \to & \Hom^\bu(A,A)\\
+\Phi & \mapsto & i_c \circ \Phi \circ s
+\end{array}
+\]
+that is a quasi-isomorphism.
+(Note that $s$ depends on the disk~$D$. 
+We do not construct a map that intertwines with any structure maps of~$Z_A$.)
+
+We now turn to constructing a map from this factorization algebra $Z_A$ to the center ${\frak Z}_n(A)$.
+The key is to show that $Z_A$ fits into a commuting triangle as in Definition~\ref{D:centralizer},
+because then we know $Z_A$ has a canonical map to~${\frak Z}_n(A)$.
+This action is quite easy to see here: there is a canonical map
+\[
+\Hom^\bu(\Sym((\Omega^\bu)^* \otimes V), \Sym(\Omega_c^* \otimes V) \otimes \Sym((\Omega^\bu)^* \otimes V) \to \Sym((\Omega^\bu)^* \otimes V)
+\]
+that sends $\Phi \otimes x$ to $\iota(\Phi(x))$,
+where 
+\[
+\iota: \Sym(\Omega_c^\bu \otimes V) \to \Sym((\Omega^\bu)^* \otimes V)
+\]
+
+4) Show this putative center fits into the commuting triangle and hence possesses a canonical map to the "true" center
+
+5) Use the Francis-Lurie recognition principle to show this map is a quasi-iso
+\end{proof}
