@@ -1828,9 +1828,12 @@ In fact, $\bC_n(\fg)$ is a constructible $\PP_0$-factorization algebra and this 
 %A $\PP_0$, or $1$-shifted Poisson, algebra is a commutative dg algebra equipped with a bracket of cohomological degree $+1$ that satisfies a graded version of the Jacobi identity and is a biderivation with respect to the commutative product \brian{reference}. 
 %Likewise, a $\PP_0$-factorization algebra is a factorization algebra whose value on each open set is $\PP_0$-algebra. 
 
-Following the proof of this proposition, our main thrust is to interpret this result by exhibiting a topological field theory on the $(n+1)$-dimensional manifold with boundary $M \times \RR_{\geq 0}$ whose factorization algebra of classical observables is equivalent to the constructible factorization algebra $\bC_n(\fg)$. 
-\brian{improve this pointer}
+Following the proof of this proposition, our main thrust is to interpret this result by exhibiting a topological field theory on the $(n+1)$-dimensional manifold with boundary $M \times \RR_{\geq 0}$ whose factorization algebra of {\em classical} observables is equivalent to the constructible factorization algebra $\bC_n(\fg)$.
+In this sense, the pair $(\bZ_n(\fg), \bU_n(\fg))$ is a model for the quantization of a particular topological field theory on a manifold with boundary.
+
+
 \owen{Somewhere please mention that the slogan ``quantization commutes with pushforward'' holds for this class of theories.}
+\brian{not sure where you wanted to address this request.}
 
 %The Batalin--Vilkovisky (BV) formalism for studying quantum field theory \brian{finish}
 %
@@ -1963,20 +1966,16 @@ We turn towards a model for the $\EE_n$ center as a constructible factorization 
 
 Before stating the definition of this model, we introduce the following variants of the de Rham complex of differential forms on $\RR_{\geq 0}$ and compactly supported differential forms.
 
-Let $j : \RR_{>0} \hookrightarrow \RR_{\geq 0}$ be the embedding of the open ray into the closed ray. 
 Let $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ be the two-term complex
 \[
-\Omega^0(\RR_{\geq 0}) \xto{j^* \circ \d_{\rm dR}} \Omega^1(\RR_{>0})[-1]  .
+\{f \in  C^{\infty}(\RR_{\geq 0}) \; | \; f(0) = 0\}  \xto{\d_{\rm dR}} \Omega^1(\RR_{\geq 0})[-1]  .
 \]
-The dg commutative algebra structure on $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ is defined by the formula
-\[
-f \cdot (g \, \d t) = (j^* f) g\, \d t .
-\]
+Notice that this is a subcomplex of the full de Rham complex on $\RR_{\geq 0}$.
+In fact, this is a de Rham model for the relative cohomology of the pair $(\RR_{\geq 0}, \partial \RR_{\geq 0} = \{t = 0\})$.
 
-Next, let $\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) \subset \Omega^{\bu}_{c}(\RR_{\geq 0})$ be the sub dg algebra of compactly supported de Rham forms defined by
-\[
-\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) = \{\alpha_{0} + \alpha_{1} \d t \; | \; \alpha_{0} (t = 0) = 0 \} .
-\]
+Similarly, let $\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) \subset \Omega^{\bu}_{c}(\RR_{\geq 0})$ be the subcomplex of compactly supported de Rham forms on $\RR_{\geq 0}$ whose zero form component vanishes at $t = 0$.
+
+Notice that $\Tilde{\Omega}_c^\bu(\RR_{\geq 0})$ (and $\Tilde{\Omega}^\bu_c(\RR_{\geq 0})$) admits the obvious enhancement to a sheaf (cosheaf) of commutative dg algebras on $\RR_{\geq 0}$.
 
 \begin{dfn}
 \label{dfn:constructible1}
@@ -2311,7 +2310,15 @@ There is a quasi-isomorphism of constructible $\PP_0$-factorization algebras on 
 %The quasi-isomorphism for the value of the factorization algebras on open sets $U \subset M \times \RR_{>0}$ is defined similarly. 
 \end{proof}
 
-\owen{Consider referring back to the Koszul pairing (in the calculus section) to talk about Neumann vs Dirichlet boundary conditions.}
+By Proposition \ref{prp:pair}, the constructible factorization algebra $\bC_n(\fg)$ is the classical limit of the factorization sc-pair $(\bZ_n(\fg), \bU_n(\fg))$.
+Thus, we have shown that the pair $(\bZ_n(\fg), \bU_n(\fg))$ is
+a model for the quantum factorization algebra of observables of topological BF theory on $M \times \RR_{\geq 0}$.
+
+In the ordinary Batalin--Vilkovisky formalism on manifolds without boundary it is the central theme of \cite{CG2} that to any effective family of functionals satisfying the ``quantum master equation'' one can associate a factorization algebra of quantum observables.
+On manifolds with boundary, this approach appears in the work of Rabinovich \cite{EugeneNew}.
+We expect that one can exhibit our constructible factorization algebra as the quantum factorization algebra of observables associated to a Batalin--Vilkovisky quantization of BF theory on $M \times \RR_{\geq 0}$.
+
+\owen{Consider referring back to the Koszul pairing (in the       calculus section) to talk about Neumann vs Dirichlet boundary conditions.}
 
 
 \begin{rmk} Examples
@@ -2431,6 +2438,8 @@ and so it remains to compute relative cohomology.
 %\bibliographystyle{spmpsci}  
 
 \end{document}
+
+
 We call $\ev_f$ the 
 $g: Sym(\fg \otimes \Omega (U_J) [1]) \longrightarrow B(U_J) $
 let $f\otimes X  $ be an 
