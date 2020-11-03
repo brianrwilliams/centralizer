@@ -1964,18 +1964,19 @@ is a model for the $\PP_n$ center of the {\em enveloping $\PP_n$ algebra} $\UU_{
 
 We turn towards a model for the $\EE_n$ center as a constructible factorization algebra on an $(n+1)$-manifold with boundary.
 
-Before stating the definition of this model, we introduce the following variants of the de Rham complex of differential forms on $\RR_{\geq 0}$ and compactly supported differential forms.
+Before stating the definition of this model, we introduce the following variants of the de Rham complex of differential forms on manifolds with boundary.
 
-Let $\Tilde{\Omega}^\bu (\RR_{\geq 0})$ be the two-term complex
+Suppose $N$ is a manifold with boundary and denote by $i_\partial : \partial N \hookrightarrow N$ the boundary embedding.
+Let $\Omega^{\bu}(N \, | \, \partial N)$ be the subcomplex of de Rham forms $\alpha$ on $N$ with the property that $i_\partial^* \alpha  = 0$.
+For instance, if $N = \RR_{\geq 0}$, then $\Omega^{\bu}(\RR_{\geq 0} \, | \, \{0\})$ is equal to the two-term complex
 \[
-\{f \in  C^{\infty}(\RR_{\geq 0}) \; | \; f(0) = 0\}  \xto{\d_{\rm dR}} \Omega^1(\RR_{\geq 0})[-1]  .
+  \{f \in  C^{\infty}(\RR_{\geq 0}) \; | \; f(0) = 0\}  \xto{\d_{\rm dR}} \Omega^1(\RR_{\geq 0})[-1]  .
 \]
-Notice that this is a subcomplex of the full de Rham complex on $\RR_{\geq 0}$.
-In fact, this is a de Rham model for the relative cohomology of the pair $(\RR_{\geq 0}, \partial \RR_{\geq 0} = \{t = 0\})$.
+The complex $\Omega^\bu(N \, | \, \partial N)$ is a de Rham model for the relative cohomology of the pair $(N, \partial N)$.
 
-Similarly, let $\Tilde{\Omega}^{\bu}_{c}(\RR_{\geq 0}) \subset \Omega^{\bu}_{c}(\RR_{\geq 0})$ be the subcomplex of compactly supported de Rham forms on $\RR_{\geq 0}$ whose zero form component vanishes at $t = 0$.
+Similarly, let $\Omega^{\bu}_{c}(N \, | \, \partial N)$ be the subcomplex of compactly supported de Rham forms $\alpha$ on $N$ with the property that $i_\partial^* \alpha = 0$.
 
-Notice that $\Tilde{\Omega}_c^\bu(\RR_{\geq 0})$ (and $\Tilde{\Omega}^\bu_c(\RR_{\geq 0})$) admits the obvious enhancement to a sheaf (cosheaf) of commutative dg algebras on $\RR_{\geq 0}$.
+Notice that both $\Omega^\bu(N \, | \, \partial N)$ and its compactly supported version are commutative dg subalgebras of the full de Rham complex.
 
 \begin{dfn}
 \label{dfn:constructible1}
@@ -1987,7 +1988,7 @@ Let $\bC_n(\fg)$ be the constructible factorization algebra on $M \times \RR_{\g
 \]
 \item to an open set $V \times [0,\epsilon)$ we assign the cochain complex 
 \[
-\bC_n (\fg) (V \times [0,\epsilon)) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}([0,\epsilon))[2] \right) \bigg).
+    \bC_n (\fg) (V \times [0,\epsilon)) = \clies\bigg(\fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V)  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon) \, | \, V) [2] \right) \bigg)
 \]
 %\brian{this is wrong
 %\[
@@ -2002,9 +2003,9 @@ i : U \sqcup V \times [0, \epsilon) \hookrightarrow V' \times [0,\epsilon')
 is given by the composition
 \[
 \begin{tikzcd}
-\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  \clies\bigg(\fg \otimes \Omega^\bu(V) \otimes \Tilde{\Omega}^\bu([0,\epsilon))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}([0,\epsilon))[2] \right) \bigg) \ar[d, "\simeq"] \\
-\clies \bigg(\fg \otimes \left(\Omega^\bu (U) \oplus \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \right) \; , \; \Sym \left(\fg \otimes \left(\Omega^\bu_c(U) [2] \oplus \Omega^\bu_c(V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}([0,\epsilon)) [2]\right)\right) \bigg) \ar[d, "i^* \otimes i_*"] \\
-\clies\bigg(\fg \otimes \Omega^\bu(V') \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon'))  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V') \Hat{\otimes} \Tilde{\Omega}^{\bu}_{c}([0,\epsilon'))[2] \right) \bigg).
+\clies \bigg(\fg \otimes \Omega^\bu (U) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \bigg) \; \otimes \;  \clies\bigg(\fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V) \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon) \, | \, V)[2] \right) \bigg) \ar[d, "\simeq"] \\
+\clies \bigg(\fg \otimes \left(\Omega^\bu (U) \oplus \Omega^\bu(V \times [0,\epsilon) \, | \, V \right) \; , \; \Sym \left(\fg \otimes \left(\Omega^\bu_c(U) [2] \oplus \Omega^\bu_c(V \times [0,\epsilon) \, | \, V) [2]\right)\right) \bigg) \ar[d, "i^* \otimes i_*"] \\
+\clies\bigg(\fg \otimes \Omega^\bu(V' \times [0,\epsilon') \, | \, V')  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V' \times [0,\epsilon') \, | \, V') [2] \right) \bigg).
 \end{tikzcd}
 \]
 %\Sym \left(\fg \otimes \Omega^\bu_c(U) [2] \right) \; \otimes \; \Sym \left(\fg \otimes \Omega^\bu_c (V \times [0,\epsilon)) [2] \right) \ar[d, "\simeq"] \\
@@ -2017,8 +2018,9 @@ The second map is induced from restriction and extension of de Rham forms and co
 \begin{rmk}
 For an open $U \subset M \times \RR_{>0}$, pulling back along an embedding $\iota : U \hookrightarrow V \times [0,\epsilon)$ determines a composition of cochain complexes
 \[
-\Omega^\bu (V') \otimes \Tilde{\Omega}^\bu([0,\epsilon)) \xto{j^*}  \Omega^\bu (V') \Hat{\otimes} \Omega^\bu((0,\epsilon)) \cong \Omega^\bu(V \times (0,\epsilon)) \xto{\iota^*} \Omega^\bu(U) .
+  \Omega^\bu (V \times [0,\epsilon) \, | \, V) \xto{j^*}  \Omega^\bu (V \times (0,\epsilon)) \xto{\iota^*} \Omega^\bu(U)
 \]
+where $j : V \times (0,\epsilon) \hookrightarrow V \times [0,\epsilon)$ is the open embedding.
 This composition provides the version of restriction $\iota^*$ of de Rham forms used in the definition above.
 \end{rmk}
 
@@ -2048,22 +2050,23 @@ We extend this to a bracket on the full complex by the graded Leibniz rule.
 Next, we define the $\PP_0$-bracket for the value of the factorization algebra on open sets of the form $V \times [0,\epsilon)$. 
 Notice that the underlying graded vector space of $\bC_n(\fg)(V \times [0,\epsilon))$ is of the form
 \[
-{\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (V) \otimes \Tilde{\Omega}^\bu ([0,\epsilon))) [1]) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon)) [2] \right) \right)  .
+{\rm Hom}^\bu\left(\Sym(\fg \otimes \Omega^\bu (V \times [0,\epsilon) \, | \, V) [1]) \; , \; \Sym \left(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon) \, | \, V) [2] \right) \right)  .
 \]
 We first define the bracket $\{F,G\}$ between the following simple elements 
 \[
-F : \fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) [2] \to k
+F : \fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V) [2] \to k
 \]
 and 
 \[
-G : k \to \fg \otimes \Omega^\bu_c(V \times [0,\epsilon))[2] .
+G : k \to \fg \otimes \Omega^\bu_c(V \times [0,\epsilon) \, | \, V)[2] .
 \]
 Define $\{F, G\}$ by the composition
 \[
 \begin{tikzcd}
-k \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[rdd, dotted, "{\{F,G\}}"'] \ar[r, "G \otimes 1"] & 
-\bigg(\fg \otimes \Omega^\bu_c(V) \Hat{\otimes} \Tilde{\Omega}^{\bu}_{c}([0,\epsilon)) [2]\bigg) \otimes \bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \bigg) \ar[d,"{[\cdot, \cdot] \otimes \wedge}"] \\
-& \fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) [2] \ar[d, "F"] \\ & k
+k \otimes \bigg(\fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V) \bigg) \ar[rdd, dotted, "{\{F,G\}}"'] \ar[r, "G \otimes 1"] &
+\bigg(\fg \otimes \Omega^\bu_c(V \times [0,\epsilon) \, | \, V) [2]\bigg) \otimes \bigg(\fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V)\bigg)
+\ar[d,"{[\cdot, \cdot] \otimes \wedge}"] \\
+& \fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V) [2] \ar[d, "F"] \\ & k
 \end{tikzcd}
 \]
 The middle bracket is induced from the Lie bracket on $\fg$ and the wedge product of differential forms.
@@ -2142,15 +2145,15 @@ We begin by constructing this map and then provide a retract that shows it is a 
 
 Recall that for $V \subset M$ we have
 \[
-\bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}(\RR_{\geq 0})[2] \right) \bigg) .
+  \bC_n(\fg)^\partial (V) = \clies\bigg(\fg \otimes \Omega^\bu(V \times \RR_{\geq 0} \, | \, V) \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0} \, | \, V)[2] \right) \bigg) .
 \]
 On $V$, the map $I^\partial$ is defined by the composition
 \[
 \begin{tikzcd}
-\clies\bigg(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})  \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V) \Hat{\otimes} \Tilde{\Omega}_{c}^{\bu}(\RR_{\geq 0})[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \times \Omega^\bu_c (V)[1] \right) .
+  \clies\bigg((\fg \otimes \Omega^\bu(V \times \RR_{\geq 0} \, | \, V) \; , \; \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0})[2] \right) \bigg) \ar[r, "{{\rm ev}_1}"] & \Sym\left(\fg \otimes \Omega^\bu_c (V \times \RR_{\geq 0} \, | V)[2] \right) \ar[d, "{\int_{\RR_{\geq 0}}}"] \\ &  \Sym\left(\fg \otimes \Omega^\bu_c (V)[1] \right) .
 \end{tikzcd}
 \]
-The first map ${\rm ev}_1$ evaluates the unit in $\Sym \left(\fg \otimes \Omega^\bu(V) \Hat{\otimes} \Tilde{\Omega}^\bu(\RR_{\geq 0})\right)$ and the second map is induced by integration along $\RR_{\geq 0}$. 
+The first map ${\rm ev}_1$ evaluates the unit in $\Sym \left(\fg \otimes \Omega^\bu(V \times \RR_{\geq 0} \, | \, V)[1]\right)$ and the second map is induced by integration along $\RR_{\geq 0}$.
 It is quick to check that $I^{\partial}$ extends to a map of factorization algebras. 
 
 On an open set $V$ the cochain map $I^{\partial}$ admits an explicit retract $r_\phi^\partial$ defined on linear elements $x \otimes \alpha$ in $\Sym (\fg \otimes \Omega^\bu_c(V)[1])$ by the formula
@@ -2219,8 +2222,9 @@ Of particular interest to us here are the shifted cotangent spaces~${\rm T}^*[n]
 
 We now turn to relating these ideas to the constructions of this paper.
 
-It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra. 
-Moreover, the observables are equipped with the structure of a $\PP_0$ factorization algebra.
+It is the central theme of \cite{CG1, CG2} that the observables of a {\em perturbative} field theory define the structure of a factorization algebra.
+The value of the factorization algebra on an open set $U$ is, by definition, the functionals on the fields restricted to $U$.
+Furthermore, the observables are equipped with the structure of a $\PP_0$ factorization algebra.
 
 Perturbative BF theory for the group $G$ is the formal moduli space is defined by the formal neighborhood of a point in a derived mapping space such as (\ref{stack1}). 
 For simplicity, consider working around the trivial $G$-bundle. 
@@ -2276,7 +2280,7 @@ That is, to an open set $U \subset M \times \RR_{>0}$ the theory is described by
 \item[(2)] 
 To an open set $V \times [0,\epsilon)$, we assign the $L_\infty$ algebra
 \[
-\cL (V \times [0,\epsilon)) = \Omega^\bu (V) \Hat{\otimes} \Tilde{\Omega}^\bu([0,\epsilon)) \otimes \fg \ltimes \Omega^{\bu} (V \times [0,\epsilon)) \otimes \fg^* [n-3] .
+    \cL (V \times [0,\epsilon)) = \Omega^\bu (V \times [0,\epsilon) \, | \, V) \otimes \fg \ltimes \Omega^{\bu} (V \times [0,\epsilon)) \otimes \fg^* [n-3] .
 \]
 \end{itemize}
 \end{dfn}
@@ -2294,8 +2298,35 @@ There is a quasi-isomorphism of constructible $\PP_0$-factorization algebras on 
 \end{prp}
 
 \begin{proof}
-\brian{all we need to say is that half-smeared is equivalent to full observables}
+  This proposition follows by tracing through some definitions, together with a key fact in functional analysis.
 
+  First, observe that the cochain complex which is {\em linear dual}\footnote{Here, we mean continuous linear dual, taking into account the structure of de Rham forms as a topological vector space.} to the cochain complex $\Omega^\bu (V \times [0,\epsilon)) \otimes \fg^*[n-3]$ is
+  \[
+    \Bar{\Omega}_c^\bu(V \times [0,\epsilon) \, | \, V) \otimes \fg[2].
+  \]
+  Here, the bar in $\Bar{\Omega}_c$ indicates compactly supported distributional differential forms.
+  In words, this is the space of compactly supported distributional de Rham forms $\alpha$ valued in $\fg[2]$ with the property that $i_\partial^* \alpha = 0$.
+  Where, as above, $i_\partial : \partial N \hookrightarrow N$ is the boundary embedding.
+
+  Now, there is a natural inclusion of cochain complexes of the smooth (non-distributional) compactly supported de Rham forms inside of the distributional ones:
+  \begin{equation}\label{eqn:AB}
+    \Omega_c^\bu(V \times [0,\epsilon) \, | \, V) \otimes \fg[2]\Bar{\Omega}_c^\bu(V \times [0,\epsilon) \, | \, V) \otimes \fg[2] .
+  \end{equation}
+  Furthermore, using ellipticity of the de Rham operator we can assert by the Atiyah--Bott lemma \cite{??} that this inclusion is a quasi-isomorphism.
+
+  With this bit of functional analysis out of the way, we observe that the value of the factorization algebra $\clies(\cL)$ on $V \times [0,\epsilon)$ is
+
+
+  The value of $\clies(\cL)$ on an open set $U$ is
+  \[
+    \clies\bigg(\fg \otimes \Omega^\bu(V \times [0,\epsilon) \, | \, V)  \; , \; \Sym\left(\fg \otimes \Bar{\Omega}^\bu_c (V \times [0,\epsilon) \, | \, V) [2] \right) \bigg) .
+\]
+So, the quasi-isomorphism (\ref{eqn:AB}) induces a quasi-isomorphism
+\[
+  \bC_n(\fg)(V \times [0,\epsilon)) \xto{\simeq} \clies(\cL)(V \times [0,\epsilon)) .
+\]
+
+Checking that $\bC_n(\fg)(U) \to \clies(\cL)(U)$ for open sets of the form $U \subset M \times \RR_{>0}$ is completely similar.
 %Suppose $V \times [0,\epsilon) \subset M \times \RR_{\geq 0}$ is an open set. 
 %Then, as cochain complexes 
 %\[
@@ -2314,20 +2345,19 @@ By Proposition \ref{prp:pair}, the constructible factorization algebra $\bC_n(\f
 Thus, we have shown that the pair $(\bZ_n(\fg), \bU_n(\fg))$ is
 a model for the quantum factorization algebra of observables of topological BF theory on $M \times \RR_{\geq 0}$.
 
-In the ordinary Batalin--Vilkovisky formalism on manifolds without boundary it is the central theme of \cite{CG2} that to any effective family of functionals satisfying the ``quantum master equation'' one can associate a factorization algebra of quantum observables.
-On manifolds with boundary, this approach appears in the work of Rabinovich \cite{EugeneNew}.
+
+In the ordinary Batalin--Vilkovisky formalism, on manifolds without boundary, it is the central result of \cite{CG2} that to any effective family of functionals satisfying the ``quantum master equation'' one can associate a factorization algebra of quantum observables.
+For manifolds with boundary, this has been developed in the work of Rabinovich \cite{EugeneNew}.
 We expect that one can exhibit our constructible factorization algebra as the quantum factorization algebra of observables associated to a Batalin--Vilkovisky quantization of BF theory on $M \times \RR_{\geq 0}$.
 
 \owen{Consider referring back to the Koszul pairing (in the       calculus section) to talk about Neumann vs Dirichlet boundary conditions.}
 
-
-\begin{rmk} Examples
-
-Poisson $\sigma$-model. 
-$B$-model. 
-cite paper with Eugene.
-Kapustin-Witten. 
-\end{rmk}
+%\begin{rmk} Examples
+%Poisson $\sigma$-model.
+%$B$-model.
+%cite paper with Eugene.
+%Kapustin-Witten.
+%\end{rmk}
 
 \subsection{Factorization homology on manifolds with boundary}
 
