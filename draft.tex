@@ -1789,13 +1789,17 @@ The resulting associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_
 The key insight is that there exists a filtration on our model $\bZ_n(\fg)$ for the $\EE_n$ center and our model $\bU_n (\fg)$ for the enveloping $\EE_n$ algebra  whose associated graded factorization algebras ${\rm Gr} \; \bZ_n(\fg)$ and ${\rm Gr} \; \bU_n(\fg)$ are commutative factorization algebras. 
 
 Given a filtered associative algebra whose associated graded is commutative, there exists a Poisson bracket on the associated graded algebra. 
-If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$ algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$. 
-There is a similar description of the ``classical limit"  of algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of algebras over a certain two-colored operad $\PP_{[n+1,n]}$, introduced by Safronov \cite{Pavel1, Pavel2}, whose definition we recall below.
+If the associated graded of a filtered $\EE_n$ algebra is commutative, then it carries the structure of a $\PP_n$ algebra, which is similar to a Poisson algebra except the bracket is of cohomological degree $1-n$.
+In particular, ${\rm Gr} \; \UU_n (\fg)$ has the structure of a $\PP_n$-algebra.
 
-\begin{prp} 
-\label{prp:poisson}
-The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ determines an algebra over the operad $\PP_{[n+1,n]}$. 
-\end{prp}
+There is a similar description of the ``classical limit"  of algebras over the $(n+1)$-dimensional Swiss cheese operad in terms of algebras over a certain two-colored operad $\PP_{[n+1,n]}$, introduced by Safronov \cite{Pavel1, Pavel2}.
+Using our model, we will see that the pair $({\rm Gr} \; \fZ_n (\fg), {\rm Gr} \; \UU_n(\fg))$ is an algebra over this two-colored operad.
+In particular, this implies that ${\rm Gr} \; \fZ_n (\fg)$ carries the structure of a $\PP_{n+1}$-algebra which ``acts'' on the $\PP_n$-algebra ${\rm Gr} \; \UU_n(\fg)$.
+
+%\begin{prp}
+%\label{prp:poisson}
+%The associated graded pair $({\rm Gr} \; \fZ_n(\fg) , {\rm Gr} \; \UU_n(\fg))$ determines an algebra over the operad $\PP_{[n+1,n]}$.
+%\end{prp}
 
 
 %The idea is too look at configurations of disks and half-disks inside of the upper-half space $\HH^{n+1} = \{(x_1,\ldots, x_{n+1}) \; | \; x_{n+1} \geq 0\}$. 
@@ -1896,13 +1900,27 @@ These are both commutative by direct inspection.
 \end{proof}
 
 The associated graded factorization algebras ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ are equipped with Poisson brackets that are compatible with the factorization structure. 
+For the remainder of this section we will assume that $\fg$ is a strict dg Lie algebra so that we can work with strict Poisson brackets
+in the category of dg algebras.
 
-For $k \geq -1$, a {\em $\PP_k$-factorization algebra} is a factorization algebra $\bA$ such that for every open set $U$ the cochain complex $\bA(U)$ is equipped with the structure of a $\PP_k$ algebra. 
-Furthermore, we require that the factorization structure maps be compatible with the $\PP_k$ algebra structure. 
+\begin{dfn}
+  A $\PP_m$-algebra is a commutative dg algebra $A$ equipped with a bracket
+  \[
+    \{\cdot , \cdot\} : A \otimes_k A \to A
+  \]
+  which defines a graded Lie bracket on $A[m-1]$ and satisfies the graded Leibniz rule
+  \[
+    \{a, b \cdot c\} = \{a,b\} \cdot c + (-1)^{|b||c|} \{a , c\} \cdot b .
+  \]
+\end{dfn}
 
-Theorem \ref{thm:lurie1} combines with the additivity result of \cite{SafronovAdd} to show that there is an equivalence of categories between the category of locally constant $\PP_k$-factorization algebras on $\RR^n$ and $\PP_{n+k}$ algebras.  
+A {\em $\PP_m$-factorization algebra} is a factorization algebra $\bA$ such that for every open set $U$ the cochain complex $\bA(U)$ is equipped with the structure of a $\PP_m$ algebra and that the factorization structure maps are compatible with the $\PP_m$-algebra structures.
+In particular, we note that a $\PP_m$-factorization algebra is a commutative factorization algebra.
 
-In light of this, the following lemma implies that ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ determine $\PP_n$ and $\PP_{n+1}$ algebras respectively. 
+There is an additivity theorem of Dunn and Lurie for $\EE_n$-algebras, see Theorem ?? in \cite{LurieHA}, which states an equivalence of $\infty$-categories between the category of $\EE_{n+1}$-algebras and the category of algebras in $\EE_{n}$-algebras.
+Safronov \cite{SafronovAdd} has proven a Poisson version of this result which states that there is an equivalence of $\infty$-categories between the category of $\PP_{n+1}$ algebras and the category of algebras in $\PP_{n}$-algebras.
+
+In light of this result, the following lemma implies that ${\rm Gr} \; \bU_n (\fg)$ and ${\rm Gr} \; \bZ_n(\fg)$ determine $\PP_n$ and $\PP_{n+1}$ algebras respectively.
 
 \begin{lmm}
 \label{lmm:pois1}
@@ -1915,8 +1933,7 @@ Then
 \end{lmm}
 
 \begin{proof}
-For any $L_\infty$ algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$ algebra.
-It is given by the sum of the $L_\infty$-operations $\ell_2 + \ell_3 + \cdots$. 
+For any Lie algebra $\fh$, the associated graded of the Chevalley--Eilenberg complex ${\rm Gr} \; \cliels {\rm Sym} (\fh [1])$ is equipped with the structure of a $\PP_0$ algebra with $\PP_0$-bracket determined by the Lie bracket on $\fh$.
 This observation implies that ${\rm Gr} \; \bU_n (\fg)$ is a $\PP_0$-factorization algebra.
 
 Next, recall that to an open set $U \subset M$ the factorization algebra ${\rm Gr} \; \bZ_n (\fg)$ assigns the cochain complex
@@ -1946,10 +1963,10 @@ The pair $(\fZ_n(\fg), \UU_n(\fg))$ is an algebra over the $(n+1)$-dimensional S
 At the level of the associated graded algebras, 
 we obtain an algebra over a certain classical limit of this operad that takes into account the aforementioned Poisson structures.
 The definition of this two-colored operad $\PP_{[n+1,n]}$ can be found in~\cite{SafronovCoiso}. 
-A {\em $\PP_{[n+1,n]}$ algebra} consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$ algebra and $B$ is a $\PP_n$ algebra that receives an action by $A$. 
+Roughly speaking, a {\em $\PP_{[n+1,n]}$ algebra} consists of a pair $(A,B)$ where $A$ is a $\PP_{n+1}$ algebra and $B$ is a $\PP_n$ algebra that receives an action by $A$.
 
 The action of $\bZ_n(\fg)$ on $\bU_n(\fg)$ descends to an action at the level of the associated graded factorization algebras
-Together with Lemma~\ref{lmm:pois1}, we obtain Proposition~\ref{prp:poisson}. 
+Together with Lemma~\ref{lmm:pois1}, we see that the associated graded pair is an algebra over $\PP_{[n+1,n]}$.
 
 \begin{rmk}
 One way to formulate the definition of a $\PP_{[n+1,n]}$ algebra $(A,B)$ is to require a map of commutative dg algebras $A \to B$ together with a lift to a map of $\PP_{n+1}$ algebras $A \to \fZ_{\PP_n} (B)$, where $\fZ_{\PP_n}(B)$ is the {\em $\PP_n$ center} of the $\PP_n$ algebra $B$. 
